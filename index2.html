@@ -1,0 +1,128 @@
+<head>
+    <title>my story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+  body {
+    background-image: url('https://lh3.google.com/u/4/d/1Jbfy9OVoGgyWYns5dxraEQ5D2a8B6sXo=w3382-h2626-iv1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.centered-container {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+}
+.hi{
+ position :relative;
+
+
+}
+.hi2{
+ position :absolute;
+ left:0;
+
+}
+.centered-container h1 {
+    
+    color: white;
+    font-family: 'Instrument Serif', serif;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    padding-top:20px;
+}
+
+.pretendard-text {
+    position:absolute;
+    left:0;
+    font-family: 'Pretendard', sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 15px;
+    text-decoration: underline;
+    text-decoration-color: black; /* 밑줄 색상 지정 */
+    width: 100%;
+    padding-top: 0px;
+    padding-left: 0;
+    margin: 0 0 0 0;
+}
+
+input[type="password"] {
+            padding: 5px;
+            font-size: 1.2em;
+
+            margin: 10px 0 0 0;
+        }
+
+        button {
+            position: relative;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-family: 'Instrument Serif', serif;
+            font-style: normal;
+            font-size: 1em;
+            border-style: dotted;
+            background-color: rgb(61, 98, 95);
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            background-color: aliceblue;
+            margin-top: 20px;
+            display: none; /* 기본적으로 숨김 */
+        }
+</style>
+
+</head>
+<body>
+<!-- <div class="centered-container">
+<h1 style="color: white">hi we're xxxxxxx</h1><br>
+<p class="pretendard-text">password</p>
+<br>
+
+
+<form>
+    <input id="pwd" type="password" placeholder="Ready to?">
+    <button onclick="checkPassword()">submit</button>
+    <div class="error-message" id="errorMessage"></div>
+</form>
+</div> -->
+
+<div class="centered-container">
+    <div class="hi"><h1 style="color: white">hi we're xxxxxxx</h1><br>
+        <div><p class="pretendard-text">password</p></div>
+        <div class="hi2">
+            <form>
+            <input id="pwd" type="password" placeholder="Ready to?">
+            <button onclick="checkPassword()">submit</button>
+            <div class="error-message" id="errorMessage"></div>
+            </form>
+        </div>
+    </div>
+
+<br>
+
+</div> 
+
+
+</body>

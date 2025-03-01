@@ -1,0 +1,174 @@
+<head>
+    <title>pf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.vt323-regular {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.section1, .section2 {
+    width: 100%;
+    height: 100vh; /* 각 섹션이 화면 전체를 차지하도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.section1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+    animation: fadein 5s ease 3s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-motion6 {
+    position: absolute;
+    top: calc(50% + 400px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.btn-motion6 span {
+    width: 24px;
+    height: 24px;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    transform: rotate(-45deg);
+    animation: btn-motion6 2s infinite;
+    opacity: 0;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+
+.btn-motion6 span:nth-of-type(1) { animation-delay: 0s; }
+.btn-motion6 span:nth-of-type(2) { animation-delay: 0.15s; }
+.btn-motion6 span:nth-of-type(3) { animation-delay: 0.3s; }
+
+@keyframes btn-motion6 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.section2 {
+    background: linear-gradient(to bottom, #4E8CFF, #E8E8E8); /* 그라데이션 추가 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.section2 img {
+    max-width: 90%; /* 이미지가 화면 너비를 넘지 않도록 조정 */
+    height: auto;
+}
+
+.line {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-family: 'Orbit-Regular';
+    word-spacing: -0.2rem;
+    font-size: 16px;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.line2 {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Orbit-Regular';
+    font-size: 12px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+    <div class="section1">
+        <img src="time.gif" alt="포폴gif">
+        <div class="overlay-img"><img src="am.png" alt="오버레이글씨">
+        </div>
+        <div class="btn-motion6">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="line"><br><br>개인 작업물로 진행하였으며 본래 출시된 앨범과는<br>
+            아무런 상관이 없는 개인 작업물임을 명시하는 바입니다.</div>
+        <div class="line2">It's my personal work. Compared to the original album,<br>
+        it states that it is just my side work to redesign.<br>&#10225;<br><br></div>
+        <img src="detail.png" alt="Detail Image">
+    </div>
+</body>

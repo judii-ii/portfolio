@@ -1,0 +1,80 @@
+<head>
+    <title>connecting to...</title>
+
+    <style>
+
+    @font-face {
+    font-family: 'DepartureMono-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2409-1@1.0/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+  background-color: #000
+}
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
+
+body,html {height:100%;margin:0;padding:0}
+ul, li, dl, dt, dd, p, span{margin:0;padding:0}
+a{text-decoration:none}
+li{list-style:none}
+a{text-decoration:none}
+*, :after, :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.typing-container {
+  color: white;
+  font-size: 20px;
+  font-weight:700;
+  font-family: 'DepartureMono-Regular';
+  margin: 50px;
+  width: 1920px;
+  word-break:keep-all
+}
+
+#cursor {
+  border-left: 2px solid white; /* 커서 스타일 */
+  animation: blink 0.7s infinite;
+  display: inline-block;
+  margin-left: 2px;
+  height: 20px; /* 폰트 크기와 동일하게 설정 */
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="typing-container">
+        <span class="text"></span><span id="cursor"></span>
+      </div>
+</body>
+<script>
+const content = "TBZ 2024 © All rights reserved. \n Have U ever dream about ***FROM nightmare TO PHANTASY \n. \n. \nLucid Dreamin \n \n \n \nReality check: Ask yourself if u're dreaming. \n Focus on an Object: Find something in the dream to concentrate on. \nComin' through \nVersion 128 bits booting from Our Dream \n \n \n \n \n \nHi! We're The Boyz!";
+const text = document.querySelector(".text");
+let i = 0;
+
+function typing() {
+    if (i < content.length) {
+        let txt = content[i++];
+        text.innerHTML += txt === "\n" ? "<br/>" : txt;
+        setTimeout(typing, 10); // 글자가 나타나는 속도를 조정하려면 이 값을 변경하세요
+    } else {
+        // 모든 글자가 출력된 후 페이지 이동
+        setTimeout(() => {
+            window.location.href = "(2)main.html"; // 원하는 페이지 경로로 수정
+        }, 2000); // 모든 글자가 출력된 후 2초 후에 이동
+    }
+}
+typing();
+</script>

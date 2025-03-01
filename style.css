@@ -1,0 +1,80 @@
+body {
+    background-color: #008080;
+    font-family: "MS Sans Serif", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .minesweeper {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    padding: 10px;
+    box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c0c0c0;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 2px solid #808080;
+    box-shadow: inset 2px 2px #ffffff, inset -2px -2px #404040;
+  }
+  
+  .counter {
+    background: black;
+    color: red;
+    font-size: 20px;
+    font-family: "Courier New", monospace;
+    width: 50px;
+    text-align: center;
+    border: 2px inset #808080;
+  }
+  
+  .reset {
+    font-size: 20px;
+    border: 2px outset #ffffff;
+    background: #c0c0c0;
+    cursor: pointer;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    gap: 2px;
+    background: #808080;
+    padding: 5px;
+    border: 2px outset #ffffff;
+  }
+  
+/* 기본 스타일 */
+.tile {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  /* 클릭된 타일 스타일 */
+  .tile.clicked {
+    background-color: #ddd;
+    border: 0.5px dashed #333; /* 점선 테두리 */
+    cursor: default;
+  }
+  
+  
+  .tile.flag {
+    background: #c0c0c0;
+    color: red;
+  }
+  

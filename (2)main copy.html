@@ -1,0 +1,266 @@
+<head>
+    <title>Hi, we're TBZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    .vt323-regular {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    body {
+        background-color: #14858B;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+    h1 {
+        font-family: 'Instrument Serif', serif;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 10px;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .left, .center, .right {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .center {
+        flex: 1;
+        text-align: center;
+    }
+
+    .window {
+        position: absolute;
+        left: 250px;
+        top: 100px;
+        display: none; /* 처음에 숨김 */
+        cursor: default;
+        width: 300px;
+        height: 200px;
+        border: 2px solid black;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        resize: both; /* 크기 조절 가능 */
+        overflow: hidden; /* 내부 body만 스크롤되도록 설정 */
+    }
+
+    .window-body {
+        padding: 10px;
+        margin: 0px;
+        height: calc(100% - 28px); /* 제목바 높이 제외한 나머지를 body로 */
+        overflow-y: auto; /* 세로 스크롤바 추가 */
+        overflow-x: hidden; /* 가로 스크롤바 숨김 */
+        box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    }
+
+    .title-bar {
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: move; /* 드래그 가능하도록 커서 설정 */
+    }
+
+    .title-bar-text {
+        font-size: 14px;
+    }
+
+    .title-bar-controls button {
+        width: 16px;
+        height: 16px;
+        background: #ccc;
+        border: none;
+        margin-left: 4px;
+        cursor: pointer;
+    }
+
+    .title-bar-controls button:hover {
+        background: #aaa;
+    }
+
+    .img-1 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-2 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-3 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-4 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-5 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-6 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="center"><a href=(2)main.html></a>Hi, we're The Boyz!</span>
+    </h1>
+    <div class="img-container">
+        <div class="img-1">
+            <img src="Artboard_1.png" alt="Image 1">
+        </div>
+        <div class="img-2">
+            <img src="Artboard_2.png" alt="Image 2">
+        </div>
+        <div class="img-3">
+            <img src="Artboard_4.png" alt="Image 3">
+        </div>
+        <div class="img-4">
+            <img src="Artboard_3.png" alt="Image 4">
+        </div>
+        <div class="img-5">
+            <img src="Artboard_5.png" alt="Image 5">
+        </div>
+        <div class="img-6">
+            <img src="Artboard_6.png" alt="Image 6">
+        </div>
+
+    </div>
+    <div class="window" id="window">
+        <div class="title-bar" id="titleBar">
+            <div class="title-bar-text">Find Out Your Dream.exe</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="closeBtn"></button>
+            </div>
+        </div>
+        <div class="window-body" style="padding: 0; overflow: hidden;">
+            <!-- Minesweeper 게임을 여기에 삽입 -->
+            <iframe src="jirae.html" style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+        
+    </div>
+
+    <script>
+        const img3 = document.querySelector('.img-3');
+    const windowEl = document.getElementById('window');
+    const closeBtn = document.getElementById('closeBtn');
+    const titleBar = document.getElementById('titleBar');
+
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    // img-3 더블 클릭 시 window 보이기
+    img3.addEventListener('dblclick', () => {
+        windowEl.style.display = 'block';
+    });
+
+    // Close 버튼 클릭 시 window 숨기기
+    closeBtn.addEventListener('click', () => {
+        windowEl.style.display = 'none';
+    });
+
+    // 드래그 시작
+    titleBar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - windowEl.offsetLeft;
+        offsetY = e.clientY - windowEl.offsetTop;
+    });
+
+    // 드래그 중
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const newX = e.clientX - offsetX;
+            const newY = e.clientY - offsetY;
+
+            // 화면 밖으로 나가지 않도록 제한
+            const maxX = window.innerWidth - windowEl.offsetWidth;
+            const maxY = window.innerHeight - windowEl.offsetHeight;
+
+            windowEl.style.left = `${Math.min(Math.max(0, newX), maxX)}px`;
+            windowEl.style.top = `${Math.min(Math.max(0, newY), maxY)}px`;
+        }
+    });
+
+    // 드래그 종료
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    // 크기 조절 이벤트
+    let isResizing = false;
+    let startWidth = 0;
+    let startHeight = 0;
+    let startX = 0;
+    let startY = 0;
+
+    windowEl.addEventListener('mousedown', (e) => {
+        // 하단 모서리에서만 크기 조절 가능
+        const rect = windowEl.getBoundingClientRect();
+        if (e.clientX > rect.right - 10 && e.clientY > rect.bottom - 10) {
+            isResizing = true;
+            startWidth = rect.width;
+            startHeight = rect.height;
+            startX = e.clientX;
+            startY = e.clientY;
+            e.preventDefault(); // 기본 이벤트 방지
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isResizing) {
+            const newWidth = startWidth + (e.clientX - startX);
+            const newHeight = startHeight + (e.clientY - startY);
+
+            // 최소 크기 제한
+            windowEl.style.width = `${Math.max(newWidth, 150)}px`;
+            windowEl.style.height = `${Math.max(newHeight, 100)}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isResizing = false;
+    });
+    </script>
+</body>

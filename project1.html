@@ -1,0 +1,247 @@
+<head>
+    <title>project 1</title>
+
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    font-family: 'Orbit-Regular';
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #333; /* Dark line at the bottom */
+}
+
+.navbar-item1 {
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #333;
+    /* background-color: #5d3e3e; */
+}
+
+.navbar-item1 a {
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbar-item2 {
+    flex-grow: 9;
+    /* background-color: #245ab0; */
+}
+
+.navbar-item3 {
+    flex-grow: 1;
+    text-align: center;
+    border-left: 1px solid #333;
+    /* background-color: #9f35c2; */
+}
+
+.navbar-item4 {
+    flex-grow: 1;
+    text-align: center;
+    padding-left: 10px;
+    border-left: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+    .project-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .project-container {
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+* {
+    cursor: url('chu.png') 16 16, auto;
+}
+body {
+    background-color: #efefef;
+    margin: 0;
+}
+
+
+.title1 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.title2 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.project-wrapper {
+    display: flex;
+    height: 150px;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.project_title {
+    flex-grow: 6;
+    line-height: 1;
+    padding-left: 50px;
+}
+
+
+.project-container {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+
+}
+
+.project-with {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.project-person {
+    padding: 5px 0 0 10px;
+}
+
+.project-type {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.project-type2 {
+    line-height: 1;
+    padding: 5px 0 0 10px;
+}
+
+.col1, .col2 {
+    flex-grow: 1;
+}
+
+.project-note {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.project-note2 {
+    padding: 5px 0 0 10px;
+}
+
+.project-contribution {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.project-contribution2 {
+    line-height: 1;
+    padding: 5px 0 0 10px;
+}
+
+.line {
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+.line2 {
+    width: 100%;
+    text-align: left;
+    margin-left: 80px;
+    padding: 20px;
+    font-family: 'Orbit-Regular';
+    font-size: 14px;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.img-container {
+    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px; /* 위 요소와 간격 */
+    flex-grow: 1;
+}
+
+.img-container img {
+    max-width: 100%; /* 이미지가 컨테이너를 벗어나지 않도록 제한 */
+    height: auto; /* 비율 유지 */
+}
+
+/* fade-in 애니메이션 정의 */
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-item1"><a href="juyoung.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
+        <div class="navbar-item2"></div>
+        <div class="navbar-item3">LINKEDIN</div>
+        <div class="navbar-item4">CONTACT</div>
+    </div>
+    <div class="project-wrapper">
+        <div class="project_title">
+            <div class="title1"> ⟡ 19</div>
+            <div class="title2"> Project</div>
+        </div>
+        <div class="project-container">
+            <div class="col1">
+                <div class="project-with"> ✦with</div>
+                <div class="project-person"> 19(NANA) </div>
+                <div class="project-type"> ✦project type</div>
+                <div class="project-type2"> video design <br> graphic design</div>
+            </div>
+            <div class="col2">
+                <div class="project-note">✦project note</div>
+                <div class="project-note2">this project is mixed with hand drawing and digital pic.</div>
+                <div class="project-contribution"> ✦contribution</div>
+                <div class="project-contribution2"> 100%</div>
+            </div>
+        </div>
+    </div>
+    <div class="img-container">
+        <div class="line"></div>
+        <div class="line2">Hello, we are 19! <br>
+        결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다. CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.</div>
+        <img src="p1.gif" alt="포폴gif">
+    </div>
+    <div class="writing">
+        <div class="cont"></div>
+    </div>
+
+</body>

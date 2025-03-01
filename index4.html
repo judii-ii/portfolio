@@ -1,0 +1,112 @@
+<head>
+    <title>hi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            background-image: url('https://lh3.google.com/u/4/d/1Jbfy9OVoGgyWYns5dxraEQ5D2a8B6sXo=w3382-h2626-iv1');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 왼쪽 정렬 */
+            padding: 20px;
+            gap: 5px; /* 줄 간격 조절 */
+            color: white;
+            width: 300px; /* 컨테이너 너비 지정 */
+        }
+
+        .centered-container h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 30px;
+            text-align: left;
+            margin: 0;
+        }
+
+        .pretendard-text {
+            font-family: 'Pretendard-Bold', sans-serif;
+            color: black;
+            font-size: 15px;
+            text-align: left;
+            text-decoration: underline;
+            margin: 10px 0 0 0;
+        }
+
+        form {
+            width: 100%; /* form을 컨테이너 너비에 맞춤 */
+        }
+
+        input[type="password"] {
+            padding: 5px;
+            font-size: 1.2em;
+            width: 60%;
+            margin-top: 0px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-family: 'Instrument Serif', serif;
+            font-size: 1em;
+            border-style: dotted;
+            border-width: 1px; 
+            background-color: rgb(61, 98, 95);
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 30%; /* 버튼을 form 너비에 맞춤 */
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="centered-container">
+        <h1>hi we're xxxxxxx</h1>
+        <p class="pretendard-text">password</p>
+        <form>
+            <input id="pwd" type="password" placeholder="Ready to?">
+            <button type="button" onclick="checkPassword()">connect</button>
+        </form>
+    </div>
+</body>
+<script>
+    function checkPassword() {
+        const passwordInput = document.getElementById("pwd").value;
+        
+        if (passwordInput === "theboyz") {
+            console.log("Password matched. Redirecting...");
+            window.location.href = "coding.html";
+        } else {
+            alert("Your dreamm access has been denied");
+        }
+        
+        return false; // 폼이 제출되지 않도록 방지
+    }
+        // 엔터 키 입력 시 checkPassword 호출
+        document.getElementById("pwd").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // 폼의 기본 제출 방지
+            checkPassword(); // 비밀번호 확인 함수 호출
+        }
+    });
+</script>
