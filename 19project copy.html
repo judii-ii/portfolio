@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Project</title>
+    <style>
+    * {
+    cursor: url('chu.png') 16 16, auto;
+    }
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Pretendard-Regular', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* 전체 페이지의 배경을 고정 */
+    .parallax-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: url('p1.gif') no-repeat center center/cover;
+        z-index: -1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* project-wrapper: 가로 배치는 그대로 유지 */
+.project-wrapper {
+    display: flex;
+    width: 95%; /* 너비는 이전 수정대로 95% 유지 */
+    max-width: 1400px;
+    justify-content: space-between; /* 제목과 세부 정보를 양쪽 끝으로 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    padding: 30px 20px; /* 위쪽 패딩을 유지하되, 필요하면 더 조정 가능 */
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+}
+
+/* project_title: 제목("⟡ 19 Project") 스타일 */
+.project_title {
+    flex: 0 0 40%;
+    line-height: 1;
+}
+
+/* project-container: 세부 정보("with", "project type" 등) 스타일 */
+.project-container {
+    display: flex;
+    flex: 0 0 50%;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+/* col1, col2: 세부 정보를 두 열로 나눔 */
+.col1, .col2 {
+    flex: 1;
+    padding-left: 10px;
+}
+
+/* 세부 정보 항목들의 스타일 */
+.project-with, .project-type, .project-note, .project-contribution {
+    font-weight: bolder;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.project-person, .project-type2, .project-note2, .project-contribution2 {
+    padding: 5px 0 0 10px;
+    line-height: 1;
+}
+
+/* 제목("⟡ 19", "Project")의 폰트 크기 */
+.title1, .title2 {
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.line {
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+    /* 섹션 스타일 */
+    .section {
+        height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        font-family: 'Orbit-Regular';
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .main {
+        background: transparent;
+    }
+
+
+    .next-section {
+        background: url('main2.jpg') no-repeat center center/cover;
+    }
+    .third-section {
+    background-color: #efefef;
+    font-family: 'Orbit-Regular';
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="parallax-container"></div>
+    
+    <div class="content">
+        <div class="section main">
+        </div>
+
+        <div class="section next-section">
+            Welcome to 19 space!
+        </div>
+
+        <div class="section third-section">
+            <div class="project-wrapper">
+                <div class="project_title">
+                    <div class="title1"> ⟡ 19</div>
+                    <div class="title2"> Project</div>
+                </div>
+                <div class="project-container">
+                    <div class="col1">
+                        <div class="project-with"> ✦with</div>
+                        <div class="project-person"> 19(NANA) </div>
+                        <div class="project-type"> ✦project type</div>
+                        <div class="project-type2"> video design <br> graphic design</div>
+                    </div>
+                    <div class="col2">
+                        <div class="project-note">✦project note</div>
+                        <div class="project-note2">this project is mixed with hand drawing and digital pic.</div>
+                        <div class="project-contribution"> ✦contribution</div>
+                        <div class="project-contribution2"> 100%</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

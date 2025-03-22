@@ -100,6 +100,8 @@ body {
     height: 150px;
     padding-top: 30px;
     justify-content: space-between;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
 }
 
 .project_title {
@@ -169,12 +171,14 @@ body {
 }
 
 .line2 {
-    width: 100%;
+    display: flex;
+    width: 80%;
     text-align: left;
-    margin-left: 80px;
-    padding: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 2vh;
     font-family: 'Orbit-Regular';
-    font-size: 14px;
+    font-size: 20px;
     overflow: hidden;
     animation: fadein 2s ease-in-out;
 }
@@ -183,13 +187,168 @@ body {
     display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
     align-items: center;
     flex-direction: column;
-    margin-top: 20px; /* 위 요소와 간격 */
+    margin-top: 1vh; /* 위 요소와 간격 */
     flex-grow: 1;
 }
 
 .img-container img {
     max-width: 100%; /* 이미지가 컨테이너를 벗어나지 않도록 제한 */
     height: auto; /* 비율 유지 */
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.main img {
+    width: 110%;
+    height: auto;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+}
+
+.writing1 {
+    display: flex; /* 플렉스 컨테이너로 설정 */
+    align-items: center;
+    margin-top: 20vh;
+    flex-direction: row; /* 가로 방향 배치 */
+    width: 100%;
+    gap: 20px; /* 컨테이너 사이 간격 */
+    animation: fade-in 2s ease-in-out;
+}
+
+.cont1 {
+    flex-grow: 6;
+    padding-left: 70px;
+    font-family: 'Pretendard-Bold';
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    padding-top: 10px;
+    line-height: 48px;
+}
+.cont2 {
+    flex-grow: 1;
+    padding-top: 12px;
+    padding-right: 100px;
+    font-family: 'Orbit-Regular';
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+/* nineteen-design1: 플렉스박스로 반반 나누기 */
+.nineteen-design1 {
+    display: flex;
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    justify-content: center;
+    flex-direction: row;
+    width: 100%; /* 전체 너비 사용 */
+    gap: 20px; /* 두 요소 사이 간격 */
+    animation: fade-in 2s ease-in-out;
+    box-sizing: border-box; /* 패딩과 보더가 크기에 포함되도록 */
+}
+
+/* album-img1과 album-writing1: 반반으로 나누기 */
+.album-img1, .album-writing1 {
+    flex: 1; /* 동일한 비율로 공간 분배 */
+    flex-basis: 50%; /* 기본 크기를 50%로 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* album-img1의 이미지 크기 제어 */
+.album-img1 img {
+    max-width: 100%; /* 컨테이너를 벗어나지 않도록 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지가 잘리지 않도록 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* album-img1 애니메이션 유지 */
+/* 애니메이션이 실행될 클래스 */
+.album-img1.animate {
+    -webkit-animation: album-img1 0.6s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+    animation: album-img1 0.6s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+}
+
+/* album-writing1 스타일 (필요 시 추가 조정) */
+.album-writing1 {
+    font-family: 'Orbit-Regular';
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+/* nineteen-design2: 플렉스박스로 반반 나누기 */
+.nineteen-design2 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    animation: fade-in 2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.album-img2, .album-writing2 {
+    flex: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.album-img2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* .album-img2 애니메이션 트리거 */
+.album-img2.animate {
+    -webkit-animation: album-img2 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s both;
+    animation: album-img2 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s both;
+}
+
+.album-writing2 {
+    font-family: 'Orbit-Regular';
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.nineteen-design3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 10vh;
+    animation: fade-in 2s ease-in-out;
+}
+
+.nineteen-design3 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* fade-in 애니메이션 정의 */
@@ -203,6 +362,89 @@ body {
     transform: none;
   }
 
+}
+
+@-webkit-keyframes album-img1 {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes album-img1 {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* .album-img2 애니메이션 정의 (오른쪽에서 날아오기) */
+@-webkit-keyframes album-img2 {
+    0% {
+        -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+        transform: translateX(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+@keyframes album-img2 {
+    0% {
+        -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-filter: blur(40px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+        transform: translateX(0) scaleY(1) scaleX(1);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
 }
 
 </style>
@@ -238,10 +480,56 @@ body {
         <div class="line"></div>
         <div class="line2">Hello, we are 19! <br>
         결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다. CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.</div>
-        <img src="p1.gif" alt="포폴gif">
     </div>
-    <div class="writing">
-        <div class="cont"></div>
+    <div class="main"><img src="p1.gif" alt="포폴gif"></div>
+    <div class="writing1">
+        <div class="cont1">19(NANA) <br> Album Design</div>
+        <div class="cont2">가수 19(NANA)의 여러 앨범 디자인을 맡으며, 음악적 스타일과 이미지를 깊이 이해하고 반영하는 작업을 진행했습니다.<br>
+            앨범 디자인을 시작하기 전, 원하는 이미지와 스타일을 세밀하게 체크한 후, 음악의 분위기와 메시지를 가장 잘 전달할 수 있는
+            <br>비주얼을 구상했습니다. 그 후, 각 곡의 특징을 반영하여 앨범 커버뿐만 아니라, 전체적인 디자인 컨셉을 세우는 데 집중했습니다.<br>
+            또한, 실물 앨범을 책 형태로 직접 제작하면서, 굿즈와 함께 판매하는 전략을 펼쳐 큰 성과를 이루었습니다. 
+        </div>
+    </div>
+    <div class="img-container">
+        <img src="main.gif" alt="포폴gif">
+    </div>
+    <div class="nineteen-design1">
+        <div class="album-img1"><img src="album1.png" alt="앨범1"></div>
+        <div class="album-writing1">hi</div>
+    </div>
+    <div class="nineteen-design2">
+        <div class="album-writing2">hi</div>
+        <div class="album-img2"><img src="album2.png" alt="앨범2"></div>
+    </div>
+    <div class="nineteen-design3">
+        <img src="nineteen2.gif" alt="포폴2gif">
     </div>
 
 </body>
+
+<script>
+// Intersection Observer 설정
+const albumImg1 = document.querySelector('.album-img1');
+const albumImg2 = document.querySelector('.album-img2');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // 요소가 뷰포트에 들어오면 animate 클래스 추가
+            entry.target.classList.add('animate');
+            // 한 번 실행 후 관찰 중지
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1 // 요소의 10%가 보일 때 트리거
+});
+
+// .album-img1과 .album-img2 요소를 관찰
+if (albumImg1) {
+    observer.observe(albumImg1);
+}
+if (albumImg2) {
+    observer.observe(albumImg2);
+}
+</script>

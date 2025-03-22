@@ -27,6 +27,8 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+
 .line-box{
     display:flex;
     justify-content: center;
@@ -137,6 +139,211 @@ html, body {
     padding-top: 10px;
 }
 
+
+.album-design {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; /* 하단 정렬 */
+    flex-direction: row;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: fade-in 2s ease-in-out;
+}
+
+.diary1, .diary2 {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex: 1;
+}
+
+.diary1 img {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.diary2 img {
+    max-width: 120%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design2 {
+    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
+    align-items: center;
+    flex-direction: column;
+    background-color: #4E8CFF;
+    flex-grow: 1;
+}
+.album-design2 img {
+    width: 80%;
+    height: auto;
+    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
+    display: block; /* 이미지 아래 여백 제거 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.album-design3 {
+    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+}
+.album-design3 img {
+    width: 90%;
+    height: auto;
+    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
+    display: block; /* 이미지 아래 여백 제거 */
+}
+
+.diary5-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'Galmuri11';
+    font-size: 10pt;
+    padding-top: 0.5vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.album-design4 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    gap: 0px; /* 수평 간격 */
+}
+
+.album-design5 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    gap: 0px; /* 수평 간격 */
+    margin-top: -100px; /* .album-design4와의 수직 간격 조정 */
+}
+
+.diary-pic1, .diary-pic2, .diary-pic3, .diary-pic4 {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex: 1;
+}
+
+.diary-pic1 img, .diary-pic2 img, .diary-pic3 img, .diary-pic4 img {
+    max-width: 110%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design6 {
+    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 20vh;
+}
+.album-design6 img {
+    width: 40%;
+    height: auto;
+    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
+    display: block; /* 이미지 아래 여백 제거 */
+}
+
+.album-design7 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5vh;
+    gap: 0;
+    animation: fade-in 2s ease-in-out;
+}
+
+.nfc-img1, .nfc-img2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nfc-img1 img, .nfc-img2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 3 / 3.5;
+}
+
+.album7-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: 12pt;
+    padding-top: 1vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.album-design8 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; /* 하단 정렬 */
+    flex-direction: row;
+    width: 100%;
+    margin-top: -10vh;
+    animation: fade-in 2s ease-in-out;
+}
+
+.nfc-img3 img {
+    max-width: 120%;
+    height: auto;
+    padding-left: 4vw;
+    object-fit: contain;
+    overflow: hidden;
+    flex: 2;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nfc-img4 img {
+    max-width: 100%;
+    height: auto;
+    padding-right: 2vw;
+    padding-top: -20vh;
+    object-fit: contain;
+    overflow: hidden;
+    flex: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album8-writing {
+    width: 100%;
+    color: #000000;
+    text-align: left;
+    font-family: 'W95FA', sans-serif;
+    font-size: 12pt;
+    padding-left: 5vw;
+    padding-top: -100vh;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
 </style>
 </head>
 <body>
@@ -166,7 +373,38 @@ html, body {
             <img src="detail.png" alt="Detail Image">
         </div>
         <div class="diary">DIARY VER.</div>
-        <div class="album-design">Album Design</div>
+        <div class="album-design">
+            <div class="diary1"><img src="diary1.png" alt="다이어리1"></div>
+            <div class="diary2"><img src="diary2.gif" alt="다이어리2"></div>
+        </div>
+        <div class="album-design2">
+            <img src="diary3.png" alt="다이어리3">
+        </div>
+        <div class="album-design3">
+            <img src="diary4.gif" alt="다이어리4">
+        </div>
+        <div class="diary5-writing">DIARY 버전에 수록된 포토북 이미지는 NFC 버전에서 코드를 통해 디지털 이미지로 제공됩니다.</div>
+        <div class="album-design4">
+            <div class="diary-pic1"><img src="diary5.png" alt="다이어리5"></div>
+            <div class="diary-pic2"><img src="diary6.png" alt="다이어리6"></div>
+        </div>
+        <div class="album-design5">
+            <div class="diary-pic3"><img src="diary7.png" alt="다이어리7"></div>
+            <div class="diary-pic4"><img src="diary8.png" alt="다이어리8"></div>
+        </div>
+        <div class="album-design6">
+            <img src="loading.png" alt="다이어리9">
+        </div>
+        <div class="album-design7">
+            <div class="nfc-img1"><img src="nfc1.png" alt="다이어리7"></div>
+            <div class="nfc-img2"><img src="nfc2.gif" alt="다이어리8"></div>
+        </div>
+        <div class="album7-writing">NFC VER.</div>
+        <div class="album-design8">
+            <div class="nfc-img3"><img src="nfc3.png" alt="다이어리9"></div>
+            <div class="nfc-img4"><img src="nfc4.png" alt="다이어리10"></div>
+        </div>
+        <div class="album8-writing">CHOOSE YOUR MEMBER!</div>
     </div>
 
 </body>

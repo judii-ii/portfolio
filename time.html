@@ -1,0 +1,970 @@
+<head>
+    <title>pf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@import url('https://fonts.cdnfonts.com/css/w95fa');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 작은 화면에서 가로 스크롤 방지 */
+}
+
+.line-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 25vh; /* 뷰포트 높이에 상대적으로 유지 */
+    padding: 0 10px; /* 작은 화면에서 양옆 여백 추가 */
+}
+
+.line {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-family: 'Galmuri11';
+    font-size: clamp(0.6rem, 0.8vw, 1rem); /* 반응형 폰트 크기 */
+    word-spacing: -0.2rem;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.line2 {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(0.8rem, 1vw, 1.2rem); /* 반응형 폰트 크기 */
+    padding-bottom: 2vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.line-box2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: nowrap; /* 필요하면 제거 */
+    min-width: 300px; /* 최소 너비 설정 */
+}
+
+.line3 {
+    width: 20%;
+    min-width: 120px; /* 최소 너비 설정 */
+    flex-shrink: 0; /* 줄어들지 않게 설정 */
+    text-align: left;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: 'W95FA', sans-serif;
+}
+
+.line4 {
+    width: 45%;
+    min-width: 250px; /* 최소 너비 설정 */
+    flex-shrink: 0; /* 줄어들지 않게 설정 */
+    text-align: left;
+    font-family: 'Galmuri11';
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.section1 gif, 
+.section1 img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.section2 {
+    background: linear-gradient(to bottom, #4E8CFF, #E8E8E8);
+}
+
+.section3 img {
+    width: 100%;
+    height: auto; /* 이미지 비율 유지 */
+}
+
+.section1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 50%;
+    max-width: 500px;
+}
+
+.overlay-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.diary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'W95FA', sans-serif;
+    font-weight: bolder;
+    font-size: clamp(0.8rem, 1vw, 1.5rem); /* 반응형 폰트 크기 */
+    padding-top: 10px;
+}
+
+.album-design {
+    display: flex;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px; /* 작은 화면에서 줄임 */
+    margin-bottom: 50px;
+    animation: fade-in 2s ease-in-out;
+}
+
+.diary1, .diary2 {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex: 1;
+    min-width: 0; /* 오버플로우 방지 */
+}
+
+.diary1 img {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.diary2 img {
+    max-width: 100%; /* 반응형으로 조정 */
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4E8CFF;
+    flex-grow: 1;
+}
+
+.album-design2 img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.album-design3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+.album-design3 img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.diary5-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'Galmuri11';
+    font-size: clamp(8pt, 1.5vw, 10pt); /* 반응형 폰트 크기 */
+    padding-top: 0.5vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+/* Grid로 수정된 부분 */
+.album-design4, .album-design5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 최소 200px 설정 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: flex-start;
+    width: 100%; /* 컨테이너 너비 조정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px 0; /* 상하 여백 추가 */
+    animation: fade-in 2s ease-in-out;
+    gap: 20px; /* 간격 조정 */
+}
+
+.album-design5 {
+    margin-top: -50px; /* 기존 간격 유지 */
+}
+
+.diary-pic1, .diary-pic2, .diary-pic3, .diary-pic4 {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.diary-pic1 img, .diary-pic2 img, .diary-pic3 img, .diary-pic4 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* 이미지를 셀에 꽉 차게 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design6 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 10vh; /* 작은 화면에서 줄임 */
+}
+
+.album-design6 img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.album-design7 {
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5vh;
+    gap: 0;
+    animation: fade-in 2s ease-in-out;
+}
+
+.nfc-img1, .nfc-img2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    min-width: 0; /* 오버플로우 방지 */
+}
+
+.nfc-img1 img, .nfc-img2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 3 / 3.5;
+}
+
+.album7-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt); /* 반응형 폰트 크기 */
+    padding-top: 1vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+        
+.album-design8 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; /* 하단 정렬 */
+    flex-direction: row;
+    width: 100%;
+    margin-top: 0vh;
+    animation: fade-in 2s ease-in-out;
+    position: relative; /* 오버레이를 위한 상대 위치 설정 */
+}
+
+.nfc-img3 {
+    flex: 2;
+    position: relative; /* .album8-writing의 기준점 */
+    z-index: 1; /* 기본 레이어 */
+}
+
+.nfc-img3 img {
+    max-width: 120%;
+    height: auto;
+    padding-left: 4vw;
+    object-fit: contain;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nfc-img4 {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.nfc-img4 img {
+    max-width: 120%;
+    height: auto;
+    padding-right: 0;
+    margin-left: -5vw;
+    object-fit: contain;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* .album8-writing 오버레이 설정 */
+.album8-writing {
+    width: auto; /* 텍스트 크기에 맞게 */
+    color: #000000;
+    text-align: left;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt); /* 반응형 폰트 크기 */
+    padding-left: 5vw;
+    overflow: hidden;
+    z-index: 3; /* .nfc-img3 위에 표시 */
+    animation: fadein 2s ease-in-out;
+    position: absolute; /* 절대 위치로 오버레이 */
+    top: 80%; /* .nfc-img3 내부에서 조정 */
+    left: 0.5%; /* 왼쪽 여백 유지 */
+    transform: translateY(-50%); /* 세로 중앙 정렬 조정 */
+}
+
+.album9-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* 반응형 폰트 크기 */
+    padding-top: 1vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.album10-writing {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-family: 'Galmuri11';
+    font-size: clamp(8pt, 1.5vw, 10pt); /* 반응형 폰트 크기 */
+    padding-top: 2vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.album-design9 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    gap: 0px; /* photocard 사이 간격 조정 */
+}
+.photocard1 {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt);
+    line-height: 5vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photocard2, .photocard3 {
+    flex: 1; /* 동일한 비율 적용 */
+    display: flex;
+    flex-direction: column;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt);
+    line-height: 5vh;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photocard1 img {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.photocard2 img, .photocard3 img {
+    max-width: 60%;
+    height: auto; /* 높이 100% → auto 변경 */
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design10 {
+    display: flex;
+    align-items: center; /* 요소 수직 정렬 */
+    justify-content: space-between; /* 요소 간격 균등 분배 */
+    max-width: 100%; /* 전체 영역 제한 */
+    margin-top: 5vh;
+    gap: 5vw; /* 텍스트와 이미지 간격 조정 */
+}
+
+.keyring1 {
+    flex: 1; /* 텍스트 영역 비율 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 5vw;
+    text-align: left;
+}
+
+.keyring-writing1 {
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3rem); /* 반응형 폰트 크기 */
+    overflow: hidden;
+}
+.keyring-writing2 {
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(12pt, 2vw, 14pt); /* 반응형 폰트 크기 */
+    line-height: 2vh;
+    text-decoration: underline;
+    overflow: hidden;
+}
+
+.keyring2 {
+    flex: 1.5; /* 이미지 영역 비율 */
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+
+.keyring2 img {
+    width: 100%;
+    margin-right: 5vw;
+    height: auto;
+}
+
+.keyring-writing3 {
+    margin-top: 2vh;
+    text-decoration: underline;
+    overflow: hidden;
+}
+
+button {
+  outline: none;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  border: 2px solid #000;
+  font-family: 'W95FA', sans-serif;
+  font-size: clamp(10pt, 1.5vw, 12pt);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.btn-8 {
+  border-radius: 20px;
+  padding: 0;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* 기본 텍스트 */
+.btn-8 .default-text {
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  color: #fff; /* 기본 상태에서는 흰색 */
+}
+
+/* hover 시 사라질 텍스트 */
+.btn-8:hover .default-text {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* hover 시 나타날 텍스트 */
+.btn-8 .hover-text {
+  position: absolute;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  color: #000000; /* hover 시에도 흰색 유지 */
+}
+
+/* hover 시 새 텍스트 표시 */
+.btn-8:hover .hover-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 버튼 배경 효과 */
+.btn-8:after {
+  position: absolute;
+  border-radius: 20px;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  transition: all 0.3s ease;
+}
+
+.btn-8:hover:after {
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+
+.album-design11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10vh;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sticker1 {
+    position: relative; /* 부모 요소를 relative로 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.album11-writing {
+    position: absolute; /* 절대 위치 지정 */
+    top: 50%; /* 상단에서 50% 위치 */
+    left: 50%; /* 왼쪽에서 50% 위치 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    color: #ffffff;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    letter-spacing: 5px;
+    text-shadow: 
+    2px 2px 0px rgba(0, 0, 0, 0.726), /* 오른쪽 아래 */
+    -2px -2px 0px rgba(0, 0, 0, 0.726), /* 왼쪽 위 */
+    2px -2px 0px rgba(0, 0, 0, 0.726), /* 오른쪽 위 */
+    -2px 2px 0px rgba(0, 0, 0, 0.726); /* 왼쪽 아래 */
+    z-index: 2; /* 이미지보다 위에 배치 */
+    animation: fadein 2s ease-in-out;
+    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+}
+
+.sticker1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+.album-design12 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* 윗선 정렬을 위해 flex-start로 변경 */
+    justify-content: center;
+    flex-direction: row;
+    width: 80%;
+    margin: 5vh auto 0;
+    gap: 10vw;
+    animation: fade-in 2s ease-in-out;
+}
+
+.stick-img1, .stick-img2 {
+    flex: 1; /* 동일한 비율로 공간 분배 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 이미지 상단 정렬 */
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+.stick-img1 img {
+    width: auto;
+    max-width: 90%; /* 가로 크기 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 잘리지 않도록 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.stick-img2 img {
+    width: auto;
+    max-width: 126%; /* 가로 크기 제한 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 잘리지 않도록 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.album-design13 {
+    display: flex;
+    background-color: #6B8898;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 2vh; /* 작은 화면에서 줄임 */
+}
+
+.album-design13 img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.album14-writing {
+    width: 100%;
+    background-color: #EFEFEF;
+    color: #000000;
+    text-align: center;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(20pt, 3vw, 24pt); /* 반응형 폰트 크기 */
+    padding-top: 1vw;
+    overflow: hidden;
+    animation: fadein 2s ease-in-out;
+}
+
+.album-design14 {
+    display: flex;
+    background-color: #EFEFEF;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    gap: 0px; 
+}
+.mp3 {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt);
+    line-height: 5vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tracklist, .timetable {
+    flex: 1; /* 동일한 비율 적용 */
+    display: flex;
+    flex-direction: column;
+    font-family: 'W95FA', sans-serif;
+    font-size: clamp(10pt, 1.5vw, 12pt);
+    line-height: 5vh;
+    margin-top: 5vh;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mp3 img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tracklist img, .timetable img {
+    max-width: 60%;
+    height: auto; /* 높이 100% → auto 변경 */
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* 작은 화면을 위한 미디어 쿼리 */
+/* 기존 코드 유지하면서 반응형 미디어 쿼리 추가 */
+@media (max-width: 1024px) {
+    .line-box2 {
+        flex-direction: column;
+        width: 90%;
+        flex-wrap: nowrap;
+        padding: 15px;
+    }
+    .line3, .line4 {
+        width: 90%;
+        text-align: center;
+    }
+    .album-design {
+        flex-direction: column;
+    }
+    .album-design4, .album-design5 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .keyring1 {
+        text-align: left;
+        width: 100%;
+    }
+    .keyring2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .keyring2 img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .line-box2 {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+    .line3, .line4 {
+        width: 100%;
+        text-align: center;
+    }
+    .album-design4, .album-design5 {
+        grid-template-columns: 1fr;
+    }
+    .album-design9 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .photocard1 img {
+        max-width: 80%;
+    }
+    .photocard2 img,.photocard3 img {
+        max-width: 60%; /* photocard2 크기 줄이기 */
+    }
+    .album-design10 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .keyring1 {
+        text-align: center;
+    }
+    .keyring2 {
+        justify-content: center;
+        padding: 0;
+    }
+    .keyring2 img {
+        width: 80%;
+        align-items: center;
+    }
+    .diary2 {
+        margin-top: 20px; /* diary2 위아래 간격 조정 */
+        margin-bottom: 20px;
+    }
+    .album11-writing {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .line, .line2, .album7-writing, .album8-writing, .album9-writing {
+        font-size: clamp(0.7rem, 2vw, 1rem);
+    }
+    .album-design {
+        margin: 10px 0;
+    }
+    .photocard1 img {
+        max-width: 90%;
+    }
+    .photocard2 img, .photocard3 img {
+        max-width: 70%; /* photocard2 모바일 크기 조정 */
+    }
+    .keyring1 {
+        text-align: center;
+    }
+    .keyring2 {
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+    }
+    .keyring2 img {
+        width: 80%;
+        align-items: center;
+    }
+    .diary2 {
+        margin-top: 30px; /* 작은 화면에서도 간격 유지 */
+        margin-bottom: 30px;
+    }
+    .album11-writing {
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+    button.custom-btn {
+        width: 100px;
+        height: 35px;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="section1">
+        <div class="overlay-img">
+            <img src="am.png" alt="오버레이글씨">
+        </div>
+        <img src="time.gif" alt="포폴gif">
+    </div>
+    <div class="section2">
+        <div class="line-box">
+            <div class="line">개인 작업물로 진행하였으며 본래 출시된 앨범과는<br>
+                아무런 상관이 없는 개인 작업물임을 명시하는 바입니다.</div>
+            <div class="line2">It's my personal work. Compared to the original album,<br>
+            it states that it is just my side work to redesign.</div>
+        </div>
+        <div class="section4">
+            <div class="line-box2">
+                <div class="line3">2 TYPES OF<br>ALBUM DETAIL PAGES</div>
+                <div class="line4">개인 작업물로 앨범을 재구성하기 위해 더보이즈의 2집 앨범의 컨셉을 기획하여 이어 몇가지 마무리를 구성하였습니다. 
+                    <br>패키지의 구성품으로는 앨범 본체, CD, 스티커나 키링, 그 속 포토북과 포토카드까지 여러 가지 굿즈가 함께 들어가 있습니다. 
+                    <br>앨범은 DIARY VER.과 NFC VER.으로 구성되어 다양한 팬들에게 더 많은 즐거움을 안겨줄 것입니다. (포토카드는 제외외 구성품 동일)
+                </div>
+            </div>
+        </div>
+        <div class="section3">
+            <img src="detail.png" alt="Detail Image">
+        </div>
+        <div class="diary">DIARY VER.</div>
+        <div class="album-design">
+            <div class="diary1"><img src="diary1.png" alt="다이어리1"></div>
+            <div class="diary2"><img src="diary2.gif" alt="다이어리2"></div>
+        </div>
+        <div class="album-design2">
+            <img src="diary3.png" alt="다이어리3">
+        </div>
+        <div class="album-design3">
+            <img src="diary4.gif" alt="다이어리4">
+        </div>
+        <div class="diary5-writing">DIARY 버전에 수록된 포토북 이미지는 NFC 버전에서 코드를 통해 디지털 이미지로 제공됩니다.</div>
+        <div class="album-design4">
+            <div class="diary-pic1"><img src="diary5.png" alt="다이어리5"></div>
+            <div class="diary-pic2"><img src="diary6.png" alt="다이어리6"></div>
+        </div>
+        <div class="album-design5">
+            <div class="diary-pic3"><img src="diary7.png" alt="다이어리7"></div>
+            <div class="diary-pic4"><img src="diary8.png" alt="다이어리8"></div>
+        </div>
+        <div class="album-design6">
+            <img src="loading.png" alt="다이어리9">
+        </div>
+        <div class="album-design7">
+            <div class="nfc-img1"><img src="nfc1.png" alt="다이어리7"></div>
+            <div class="nfc-img2"><img src="nfc2.gif" alt="다이어리8"></div>
+        </div>
+        <div class="album7-writing">NFC VER.</div>
+        <div class="album-design8">
+            <div class="nfc-img3"><img src="nfc3.png" alt="다이어리9">
+                <div class="album8-writing">CHOOSE YOUR MEMBER!</div>
+            </div>
+            <div class="nfc-img4"><img src="nfc4.png" alt="다이어리10"></div>
+        </div>
+        <div class="album9-writing">PHOTOCARD DESIGN</div>
+        <div class="album10-writing">PHOTOCARD (11종 구성)</div>
+        <div class="album-design9">
+            <div class="photocard1"><img src="pc1.png" alt="포카1">
+                <div class="photocard1-writing">FRONT</div>
+            </div>
+            <div class="photocard2"><img src="pc2.png" alt="포카뒤1">
+                <div class="photocard1-writing">REAR (DIARY VER.)</div>
+            </div>
+            <div class="photocard3"><img src="pc3.png" alt="포카뒤2">
+                <div class="photocard1-writing">REAR (NFC VER.)</div>
+            </div>
+        </div>
+        <div class="album-design10">
+            <div class="keyring1">
+                <div class="keyring-writing1">WITH<br>KEYRING</div>
+                <div class="keyring-writing2">ONLY IN DIARY VER.</div>
+                <div class="keyring-writing3">
+                    <button class="custom-btn btn-8">
+                        <span class="default-text">GET IT?</span>
+                        <span class="hover-text">GOT IT!</span>
+                    </button>
+                </div>               
+            </div>
+        <div class="keyring2"><img src="keyring.png" alt="키링"></div>
+        </div>
+        <div class="album-design11">
+            <div class="sticker1"><img src="sticker01.jpg" alt="스티커1">
+                <div class="album11-writing">STICKER DESIGN</div></div>
+        </div>
+        <div class="album-design12">
+            <div class="stick-img1"><img src="sticker02.png" alt="스티커2"></div>
+            <div class="stick-img2"><img src="sticker03.png" alt="스티커3"></div>
+        </div>
+        <div class="album-design13">
+            <img src="sticker04.png" alt="스티커4">
+        </div>
+        <div class="album14-writing">AND MORE...</div>
+        <div class="album-design14">
+            <div class="tracklist"><img src="tracklist.png" alt="트랙리스트">
+                <div class="tracklist-writing">TRACKLIST</div>
+            </div>
+            <div class="timetable"><img src="timetable.png" alt="타임테이블">
+                <div class="timetable-writing">TIMETABLE</div>
+            </div>
+            <div class="mp3"><img src="mp3.gif" alt="mp3"></div>
+        </div>
+        
+
+    </div>
+
+</body>

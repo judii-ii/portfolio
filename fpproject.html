@@ -21,6 +21,7 @@
 }
 
 
+
 * {
     cursor: url('danchu.png') 16 16, auto;
 }
@@ -102,6 +103,16 @@ body {
     padding-left: 50px;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(25px); /* 20px -> 50px로 더 크게 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .project-container {
     display: flex;
@@ -109,7 +120,7 @@ body {
     font-family: 'Pretendard-Regular';
     font-size: 12px;
     overflow: hidden;
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 
 }
 
@@ -187,7 +198,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 20px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .cont1 {
@@ -212,7 +223,7 @@ body {
     flex-direction: row;
     width: 100%;
     gap: 20px;
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 
@@ -270,7 +281,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 20px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .cont3 {
@@ -346,26 +357,69 @@ body {
         height: 250px;
     }
 }
-
 .slide-container {
     display: flex;
     flex-direction: row;
     width: 100%;
-}    
+    height: auto; /* 높이를 자동으로 조정 */ /* 요소 간 간격 유지 */
+    animation: fade-in 2s ease-in-out;
+}
 
 .slide-box1, .slide-box2 {
-    flex: 1;
+    flex: 1; /* 동일한 비율로 가로 공간을 나눔 */
     display: flex;
     justify-content: center;
     align-items: center;
-     /* 너비를 100%로 설정하여 크기 자동 조정 */
-    height: 1000px;
+    height: auto; /* 높이를 고정값 대신 자동으로 조정 */
+    overflow: hidden; /* 내용이 넘치지 않도록 설정 */
 }
 
 .slide-box1 img {
-    width: 800px;
-    height: 800px;
-    object-fit: contain;
+    width: 100%; /* 부모 컨테이너에 맞춰 크기 조정 */
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.slider__wrap {
+    width: 100%; /* 부모 컨테이너에 맞춤 */
+    height: 100%; /* 부모 높이에 맞춤 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__img {
+    position: relative;
+    width: 100%; /* 고정값 대신 100%로 설정 */
+    height: 100%; /* 부모 높이에 맞춤 */
+    overflow: hidden;
+}
+
+.slider__inner {
+    display: flex;
+    flex-wrap: nowrap; /* 줄 바꿈 방지 */
+    width: 500%; /* 슬라이더 개수에 맞춰 수정 (5개 이미지 기준) */
+    height: 100%; /* 부모 높이에 맞춤 */
+}
+
+.slider {
+    position: relative;
+    width: 20%; /* 전체 너비의 1/5 (5개 이미지 기준) */
+    height: 100%; /* 부모 높이에 맞춤 */
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지 비율 유지 */
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 800px) {
+    .slider__img {
+        width: 100%; /* 작은 화면에서도 전체 너비 사용 */
+        height: auto; /* 높이 자동 조정 */
+    }
 }
 
 /*상세페이지 콘텐츠 영역*/
@@ -376,7 +430,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 20px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .detail-left {
@@ -561,7 +615,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 20px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .cont5 {
@@ -604,19 +658,42 @@ body {
 }
 
 .workshop-container1 {
-    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
-    align-items: center;
-    flex-direction: column;
-    margin-top: 30px; /* 위 요소와 간격 */
-    flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 30px;
+      padding: 0;
 }
+
 .workshop-container1 img {
-    width: 100%;
-    height: 80%; /* 뷰포트 높이의 100% */
-    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너 채우기 */
-    display: block; /* 이미지 아래 여백 제거 */
-    margin: 0;
+  width: 100%;
+  height: auto; /* 비율 유지 */
+  object-fit: contain; /* 이미지 전체 표시 */
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+    .workshop-container1 img:first-child {
+      opacity: 1;
+    }
+
+    .workshop-container1 img:last-child {
+      opacity: 0;
+    }
+
+    .workshop-container1:hover img:first-child {
+      opacity: 0;
+    }
+
+    .workshop-container1:hover img:last-child {
+      opacity: 1;
+    }
 
 /*캔 라벨 영역*/
 .writing5 {
@@ -637,7 +714,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 40px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 .can-img1 {
     flex: 0.8;
@@ -745,7 +822,7 @@ body {
     align-items: stretch; /* 컨테이너 안의 요소 높이를 자동으로 동일하게 맞춤 */
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 .banner2 {
     flex-grow: 1;
@@ -867,7 +944,7 @@ body {
     flex-direction: row; /* 가로 방향 배치 */
     width: 100%;
     gap: 0px; /* 컨테이너 사이 간격 */
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 .sticker-img1 {
     flex: 1;
@@ -962,7 +1039,7 @@ body {
     width: 100%;
     margin-top: 100px;
     gap: 20px;
-    animation: fadein 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .hoodie-img1, .hoodie-img2 {
@@ -1162,6 +1239,7 @@ body {
     <div class="writing4">✴︎ Futureplay Can</div>
     <div class="workshop-container1">
         <img src="futureplaycan.png" alt="이미지17">
+        <img src="futureplaycan2.png" alt="호버 이미지2">
     </div>
     <div class="writing5">Label Design</div>
     <div class="workshop-container2">
@@ -1212,15 +1290,51 @@ body {
 </body>
 
 <script>
-    const sliderInner = document.querySelector(".slider__inner");
-    const slider = document.querySelectorAll(".slider");
+const sliderInner = document.querySelector(".slider__inner");
+    const sliders = document.querySelectorAll(".slider");
     let currentIndex = 0;
-    
-    sliderInner.style.transition = "all 0.6s";
-    
-    setInterval(()=> {
-        currentIndex = (currentIndex +1) % slider.length;
-    
-        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
-    },2000);
+
+    // 슬라이드 너비를 동적으로 계산
+    function updateSlider() {
+        const slideWidth = sliders[0].offsetWidth; // 슬라이드 하나의 실제 너비
+        sliderInner.style.transition = "all 0.6s";
+        sliderInner.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    }
+
+    // 주기적으로 슬라이드 이동
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % sliders.length;
+        updateSlider();
+    }, 2000);
+
+    // 창 크기 변경 시 슬라이드 업데이트
+    window.addEventListener("resize", updateSlider);
+
+    // 페이지 로드 시 초기화
+    document.addEventListener("DOMContentLoaded", () => {
+        updateSlider();
+
+        const allElements = document.querySelectorAll("body > *:not(.navbar)");
+        allElements.forEach((element) => {
+            element.style.animation = "none";
+            setTimeout(() => {
+                element.style.animation = "fade-in 2s ease-in-out";
+            }, 10);
+        });
+    });
+
+    // workshop-container1 높이 조정 (기존 코드 유지)
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector(".workshop-container1");
+        const img = container.querySelector("img:first-child");
+
+        function adjustHeight() {
+            const aspectRatio = img.naturalHeight / img.naturalWidth;
+            const containerWidth = container.offsetWidth;
+            container.style.height = `${containerWidth * aspectRatio}px`;
+        }
+
+        img.onload = adjustHeight;
+        window.addEventListener("resize", adjustHeight);
+    });
 </script>
