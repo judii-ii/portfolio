@@ -1,67 +1,70 @@
 <head>
-    <title>Hi, we're TBZ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<style>
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-.vt323-regular {
-font-family: "VT323", serif;
-font-weight: 400;
-font-style: normal;
-}
-
-* {
-margin:0; 
-padding:0;
-}
-li {
-  list-style: none;
-}
-.kind_wrap {
-  border:2px solid black; 
-  width:100%; 
-  max-width:800px; 
-  margin:0 auto; 
-  position: relative;
-}
-.kind_wrap > .kind_slider {
-  overflow: hidden;
-}
-.kind_wrap > .kind_slider .slider { 
-  position: relative; 
-  transition: 0.5s;
-}
-.kind_wrap > .kind_slider .slider li {
-  float:left;
-}
-.kind_wrap > .kind_slider img {
-  vertical-align: top;
-}
-.kind_wrap .arrow > a.prev {
-  position: absolute; 
-  left:-50px; 
-  top:100px;
-}
-.kind_wrap .arrow > a.next {
-  position: absolute; 
-  right:-50px; 
-  top:100px;
-}  
-</style>
+  <title>Hi, we're TBZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+      @font-face {
+          font-family: 'Pretendard-Regular';
+          src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+          font-weight: 400;
+          font-style: normal;
+      }
+      .vt323-regular {
+          font-family: "VT323", serif;
+          font-weight: 400;
+          font-style: normal;
+      }
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      li {
+          list-style: none;
+      }
+      .kind_wrap {
+          border: 2px solid black;
+          width: 100%;
+          max-width: 577px;
+          margin: 0 auto;
+          position: relative;
+      }
+      .kind_wrap > .kind_slider {
+          overflow: hidden;
+      }
+      .kind_wrap > .kind_slider .slider {
+          position: relative;
+          transition: 0.5s;
+      }
+      .kind_wrap > .kind_slider .slider li {
+          float: left;
+      }
+      .kind_wrap > .kind_slider img {
+          vertical-align: top;
+      }
+      .kind_wrap .arrow > a.prev {
+          position: absolute;
+          left: -50px;
+          top: 320px;
+      }
+      .kind_wrap .arrow > a.next {
+          position: absolute;
+          right: -50px;
+          top: 320px;
+      }
+      .prev-btn, .next-btn {
+          width: 40px;
+          height: auto;
+      }
+  </style>
 </head>
 <body>
-    <div class="kind_wrap">
-        <div class="kind_slider">
+  <div class="kind_wrap">
+      <div class="kind_slider">
           <ul class="slider">
               <li><img src="theboyz_1.png" alt=""></li>
               <li><img src="theboyz_2.png" alt=""></li>
@@ -75,46 +78,51 @@ li {
               <li><img src="theboyz_10.png" alt=""></li>
               <li><img src="theboyz_11.png" alt=""></li>
           </ul>
-        </div>
-        <div class="arrow">
-            <a href="" class="prev">이전</a>
-            <a href="" class="next">다음</a>
-        </div>
-    </div>
-<script>
-        window.onload = function() {
-          const kindWrap =  document.querySelector('.kind_wrap');
+      </div>
+      <div class="arrow">
+          <a href="" class="prev">
+              <img src="button_left.png" alt="이전 이미지" class="prev-btn">
+          </a>
+          <a href="" class="next">
+              <img src="button_right.png" alt="다음 이미지" class="next-btn">
+          </a>
+      </div>
+  </div>
+  <script>
+      window.onload = function() {
+          const kindWrap = document.querySelector('.kind_wrap');
           const slider = kindWrap.querySelector('.slider');
-          const slideLis = slider.querySelectorAll('li')
-          const moveButton = kindWrap.querySelector('.arrow');
-        
+          const slideLis = slider.querySelectorAll('li');
+          const prevBtn = kindWrap.querySelector('.prev-btn'); // 이전 버튼 이미지
+          const nextBtn = kindWrap.querySelector('.next-btn'); // 다음 버튼 이미지
+
           /* ul 넓이 계산해 주기 */
           const liWidth = slideLis[0].clientWidth;
           const sliderWidth = liWidth * slideLis.length;
-          slider.style.width = `${sliderWidth}px` ;
-        
-          /* 리스너 설치하기 */
+          slider.style.width = `${sliderWidth}px`;
+
+          /* 슬라이드 이동 변수 */
           let currentIdx = 0; // 슬라이드 현재 번호
           let translate = 0; // 슬라이드 위치 값
-          moveButton.addEventListener('click', moveSlide);
-        
-          function moveSlide(event) {
-            event.preventDefault();
-            if (event.target.className === 'next') {
-              if (currentIdx !== slideLis.length -1) {
-                translate -= liWidth;
-                slider.style.transform = `translateX(${translate}px)`;
-                currentIdx += 1;
-              }
-            } else if (event.target.className === 'prev') {
-                if (currentIdx !== 0) {
+
+          /* 버튼 클릭 이벤트 리스너 */
+          prevBtn.addEventListener('click', function(event) {
+              event.preventDefault();
+              if (currentIdx !== 0) {
                   translate += liWidth;
                   slider.style.transform = `translateX(${translate}px)`;
                   currentIdx -= 1;
-                }
               }
-          }
-        
-        }
-</script>
+          });
+
+          nextBtn.addEventListener('click', function(event) {
+              event.preventDefault();
+              if (currentIdx !== slideLis.length - 1) {
+                  translate -= liWidth;
+                  slider.style.transform = `translateX(${translate}px)`;
+                  currentIdx += 1;
+              }
+          });
+      }
+  </script>
 </body>

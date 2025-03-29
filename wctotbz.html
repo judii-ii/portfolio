@@ -66,7 +66,12 @@
         resize: both; /* 크기 조절 가능 */
         overflow: hidden; /* 내부 body만 스크롤되도록 설정 */
     }
-
+    .window2 {
+        position: absolute;
+        left: 250px;
+        top: 100px;
+        display: none; /* 처음에 숨김 */
+    }
     #window1 {
         height: 500px;
         left: 250px;
@@ -157,11 +162,6 @@
         cursor: pointer;
     }
 
-    .img-4 img {
-        width: 100px; /* 원하는 너비 */
-        height: auto; /* 비율 유지 */
-        cursor: pointer;
-    }
 
     .img-5 img {
         width: 100px; /* 원하는 너비 */
@@ -209,17 +209,13 @@
         <div class="img-3">
             <img src="Artboard_4.png" alt="Image 3">
         </div>
-        <div class="img-4">
-            <img src="Artboard_3.png" alt="Image 4">
-        </div>
+
         <div class="img-5">
             <img src="Artboard_5.png" alt="Image 5">
         </div>
-        <a href="time.html">
-            <div class="img-6">
-                <img src="Artboard_6.png" alt="Image 6">
-            </div>
-        </a>
+        <div class="img-6">
+            <img src="Artboard_6.png" alt="Image 6">
+        </div>
     </div>
     <div class="window" id="window1">
         <div class="title-bar" id="titleBar">
@@ -262,11 +258,7 @@
         </div>
         
     </div>
-    <div class="window" id="window4">
-        <div class="title-bar" id="titleBar">
-        </div>
-        <div class="window-body4" style="padding: 0; overflow: hidden;">
-        </div>
+    <div class="window2" id="window4">
     </div>
     <script src="https://unpkg.com/webamp"></script>
 
@@ -286,15 +278,15 @@
             // NOTE: Your audio file must be served from the same domain as your HTML
             // file, or served with permissive CORS HTTP headers:
             // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-            url: "https://juyounglee.co.kr/watchit.mp3",
+            url: "watchit.mp3",
             duration: 5.322286,
           },
           {
             metaData: {
-              artist: "Some Artist",
-              title: "Title of Second Track",
+              artist: "The Boyz",
+              title: "덫 (Rat In The Trap)",
             },
-            url: "",
+            url: "watchit.mp3",
             duration: 5.322286,
           },
         ],
@@ -306,7 +298,6 @@
     const img1 = document.querySelector('.img-1 img');
     const img2 = document.querySelector('.img-2 img');
     const img3 = document.querySelector('.img-3 img');
-    const img4 = document.querySelector('.img-4 img');
     const img6 = document.querySelector('.img-6 img');
 
 
@@ -323,9 +314,8 @@
     });
     img2.addEventListener('dblclick', () => showWindow('window2'));
     img3.addEventListener('dblclick', () => showWindow('window3'));
-    img4.addEventListener('dblclick', () => showWindow('window4'));
     img6.addEventListener('dblclick', () => {
-        window.location.href = 'time2.html'; // 이동할 HTML 파일 경로 입력
+        window.location.href = 'time.html'; // 이동할 HTML 파일 경로 입력
     });
 
 
