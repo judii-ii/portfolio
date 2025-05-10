@@ -65,6 +65,15 @@ body {
     text-align: center;
     border-left: 1px solid #333;
     /* background-color: #9f35c2; */
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item3:hover {
+  text-decoration: underline; /* 호버 시 시각적 피드백 */
 }
 
 .navbar-item4 {
@@ -72,7 +81,17 @@ body {
     text-align: center;
     padding-left: 10px;
     border-left: 1px solid #333;
+    color: black; /* 기본 텍스트 색 */
+    text-decoration: none; /* 밑줄 제거 */
+    cursor: pointer; /* 손가락 모양 커서 */
+    font-family: inherit;
+    font-weight: bold; /* 필요시 */
 }
+
+.navbar-item4:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
+}
+
 
 .introduce {
     position: relative;
@@ -241,10 +260,10 @@ img {
 
 <body>
     <div class="navbar">
-        <div class="navbar-item1"><a href="juyoung.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
+        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
-        <div class="navbar-item3">LINKEDIN</div>
-        <div class="navbar-item4">CONTACT</div>
+        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
     <div class="introduce">Hi, I am Ju young. <br> I'd love to work in graphic design</div>
     <div class="img-container">

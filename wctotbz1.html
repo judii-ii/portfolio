@@ -52,7 +52,7 @@
         text-align: center;
     }
 
-    .window {
+    .window0 {
         position: absolute;
         left: 250px;
         top: 100px;
@@ -85,6 +85,8 @@
         top: 300px;
         width: 500px;
     }
+
+    
 
     .frame-window {
         display: flex;
@@ -217,7 +219,7 @@
             <img src="Artboard_6.png" alt="Image 6">
         </div>
     </div>
-    <div class="window" id="window1">
+    <div class="window0" id="window1">
         <div class="title-bar" id="titleBar">
             <div class="title-bar-text">Find Out Your Dream.exe</div>
             <div class="title-bar-controls">
@@ -230,7 +232,7 @@
             <iframe src="slide.html" style="width:100%; height:100%; border:none;"></iframe>
         </div> 
     </div>
-    <div class="window" id="window2">
+    <div class="window0" id="window2">
         <div class="title-bar" id="titleBar">
             <div class="title-bar-text">Media Player</div>
             <div class="title-bar-controls">
@@ -243,7 +245,7 @@
             <div class="frame-window"><iframe width="560" height="315" src="https://www.youtube.com/embed/fP-DiwUaVVQ?si=qhnHTnenGv7WhIdT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
     </div>
-    <div class="window" id="window3">
+    <div class="window0" id="window3">
         <div class="title-bar" id="titleBar">
             <div class="title-bar-text">Find Out Your Dream.exe</div>
             <div class="title-bar-controls">
@@ -279,15 +281,47 @@
             // file, or served with permissive CORS HTTP headers:
             // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
             url: "watchit.mp3",
-            duration: 5.322286,
+            duration: 179.322286,
           },
           {
             metaData: {
               artist: "The Boyz",
               title: "덫 (Rat In The Trap)",
             },
-            url: "watchit.mp3",
-            duration: 5.322286,
+            url: "ratinthetrap.mp3",
+            duration: 200.322286,
+          },
+          {
+            metaData: {
+              artist: "The Boyz",
+              title: "Honey",
+            },
+            url: "honey.mp3",
+            duration: 168.322286,
+          },
+          {
+            metaData: {
+              artist: "The Boyz",
+              title: "Bad Luck",
+            },
+            url: "badluck.mp3",
+            duration: 178.322286,
+          },
+          {
+            metaData: {
+              artist: "The Boyz",
+              title: "CRYING&LAUGHTER",
+            },
+            url: "cryinglaughter.mp3",
+            duration: 194.322286,
+          },
+          {
+            metaData: {
+              artist: "The Boyz",
+              title: "Escape",
+            },
+            url: "escape.mp3",
+            duration: 206.322286,
           },
         ],
       });
@@ -298,6 +332,7 @@
     const img1 = document.querySelector('.img-1 img');
     const img2 = document.querySelector('.img-2 img');
     const img3 = document.querySelector('.img-3 img');
+    const img5 = document.querySelector('.img-5 img');
     const img6 = document.querySelector('.img-6 img');
 
 
@@ -314,6 +349,9 @@
     });
     img2.addEventListener('dblclick', () => showWindow('window2'));
     img3.addEventListener('dblclick', () => showWindow('window3'));
+    img5.addEventListener('dblclick', () => {
+        window.location.href = 'https://x.com/THEBOYZ_officl'; // 이동할 HTML 파일 경로 입력
+    });
     img6.addEventListener('dblclick', () => {
         window.location.href = 'time.html'; // 이동할 HTML 파일 경로 입력
     });
@@ -328,11 +366,11 @@
         const windowEl = document.getElementById(windowId);
         windowEl.style.display = 'none';
     }
-    document.querySelectorAll('.window .title-bar').forEach(titleBar => {
+    document.querySelectorAll('.window0 .title-bar').forEach(titleBar => {
     let isDragging = false;
     let offsetX = 0;
     let offsetY = 0;
-    let windowEl = titleBar.closest('.window');
+    let windowEl = titleBar.closest('.window0');
 
     titleBar.addEventListener('mousedown', (e) => {
         isDragging = true;

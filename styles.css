@@ -1,0 +1,92 @@
+:root {
+    --Background: #008080;
+    --ButtonFace: #C0C0C0;
+    --ButtonLight: #DFDFDF;
+    --ButtonHilight: #FFFFFF;
+    --ButtonShadow: #808080;
+    --ButtonText: #000000;
+    --Hilight: #000080;
+    --HilightText: #FFFFFF;
+    --Window: #FFFFFF;
+    --WindowText: #000000;
+}
+
+.desktop-wrapper {
+    background: var(--Background);
+}
+
+.start-bar {
+    outline: 1px solid var(--ButtonLight);
+    border-top: 1px solid var(--ButtonHilight);
+    background: var(--ButtonFace);
+    color: var(--ButtonText);
+}
+
+.start-menu {
+    background-color: var(--ButtonFace);
+    color: var(--ButtonText);
+}
+
+.start-menu ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.start-menu li {
+    padding: 5px 10px;
+    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.start-menu li:hover {
+    background-color: var(--Hilight);
+    color: var(--HilightText);
+}
+
+.start-menu li a,
+.start-menu .back-link {
+    display: block;
+    padding: 5px 0;
+    color: blue !important;
+}
+
+.start-menu li a:before,
+.start-menu .back-link:before {
+    content: "»";
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.start-menu .back-link:before {
+    content: "«";
+}
+
+.img-container .desㄴktop-icon {
+    position: relative;
+    outline: none;
+}
+
+.img-container .desktop-icon .title {
+    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-size: 8pt;
+    background: var(--Background);
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.img-container:focus-within .desktop-icon.selected .title {
+    background: var(--Hilight);
+    color: var(--HilightText);
+}
+
+* {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}

@@ -12,6 +12,9 @@
             font-style: normal;
         }
 
+        @import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+        @import url('https://fonts.cdnfonts.com/css/w95fa');
+
         body {
             background-image: url('https://lh3.google.com/u/4/d/1Jbfy9OVoGgyWYns5dxraEQ5D2a8B6sXo=w3382-h2626-iv1');
             background-size: cover;
@@ -43,12 +46,50 @@
         }
 
         .pretendard-text {
+            position: relative;
+            cursor: pointer;
             font-family: 'Pretendard-Bold', sans-serif;
             color: black;
             font-size: 15px;
             text-align: left;
             text-decoration: underline;
             margin: 10px 0 0 0;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgb(255, 255, 225);
+            color: black;
+            font-family: 'W95FA', sans-serif;
+            font-size: clamp(0.8rem, 1vw, 1.2rem);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-style: solid;
+            border-color: black;
+            font-size: 14px;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 30%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgb(255, 255, 225) transparent transparent transparent;
+        }
+        
+        .pretendard-text:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
 
         form {
@@ -82,7 +123,10 @@
 <body>
     <div class="centered-container">
         <h1>hi we're xxxxxxx</h1>
-        <p class="pretendard-text">password</p>
+        <p class="pretendard-text">
+            password
+            <span class="tooltip">password : theboyz</span>
+        </p>
         <form>
             <input id="pwd" type="password" placeholder="Ready to?">
             <button type="button" onclick="checkPassword()">connect</button>
