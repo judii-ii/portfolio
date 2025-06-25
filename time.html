@@ -63,32 +63,35 @@ html, body {
 }
 
 .line-box2 {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
     align-items: center;
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    flex-wrap: nowrap; /* 필요하면 제거 */
-    min-width: 300px; /* 최소 너비 설정 */
+    padding: 60px 20px;
 }
 
 .line3 {
-    width: 20%;
-    min-width: 120px; /* 최소 너비 설정 */
-    flex-shrink: 0; /* 줄어들지 않게 설정 */
     text-align: left;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-family: 'W95FA', sans-serif;
+    line-height: 1.3;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    min-height: 120px;
 }
 
 .line4 {
-    width: 45%;
-    min-width: 250px; /* 최소 너비 설정 */
-    flex-shrink: 0; /* 줄어들지 않게 설정 */
     text-align: left;
     font-family: 'Galmuri11';
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #333;
+    display: flex;
+    align-items: center;
 }
 
 .section1 gif, 
@@ -147,12 +150,13 @@ html, body {
 
 .album-design {
     display: flex;
-    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+    flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
-    width: 100%;
-    margin-top: 50px; /* 작은 화면에서 줄임 */
-    margin-bottom: 50px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
     animation: fade-in 2s ease-in-out;
 }
 
@@ -391,13 +395,15 @@ html, body {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    margin-top: 60px;
-    padding-top: 20px;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 20px;
     animation: fade-in 2s ease-in-out;
-    gap: 0px; /* photocard 사이 간격 조정 */
+    gap: 20px;
 }
+
 .photocard1 {
     flex: 1.5;
     display: flex;
@@ -417,8 +423,6 @@ html, body {
     font-family: 'W95FA', sans-serif;
     font-size: clamp(10pt, 1.5vw, 12pt);
     line-height: 5vh;
-    margin-left: -5vw;
-    margin-right: -5vw;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -573,59 +577,54 @@ button {
 }
 
 .album-design11 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 10vh;
-    background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
-.sticker1 {
-    position: relative; /* 부모 요소를 relative로 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.sticker-slider {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 2 / 1.5;
+  overflow: hidden;
 }
 
-.album11-writing {
-    position: absolute; /* 절대 위치 지정 */
-    top: 50%; /* 상단에서 50% 위치 */
-    left: 50%; /* 왼쪽에서 50% 위치 */
-    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
-    color: #ffffff;
-    text-align: center;
-    font-family: 'W95FA', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    letter-spacing: 5px;
-    text-shadow: 
-    2px 2px 0px rgba(0, 0, 0, 0.726), /* 오른쪽 아래 */
-    -2px -2px 0px rgba(0, 0, 0, 0.726), /* 왼쪽 위 */
-    2px -2px 0px rgba(0, 0, 0, 0.726), /* 오른쪽 위 */
-    -2px 2px 0px rgba(0, 0, 0, 0.726); /* 왼쪽 아래 */
-    z-index: 2; /* 이미지보다 위에 배치 */
-    animation: fadein 2s ease-in-out;
-    white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.sticker1 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    z-index: 1;
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.sticker-label {
+  margin-top: 12px;
+  text-align: center;
+  font-family: 'W95FA', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* 반응형 폰트 크기 */
 }
 
 .album-design12 {
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start; /* 윗선 정렬을 위해 flex-start로 변경 */
+    align-items: center; /* 중앙 정렬로 변경 */
     justify-content: center;
     flex-direction: row;
-    width: 80%;
+    width: 90%; /* 너비를 약간 늘림 */
     margin: 5vh auto 0;
-    gap: 10vw;
+    gap: 3vw; /* 간격을 줄임 */
     animation: fade-in 2s ease-in-out;
 }
 
@@ -633,23 +632,16 @@ button {
     flex: 1; /* 동일한 비율로 공간 분배 */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 이미지 상단 정렬 */
+    align-items: center; /* 중앙 정렬 */
     padding: 0;
     margin: 0;
     min-width: 0;
+    max-width: 45%; /* 최대 너비 제한 */
 }
 
-.stick-img1 img {
-    width: auto;
-    max-width: 90%; /* 가로 크기 제한 */
-    height: auto; /* 비율 유지 */
-    object-fit: contain; /* 잘리지 않도록 */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.stick-img2 img {
-    width: auto;
-    max-width: 126%; /* 가로 크기 제한 */
+.stick-img1 img, .stick-img2 img {
+    width: 100%; /* 동일한 너비로 설정 */
+    max-width: 100%; /* 최대 너비 통일 */
     height: auto; /* 비율 유지 */
     object-fit: contain; /* 잘리지 않도록 */
     transition: opacity 0.5s ease-in-out;
@@ -657,7 +649,6 @@ button {
 
 .album-design13 {
     display: flex;
-    background-color: #6B8898;
     align-items: center;
     flex-direction: column;
     flex-grow: 1;
@@ -665,35 +656,36 @@ button {
 }
 
 .album-design13 img {
-    width: 50%;
+    width: 80%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
 .album14-writing {
     width: 100%;
-    background-color: #EFEFEF;
     color: #000000;
     text-align: center;
     font-family: 'W95FA', sans-serif;
-    font-size: clamp(20pt, 3vw, 24pt); /* 반응형 폰트 크기 */
-    padding-top: 1vw;
+    font-size: clamp(20pt, 3vw, 24pt);
+    padding-top: 5vw;
     overflow: hidden;
     animation: fadein 2s ease-in-out;
 }
 
 .album-design14 {
     display: flex;
-    background-color: #EFEFEF;
     flex-wrap: nowrap;
     align-items: center;
-    padding-top: 20px;
+    padding: 40px 20px;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     animation: fade-in 2s ease-in-out;
-    gap: 0px; 
+    gap: 30px;
 }
+
 .mp3 {
     flex: 1.2;
     display: flex;
@@ -707,15 +699,12 @@ button {
 }
 
 .tracklist, .timetable {
-    flex: 1; /* 동일한 비율 적용 */
+    flex: 1;
     display: flex;
     flex-direction: column;
     font-family: 'W95FA', sans-serif;
     font-size: clamp(10pt, 1.5vw, 12pt);
     line-height: 5vh;
-    margin-top: 5vh;
-    margin-left: -5vw;
-    margin-right: -5vw;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -729,27 +718,64 @@ button {
 }
 
 .tracklist img, .timetable img {
-    max-width: 60%;
-    height: auto; /* 높이 100% → auto 변경 */
+    max-width: 80%;
+    height: auto;
     object-fit: contain;
     transition: opacity 0.5s ease-in-out;
 }
 
-/* 작은 화면을 위한 미디어 쿼리 */
-/* 기존 코드 유지하면서 반응형 미디어 쿼리 추가 */
-@media (max-width: 1024px) {
-    .line-box2 {
-        flex-direction: column;
-        width: 90%;
-        flex-wrap: nowrap;
-        padding: 15px;
+/* 더 부드러운 반응형을 위한 개선된 미디어 쿼리 */
+@media (max-width: 1200px) {
+    .line-box2, .album-design, .album-design9, .album-design14 {
+        width: 95%;
+        padding: 30px 15px;
     }
-    .line3, .line4 {
-        width: 90%;
+    .line-box2 {
+        gap: 30px;
+        padding: 50px 15px;
+    }
+    .album-design14 {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .line-box2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 95%;
+        padding: 40px 15px;
+        align-items: start;
+    }
+    .line3 {
         text-align: center;
+        margin-bottom: 15px;
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
+        min-height: auto;
+        justify-content: center;
+    }
+    .line4 {
+        text-align: center;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        justify-content: center;
     }
     .album-design {
         flex-direction: column;
+        width: 95%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+    .album-design9 {
+        flex-direction: column;
+        width: 95%;
+        gap: 25px;
+        padding: 25px 15px;
+    }
+    .album-design14 {
+        flex-direction: column;
+        width: 95%;
+        gap: 30px;
+        padding: 30px 15px;
     }
     .album-design4, .album-design5 {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -767,24 +793,35 @@ button {
     .keyring2 img {
         width: 100%;
     }
+    .album-design12 {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .stick-img1, .stick-img2 {
+        max-width: 80%;
+    }
+    .tracklist, .timetable, .mp3 {
+        margin: 0;
+    }
 }
 
 @media (max-width: 768px) {
-    .line-box2 {
-        flex-direction: column;
+    .line-box2, .album-design, .album-design9, .album-design14 {
         width: 100%;
-        padding: 10px;
+        padding: 20px 10px;
     }
-    .line3, .line4 {
-        width: 100%;
-        text-align: center;
+    .line-box2 {
+        gap: 25px;
+        padding: 30px 10px;
+    }
+    .album-design9 {
+        gap: 20px;
+    }
+    .album-design14 {
+        gap: 25px;
     }
     .album-design4, .album-design5 {
         grid-template-columns: 1fr;
-    }
-    .album-design9 {
-        flex-direction: column;
-        align-items: center;
     }
     .photocard1 img {
         max-width: 80%;
@@ -820,8 +857,9 @@ button {
     .line, .line2, .album7-writing, .album8-writing, .album9-writing {
         font-size: clamp(0.7rem, 2vw, 1rem);
     }
-    .album-design {
-        margin: 10px 0;
+    .album-design, .album-design9 {
+        margin: 10px auto;
+        padding: 10px;
     }
     .photocard1 img {
         max-width: 90%;
@@ -861,7 +899,7 @@ button {
         <div class="overlay-img">
             <img src="am.png" alt="오버레이글씨">
         </div>
-        <img src="time.gif" alt="포폴gif">
+        <img src="time.webp" alt="포폴gif">
     </div>
     <div class="section2">
         <div class="line-box">
@@ -880,52 +918,52 @@ button {
             </div>
         </div>
         <div class="section3">
-            <img src="detail.png" alt="Detail Image">
+            <img src="detail.webp" alt="Detail Image">
         </div>
         <div class="diary">DIARY VER.</div>
         <div class="album-design">
-            <div class="diary1"><img src="diary1.png" alt="다이어리1"></div>
-            <div class="diary2"><img src="diary2.gif" alt="다이어리2"></div>
+            <div class="diary1"><img src="diary1.webp" alt="다이어리1"></div>
+            <div class="diary2"><img src="diary2.webp" alt="다이어리2"></div>
         </div>
         <div class="album-design2">
-            <img src="diary3.png" alt="다이어리3">
+            <img src="diary3.webp" alt="다이어리3">
         </div>
         <div class="album-design3">
-            <img src="diary4.gif" alt="다이어리4">
+            <img src="diary4.webp" alt="다이어리4">
         </div>
         <div class="diary5-writing">DIARY 버전에 수록된 포토북 이미지는 NFC 버전에서 코드를 통해 디지털 이미지로 제공됩니다.</div>
         <div class="album-design4">
-            <div class="diary-pic1"><img src="diary5.png" alt="다이어리5"></div>
-            <div class="diary-pic2"><img src="diary6.png" alt="다이어리6"></div>
+            <div class="diary-pic1"><img src="diary5.webp" alt="다이어리5"></div>
+            <div class="diary-pic2"><img src="diary6.webp" alt="다이어리6"></div>
         </div>
         <div class="album-design5">
-            <div class="diary-pic3"><img src="diary7.png" alt="다이어리7"></div>
-            <div class="diary-pic4"><img src="diary8.png" alt="다이어리8"></div>
+            <div class="diary-pic3"><img src="diary7.webp" alt="다이어리7"></div>
+            <div class="diary-pic4"><img src="diary8.webp" alt="다이어리8"></div>
         </div>
         <div class="album-design6">
             <img src="loading.png" alt="다이어리9">
         </div>
         <div class="album-design7">
-            <div class="nfc-img1"><img src="nfc1.png" alt="다이어리7"></div>
-            <div class="nfc-img2"><img src="nfc2.gif" alt="다이어리8"></div>
+            <div class="nfc-img1"><img src="nfc1.webp" alt="다이어리7"></div>
+            <div class="nfc-img2"><img src="nfc2.webp" alt="다이어리8"></div>
         </div>
         <div class="album7-writing">NFC VER.</div>
         <div class="album-design8">
-            <div class="nfc-img3"><img src="nfc3.png" alt="다이어리9">
+            <div class="nfc-img3"><img src="nfc3.webp" alt="다이어리9">
                 <div class="album8-writing">CHOOSE YOUR MEMBER!</div>
             </div>
-            <div class="nfc-img4"><img src="nfc4.png" alt="다이어리10"></div>
+            <div class="nfc-img4"><img src="nfc4.webp" alt="다이어리10"></div>
         </div>
         <div class="album9-writing">PHOTOCARD DESIGN</div>
         <div class="album10-writing">PHOTOCARD (11종 구성)</div>
         <div class="album-design9">
-            <div class="photocard1"><img src="pc1.png" alt="포카1">
+            <div class="photocard1"><img src="pc1.webp" alt="포카1">
                 <div class="photocard1-writing">FRONT</div>
             </div>
-            <div class="photocard2"><img src="pc2.png" alt="포카뒤1">
+            <div class="photocard2"><img src="pc2.webp" alt="포카뒤1">
                 <div class="photocard1-writing">REAR (DIARY VER.)</div>
             </div>
-            <div class="photocard3"><img src="pc3.png" alt="포카뒤2">
+            <div class="photocard3"><img src="pc3.webp" alt="포카뒤2">
                 <div class="photocard1-writing">REAR (NFC VER.)</div>
             </div>
         </div>
@@ -943,28 +981,47 @@ button {
         <div class="keyring2"><img src="keyring.png" alt="키링"></div>
         </div>
         <div class="album-design11">
-            <div class="sticker1"><img src="sticker01.jpg" alt="스티커1">
-                <div class="album11-writing">STICKER DESIGN</div></div>
+            <p class="sticker-label">STICKER DESIGN</p>
+            <div class="sticker-slider">
+              <img src="sticker00.webp" class="slide active" alt="스티커1">
+              <img src="sticker01.webp" class="slide" alt="스티커2">
+            </div>
         </div>
+          
+          
+          
         <div class="album-design12">
-            <div class="stick-img1"><img src="sticker02.png" alt="스티커2"></div>
-            <div class="stick-img2"><img src="sticker03.png" alt="스티커3"></div>
+            <div class="stick-img1"><img src="sticker02.webp" alt="스티커2"></div>
+            <div class="stick-img2"><img src="sticker03.webp" alt="스티커3"></div>
         </div>
         <div class="album-design13">
-            <img src="sticker04.png" alt="스티커4">
+            <img src="sticker04.webp" alt="스티커4">
         </div>
         <div class="album14-writing">AND MORE...</div>
         <div class="album-design14">
-            <div class="tracklist"><img src="tracklist.png" alt="트랙리스트">
+            <div class="tracklist"><img src="tracklist.webp" alt="트랙리스트">
                 <div class="tracklist-writing">TRACKLIST</div>
             </div>
-            <div class="timetable"><img src="timetable.png" alt="타임테이블">
+            <div class="timetable"><img src="timetable.webp" alt="타임테이블">
                 <div class="timetable-writing">TIMETABLE</div>
             </div>
-            <div class="mp3"><img src="mp3.gif" alt="mp3"></div>
+            <div class="mp3"><img src="mp3.webp" alt="mp3"></div>
         </div>
         
 
     </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+      
+        setInterval(() => {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }, 2000); // 3초마다 전환
+    </script>
+      
+      
 
-</body>
+</body>ㄴ

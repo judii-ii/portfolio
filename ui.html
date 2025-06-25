@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    button {
+      border: none;
+      border-radius: 5px;
+      background: #18A0FB;
+      color: white;
+      padding: 8px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0D8DE3;
+    }
+    .file-info {
+      margin: 20px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Figma 플러그인 채널 3055</h2>
+  
+  <div class="file-info">
+    <h3>연결된 Figma 파일</h3>
+    <p>파일 ID: Iv7ir2QlkA6G30ANy2VbOK</p>
+    <p>노드 ID: 20-53</p>
+    <p>파일명: 즈보이더</p>
+  </div>
+
+  <button id="create">사각형 생성</button>
+  <button id="send">채널 3055로 메시지 전송</button>
+  
+  <script>
+    document.getElementById('create').onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'create-rectangles' } }, '*');
+    };
+    
+    document.getElementById('send').onclick = () => {
+      parent.postMessage({ 
+        pluginMessage: { 
+          type: 'channel-3055',
+          data: '채널 3055로 메시지 전송'
+        } 
+      }, '*');
+    };
+  </script>
+</body>
+</html> 

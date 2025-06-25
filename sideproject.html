@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <title>other project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.navbar {
+    font-family: 'Orbit-Regular';
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #333; /* Dark line at the bottom */
+}
+
+.navbar-item1 {
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #333;
+    /* background-color: #5d3e3e; */
+}
+
+.navbar-item1 a {
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbar-item2 {
+    flex-grow: 9;
+    /* background-color: #245ab0; */
+}
+
+.navbar-item3 {
+    flex-grow: 1;
+    text-align: center;
+    border-left: 1px solid #333;
+    /* background-color: #9f35c2; */
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item3:hover {
+  text-decoration: underline; /* 호버 시 시각적 피드백 */
+}
+
+.navbar-item4 {
+    flex-grow: 1;
+    text-align: center;
+    padding-left: 10px;
+    border-left: 1px solid #333;
+    color: black; /* 기본 텍스트 색 */
+    text-decoration: none; /* 밑줄 제거 */
+    cursor: pointer; /* 손가락 모양 커서 */
+    font-family: inherit;
+    font-weight: bold; /* 필요시 */
+}
+
+.navbar-item4:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
+}
+
+@media (max-width: 600px) {
+    .project-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .project-container {
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+* {
+    cursor: url('danchu.png') 16 16, auto;
+}
+body {
+    background-color: #efefef;
+    margin: 0;
+}
+
+
+.title1 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.title2 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.project-wrapper {
+    display: flex;
+    height: 150px;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.project_title {
+    flex-grow: 6;
+    line-height: 1;
+    padding-left: 50px;
+}
+
+/* 새로운 섹션 스타일 */
+.section {
+    margin: 50px 0;
+    padding: 0 50px;
+}
+
+.section-divider {
+    border-top: 1px solid #000;
+    margin: 50px 50px 0 50px;
+}
+
+.section-number {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 48px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-box {
+    height: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-box {
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.youtube-box {
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.pink-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    min-height: 200px;
+    align-items: center;
+}
+
+.small-image-box {
+    flex: 1;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.small-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 텍스트 콘텐츠 스타일 */
+.content-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.content-row .image-box,
+.content-row .video-box,
+.content-row .youtube-box {
+    flex: 1.5;
+    min-width: 0;
+}
+
+.text-content {
+    flex: 1;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    padding: 50px 0;
+}
+
+.text-content.standalone {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.text-content h3 {
+    font-family: 'Orbit-SemiBold';
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 60px 0;
+    color: #333;
+}
+
+.text-content p {
+    margin: 0 0 30px 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* 01 섹션 전용 - 완전 독립적으로 조정 가능 */
+.section01-text p {
+    margin-bottom: 80%; /* 기본 p 스타일 무시 */
+}
+
+.section01-desc {
+    margin: 0 0 30px 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.section01-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+}
+
+/* 02, 03 섹션 - 텍스트 옆의 info-grid */
+.section:nth-child(4) .content-row .text-content:last-child .info-grid,
+.section:nth-child(5) .content-row .text-content:last-child .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+}
+
+/* 02, 03 섹션 - standalone 텍스트의 info-grid */
+.text-content.standalone .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.info-item .label {
+    font-weight: 400;
+    color: #333;
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.info-item .value {
+    font-weight: 400;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .section {
+        padding: 0 20px;
+    }
+    
+    .content-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pink-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .small-box {
+        height: 100px;
+    }
+    
+    .large-box {
+        height: 200px;
+        font-size: 20px;
+    }
+    
+    .section-number {
+        font-size: 36px;
+    }
+    
+    .text-content {
+        font-size: 12px;
+    }
+    
+    .text-content h3 {
+        font-size: 20px;
+    }
+    
+    .info-item {
+        font-size: 10px;
+    }
+}
+
+/* 자동 슬라이더 스타일 */
+.slider-container {
+    height: 900px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000000;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slide-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* fade-in 애니메이션 정의 */
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
+        <div class="navbar-item2"></div>
+        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+    </div>
+    <div class="project-wrapper">
+        <div class="project_title">
+            <div class="title1"> ⟡ Side</div>
+            <div class="title2"> &nbsp;&nbsp;&nbsp;&nbsp;Project</div>
+        </div>
+    </div>
+
+    <!-- 구분선 -->
+    <div class="section-divider"></div>
+
+    <!-- Section 01 -->
+    <div class="section">
+        <div class="section-number">01</div>
+        <div class="section-content">
+            <!-- 첫 번째 비디오와 설명 -->
+            <div class="content-row">
+                <div class="image-box">
+                    <video controls="" autoplay="" muted="" loop="">
+                        <source src="card.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-content section01-text">
+                    <h3>FanGoods</h3>
+                    <p class="section01-desc">팬 굿즈로 사원증과 스티커를 제작해 Witchform에서 판매했고, <br>
+                        실제 수익으로 이어졌습니다. 디자인부터 유통까지 전 과정을 직접 운영한 경험입니다.</p>
+                    <div class="info-grid section01-info">
+                        <div class="info-item">
+                            <span class="label">✦ with</span>
+                            <span class="value">✦ contribution</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">made by Juyoung Lee</span>
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">✦ project type</span>
+                            <span class="value">✦ project note</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">graphic design<br>goods design<br>personal project</span>
+                            <span class="value">A self-initiated fan merchandise<br>project involving design, production,<br>and online sales through Witchform.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3개 이미지 분홍 컨테이너 -->
+            <div class="pink-container">
+                <div class="small-image-box">
+                    <img src="card01.webp" alt="이미지1">
+                </div>
+                <div class="small-image-box">
+                    <img src="card02.webp" alt="이미지2">
+                </div>
+                <div class="small-image-box">
+                    <img src="card03.webp" alt="이미지3">
+                </div>
+            </div>
+            
+            <!-- 네 번째 이미지 -->
+            <div class="image-box">
+                <img src="card04.webp" alt="이미지 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 02 -->
+    <div class="section">
+        <div class="section-number">02</div>
+        <div class="section-content">
+            <!-- 다섯 번째 이미지 -->
+            <div class="image-box">
+                <img src="yt1.webp" alt="이미지 5">
+            </div>
+            
+            <!-- YouTube 텍스트 설명 -->
+            <div class="content-row">
+                <div class="text-content">
+                    <h3>YouTube</h3>
+                    <p>일본 예능 프로그램을 직접 번역하고 자막을 제작해 팬 유튜브 채널을 운영했습니다.<br>
+                    자연스러운 번역과 편집으로 4천 여명의 구독자들의 관심을 얻었고, 콘텐츠 제작과 팬 커뮤니티의 반응을<br>
+                    직접 경험할 수 있었습니다.</p>
+                </div>
+                <div class="text-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">✦ with</span>
+                            <span class="value">✦ contribution</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">made by Juyoung Lee</span>
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">✦ project type</span>
+                            <span class="value">✦ project note</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">content localization<br>Adobe Premiere Pro<br>Adobe After Effects<br>personal project</span>
+                            <span class="value">Translated and subtitled Japanese<br>variety shows for a fan YouTube channel.<br>Managed all stages from translation and<br>editing to publishing.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- YouTube 영상 -->
+            <div class="youtube-box">
+                <iframe src="https://www.youtube.com/embed/wOTTg_YwfZQ?si=X-86_UhoKpshAEd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 03 -->
+    <div class="section">
+        <div class="section-number">03</div>
+        <div class="section-content">
+            <!-- AI Generation 텍스트 설명 -->
+            <div class="content-row">
+                <div class="text-content">
+                    <h3>AI Generation</h3>
+                    <p>Midjourney를 활용해 다양한 인물의 이미지를 생성하고, 직접 프롬프트를 설계하여<br>
+                    AI 비주얼 스타일을 조정했습니다. 생성된 이미지를 기반으로 영상 콘텐츠를 제작하여,<br>
+                    이미지→스토리→영상으로 이어지는 시각적 흐름을 실험한 프로젝트입니다.</p>
+                </div>
+                <div class="text-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">✦ with</span>
+                            <span class="value">✦ contribution</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">made by Juyoung Lee</span>
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">✦ project type</span>
+                            <span class="value">✦ project note</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">AI Image Generation<br>prompt design<br>midjourney<br>Kling-2.0</span>
+                            <span class="value">This project explored new forms of AI-driven<br>visual storytelling. Created character visuals<br>using Midjourney with original prompt design,<br>and developed video content by Kling.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 영상 파일 -->
+            <div class="video-box">
+                <video controls="">
+                    <source src="ai.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- 자동 이미지 슬라이드 -->
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="mj1.webp" alt="슬라이드 이미지 1">
+                    </div>
+                    <div class="slide">
+                        <img src="mj2.webp" alt="슬라이드 이미지 2">
+                    </div>
+                    <div class="slide">
+                        <img src="mj3.webp" alt="슬라이드 이미지 3">
+                    </div>
+                    <div class="slide">
+                        <img src="mj4.webp" alt="슬라이드 이미지 4">
+                    </div>
+                    <div class="slide">
+                        <img src="mj5.webp" alt="슬라이드 이미지 5">
+                    </div>
+                </div>
+                <div class="slide-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 자동 이미지 슬라이더 기능
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // 모든 슬라이드와 인디케이터에서 active 클래스 제거
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // 현재 슬라이드와 인디케이터에 active 클래스 추가
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // 3초마다 자동으로 다음 슬라이드로 이동
+        setInterval(nextSlide, 3000);
+
+        // 인디케이터 클릭 시 해당 슬라이드로 이동
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+    </script>
+
+
+
+</body></html>

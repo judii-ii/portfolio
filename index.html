@@ -1,4 +1,4 @@
-<head>
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <title>juyoung</title>
 
 <style>
@@ -106,7 +106,7 @@ body {
     justify-content: center;
 }
 
-img {
+.img-container img {
     width: 1200px
 }
 
@@ -166,7 +166,7 @@ img {
         overflow: hidden; /* 이미지 경계 밖으로 나가는 요소 숨기기 */
     }
 
-    .sthumbnail-container img {
+    .sthumbnail-1 img {
       width: 100%;
       aspect-ratio:  1 / 1; /* 정사각형 유지 */
       object-fit: cover;
@@ -254,8 +254,52 @@ img {
         pointer-events: none;
     }
 
+    .overlay-text4 {
+        position: absolute;
+        top: 10%; /* 이미지 상단으로부터 상대적 위치 */
+        left: 16%; /* 이미지 왼쪽으로부터 상대적 위치 */
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Pretendard-Regular';
+        font-weight: lighter;
+        font-size: 1.5vw; /* 뷰포트 너비를 기준으로 글자 크기 조정 */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        pointer-events: none;
+    }
 
-    </style>
+    .text-only-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f8f8;
+        padding: 40px;
+        text-align: center;
+        aspect-ratio: 1 / 1; /* 정사각형 유지 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-only-content {
+        font-family: 'Orbit-Regular';
+        font-size: 1.0vw;
+        line-height: 1.6;
+        color: #333;
+        max-width: 80%;
+    }
+
+    .instagram-link {
+        cursor: pointer;
+        max-width: 300px;
+        height: auto;
+        margin-top: 15px;
+        transition: transform 0.3s ease;
+        object-fit: contain;
+    }
+
+    .instagram-link:hover {
+        transform: scale(1.1);
+    }
+</style>
 </head>
 
 <body>
@@ -263,9 +307,10 @@ img {
         <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
         <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
-    <div class="introduce">Hi, I am Ju young. <br> I'd love to work in graphic design</div>
+    <div class="introduce">Juyoung's room *⋆꒰ঌ(⁎ᴗ͈ˬᴗ͈⁎)໒꒱⋆* <br> I'd love to work in graphic design and marketing
+    <br> 이 사이트는 웹에 최적화되어있습니다!</div>
     <div class="img-container">
         <img src="main_1.gif" alt="예시 GIF">
     </div>
@@ -286,23 +331,39 @@ img {
     </div>
     <div class="sthumbnail-container">
         <div class="sthumbnail-1">
-            <img src="c.gif">
+            <img src="c.webp">
             <div class="overlay-text1">✦ theboyz <br>&nbsp;&nbsp;&nbsp;&nbsp;access password</div>
             <button class="hover-button" onclick="location.href='pwtheboyz.html'">૮ ・ﻌ・ა view project</button>
         </div>
         <div class="sthumbnail-1">
+            <img src="e.webp">
+            <div class="overlay-text4">✦ cosmetic <br>&nbsp;&nbsp;&nbsp;&nbsp;brand design</div>
+            <button class="hover-button" onclick="location.href='cosmetics.html'">૮ ・ﻌ・ა view project</button>
+        </div>
+        <div class="sthumbnail-1">
             <img src="b.png">
-            <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&design</div>
+            <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&amp;design</div>
             <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ა view project</button>
         </div>
         <div class="sthumbnail-1">
-            <img src="a.gif">
+            <img src="a.webp">
             <div class="overlay-text3">✦ 19<br>&nbsp;&nbsp;&nbsp;&nbsp;project</div>
             <button class="hover-button" onclick="location.href='19project.html'">૮ ・ﻌ・ა view project</button>
         </div>
         <div class="sthumbnail-1">
-            <img src="d.png">
-            <button class="hover-button" onclick="location.href='project4.html'">૮ ・ﻌ・ა view project</button>
+            <img src="d.webp">
+            <button class="hover-button" onclick="location.href='sideproject.html'">૮ ・ﻌ・ა view project</button>
+        </div>
+        <div class="text-only-container">
+            <div class="text-only-content">
+                This is just the beginning-<br><br>
+                I'm planning to fill this space<br> with more projects I love(⸝⸝º ^ º⸝⸝ )<br>
+                rooted in my passion for music, film, and storytelling through design ♡
+                <br><br>
+                <img src="pixel.webp" alt="Instagram Link" class="instagram-link" onclick="window.open('https://www.instagram.com/19xharu', '_blank')">
+            </div>
         </div>
     </div>
-</body>
+
+
+</body></html>

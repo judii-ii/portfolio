@@ -54,6 +54,15 @@
     text-align: center;
     border-left: 1px solid #333;
     /* background-color: #9f35c2; */
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item3:hover {
+  text-decoration: underline; /* 호버 시 시각적 피드백 */
 }
 
 .navbar-item4 {
@@ -61,6 +70,15 @@
     text-align: center;
     padding-left: 10px;
     border-left: 1px solid #333;
+    color: black; /* 기본 텍스트 색 */
+    text-decoration: none; /* 밑줄 제거 */
+    cursor: pointer; /* 손가락 모양 커서 */
+    font-family: inherit;
+    font-weight: bold; /* 필요시 */
+}
+
+.navbar-item4:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
 }
 
 @media (max-width: 600px) {
@@ -75,7 +93,7 @@
 }
 
 * {
-    cursor: url('chu.png') 16 16, auto;
+    cursor: url('danchu.png') 16 16, auto;
 }
 body {
     background-color: #efefef;
@@ -239,100 +257,59 @@ body {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
-/* nineteen-design1: 플렉스박스로 반반 나누기 */
-.nineteen-design1 {
-    display: flex;
-    flex-wrap: nowrap; /* 줄바꿈 방지 */
-    align-items: flex-start; /* 위쪽 정렬 */
-    justify-content: center;
-    flex-direction: row;
-    width: 100%; /* 전체 너비 사용 */
-    gap: 20px; /* 두 요소 사이 간격 */
-    animation: fade-in 2s ease-in-out;
-    box-sizing: border-box; /* 패딩과 보더가 크기에 포함되도록 */
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin: 100px auto;
 }
 
-/* album-img1과 album-writing1: 반반으로 나누기 */
-.album-img1, .album-writing1 {
-    flex: 1; /* 동일한 비율로 공간 분배 */
-    flex-basis: 50%; /* 기본 크기를 50%로 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
-    box-sizing: border-box;
+.album-item {
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
 }
 
-/* album-img1의 이미지 크기 제어 */
-.album-img1 img {
-    max-width: 100%; /* 컨테이너를 벗어나지 않도록 */
-    height: auto; /* 비율 유지 */
-    object-fit: contain; /* 이미지가 잘리지 않도록 */
-    transition: opacity 0.5s ease-in-out;
+.album-cover img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-/* album-img1 애니메이션 유지 */
-/* 애니메이션이 실행될 클래스 */
-.album-img1.animate {
-    -webkit-animation: album-img1 0.6s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
-    animation: album-img1 0.6s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+.album-item:hover .album-cover img {
+  transform: scale(1.03);
 }
 
-/* album-writing1 스타일 (필요 시 추가 조정) */
-.album-writing1 {
-    font-family: 'Orbit-Regular';
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-align: center;
-    align-items: center;
-    margin-top: 5vh;
-}
-/* nineteen-design2: 플렉스박스로 반반 나누기 */
-.nineteen-design2 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    gap: 20px;
-    animation: fade-in 2s ease-in-out;
-    box-sizing: border-box;
+.album-info {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-size: 14px;
+  font-family: 'Orbit', sans-serif;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
-.album-img2, .album-writing2 {
-    flex: 1;
-    flex-basis: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
-    box-sizing: border-box;
+.album-item.active .album-info {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.album-img2 img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: opacity 0.5s ease-in-out;
+.album-info::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 1px;
+  background-color: #bbb;
+  margin: 20px auto 0;
+  opacity: 0.4;
 }
 
-/* .album-img2 애니메이션 트리거 */
-.album-img2.animate {
-    -webkit-animation: album-img2 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s both;
-    animation: album-img2 1.0s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s both;
-}
-
-.album-writing2 {
-    font-family: 'Orbit-Regular';
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-align: center;
-    align-items: center;
-    margin-top: 5vh;
-}
 
 .nineteen-design3 {
     display: flex;
@@ -444,8 +421,11 @@ body {
 }
 
 .nineteen-design8 {
+    background-color: #333;
     display: flex;
     width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
     height: auto; /* 높이를 내용에 맞게 조절 */
     animation: fade-in 2s ease-in-out;
 }
@@ -459,7 +439,7 @@ body {
 }
 
 .book1 img, .book2 img {
-    width: 100%; /* 부모 요소의 너비를 꽉 채우도록 설정 */
+    width: 80%; /* 부모 요소의 너비를 꽉 채우도록 설정 */
     height: auto; /* 이미지 비율 유지 */
     max-height: 100vh; /* 화면을 넘지 않도록 설정 */
     object-fit: contain; /* 이미지가 잘리지 않도록 조절 */
@@ -474,13 +454,12 @@ body {
     height: auto; /* 뷰포트 높이 100% */
     margin: 0;
     padding: 0;
-    margin-top: 5vh;
     animation: fade-in 2s ease-in-out;
     overflow: hidden; /* 넘치는 부분 숨김 */
 }
 
 .nineteen-design9 img {
-    width: 50%; /* 부모 요소에 맞게 */
+    width: 100%; /* 부모 요소에 맞게 */
     height: auto; /* 부모 요소에 맞게 */
     max-width: none; /* 최대 너비 제한 제거 */
     max-height: none; /* 최대 높이 제한 제거 */
@@ -537,6 +516,24 @@ body {
     transform: translateY(0);
     transition: transform 0.1s ease-out;
 }
+
+.youtube-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.youtube-wrapper iframe {
+  max-width: 960px;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 유지 가능한 경우 */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
 
 /* fade-in 애니메이션 정의 */
 @keyframes fadein{
@@ -638,10 +635,10 @@ body {
 
 <body>
     <div class="navbar">
-        <div class="navbar-item1"><a href="juyoung.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
+        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
-        <div class="navbar-item3">LINKEDIN</div>
-        <div class="navbar-item4">CONTACT</div>
+        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
     <div class="project-wrapper">
         <div class="project_title">
@@ -668,7 +665,7 @@ body {
         <div class="line2">Hello, we are 19! <br>
         결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다. CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.</div>
     </div>
-    <div class="main"><img src="p1.gif" alt="포폴gif"></div>
+    <div class="main"><img src="p1.webp" alt="포폴gif"></div>
     <div class="writing1">
         <div class="cont1">19(NANA) <br> Album Design</div>
         <div class="cont2">가수 19(NANA)의 여러 앨범 디자인을 맡으며, 음악적 스타일과 이미지를 깊이 이해하고 반영하는 작업을 진행했습니다.<br>
@@ -678,38 +675,79 @@ body {
         </div>
     </div>
     <div class="img-container">
-        <img src="main.gif" alt="포폴gif">
+        <img src="main.webp" alt="포폴gif">
     </div>
-    <div class="nineteen-design1">
-        <div class="album-img1"><img src="album1.png" alt="앨범1"></div>
-        <div class="album-writing1">hi</div>
-    </div>
-    <div class="nineteen-design2">
-        <div class="album-writing2">hi</div>
-        <div class="album-img2"><img src="album2.png" alt="앨범2"></div>
-    </div>
+    
+    <div class="album-gallery">
+
+        <div class="album-item">
+          <div class="album-cover"><img src="album1.webp" alt="album1"></div>
+          <div class="album-info">2018 1st single<br>summer side A<br>title : jelly</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album2.webp" alt="album2"></div>
+          <div class="album-info">2018 2nd single<br>summer side B<br>title : flamingo</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album3.webp" alt="album3"></div>
+          <div class="album-info">2018 3rd single<br>fall diskette<br>title : melancholy smoothie</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album4.webp" alt="album4"></div>
+          <div class="album-info">2019 single<br>archive : winter to spring<br>title : 밤의 피크닉</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album5.webp" alt="album5"></div>
+          <div class="album-info">
+            2020 EP<br>예쁜 오류<br>TRACK<br>
+            01. dive into<br>02. terrace (TITLE)<br>03. 꽃잎동전세탁소 (flower coin laundry) (TITLE2)<br>
+            04. 안녕, 우리의 어항에게 (dear the fishbowl)<br>05. Am I violet?<br>06. 410
+          </div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album6.webp" alt="album6"></div>
+          <div class="album-info">2021 1st single<br>17.1224<br>title : 우리는 지구에서 모래성을 만들어</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album7.webp" alt="album7"></div>
+          <div class="album-info">2021 2nd single<br>to my lighter<br>title : 서로 등을 맞대고 다른 등을 보았지</div>
+        </div>
+      
+        <div class="album-item">
+          <div class="album-cover"><img src="album8.webp" alt="album8"></div>
+          <div class="album-info">2021 3rd single<br>cherry carnival<br>title : coco</div>
+        </div>
+      
+      </div>
+      
     <div class="nineteen-design3">
-        <img src="nineteen2.gif" alt="포폴2gif">
+        <img src="nineteen2.webp" alt="포폴2gif">
     </div>
     <div class="nineteen-design4">
         <div class="album-writing3">Album Book ver.</div>
     </div>
     <div class="nineteen-design5">
-        <img src="book3.jpg" alt="book3">
+        <img src="book3.webp" alt="book3">
     </div>
     <div class="nineteen-design6">
-        <img src="book4.jpg" alt="book">
-        <img src="book5.png" alt="book-hover">
+        <img src="book4.webp" alt="book">
+        <img src="book5.webp" alt="book-hover">
     </div>
     <div class="nineteen-design7">
-        <img src="book6.jpg" alt="book6">
+        <img src="book6.webp" alt="book6">
     </div>
     <div class="nineteen-design8">
-        <div class="book1"><img src="book1.png" alt="book1"></div>
-        <div class="book2"><img src="book2.png" alt="book2"></div>
+        <div class="book1"><img src="book1.webp" alt="book1"></div>
+        <div class="book2"><img src="book2.webp" alt="book2"></div>
     </div>
     <div class="nineteen-design9">
-        <img src="book7.png" alt="book7">
+        <img src="book7.webp" alt="book7">
     </div>
     <div class="nineteen-design10">
         <div class="album-writing4">Musicvideo</div>
@@ -718,31 +756,44 @@ body {
             및 홍보를 담당하기도 했습니다.</div>
     </div>
     <section class="parallax-section">
-        <div class="parallax-background" style="background-image: url('03.jpg');"></div>
-        <img src="03.jpg" class="parallax-image" data-speed="0.3">
+        <div class="parallax-background" style="background-image: url('03.webp');"></div>
+        <img src="03.webp" class="parallax-image" data-speed="0.3">
     </section>
     
     <!-- 두 번째 섹션 (08.jpg) -->
     <section class="parallax-section">
-        <div class="parallax-background" style="background-image: url('08.jpg');"></div>
-        <img src="08.jpg" class="parallax-image" data-speed="0.6">
+        <div class="parallax-background" style="background-image: url('08.webp');"></div>
+        <img src="08.webp" class="parallax-image" data-speed="0.6">
     </section>
 
     <!-- 3 번째 섹션 (15.jpg) -->
     <section class="parallax-section">
-        <div class="parallax-background" style="background-image: url('15.jpg');"></div>
-        <img src="15.jpg" class="parallax-image" data-speed="0.9">
+        <div class="parallax-background" style="background-image: url('15.webp');"></div>
+        <img src="15.webp" class="parallax-image" data-speed="0.9">
     </section>
 
     <section class="parallax-section">
-        <div class="parallax-background" style="background-image: url('01.jpg');"></div>
-        <img src="01.jpg" class="parallax-image" data-speed="1.2">
+        <div class="parallax-background" style="background-image: url('01.webp');"></div>
+        <img src="01.webp" class="parallax-image" data-speed="1.2">
     </section>
 
     <section class="parallax-section">
-        <div class="parallax-background" style="background-image: url('05.jpg');"></div>
-        <img src="05.jpg" class="parallax-image" data-speed="1.5">
+        <div class="parallax-background" style="background-image: url('05.webp');"></div>
+        <img src="05.webp" class="parallax-image" data-speed="1.5">
     </section>
+
+    <div class="youtube-wrapper">
+        <iframe 
+          width="100%" 
+          height="600" 
+          src="https://www.youtube.com/embed/BrOtGB51eAk" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
 
     
 
@@ -784,4 +835,10 @@ document.addEventListener("scroll", function () {
         img.style.transform = `translateY(${scrollPosition * speed}px)`;
     });
 });
+
+document.querySelectorAll(".album-cover").forEach(cover => {
+    cover.addEventListener("click", () => {
+      cover.parentElement.classList.toggle("active");
+    });
+  });
 </script>

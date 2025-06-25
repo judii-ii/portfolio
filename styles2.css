@@ -60,6 +60,16 @@ html, body {
     flex-grow: 1;
     text-align: center;
     border-left: 1px solid #333;
+    /* background-color: #9f35c2; */
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item3:hover {
+  text-decoration: underline; /* 호버 시 시각적 피드백 */
 }
 
 .navbar-item4 {
@@ -67,6 +77,15 @@ html, body {
     text-align: center;
     padding-left: 10px;
     border-left: 1px solid #333;
+    color: black; /* 기본 텍스트 색 */
+    text-decoration: none; /* 밑줄 제거 */
+    cursor: pointer; /* 손가락 모양 커서 */
+    font-family: inherit;
+    font-weight: bold; /* 필요시 */
+}
+
+.navbar-item4:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
 }
 
 .title1 {

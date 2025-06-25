@@ -1,0 +1,11 @@
+{
+  "name": "채널 3055 통신 플러그인",
+  "id": "channel-3055-plugin",
+  "api": "1.0.0",
+  "main": "figma-plugin.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["*"]
+  }
+} 
