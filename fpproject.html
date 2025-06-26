@@ -5,169 +5,1400 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>futureplay</title>
-    <link rel="stylesheet" href="styles2.css">
+    <style>
+/* styles.css */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbit-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    cursor: url('danchu.png') 16 16, auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efefef;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 메인 컨테이너 */
+.main-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #efefef;
+}
+
+.navbar {
+    font-family: 'Orbit-Regular';
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-item1 {
+    flex-grow: 1;
+    text-align: center;
+    border-right: 1px solid #333;
+}
+
+.navbar-item1 a {
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbar-item2 {
+    flex-grow: 9;
+}
+
+.navbar-item3 {
+    flex-grow: 1;
+    text-align: center;
+    border-left: 1px solid #333;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item3:hover {
+  text-decoration: underline;
+}
+
+.navbar-item4 {
+    flex-grow: 1;
+    text-align: center;
+    padding-left: 10px;
+    border-left: 1px solid #333;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.navbar-item4:hover {
+  text-decoration: underline;
+}
+
+.title1 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.title2 {
+    position: relative;
+    font-family: 'Pretendard-Regular';
+    font-size: 40px;
+}
+
+.project-wrapper {
+    display: flex;
+    height: 150px;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.project_title {
+    flex-grow: 6;
+    line-height: 1;
+    padding-left: 50px;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-container {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    overflow: hidden;
+    animation: fade-in 2s ease-in-out;
+}
+
+.project-with {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.project-person {
+    padding: 5px 0 0 10px;
+}
+
+.project-type {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.project-type2 {
+    line-height: 1;
+    padding: 5px 0 0 10px;
+}
+
+.col1, .col2 {
+    flex-grow: 1;
+}
+
+.project-note {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.project-note2 {
+    padding: 5px 0 0 10px;
+}
+
+.project-contribution {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.project-contribution2 {
+    line-height: 1;
+    padding: 5px 0 0 10px;
+}
+
+.line {
+    border-top: 1px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.img-container img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.color-text-container {
+    height: 100px;
+}
+
+.color-note {
+    font-family: 'Pretendard-semibold';
+    font-size: 2rem;
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 20vh;
+    margin-left: 60px;
+}
+
+.color-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.color-text-container {
+    width: 90%;
+    padding: 4px 40px 0 0;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2vh;
+}
+
+.color-box1, .color-box2 {
+    flex: 1;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pretendard-regular';
+    font-size: 1.5rem;
+}
+
+.color-box1 {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.color-box2 {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* 새로운 텍스트 섹션 디자인 */
+.content-section {
+    display: flex;
+    margin: 120px 0 60px 0;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    animation: fade-in 2s ease-in-out;
+    padding: 0 40px;
+    align-items: stretch;
+    min-height: 300px;
+}
+
+.content-left {
+    flex: 1;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    color: white;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.content-left:hover::before {
+    left: 100%;
+}
+
+.content-right {
+    flex: 1.5;
+    background: white;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.content-title {
+    font-family: 'Pretendard-Bold';
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.content-description {
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.writing1 {
+    margin-top: 350px;
+}
+
+.writing2 {
+    margin-top: 200px;
+}
+
+.writing3 {
+    margin-top: 120px;
+}
+
+/* 섹션 제목들 각진 디자인 */
+.section-title {
+    text-align: center;
+    margin: 120px 0 60px 0;
+    position: relative;
+}
+
+.section-title-inner {
+    display: inline-block;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    color: white;
+    padding: 25px 60px;
+    font-family: 'Pretendard-Regular';
+    font-size: 36px;
+    font-weight: 500;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.section-title-inner:hover::before {
+    left: 100%;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin: 80px 0 40px 0;
+    position: relative;
+}
+
+.section-subtitle-inner {
+    display: inline-block;
+    background: white;
+    color: #666;
+    padding: 20px 40px;
+    font-family: 'Pretendard-Light';
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.section-subtitle-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-color: #333;
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    animation: fade-in 2s ease-in-out;
+    margin: 20px 0 60px 0;
+}
+
+.slide-box1, .slide-box2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.slide-box1 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.slider__wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 500%;
+    height: 100%;
+}
+
+.slider {
+    position: relative;
+    width: 20%;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.detail-image-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 20px 0 60px 0;
+}
+
+.detail-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.recruit-container1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0 60px 0;
+    flex-grow: 1;
+}
+
+.recruit-container1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.recruit-container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    margin: 60px 0;
+    min-height: 500px;
+}
+
+.recruit-writing {
+    flex: 1;
+    background: white;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.recruit-writing1 {
+    font-family: 'Pretendard-Semibold';
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.recruit-writing2 {
+    font-family: 'Pretendard-Light';
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 32px;
+    color: #666;
+}
+
+.recruit-writing3 {
+    font-family: 'Pretendard-Regular';
+    font-size: 1.2rem;
+    line-height: 32px;
+    color: #555;
+}
+
+.recruit-writing4 {
+    font-family: 'Pretendard-Light';
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 32px;
+    color: #666;
+}
+
+.recruit-writing5 {
+    font-family: 'Pretendard-Light';
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 1.7;
+    color: #555;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.recruit-img1 {
+    flex: 1;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px;
+}
+
+.recruit-img1 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.recruit-img1:hover img {
+    transform: scale(1.05);
+}
+
+.detail-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.workshop-start {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0 40px 0;
+    flex-grow: 1;
+}
+
+.workshop-start img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.workshop-container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 40px 0 60px 0;
+    padding: 0;
+}
+
+.workshop-container1 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.workshop-container1 img:first-child {
+    opacity: 1;
+}
+
+.workshop-container1 img:last-child {
+    opacity: 0;
+}
+
+.workshop-container1:hover img:first-child {
+    opacity: 0;
+}
+
+.workshop-container1:hover img:last-child {
+    opacity: 1;
+}
+
+.workshop-container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    margin: 40px 0 60px 0;
+    background-color: grey;
+    padding: 40px 0;
+    flex-direction: row;
+    width: 100%;
+    gap: 40px;
+    animation: fade-in 2s ease-in-out;
+}
+
+.can-img1 {
+    flex: 0.8;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.can-img2 {
+    flex: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.can-img3 {
+    flex: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.can-img1 img, .can-img2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.can-img3 img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.can-img3 {
+    position: relative;
+}
+
+.can-img3 img {
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.can-img3 img:first-child {
+    opacity: 1;
+}
+
+.can-img3 img:last-child {
+    opacity: 0;
+}
+
+.can-img3:hover img:first-child {
+    opacity: 0;
+}
+
+.can-img3:hover img:last-child {
+    opacity: 1;
+}
+
+.workshop-container3 {
+    display: flex;
+    margin: 60px 0;
+    flex-grow: 1;
+}
+
+.can-img4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.workshop-container3 img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.workshop-container4, .workshop-container6, .workshop-container7, .workshop-container8, .workshop-container9, .workshop-container10, .workshop-container12, .workshop-container13, .workshop-container14, .workshop-container15 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0;
+    flex-grow: 1;
+}
+
+.workshop-container4 img, .workshop-container6 img, .workshop-container7 img, .workshop-container8 img, .workshop-container9 img, .workshop-container10 img, .workshop-container12 img, .workshop-container13 img, .workshop-container14 img, .workshop-container15 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.workshop-container5, .workshop-container11, .workshop-container16 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: row;
+    width: 100%;
+    animation: fade-in 2s ease-in-out;
+    margin: 60px 0;
+}
+
+.banner2, .banner3, .sticker-img1, .sticker-img2, .hoodie-img1, .hoodie-img2 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner2 img, .banner3 img, .sticker-img1 img, .sticker-img2 img, .hoodie-img1 img, .hoodie-img2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.workshop-container13 img {
+    width: 80%;
+}
+
+.workshop-container14 img {
+    object-fit: contain;
+}
+
+/* 실제 착용 사진들 - 여백 제거 */
+.workshop-container17, .workshop-container18, .workshop-container19 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.workshop-container17 img, .workshop-container18 img, .workshop-container19 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.workshop-container19 {
+    position: relative;
+}
+
+.hoodie-img1 img, .hoodie-img2 img {
+    max-width: 80%;
+}
+
+.black-gradient {
+    width: 100%;
+    height: 10vh;
+    background: black;
+}
+
+/* 반응형 미디어 쿼리 */
+@media screen and (max-width: 1400px) {
+    .navbar {
+        font-size: 14px;
+    }
+
+    .title1, .title2 {
+        font-size: 32px;
+    }
+
+    .project-wrapper {
+        height: auto;
+        padding: 25px 0;
+    }
+
+    .project_title {
+        padding-left: 30px;
+    }
+
+    .project-container {
+        font-size: 11px;
+        gap: 20px;
+    }
+
+    .project-with, .project-type, .project-note, .project-contribution {
+        font-size: 13px;
+    }
+
+    .color-note {
+        font-size: 1.5rem;
+        margin-left: 40px;
+        margin-top: 15vh;
+    }
+
+    .color-box1, .color-box2 {
+        font-size: 1.2rem;
+        height: 120px;
+    }
+
+    .content-section {
+        gap: 15px;
+        padding: 0 30px;
+        min-height: 280px;
+    }
+
+    .content-left, .content-right {
+        padding: 35px 30px;
+    }
+
+    .content-title {
+        font-size: 36px;
+    }
+
+    .content-description {
+        font-size: 16px;
+    }
+
+    .section-title-inner {
+        font-size: 30px;
+        padding: 20px 50px;
+    }
+
+    .section-subtitle-inner {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+
+    .recruit-writing {
+        padding: 50px 40px;
+    }
+
+    .recruit-writing1 {
+        font-size: 1.8rem;
+    }
+
+    .recruit-writing3 {
+        font-size: 1rem;
+    }
+
+    .recruit-writing5 {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 1178px) {
+    .content-description {
+        font-size: 13px;
+    }
+    .recruit-writing5 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .content-description {
+        font-size: 12px;
+    }
+    .recruit-writing5 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content-description {
+        font-size: 12px;
+    }
+    .recruit-writing5 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-item1, .navbar-item3, .navbar-item4 {
+        flex-grow: 1;
+        padding: 0;
+    }
+
+    .navbar-item2 {
+        flex-grow: 0;
+        display: none;
+    }
+
+    .project-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .project_title {
+        padding: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .title1, .title2 {
+        font-size: 28px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        padding: 0 20px;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .col1, .col2 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-with, .project-type, .project-note, .project-contribution {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .project-person, .project-type2, .project-note2, .project-contribution2 {
+        padding: 8px 0 0 0;
+        margin: 0;
+    }
+
+    .color-note {
+        font-size: 1.2rem;
+        margin-left: 20px;
+        margin-top: 10vh;
+    }
+
+    .color-box1, .color-box2 {
+        font-size: 1rem;
+        height: 100px;
+    }
+
+    .content-section {
+        flex-direction: column;
+        margin: 80px 0 60px 0;
+        min-height: auto;
+        gap: 0;
+        padding: 0 20px;
+    }
+
+    .content-left {
+        padding: 30px 30px;
+    }
+
+    .content-right {
+        padding: 30px 25px;
+    }
+
+    .content-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .content-description {
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .section-title-inner {
+        font-size: 24px;
+        padding: 15px 30px;
+    }
+
+    .section-subtitle-inner {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .recruit-container2 {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .recruit-writing {
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .recruit-writing1 {
+        font-size: 1.5rem;
+    }
+
+    .recruit-writing3 {
+        font-size: 0.9rem;
+    }
+
+    .recruit-writing5 {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .recruit-img1 {
+        padding: 30px;
+    }
+
+    .slide-container {
+        flex-direction: column;
+        margin: 20px 0 40px 0;
+    }
+
+    .slide-box1, .slide-box2 {
+        width: 100%;
+    }
+
+    .slider__img {
+        width: 100%;
+        height: auto;
+    }
+
+    .workshop-container2 {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0;
+    }
+
+    .can-img1, .can-img2, .can-img3 {
+        flex: 1;
+        padding-left: 0;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .workshop-container5, .workshop-container11, .workshop-container16 {
+        flex-direction: column;
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .banner2, .banner3, .sticker-img1, .sticker-img2, .hoodie-img1, .hoodie-img2 {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        font-size: 10px;
+    }
+
+    .title1, .title2 {
+        font-size: 24px;
+    }
+
+    .project-wrapper {
+        padding: 15px 0;
+    }
+
+    .project_title {
+        margin-bottom: 20px;
+    }
+
+    .project-container {
+        font-size: 9px;
+        gap: 20px;
+    }
+
+    .col1, .col2 {
+        gap: 12px;
+    }
+
+    .project-with, .project-type, .project-note, .project-contribution {
+        font-size: 10px;
+    }
+
+    .project-person, .project-type2, .project-note2, .project-contribution2 {
+        padding: 6px 0 0 0;
+    }
+
+    .color-note {
+        font-size: 1rem;
+        margin-left: 10px;
+        margin-top: 8vh;
+    }
+
+    .color-box1, .color-box2 {
+        font-size: 0.8rem;
+        height: 80px;
+    }
+
+    .content-section {
+        padding: 0 15px;
+    }
+
+    .content-left, .content-right {
+        padding: 25px 15px;
+    }
+
+    .content-title {
+        font-size: 24px;
+    }
+
+    .content-description {
+        font-size: 11px;
+    }
+
+    .section-title-inner {
+        font-size: 20px;
+        padding: 12px 25px;
+    }
+
+    .section-subtitle-inner {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .recruit-writing {
+        padding: 30px 20px;
+    }
+
+    .recruit-writing1 {
+        font-size: 1.2rem;
+    }
+
+    .recruit-writing3 {
+        font-size: 0.8rem;
+    }
+
+    .recruit-writing5 {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .recruit-img1 {
+        padding: 20px;
+    }
+}
+    </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
-        <div class="navbar-item2"></div>
-        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
-    </div>
-    <div class="project-wrapper">
-        <div class="project_title">
-            <div class="title1"> ⟡ FP</div>
-            <div class="title2"> Design/Marketing</div>
+    <div class="main-container">
+        <div class="navbar">
+            <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
+            <div class="navbar-item2"></div>
+            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
         </div>
-        <div class="project-container">
-            <div class="col1">
-                <div class="project-with"> ✦with</div>
-                <div class="project-person"> Futureplay </div>
-                <div class="project-type"> ✦project type</div>
-                <div class="project-type2"> contents design <br> graphic design <br> merchandise design</div>
+        <div class="project-wrapper">
+            <div class="project_title">
+                <div class="title1"> ⟡ FP</div>
+                <div class="title2"> Design/Marketing</div>
             </div>
-            <div class="col2">
-                <div class="project-note">✦project note</div>
-                <div class="project-note2">this project only contains digital design pic.</div>
-                <div class="project-contribution"> ✦contribution</div>
-                <div class="project-contribution2"> 80%</div>
+            <div class="project-container">
+                <div class="col1">
+                    <div class="project-with"> ✦with</div>
+                    <div class="project-person"> Futureplay </div>
+                    <div class="project-type"> ✦project type</div>
+                    <div class="project-type2"> contents design <br> graphic design <br> merchandise design</div>
+                </div>
+                <div class="col2">
+                    <div class="project-note">✦project note</div>
+                    <div class="project-note2">this project only contains digital design pic.</div>
+                    <div class="project-contribution"> ✦contribution</div>
+                    <div class="project-contribution2"> 80%</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="img-container">
-        <div class="line"></div>
-        <img src="future_banner.webp" alt="포폴png">
-    </div>
-    <div class='color-text-container'>
-        <div class="color-note">Color</div>
-    </div>
-    <div class='color-container'>
-        <div class='color-box1'>#000000</div>
-        <div class='color-box2'>#FFFFFF</div>
-    </div>
-    <div class="writing1">
-        <div class="cont1">Recruitment <br> Marketing & Design</div>
-        <div class="cont2">채용 공고를 디자인하고, SNS에 게시할 콘텐츠를 제작했습니다.<br>
-            Adobe Photoshop, Illustrator를 함께 활용하여 디자인을 진행했고 이와 동시에 채용마케팅을 진행하였습니다.<br>
-            SNS 채널에 게시할 카드 뉴스를 기획하였으며, 회사 내부 행사에 필요한 굿즈를 디자인하고 인터널브랜딩을 시행했습니다.   </div>
-    </div>  
-    <div class="slide-container">
-        <div class="slide-box1">
-            <img src="iphone.webp" alt="이미지5">
+        <div class="img-container">
+            <div class="line"></div>
+            <img src="future_banner.webp" alt="포폴png">
         </div>
-        <section class="slide-box2" id="sliderType02">
-            <div class="slider__wrap">
-                <div class="slider__img">
-                    <div class="slider__inner">
-                        <div class="slider">
-                            <img src="insta1.webp" alt="이미지5" loading="lazy">
-                        </div>
-                        <div class="slider">
-                            <img src="insta2.webp" alt="이미지6" loading="lazy">
-                        </div>
-                        <div class="slider">
-                            <img src="insta3.webp" alt="이미지7" loading="lazy">
-                        </div>
-                        <div class="slider">
-                            <img src="insta4.webp" alt="이미지8" loading="lazy">
-                        </div>
-                        <div class="slider">
-                            <img src="insta5.webp" alt="이미지9" loading="lazy">
+        <div class="color-text-container">
+            <div class="color-note">Color</div>
+        </div>
+        <div class="color-container">
+            <div class="color-box1">#000000</div>
+            <div class="color-box2">#FFFFFF</div>
+        </div>
+        
+        <div class="content-section writing1">
+            <div class="content-left">
+                <div class="content-title">Recruitment<br>Marketing & Design</div>
+            </div>
+            <div class="content-right">
+                <div class="content-description">채용 공고를 디자인하고, SNS에 게시할 콘텐츠를 제작했습니다.<br><br>
+                Adobe Photoshop, Illustrator를 함께 활용하여 디자인을 진행했고 이와 동시에<br>채용마케팅을 진행하였습니다.
+                SNS 채널에 게시할 카드 뉴스를 기획하였으며,<br> 회사 내부 행사에 필요한 굿즈를 디자인하고 인터널브랜딩을 시행했습니다.</div>
+            </div>
+        </div>
+        
+        <div class="slide-container">
+            <div class="slide-box1">
+                <img src="iphone.webp" alt="이미지5">
+            </div>
+            <section class="slide-box2" id="sliderType02">
+                <div class="slider__wrap">
+                    <div class="slider__img">
+                        <div class="slider__inner">
+                            <div class="slider">
+                                <img src="insta1.webp" alt="이미지5" loading="lazy">
+                            </div>
+                            <div class="slider">
+                                <img src="insta2.webp" alt="이미지6" loading="lazy">
+                            </div>
+                            <div class="slider">
+                                <img src="insta3.webp" alt="이미지7" loading="lazy">
+                            </div>
+                            <div class="slider">
+                                <img src="insta4.webp" alt="이미지8" loading="lazy">
+                            </div>
+                            <div class="slider">
+                                <img src="insta5.webp" alt="이미지9" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </div>
+        
+        <div class="detail-image-container">
+            <img src="detailimage.webp" alt="이미지17" loading="lazy">
+        </div>
+        
+        <div class="content-section writing2">
+            <div class="content-left">
+                <div class="content-title">SNS Marketing Contents</div>
             </div>
-        </section>
-    </div>
-    <div class="detail-image-container">
-        <img src="detailimage.webp" alt="이미지17" loading="lazy">
-    </div>
-    <div class="writing2">
-        <div class="cont3">SNS Marketing Contents</div>
-        <div class="cont4">인스타그램을 필두로 하여 링크드인 등 다양한 SNS페이지에 채용 홍보/마케팅을 진행했습니다.<br>
-            더 많은 지원자들이 퓨처플레이라는 회사에 대해 호감을 느끼고 지원까지 이어질 수 있도록 카드뉴스를 제작했습니다.<br>
+            <div class="content-right">
+                <div class="content-description">인스타그램을 필두로 하여 링크드인 등 다양한 SNS페이지에 채용 홍보/마케팅을 진행했습니다.<br><br>
+                더 많은 지원자들이 퓨처플레이라는 회사에 대해 호감을 느끼고 지원까지 이어질 수 있도록 카드뉴스를 제작했습니다.</div>
+            </div>
         </div>
-    </div>
-    <div class="recruit-container1">
-        <img src="recruit1.webp" alt="공고png1" loading="lazy">
-    </div>
-    <div class="recruit-container2">
-        <div class="recruit-writing">
-            <div class="recruit-writing1">Recruit Ad Design</div>
-            <div class="recruit-writing2">keyword</div>
-            <div class="recruit-writing3">Minimalism, Monochrome, Clean Typography</div>
-            <div class="recruit-writing4">Concept</div>
-            <div class="recruit-writing5">퓨처플레이의 혁신적이고 미래지향적인 브랜드 정체성을 반영한 모던 컨셉.<br>
-                흑백 모노톤을 기반으로 세련된 타이포그래피와 직관적인 레이아웃을 활용하였습니다.<br>
-                이를 통해 기업의 전문성과 신뢰감을 강조하는 동시에 가독성을 극대화했으며,<br>
-                불필요한 요소를 배제했습니다.<br>
-                채용 공고 디자인인 만큼 핵심 메시지에 집중했습니다. 이 공고를 통해 지원자들이<br>
-                기업의 가치와 비전을 빠르게 이해할 수 있도록 섹션을 나누어 구성하였습니다.</div>
+        
+        <div class="recruit-container1">
+            <img src="recruit1.webp" alt="공고png1" loading="lazy">
         </div>
-        <div class="recruit-img1"><img src="detail1.webp" alt="공고gif" loading="lazy"></div>
-    </div>
-    <div class="detail-container">
-        <img src="webfp.webp" alt="이미지17" loading="lazy">
-    </div>
-    <div class="writing3">
-        <div class="cont5">Workshop <br> Goods Design</div>
-        <div class="cont6">기업 내부 행사인 "창업자 네트워킹 행사"에 필요한 다양한 굿즈를 디자인하고 제작하였습니다.<br>
-            현수막, 리플렛, 맥주캔, 단체 후드티 등 회의를 통해 필요한 굿즈를 기획한 후 제작에 착수했습니다. <br>
-            이를 토대로 기한 내 발주하여 제 날짜에 제대로 수행할 수 있도록 도왔습니다.<br>
+        
+        <div class="recruit-container2">
+            <div class="recruit-writing">
+                <div class="recruit-writing1">Recruit Ad Design</div>
+                <div class="recruit-writing2">keyword</div>
+                <div class="recruit-writing3">Minimalism, Monochrome, Clean Typography</div>
+                <div class="recruit-writing4">Concept</div>
+                <div class="recruit-writing5">퓨처플레이의 혁신적이고 미래지향적인 브랜드 정체성을 반영한 모던 컨셉. 흑백 모노톤을 기반으로 세련된 타이포그래피와 직관적인 레이아웃을 활용하였습니다. 이를 통해 기업의 전문성과 신뢰감을 강조하는 동시에 가독성을 극대화했으며, 불필요한 요소를 배제했습니다. 채용 공고 디자인인 만큼 핵심 메시지에 집중했습니다. 이 공고를 통해 지원자들이 기업의 가치와 비전을 빠르게 이해할 수 있도록 섹션을 나누어 구성하였습니다.</div>
+            </div>
+            <div class="recruit-img1"><img src="detail1.webp" alt="공고gif" loading="lazy"></div>
         </div>
-    </div>
-    <div class="workshop-start"><img src="workshop.webp" alt="이미지23" loading="lazy"></div>
-    <div class="writing4">✴︎ Futureplay Can</div>
-    <div class="workshop-container1">
-        <img src="futureplaycan.webp" alt="이미지17" loading="lazy">
-        <img src="futureplaycan2.webp" alt="호버 이미지2" loading="lazy">
-    </div>
-    <div class="writing5">Label Design</div>
-    <div class="workshop-container2">
-        <div class="can-img1"><img src="can-img1.webp" alt="이미지18" loading="lazy"></div>
-        <div class="can-img2"><img src="can-img2.webp" alt="이미지19" loading="lazy"></div>
-        <div class="can-img3">
-            <img src="whitecan.webp" alt="이미지20" loading="lazy">
-            <img src="blackcan.webp" alt="호버 이미지" loading="lazy">
+        
+        <div class="detail-container">
+            <img src="webfp.webp" alt="이미지17" loading="lazy">
         </div>
-    </div>
-    <div class="workshop-container3">
-        <div class="can-img4"><img src="can-img4.webp" alt="이미지21" loading="lazy"></div>
-    </div>
-    <div class="writing6">✴︎ Banner Design</div>
-    <div class="workshop-container4">
-        <img src="banner1.webp" alt="이미지17" loading="lazy">
-    </div>
-    <div class="workshop-container5">
-        <div class="banner2"><img src="banner2.webp" alt="이미지22" loading="lazy"></div>
-        <div class="banner3"><img src="banner3.webp" alt="이미지23" loading="lazy"></div>
-    </div>
-    <div class="workshop-container6"><img src="banner4.webp" alt="이미지24" loading="lazy"></div>
-    <div class="writing7">Sports Towel Design</div>
-    <div class="workshop-container7"><img src="banner5.webp" alt="이미지25" loading="lazy"></div>
-    <div class="workshop-container8"><img src="banner6.webp" alt="이미지26" loading="lazy"></div>
-    <div class="workshop-container9"><img src="banner7.webp" alt="이미지27" loading="lazy"></div>
-    <div class="writing8">✴︎ Sticker Design</div>
-    <div class="workshop-container10"><img src="sticker0.webp" alt="이미지28" loading="lazy"></div>
-    <div class="workshop-container11">
-        <div class="sticker-img1"><img src="sticker1.webp" alt="이미지29" loading="lazy"></div>
-        <div class="sticker-img2"><img src="sticker2.webp" alt="이미지30" loading="lazy"></div>
-    </div>
-    <div class="workshop-container12"><img src="sticker4.webp" alt="이미지32" loading="lazy"></div>
-    <div class="writing9">✴︎ Leaflet Design</div>
-    <div class="workshop-container13"><img src="leaflet0.webp" alt="이미지33" loading="lazy"></div>
-    <div class="workshop-container14"><img src="leaflet1.webp" alt="이미지34" loading="lazy"></div>
-    <div class="writing10">✴︎ Hoodie Design</div>
-    <div class="workshop-container15"><img src="hoodie0.webp" alt="이미지35" loading="lazy"></div>
-    <div class="workshop-container16">
-        <div class="hoodie-img1"><img src="hoodie1.webp" alt="이미지36" loading="lazy"></div>
-        <div class="hoodie-img2"><img src="hoodie2.webp" alt="이미지37" loading="lazy"></div>
-    </div>
-    <div class="writing11">실제 착용 사진</div>
-    <div class="workshop-container17"><img src="hoodie3.webp" alt="이미지38" loading="lazy"></div>
-    <div class="workshop-container18"><img src="hoodie4.webp" alt="이미지39" loading="lazy"></div>
-    <div class="workshop-container19"><img src="hoodie5.webp" alt="이미지40" loading="lazy">
-        <div class="black-gradient"></div>
+        
+        <div class="content-section writing3">
+            <div class="content-left">
+                <div class="content-title">Workshop<br>Goods Design</div>
+            </div>
+            <div class="content-right">
+                <div class="content-description">기업 내부 행사인 "창업자 네트워킹 행사"에 필요한 다양한 굿즈를 디자인하고 제작하였습니다.<br>
+                현수막, 리플렛, 맥주캔, 단체 후드티 등 회의를 통해 필요한 굿즈를 기획한 후 제작에 착수했습니다.<br>
+                이를 토대로 기한 내 발주하여 제 날짜에 제대로 수행할 수 있도록 도왔습니다.</div>
+            </div>
+        </div>
+        
+        <div class="workshop-start"><img src="workshop.webp" alt="이미지23" loading="lazy"></div>
+        
+        <div class="section-title">
+            <div class="section-title-inner">✴︎ Futureplay Can</div>
+        </div>
+        <div class="workshop-container1">
+            <img src="futureplaycan.webp" alt="이미지17" loading="lazy">
+            <img src="futureplaycan2.webp" alt="호버 이미지2" loading="lazy">
+        </div>
+        
+        <div class="section-subtitle">
+            <div class="section-subtitle-inner">Label Design</div>
+        </div>
+        <div class="workshop-container2">
+            <div class="can-img1"><img src="can-img1.webp" alt="이미지18" loading="lazy"></div>
+            <div class="can-img2"><img src="can-img2.webp" alt="이미지19" loading="lazy"></div>
+            <div class="can-img3">
+                <img src="whitecan.webp" alt="이미지20" loading="lazy">
+                <img src="blackcan.webp" alt="호버 이미지" loading="lazy">
+            </div>
+        </div>
+        <div class="workshop-container3">
+            <div class="can-img4"><img src="can-img4.webp" alt="이미지21" loading="lazy"></div>
+        </div>
+        
+        <div class="section-title">
+            <div class="section-title-inner">✴︎ Banner Design</div>
+        </div>
+        <div class="workshop-container4">
+            <img src="banner1.webp" alt="이미지17" loading="lazy">
+        </div>
+        <div class="workshop-container5">
+            <div class="banner2"><img src="banner2.webp" alt="이미지22" loading="lazy"></div>
+            <div class="banner3"><img src="banner3.webp" alt="이미지23" loading="lazy"></div>
+        </div>
+        <div class="workshop-container6"><img src="banner4.webp" alt="이미지24" loading="lazy"></div>
+        
+        <div class="section-subtitle">
+            <div class="section-subtitle-inner">Sports Towel Design</div>
+        </div>
+        <div class="workshop-container7"><img src="banner5.webp" alt="이미지25" loading="lazy"></div>
+        <div class="workshop-container8"><img src="banner6.webp" alt="이미지26" loading="lazy"></div>
+        <div class="workshop-container9"><img src="banner7.webp" alt="이미지27" loading="lazy"></div>
+        
+        <div class="section-title">
+            <div class="section-title-inner">✴︎ Sticker Design</div>
+        </div>
+        <div class="workshop-container10"><img src="sticker0.webp" alt="이미지28" loading="lazy"></div>
+        <div class="workshop-container11">
+            <div class="sticker-img1"><img src="sticker1.webp" alt="이미지29" loading="lazy"></div>
+            <div class="sticker-img2"><img src="sticker2.webp" alt="이미지30" loading="lazy"></div>
+        </div>
+        <div class="workshop-container12"><img src="sticker4.webp" alt="이미지32" loading="lazy"></div>
+        
+        <div class="section-title">
+            <div class="section-title-inner">✴︎ Leaflet Design</div>
+        </div>
+        <div class="workshop-container13"><img src="leaflet0.webp" alt="이미지33" loading="lazy"></div>
+        <div class="workshop-container14"><img src="leaflet1.webp" alt="이미지34" loading="lazy"></div>
+        
+        <div class="section-title">
+            <div class="section-title-inner">✴︎ Hoodie Design</div>
+        </div>
+        <div class="workshop-container15"><img src="hoodie0.webp" alt="이미지35" loading="lazy"></div>
+        <div class="workshop-container16">
+            <div class="hoodie-img1"><img src="hoodie1.webp" alt="이미지36" loading="lazy"></div>
+            <div class="hoodie-img2"><img src="hoodie2.webp" alt="이미지37" loading="lazy"></div>
+        </div>
+        
+        <div class="section-subtitle">
+            <div class="section-subtitle-inner">실제 착용 사진</div>
+        </div>
+        <div class="workshop-container17"><img src="hoodie3.webp" alt="이미지38" loading="lazy"></div>
+        <div class="workshop-container18"><img src="hoodie4.webp" alt="이미지39" loading="lazy"></div>
+        <div class="workshop-container19"><img src="hoodie5.webp" alt="이미지40" loading="lazy">
+            <div class="black-gradient"></div>
+        </div>
     </div>
 
     <script>
