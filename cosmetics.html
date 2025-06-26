@@ -1,5 +1,6 @@
-<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coluffy - Brand Design</title>
@@ -34,8 +35,6 @@
             font-family: 'Poppins', 'Noto Sans KR', sans-serif;
         }
         
-
-
         body {
             background-color: #D18293;
             color: var(--text-dark);
@@ -105,7 +104,6 @@
             text-align: center;
         }
         
-        
         .coluffy-hero {
             position: relative;
             height: 720px;
@@ -116,7 +114,6 @@
             align-items: center;
             justify-content: center;
         }
-        
         
         .coluffy-columns {
             display: grid;
@@ -162,9 +159,9 @@
         }
         
         .coluffy-footer {
-            background-color: #FFE4EA;
+            background-color: #d4a9a3;
             padding: 60px 40px;
-            color: black;
+            color: white;
         }
         
         .coluffy-brand-name {
@@ -174,6 +171,7 @@
             font-size: 30px;
             font-weight: 600;
             margin-bottom: 30px;
+            color: white;
         }
 
         .coluffy-brand-description {
@@ -181,12 +179,13 @@
             font-size: 14px;
             line-height: 1.8;
             max-width: 800px;
+            color: white;
         }
         
         .brand-design-section {
             color: white;
             padding-top: 60px;
-            margin: 0; /* 40px 0에서 0으로 변경 */
+            margin: 0;
         }
 
         .brand-design-header {
@@ -203,14 +202,25 @@
         flex-direction: row;
         margin-bottom: 60px;
         padding: 0 40px;
-        }
+        align-items: center; /* flex-start에서 center로 변경 */
+        min-height: 400px; /* 최소 높이 설정 */
+    }
 
-        .logo-showcase {
+    .logo-showcase {
         flex: 1;
         display: flex;
         justify-content: center;
-        align-items: center;
-        }
+        align-items: center; /* flex-start에서 center로 변경 */
+        padding: 20px; /* 패딩 추가 */
+    }
+
+    .logo-description {
+        flex: 1;
+        padding: 20px 60px; /* 상하 패딩 추가 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* flex-start에서 center로 변경 */
+    }
 
         .logo-variants {
         display: flex;
@@ -224,15 +234,9 @@
         }
 
         .logo-variant img {
-        width: 100%;           /* 화면 넓이의 40% → 넓게 보임 */
+        width: 100%;
         height: auto;
         display: block;
-        }
-
-
-        .logo-description {
-        flex: 1;
-        padding: 0 60px;
         }
 
         .description-pt, .description-en {
@@ -294,11 +298,10 @@
         }
 
         .brand-logo-oval img {
-        width: 100%;           /* 화면 넓이의 40% → 넓게 보임 */
+        width: 100%;
         height: auto;
         display: block;
         }
-
 
         /* 폰트 레이아웃 스타일 */
         .brand-principles-content {
@@ -306,7 +309,7 @@
         background-color: #AA6B77;
         color: white;
         padding: 40px;
-        margin-bottom: 0; /* 하단 마진이 있다면 제거 */
+        margin-bottom: 0;
         }
 
         .font-category {
@@ -320,7 +323,7 @@
         font-style: italic;
         font-size: 24px;
         font-weight: 700;
-        margin-bottom: 20vh; /* Title과 Body 사이 간격 조정 */
+        margin-bottom: 20vh;
         }
 
         .body-label {
@@ -332,7 +335,7 @@
         }
 
         .font-section {
-        margin-bottom: 100px; /* 타이틀과 바디 섹션 사이 간격 */
+        margin-bottom: 100px;
         }
 
         .font-title {
@@ -368,7 +371,7 @@
         .font-weights {
         display: flex;
         flex-direction: column;
-        gap: 40px; /* 각 폰트 무게 샘플 사이 간격 */
+        gap: 40px;
         }
 
         .font-weight-sample {
@@ -382,19 +385,19 @@
         font-family: "Inter", sans-serif;
         font-size: 16px;
         line-height: 1.6;
-        font-weight: 400; /* Regular */
+        font-weight: 400;
         }
 
         .sample-text.semi-bold {
-        font-weight: 500; /* Semi Bold */
+        font-weight: 500;
         }
 
         .sample-text.extra-bold {
-        font-weight: 800; /* Extra Bold */
+        font-weight: 800;
         }
 
         .sample-text.black {
-        font-weight: 900; /* Black */
+        font-weight: 900;
         font-style: italic;
         }
 
@@ -430,7 +433,6 @@
             position: relative;
         }
         
-        
         .feature-card .divider {
             font-family: "adobe-aldine", serif;
             color: #ffffff;
@@ -454,28 +456,28 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: #fff; /* 필요 시 텍스트 대비 조정 */
+        color: #fff;
         }
         .feature-card[data-product="serum"] {
         background-image: url('serum.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: #fff; /* 필요 시 텍스트 대비 조정 */
+        color: #fff;
         }
         .feature-card[data-product="cream"] {
         background-image: url('kream.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: #fff; /* 필요 시 텍스트 대비 조정 */
+        color: #fff;
         }
         .feature-card[data-product="essence"] {
         background-image: url('essence.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        color: #fff; /* 필요 시 텍스트 대비 조정 */
+        color: #fff;
         }
 
         .coluffy-brand-pt {
@@ -499,8 +501,8 @@
             .coluffy-brand-pt2 img {
             width: 50%;
             height: auto;
-            object-fit: cover; /* or contain */
-            aspect-ratio: auto; /* 새 브라우저에선 명시 가능 */
+            object-fit: cover;
+            aspect-ratio: auto;
             }
         
         /* Product section */
@@ -541,12 +543,11 @@
             }
 
         .double-image-section img {
-            width: 50%;           /* 화면 넓이의 40% → 넓게 보임 */
+            width: 50%;
             max-width: 1200px;
             height: auto;
             display: block;
             }
-
         
         /* Overview section */
         .overview {
@@ -567,7 +568,6 @@
             line-height: 1vh;
             margin-bottom: 15px;
         }
-        
         
         /* YouTube video section */
         .product-gallery {
@@ -594,7 +594,6 @@
             padding: 0;
             }
 
-
         /* Concept contrasts - Accordion style */
         .concept-contrasts {
             display: flex;
@@ -612,7 +611,7 @@
         }
         
         .concept:hover {
-            flex: 3; /* Expand when hovered */
+            flex: 3;
         }
         
         .concept-bg {
@@ -622,7 +621,7 @@
         }
         
         .concept:hover .concept-bg {
-            transform: scale(1.05); /* Slightly zoom background on hover */
+            transform: scale(1.05);
         }
         
         .concept:nth-child(1) .concept-bg {
@@ -755,17 +754,16 @@
             align-items: center;
             border-radius: 8px;
             position: relative;
-            overflow: hidden; /* 이미지가 컨테이너를 벗어나지 않도록 */
+            overflow: hidden;
         }
 
         .detail-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너를 채움 */
-            object-position: center top; /* 이미지 위치를 상단으로 조정 */
-            border-radius: 4px; /* 이미지 모서리를 약간 둥글게 */
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 4px;
         }
-
         
         .detail-info {
             flex: 2;
@@ -889,18 +887,18 @@
         }
 
         .logo-half {
-            flex: 1; /* 공간을 균등하게 분배 */
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* 넘치는 내용 숨김 */
+            overflow: hidden;
         }
 
         .logo-half img {
-            width: 100%; /* 이미지가 부모 요소의 전체 너비를 차지하도록 설정 */
+            width: 100%;
             height: auto;
-            display: block; /* 인라인 요소의 여백 제거 */
-            object-fit: cover; /* 비율 유지하면서 영역 채우기 */
+            display: block;
+            object-fit: cover;
         }
         
         /* 태그 이미지 그리드 */
@@ -945,7 +943,7 @@
 
         .brand-description {
             text-align: center;
-            color: #FF9BAA; /* 텍스트 색상 */
+            color: #FF9BAA;
         }
 
         .brand-is {
@@ -1032,8 +1030,8 @@
         .lifestyle-section {
             width: 100%;
             background-color: #ffeaef;
-            padding: 0; /* 패딩 제거 */
-            overflow: hidden; /* 혹시 이미지가 넘치는 것 방지 */
+            padding: 0;
+            overflow: hidden;
         }
 
         .lifestyle-image {
@@ -1041,13 +1039,13 @@
             margin: 0;
             padding: 0;
             position: relative;
-            line-height: 0; /* 이미지 아래 여백 제거 */
+            line-height: 0;
         }
 
         .lifestyle-image img {
             width: 100%;
             height: auto;
-            display: block; /* 이미지 하단 여백 제거 */
+            display: block;
             margin: 0;
             padding: 0;
         }
@@ -1112,7 +1110,6 @@
             color: #999;
             margin-top: 10px;
         }
-                        
         
         /* 빌보드 이미지 섹션 - 간단 스타일 */
         .billboard-section {
@@ -1124,7 +1121,7 @@
 
         .billboard-image {
             width: 100%;
-            height: 100vh; /* 화면 높이에 맞춤 */
+            height: 100vh;
             overflow: hidden;
             position: relative;
         }
@@ -1132,10 +1129,9 @@
         .billboard-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너를 채움 */
+            object-fit: cover;
             display: block;
         }
-        
         
         /* 웹사이트 섹션 - 애니메이션 효과 */
         .website-section {
@@ -1197,7 +1193,6 @@
             overflow: hidden;
         }
         
-        /* 여기부터 수정 시작 */
         .product-image {
             width: 100%;
             align-items: center;
@@ -1216,7 +1211,6 @@
             object-fit: cover;
         }
 
-        /* 초기 상태 설정 */
         .product-image img:nth-child(1) {
             opacity: 1;
         }
@@ -1260,7 +1254,6 @@
             100% { opacity: 0; }
         }
 
-        /* 애니메이션 적용 */
         .product-card .animate-product:nth-child(1) {
             animation: fadeInOut1 5s infinite;
         }
@@ -1398,7 +1391,6 @@
             text-transform: uppercase;
             margin-bottom: 40px;
         }
-    
         
         .social-content {
             margin-top: auto;
@@ -1498,63 +1490,6 @@
             font-family: 'Inter', sans-serif;
             font-size: 12px;
             color: #666;
-        }
-        
-        /* Dark mode for product details */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #181818;
-                color: var(--text-light);
-            }
-            
-            .product-description,
-            .overview,
-            .confidence-section {
-                color: var(--text-light);
-            }
-            
-            .product-detail-page {
-                background-color: #181818;
-            }
-            
-            .detail-header h1,
-            .detail-info h2,
-            .detail-info h3 {
-                color: var(--text-light);
-            }
-            
-            .detail-header {
-                border-bottom-color: #333;
-            }
-            
-            .core-value-item {
-                border-color: #333;
-            }
-            
-            .design-principle {
-                border-color: #333;
-            }
-            
-            .website-nav-item,
-            .website-logo,
-            .product-title {
-                color: #eee;
-            }
-            
-            .website-header {
-                background-color: #222;
-                border-color: #444;
-            }
-            
-            .website-grid,
-            .product-card,
-            .product-info {
-                background-color: #333;
-            }
-            
-            .product-price {
-                color: #aaa;
-            }
         }
         
         /* 반응형 디자인 - 체계적인 미디어 쿼리 */
@@ -1666,17 +1601,7 @@
             }
             
             .core-value-grid {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .model-image-container {
-                flex-basis: 48%;
-            }
-            
-            .model-image-container:last-child {
-                flex-basis: 100%;
-                margin-top: 20px;
+                gap: 15px; /* 간격만 줄이기 */
             }
             
             .mobile-container {
@@ -1863,17 +1788,34 @@
             }
             
             .core-value-grid {
+                gap: 10px;
+            }
+
+            .brand-design-content {
                 flex-direction: column;
+                gap: 30px;
+                padding: 20px;
             }
             
-            .model-image-container {
-                flex-basis: 100%;
-                margin-bottom: 20px;
+            .logo-description {
+                padding: 0;
             }
             
-            .model-image-container:last-child {
-                margin-top: 0;
+            .description-pt p, .description-en p {
+                font-size: 11px;
+                line-height: 1.3;
+                margin-bottom: 10px;
             }
+            
+            .description-pt h3, .description-en h3 {
+                font-size: 11px;
+                margin-bottom: 10px;
+            }
+            
+            .description-pt, .description-en {
+                margin-bottom: 25px;
+            }
+            
         }
 
         /* 소형 모바일 (575px 이하) */
@@ -1947,6 +1889,11 @@
                 font-size: 13px;
                 line-height: 1.5;
             }
+
+            .core-value-grid {
+                gap: 8px; /* 간격 최소화 */
+                padding: 0 10px; /* 좌우 패딩 추가 */
+            }
             
             .overview p {
                 font-size: 12px;
@@ -2001,6 +1948,7 @@
                 width: 250px;
                 height: 500px;
             }
+            
         }
     </style>
 </head>
@@ -2023,7 +1971,6 @@
         
         <div class="coluffy-hero">
         </div>
-        
         
         <div class="coluffy-columns">
             <div class="coluffy-column-black">
@@ -2061,140 +2008,139 @@
             </div>
         </div>
 
-                <!-- Logo Design and Typography Section -->
-                <div class="brand-design-section">
-                    <div class="brand-design-header">
-                        <h2>LOGO CONCEPT</h2>
+        <!-- Logo Design and Typography Section -->
+        <div class="brand-design-section">
+            <div class="brand-design-header">
+                <h2>LOGO CONCEPT</h2>
+            </div>
+            
+            <div class="brand-design-content">
+                <div class="logo-showcase">
+                    <div class="logo-variants">
+                        <div class="logo-variant">
+                            <img src="logo-c.webp" class="logo-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="logo-description">
+                    <div class="description-pt">
+                        <h3>COLUFFY</h3>
+                        <p>The coluffy logo features a fluid, flower-like form composed of soft, rounded lines.</p>
+                        <p>Its organically expanding curves and glossy jelly-like contours reflect the brand's core identity:
+                            playful, free-spirited, and unapologetically individual.
+                            Unlike rigid or geometric branding marks, the coluffy logo embraces irregularity and softness—representing a beauty standard that is self-defined rather than externally imposed.
+                            The lettering seamlessly blends into the floral silhouette, symbolizing a harmony between identity and expression.
+                        </p>
+                        <p>This is a logo that doesn't dictate; it flows.
+                            It invites you to express color not through perfection, but through personality.
+                            At its core, coluffy stands for a new kind of beauty—
+                            effortless, expressive, and unmistakably yours.</p>
                     </div>
                     
-                    <div class="brand-design-content">
-                        <div class="logo-showcase">
-                            <div class="logo-variants">
-                                <div class="logo-variant">
-                                    <img src="logo-c.webp" class="logo-image">
-                                </div>
-                            </div>
+                    <div class="description-en">
+                        <p>coluffy의 로고는 꽃처럼 부드럽게 퍼지는 자유로운 곡선으로 이루어져 있습니다.
+                            마치 젤리처럼 탱글하고 유려한 형태는 브랜드가 추구하는 감각적이고 유연한 아름다움을 상징합니다.</p>
+                        <p>단단한 직선이 아닌, 둥글고 흐르는 라인을 택한 이유는 coluffy가 '정답 없는 미'와 '내 마음대로의 표현'을 지지하기 때문입니다.
+                            로고는 하나의 꽃처럼 보이지만, 그 중심에는 글자가 자유롭게 얽히고 흩어지며, 틀에 얽매이지 않는 coluffy의 정신을 담아냅니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand-tagline-section">
+                <div class="brand-taglines">
+                    <p class="tagline"><sup>01</sup>Gloss with no rules <em>shine without fixed beauty standard</em></p>
+                    <p class="tagline"><sup>02</sup>Color the way you feel <em>encouraging self-expression through shades</em></p>
+                    <p class="tagline"><sup>03</sup>Just You <em>combining gentle aesthetics with bold individuality</em></p>
+                </div>
+                
+                <div class="brand-logo-oval">
+                    <img src="logo-c1.webp" class="logo-oval-image">
+                </div>
+            </div>
+            
+            <div class="brand-principles-content">
+                <div class="font-category">
+                    <div class="category-label">Title</div>
+                    <div class="category-label body-label">Body</div>
+                </div>
+                
+                <div class="font-samples">
+                    <!-- 타이틀 폰트 샘플 -->
+                    <div class="font-section">
+                        <div class="font-title">
+                            <div class="korean-name">adobe-aldine</div>
                         </div>
                         
-                        <div class="logo-description">
-                            <div class="description-pt">
-                                <h3>COLUFFY</h3>
-                                <p>The coluffy logo features a fluid, flower-like form composed of soft, rounded lines.</p>
-                                <p>Its organically expanding curves and glossy jelly-like contours reflect the brand’s core identity:
-                                    playful, free-spirited, and unapologetically individual.
-                                    Unlike rigid or geometric branding marks, the coluffy logo embraces irregularity and softness—representing a beauty standard that is self-defined rather than externally imposed.
-                                    The lettering seamlessly blends into the floral silhouette, symbolizing a harmony between identity and expression.
-                                </p>
-                                <p>This is a logo that doesn’t dictate; it flows.
-                                    It invites you to express color not through perfection, but through personality.
-                                    At its core, coluffy stands for a new kind of beauty—
-                                    effortless, expressive, and unmistakably yours.</p>
+                        <div class="font-description">
+                            <div class="korean-desc">softness, individuality, and playful imperfection</div>
+                            <div class="korean-desc">We create glosses colors that speak like feelings</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 바디 폰트 샘플 -->
+                    <div class="font-section body-section">
+                        <div class="font-title">
+                            <div class="english-name">INTER</div>
+                        </div>
+                        
+                        <div class="font-weights">
+                            <!-- Regular 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
+                                </div>
+                                <div class="weight-name">Inter<br>Regular</div>
                             </div>
                             
-                            <div class="description-en">
-                                <p>coluffy의 로고는 꽃처럼 부드럽게 퍼지는 자유로운 곡선으로 이루어져 있습니다.
-                                    마치 젤리처럼 탱글하고 유려한 형태는 브랜드가 추구하는 감각적이고 유연한 아름다움을 상징합니다.</p>
-                                <p>단단한 직선이 아닌, 둥글고 흐르는 라인을 택한 이유는 coluffy가 ‘정답 없는 미’와 ‘내 마음대로의 표현’을 지지하기 때문입니다.
-                                    로고는 하나의 꽃처럼 보이지만, 그 중심에는 글자가 자유롭게 얽히고 흩어지며, 틀에 얽매이지 않는 coluffy의 정신을 담아냅니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="brand-tagline-section">
-                        <div class="brand-taglines">
-                            <p class="tagline"><sup>01</sup>Gloss with no rules <em>shine without fixed beauty standard</em></p>
-                            <p class="tagline"><sup>02</sup>Color the way you feel <em>encouraging self-expression through shades</em></p>
-                            <p class="tagline"><sup>03</sup>Just You <em>combining gentle aesthetics with bold individuality</em></p>
-                        </div>
-                        
-                        <div class="brand-logo-oval">
-                            <img src="logo-c1.webp" class="logo-oval-image">
-                        </div>
-                    </div>
-                    
-                    <div class="brand-principles-content">
-                        <div class="font-category">
-                            <div class="category-label">Title</div>
-                            <div class="category-label body-label">Body</div>
-                        </div>
-                        
-                        <div class="font-samples">
-                            <!-- 타이틀 폰트 샘플 -->
-                            <div class="font-section">
-                                <div class="font-title">
-                                    <div class="korean-name">adobe-aldine</div>
+                            <!-- Semi Bold 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text semi-bold">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
-                                
-                                <div class="font-description">
-                                    <div class="korean-desc">softness, individuality, and playful imperfection</div>
-                                    <div class="korean-desc">We create glosses colors that speak like feelings</div>
-                                </div>
+                                <div class="weight-name">Inter<br>Semi Bold</div>
                             </div>
                             
-                            <!-- 바디 폰트 샘플 -->
-                            <div class="font-section body-section">
-                                <div class="font-title">
-                                    <div class="english-name">INTER</div>
+                            <!-- Extra Bold 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text extra-bold">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
-                                
-                                <div class="font-weights">
-                                    <!-- Regular 폰트 -->
-                                    <div class="font-weight-sample">
-                                        <div class="sample-text">
-                                            <p>감정을 닮은 컬러.</p>
-                                            <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                            <p>나다움을 증명할 필요 없어요.</p>
-                                        </div>
-                                        <div class="weight-name">Inter<br>Regular</div>
-                                    </div>
-                                    
-                                    <!-- Semi Bold 폰트 -->
-                                    <div class="font-weight-sample">
-                                        <div class="sample-text semi-bold">
-                                            <p>감정을 닮은 컬러.</p>
-                                            <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                            <p>나다움을 증명할 필요 없어요.</p>
-                                        </div>
-                                        <div class="weight-name">Inter<br>Semi Bold</div>
-                                    </div>
-                                    
-                                    <!-- Extra Bold 폰트 -->
-                                    <div class="font-weight-sample">
-                                        <div class="sample-text extra-bold">
-                                            <p>감정을 닮은 컬러.</p>
-                                            <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                            <p>나다움을 증명할 필요 없어요.</p>
-                                        </div>
-                                        <div class="weight-name">Inter<br>Extra Bold</div>
-                                    </div>
-                                    
-                                    <!-- Black 폰트 -->
-                                    <div class="font-weight-sample">
-                                        <div class="sample-text black">
-                                            <p>감정을 닮은 컬러.</p>
-                                            <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                            <p>나다움을 증명할 필요 없어요.</p>
-                                        </div>
-                                        <div class="weight-name">Inter<br>Black Italic</div>
-                                    </div>
+                                <div class="weight-name">Inter<br>Extra Bold</div>
+                            </div>
+                            
+                            <!-- Black 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text black">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
+                                <div class="weight-name">Inter<br>Black Italic</div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
         <div class="coluffy-webp"></div>
         <div class="coluffy-footer">
             <div class="coluffy-brand-name">Coluffy</div>
             <div class="coluffy-brand-description">
-                Coluffy는 누군가를 따라 만들지 않은, 오직 ‘나’를 위한 브랜드입니다.<br><br>
-                Everyone has their own color. Sometimes, you might feel like you haven’t found yours yet, or you may compare<br>
+                Coluffy는 누군가를 따라 만들지 않은, 오직 '나'를 위한 브랜드입니다.<br><br>
+                Everyone has their own color. Sometimes, you might feel like you haven't found yours yet, or you may compare<br>
                 yourself to others and feel uncertain.
                 But your true color will always reveal itself naturally, like a soft, blooming hue.
             </div>
         </div>
     </section>
-    
     
     <!-- Feature icons section -->
     <div class="feature-icons">
@@ -2216,7 +2162,6 @@
         </div>
     </div>
 
-    
     <!-- Product Detail Pages -->
     <div id="productDetailPages" class="hidden">
         <!-- tube01 Detail Page -->
@@ -2369,7 +2314,7 @@
             <img src="pd1.webp" alt="Coluffy Lip Texture" />
             <div class="product-description">
                 <p>Coluffy 립튜브는 연분홍빛의 글로시한 제형으로, 입술에 탱글한 생기를 더해줍니다.</p>
-                <p>가볍지만 끈적임 없이 촘촘하게 밀착되어, ‘탕후루 립’처럼 탱글하고 빛나는 입술 표현이 가능합니다.</p>
+                <p>가볍지만 끈적임 없이 촘촘하게 밀착되어, '탕후루 립'처럼 탱글하고 빛나는 입술 표현이 가능합니다.</p>
                 <p>투명한 광택감과 유리알처럼 반짝이는 마무리감은,
                     한 번의 터치만으로도 입술을 도톰하고 생기있게 연출해줍니다.</p>
             </div>
@@ -2389,7 +2334,6 @@
             <p>revealing the natural beauty of the lips—elevated with elegant simplicity.</p>
         </div>
         
-        
         <!-- box image section -->
         <div class="product-gallery">
             <div class="video-container">
@@ -2398,7 +2342,6 @@
             </div>
           </div>
           
-        
         <!-- Concept contrasts -->
         <div class="concept-contrasts">
             <div class="concept">
@@ -2415,7 +2358,7 @@
                     <div class="concept-label-neg">Unexpectedly Loved</div>
                     <div>#cherrydrip</div>
                 </div>
-                <div class="concept-label-bottom">One drop. That’s all it takes</div>
+                <div class="concept-label-bottom">One drop. That's all it takes</div>
             </div>
             <div class="concept">
                 <div class="concept-bg"></div>
@@ -2671,7 +2614,7 @@
                                 It just needs to feel right—<br>
                                 like a soft flush of light,
                                 or a quiet moment that lingers.
-                                coluffy captures those moods you can’t quite explain.
+                                coluffy captures those moods you can't quite explain.
                             </div>
                             <div class="social-footer">
                                 <div class="social-footer-item"><i class="far fa-heart"></i> 145</div>
@@ -2700,19 +2643,6 @@
     </section>
 
     <script>
-        // Check for dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
-        
         // Define main content and product detail pages
         const mainContent = document.querySelector('.container');
         const featureIcons = document.querySelector('.feature-icons');
@@ -2804,6 +2734,5 @@
             console.log('화면 크기가 변경되었습니다. 현재 너비: ' + window.innerWidth + 'px');
         });
     </script>
-
-
-</body></html>
+</body>
+</html>

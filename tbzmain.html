@@ -1,0 +1,1556 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <title>Hi, we're TBZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/w95fa" rel="stylesheet">
+    <style>
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    .vt323-regular {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    body {
+        background-color: #14858B;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    h1 {
+        font-family: 'Instrument Serif', serif;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 10px;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .left, .center, .right {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .center {
+        flex: 1;
+        text-align: center;
+    }
+
+    .window0 {
+        position: absolute;
+        left: 250px;
+        top: 100px;
+        display: none; /* 처음에 숨김 */
+        cursor: default;
+        width: 560px;
+        height: 330px;
+        border: 2px solid black;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        resize: none; /* 크기 조절 불가능하게 변경 */
+        overflow: hidden; /* 내부 body만 스크롤되도록 설정 */
+    }
+    .window2 {
+        position: absolute;
+        left: 400px;
+        top: 300px;
+        display: none; /* 처음에 숨김 */
+        z-index: 100;
+    }
+    #window1 {
+    height: 440px; /* 창 높이 조정 (이전에 논의됨) */
+    left: 250px;
+    top: 50px;
+    width: 560px;
+    resize: none;
+    background-color: #c0c0c0; /* Windows 98 회색 추가 */
+}
+
+    #window3 {
+        height: 500px;
+        left: 500px;
+        top: 300px;
+        width: 500px;
+    }
+
+    .frame-window {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .window-body {
+        padding-top:25px;
+        padding-bottom:0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin:0;
+        height: calc(300px); /* 제목바 높이 제외한 나머지를 body로 */
+        overflow-y: hidden; /* 세로 스크롤바 추가 */
+        overflow-x: hidden; /* 가로 스크롤바 숨김 */
+        box-sizing: border-box; /* 패딩 포함 크기 계산 */
+        background-color: #c0c0c0; /* Windows 98 회색 추가 */
+    }
+    
+    .window-body3 {
+        padding-top:25px;
+        padding-bottom:0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin:0;
+        height: calc(500px); /* 제목바 높이 제외한 나머지를 body로 */
+        overflow-y: hidden; /* 세로 스크롤바 추가 */
+        overflow-x: hidden; /* 가로 스크롤바 숨김 */
+        box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    }
+
+    /* 슬라이드 영역 스타일 */
+    .slide-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #c0c0c0; /* Windows 98 회색 추가 */
+   }
+
+    .slide-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 10px;
+    }
+
+    .slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #c0c0c0; /* Windows 98 회색 추가 */
+    }
+
+    .slide.active {
+        display: block;
+    }
+
+    /* 이미지 크기 조정 - 테두리 제거 & 비율 유지 */
+    .profile-img {
+        width: 100%;
+        max-width: 540px;
+        height: auto;
+        max-height: 550px;
+        object-fit: contain; /* 이미지 비율 유지하며 온전히 표시 */
+        margin: 0 auto; /* 하단 여백 제거 */
+        display: block;
+        border: none; /* 테두리 제거 */
+        box-shadow: none; /* 그림자 제거 */
+    }
+
+    .member-info {
+    margin: 0 auto; /* 좌우 자동 여백으로 가운데 정렬 */
+    padding-top: 10px;
+    font-family: 'W95FA', sans-serif;
+    max-width: 600px; /* 최대 너비 제한 */
+    width: 90%; /* 전체 너비의 80%만 사용 */
+    }
+
+    .member-name, .member-password {
+        display: flex;
+        align-items: center;
+        margin: 1px 0;
+    }
+
+    .member-name span, .member-password span {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .name-input, .password-input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+
+    .dropdown-button {
+        margin-left: 5px;
+        padding: 5px 8px;
+        background-color: #c0c0c0;
+        border: 1px solid #000;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    .dropdown-button:hover {
+        background-color: #a0a0a0;
+    }
+    
+    .dropdown-button:active {
+        background-color: #808080;
+    }
+
+    .role-button {
+        margin-top: 10px; /* 여백 더 줄임 */
+        padding: 3px 20px;
+        background-color: #FFD700;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+
+    /* 화살표 버튼 컨테이너 스타일 */
+    .nav-buttons {
+        position: absolute;
+        top: 25%; /* 화살표 위치 */
+        width: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        z-index: 50;
+        pointer-events: none;
+    }
+
+    /* 투명한 화살표 버튼 스타일 */
+    .nav-buttons button {
+        background-color: transparent; /* 배경 투명 */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        pointer-events: auto;
+        
+        /* 테두리 제거 */
+        border: none;
+        box-shadow: none;
+        
+        /* 화살표 스타일 */
+        font-size: 24px; /* 화살표 크기 키움 */
+        font-weight: bold;
+        color: #333; /* 어두운 회색 */
+    }
+
+    /* 호버 효과 */
+    .nav-buttons button:hover {
+        color: #000; /* 검정색으로 변경 */
+    }
+
+    /* 클릭 효과 */
+    .nav-buttons button:active {
+        transform: scale(0.95); /* 약간 축소 효과 */
+    }
+
+    .title-bar {
+        background-color: #333;
+        color: white;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: move; /* 드래그 가능하도록 커서 설정 */
+    }
+
+    .title-bar-text {
+        font-size: 14px;
+    }
+
+    .title-bar-controls button {
+        width: 16px;
+        height: 16px;
+        background: #ccc;
+        border: none;
+        margin-left: 4px;
+        cursor: pointer;
+    }
+
+    .title-bar-controls button:hover {
+        background: #aaa;
+    }
+
+    .img-1 img, .img-2 img, .img-3 img, .img-4 img, .img-5 img, .img-6 img {
+        width: 100px; /* 원하는 너비 */
+        height: auto; /* 비율 유지 */
+        cursor: pointer;
+    }
+
+    .img-container {
+        padding: 20px;
+    }
+    
+    .img-1, .img-2, .img-3, .img-4, .img-5, .img-6 {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    #wrap {
+        min-height: calc(100vh - 28px); /* Adjust for the taskbar */
+        position: relative;
+        width: 100%;
+    }
+    .image-bottom {
+        width: 100%;
+        height: 30px; /* 내용물에 따라 알맞는 값 설정 */
+        bottom: 0px;
+        position: absolute;
+    }
+    .widnow-top{
+        display:flex;
+    }
+    html, body {
+        margin:0;
+        padding: 0;
+    }
+
+    /* Start bar styles */
+    .taskbar {
+        position: fixed;
+        font-family: 'W95FA', sans-serif;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 28px;
+        background-color: #c0c0c0;
+        border-top: 1px solid #ffffff;
+        display: flex;
+        z-index: 1000;
+    }
+
+    .start-button {
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        height: 22px;
+        margin: 2px;
+        background-color: #c0c0c0;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid #000000;
+        border-right: 1px solid #000000;
+        cursor: pointer;
+    }
+
+    .start-button img {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+    }
+
+    .start-button:active, .start-button.active {
+        border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-bottom: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+    }
+
+    .start-menu {
+        position: absolute;
+        font-family: 'W95FA', sans-serif;
+        bottom: 28px;
+        left: 0;
+        width: 200px;
+        background-color: #c0c0c0;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid #000000;
+        border-right: 1px solid #000000;
+        display: none;
+        flex-direction: column;
+        padding: 2px;
+        z-index: 1001;
+    }
+
+    .start-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 4px 6px;
+        cursor: pointer;
+    }
+
+    .start-menu-item:hover {
+        background-color: #000080;
+        color: white;
+    }
+
+    .start-menu-item img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
+
+    .start-menu-divider {
+        height: 1px;
+        background-color: #808080;
+        margin: 2px 0;
+    }
+
+    .taskbar-separator {
+        width: 1px;
+        height: 22px;
+        background-color: #808080;
+        margin: 2px 5px;
+    }
+
+    .task-buttons {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    .task-button {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        min-width: 120px;
+        max-width: 200px;
+        margin: 2px 3px;
+        padding: 0 7px;
+        background-color: #c0c0c0;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid #000000;
+        border-right: 1px solid #000000;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .task-button.active {
+        border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-bottom: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        background-color: #bfbfbf;
+    }
+
+    .system-tray {
+        display: flex;
+        align-items: center;
+        height: 22px;
+        margin: 2px;
+        padding: 0 5px;
+        background-color: #c0c0c0;
+        border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-bottom: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+    }
+
+    .clock {
+        font-family: 'W95FA', sans-serif;
+        font-size: 14px;
+        padding: 0 5px;
+    }
+
+    .win98-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+    }
+
+    .win98-logo-part {
+        width: 8px;
+        height: 8px;
+    }
+
+    .win98-logo-part:nth-child(1) {
+        background-color: #ff0000;
+    }
+    .win98-logo-part:nth-child(2) {
+        background-color: #00ff00;
+    }
+    .win98-logo-part:nth-child(3) {
+        background-color: #0000ff;
+    }
+    .win98-logo-part:nth-child(4) {
+        background-color: #ffff00;
+    }
+
+    .start-menu-header {
+        background: linear-gradient(to right, #000080, #1084d0);
+        color: white;
+        height: 54px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 8px;
+        margin-bottom: 5px;
+        font-family: 'VT323', monospace;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* 슬라이드 인디케이터 추가 */
+    .slide-indicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 0; /* 여백 제거 */
+    }
+
+    .slide-indicator .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+
+    .slide-indicator .dot.active {
+        background-color: #333;
+    }
+    
+    /* 비밀번호 표시 애니메이션 */
+    @keyframes passwordReveal {
+        0% { background-color: #f0f0f0; }
+        50% { background-color: #ffff80; }
+        100% { background-color: white; }
+    }
+    
+    .password-reveal {
+        animation: passwordReveal 1s ease;
+    }
+
+    /* 포스트잇 메모 스타일 */
+    .sticky-note {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #ffff90;
+        border: 1px solid #d4d45a;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        font-family: 'W95FA', sans-serif;
+        font-size: 12px;
+        cursor: move;
+        z-index: 50;
+        transform: rotate(0deg);
+        transition: transform 0.2s ease;
+    }
+
+    .sticky-note-header {
+        background-color: #e6e635;
+        padding: 2px 5px;
+        border-bottom: 1px solid #d4d45a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 18px;
+        cursor: move;
+    }
+
+    .sticky-note-title {
+        font-size: 11px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .sticky-note-close {
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-size: 10px;
+        width: 14px;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        min-width: 14px;
+    }
+
+    .sticky-note-close:hover {
+        background-color: #ff6b6b;
+        color: white;
+    }
+
+    .sticky-note-content {
+        padding: 8px;
+        height: calc(100% - 40px);
+        overflow: hidden;
+    }
+
+    .sticky-note-text {
+        width: 100%;
+        height: calc(100% - 25px);
+        border: none;
+        background: transparent;
+        font-family: 'W95FA', sans-serif;
+        font-size: 12px;
+        resize: none;
+        outline: none;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    .sticky-note-date {
+        position: absolute;
+        bottom: 5px;
+        right: 8px;
+        font-size: 10px;
+        color: #666;
+    }
+
+    .add-note-btn {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background-color: #ffff90;
+        border: 2px solid #d4d45a;
+        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        cursor: pointer;
+        z-index: 60;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .add-note-btn:hover {
+        background-color: #e6e635;
+    }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>
+        <span class="center">Hi, we're The Boyz!</span>
+    </h1>
+    
+    <!-- 포스트잇 추가 버튼 -->
+    <button class="add-note-btn" onclick="addStickyNote()" title="Add Sticky Note">+</button>
+    
+    <!-- 기본 포스트잇 메모 -->
+    <div class="sticky-note" id="note1" style="top: 120px; left: 600px;">
+        <div class="sticky-note-header">
+            <span class="sticky-note-title">NOTICE</span>
+            <button class="sticky-note-close" onclick="removeStickyNote('note1')">×</button>
+        </div>
+        <div class="sticky-note-content">
+            <textarea class="sticky-note-text" placeholder="This is a sample sticky note">Album detail page is in TIME.
+plz click time icon and check it out for page!</textarea>
+            <div class="sticky-note-date">04/03/2018 12:06 PM</div>
+        </div>
+    </div>
+    
+    <div class="img-container">
+        <div class="img-1">
+            <img src="Artboard_1.png" alt="Image 1">
+        </div>
+        <div class="img-2">
+            <img src="Artboard_2.png" alt="Image 2">
+        </div>
+        <div class="img-3">
+            <img src="Artboard_4.png" alt="Image 3">
+        </div>
+        <div class="img-4">
+            <img src="Artboard_3.png" alt="Image 4">
+        </div>
+        <div class="img-5">
+            <img src="Artboard_5.png" alt="Image 5">
+        </div>
+        <div class="img-6">
+            <img src="Artboard_6.png" alt="Image 6">
+        </div>
+    </div>
+    <div class="window0" id="window1">
+        <div class="title-bar" id="titleBar1">
+            <div class="title-bar-text">Find Out Your Dream.exe</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="closeWindow('window1')"></button>
+            </div>
+        </div>
+        <div class="window-body" style="padding: 0; overflow: hidden; height: calc(680px - 30px);">
+            <!-- 슬라이드 기능을 iframe 대신 직접 구현 -->
+            <div class="slide-container">
+                <!-- 이전/다음 버튼 - 이미지 위에 표시되도록 위치 변경 -->
+                <div class="nav-buttons">
+                    <button id="prevBtn" onclick="changeSlide(-1)">◀</button>
+                    <button id="nextBtn" onclick="changeSlide(1)">▶</button>
+                </div>
+                
+                <div class="slide-wrapper" id="slideContainer">
+                    <!-- 슬라이드 1 - Sangyeon -->
+                    <div class="slide active" data-index="0">
+                        <img src="tbz1.png" alt="Sangyeon" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Sangyeon" readonly="">
+                                <button class="dropdown-button" data-birthday="1996.11.04">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 2 - Jacob -->
+                    <div class="slide" data-index="1">
+                        <img src="tbz2.png" alt="Jacob" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Jacob" readonly="">
+                                <button class="dropdown-button" data-birthday="1997.05.30">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">lead vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 3 - Younghoon -->
+                    <div class="slide" data-index="2">
+                        <img src="tbz3.png" alt="Younghoon" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Younghoon" readonly="">
+                                <button class="dropdown-button" data-birthday="1997.08.08">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">sub vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 4 - Hyunjae -->
+                    <div class="slide" data-index="3">
+                        <img src="tbz4.png" alt="Hyunjae" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Hyunjae" readonly="">
+                                <button class="dropdown-button" data-birthday="1997.09.13">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">lead vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 5 - Juyeon -->
+                    <div class="slide" data-index="4">
+                        <img src="tbz5.png" alt="Juyeon" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Juyeon" readonly="">
+                                <button class="dropdown-button" data-birthday="1998.01.15">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main dancer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 6 - Kevin -->
+                    <div class="slide" data-index="5">
+                        <img src="tbz6.png" alt="Kevin" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Kevin" readonly="">
+                                <button class="dropdown-button" data-birthday="1998.02.23">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 7 - New -->
+                    <div class="slide" data-index="6">
+                        <img src="tbz7.png" alt="New" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="New" readonly="">
+                                <button class="dropdown-button" data-birthday="1998.04.26">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main vocal</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 8 - Q (Changmin) -->
+                    <div class="slide" data-index="7">
+                        <img src="tbz8.png" alt="Q" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Q (Changmin)" readonly="">
+                                <button class="dropdown-button" data-birthday="1998.11.05">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main dancer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 9 - Juhaknyeon -->
+                    <div class="slide" data-index="8">
+                        <img src="tbz9.png" alt="Juhaknyeon" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Juhaknyeon" readonly="">
+                                <button class="dropdown-button" data-birthday="2000.03.09">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">lead dancer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 10 - Sunwoo -->
+                    <div class="slide" data-index="9">
+                        <img src="tbz10.png" alt="Sunwoo" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Sunwoo" readonly="">
+                                <button class="dropdown-button" data-birthday="2000.04.12">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">main rapper</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 슬라이드 11 - Eric -->
+                    <div class="slide" data-index="10">
+                        <img src="tbz11.png" alt="Eric" class="profile-img">
+                        <div class="member-info">
+                            <div class="member-name">
+                                <span>🔍 name:</span>
+                                <input type="text" class="name-input" value="Eric" readonly="">
+                                <button class="dropdown-button" data-birthday="2000.12.22">▼</button>
+                            </div>
+                            <div class="member-password">
+                                <span>password:</span>
+                                <input type="text" class="password-input" value="" readonly="">
+                                <span style="margin-left: 5px;">(hint: birthday)</span>
+                            </div>
+                            <button class="role-button">lead rapper, lead dancer</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 슬라이드 인디케이터 -->
+                <div class="slide-indicator" id="slideIndicator">
+                    <!-- 인디케이터는 JavaScript로 동적 생성 -->
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="window0" id="window2">
+        <div class="title-bar" id="titleBar2">
+            <div class="title-bar-text">Media Player</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="closeWindow('window2')"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="frame-window"><iframe width="560" height="315" src="https://www.youtube.com/embed/fP-DiwUaVVQ?si=qhnHTnenGv7WhIdT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+        </div>
+    </div>
+    <div class="window0" id="window3">
+        <div class="title-bar" id="titleBar3">
+            <div class="title-bar-text">Find Out Your Dream.exe</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="closeWindow('window3')"></button>
+            </div>
+        </div>
+        <div class="window-body3" style="padding: 0; overflow: hidden;">
+            <!-- Minesweeper 게임을 여기에 삽입 -->
+            <iframe src="jirae2.html" style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+    </div>
+    <div class="window2" id="window4">
+    </div>
+
+    <!-- Windows 98 Start Bar -->
+    <div class="taskbar">
+        <div class="start-button" id="startButton">
+            <div class="win98-logo">
+                <div class="win98-logo-part"></div>
+                <div class="win98-logo-part"></div>
+                <div class="win98-logo-part"></div>
+                <div class="win98-logo-part"></div>
+            </div>
+            <span>Start</span>
+        </div>
+        <div class="taskbar-separator"></div>
+        <div class="task-buttons" id="taskButtons">
+            <!-- Task buttons will be generated dynamically -->
+        </div>
+        <div class="system-tray">
+            <div class="clock" id="clock">12:00 AM</div>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu" id="startMenu">
+        <div class="start-menu-header">
+            PHANTASY<span style="font-size: 18px;">TBZ</span>
+        </div>
+        <div class="start-menu-item" onclick="showWindow('window1')">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIvPjxyZWN0IHg9IjMiIHk9IjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSIyIiBmaWxsPSIjMDAwIi8+PHJlY3QgeD0iMyIgeT0iOSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjIiIGZpbGw9IiMwMDAiLz48L3N2Zz4=" alt="Dream">
+            THE BOYZ
+        </div>
+        <div class="start-menu-item" onclick="showWindow('window2')">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIvPjxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSI0IiBmaWxsPSIjMDAwIi8+PHJlY3QgeD0iNyIgeT0iMiIgd2lkdGg9IjIiIGhlaWdodD0iMyIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==" alt="Media">
+            Memory : Media Player
+        </div>
+        <div class="start-menu-item" onclick="showWindow('window3')">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIvPjxjaXJjbGUgY3g9IjQiIGN5PSI0IiByPSIxLjUiIGZpbGw9IiMwMDAiLz48Y2lyY2xlIGN4PSI4IiBjeT0iNCIgcj0iMS41IiBmaWxsPSIjMDAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI0IiByPSIxLjUiIGZpbGw9IiMwMDAiLz48Y2lyY2xlIGN4PSI0IiBjeT0iOCIgcj0iMS41IiBmaWxsPSIjMDAwIi8+PGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjEuNSIgZmlsbD0iIzAwMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMS41IiBmaWxsPSIjMDAwIi8+PGNpcmNsZSBjeD0iNCIgY3k9IjEyIiByPSIxLjUiIGZpbGw9IiMwMDAiLz48Y2lyY2xlIGN4PSI4IiBjeT0iMTIiIHI9IjEuNSIgZmlsbD0iIzAwMCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEuNSIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==" alt="Game">
+            Dream? (Game)
+        </div>
+        <div class="start-menu-item" onclick="openWinamp()">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIvPjxwYXRoIGQ9Ik00LDQgTDEyLDggTDQsMTIgWiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==" alt="Music">
+            Phantasy Pt.2
+        </div>
+        <div class="start-menu-item" onclick="addStickyNote()">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmZmOTAiIHN0cm9rZT0iI2Q0ZDQ1YSIvPjxsaW5lIHgxPSI4IiB5MT0iNCIgeDI9IjgiIHkyPSIxMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNCIgeTE9IjgiIHgyPSIxMiIgeTI9IjgiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="Note">
+            Add Sticky Note
+        </div>
+        <div class="start-menu-divider"></div>
+        <div class="start-menu-item" onclick="window.location.href='https://x.com/THEBOYZ_officl'">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cmVjdCB4PSIxIiB5PSIxIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIvPjxwYXRoIGQ9Ik00LDEyIEwxMiw0IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iNCIgcj0iMiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==" alt="X">
+            Love X
+        </div>
+        <div class="start-menu-item" onclick="window.location.href='time.html'">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMDAwIi8+PGxpbmUgeDE9IjgiIHkxPSI4IiB4Mj0iOCIgeTI9IjQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iOCIgeTE9IjgiIHgyPSIxMSIgeTI9IjEwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+" alt="Time">
+            Check Out Detail
+        </div>
+        <div class="start-menu-divider"></div>
+        <div class="start-menu-item" onclick="shutDown()">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMDAwIi8+PGxpbmUgeDE9IjgiIHkxPSI0IiB4Mj0iOCIgeTI9IjEyIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="Shutdown">
+            Shut Down...
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+<script>
+    // 포스트잇 관련 변수
+    let noteCounter = 1;
+    let noteZIndex = 60;
+
+    // 포스트잇 추가 함수
+    function addStickyNote() {
+        closeStartMenu();
+        noteCounter++;
+        noteZIndex++;
+        
+        const now = new Date();
+        const dateString = now.toLocaleDateString('en-US', {
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric'
+        }) + ' ' + now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+        
+        const noteId = 'note' + noteCounter;
+        const randomX = Math.random() * (window.innerWidth - 250) + 50;
+        const randomY = Math.random() * (window.innerHeight - 250) + 100;
+        // const randomRotation = (Math.random() - 0.5) * 8; // 회전 제거 // -4도에서 4도 사이
+        
+        const noteHtml = `
+            <div class="sticky-note" id="${noteId}" style="top: ${randomY}px; left: ${randomX}px; z-index: ${noteZIndex}; /* transform: rotate(${randomRotation}deg); */ /* 회전 제거 */">
+                <div class="sticky-note-header">
+                    <span class="sticky-note-title">Note's title</span>
+                    <button class="sticky-note-close" onclick="removeStickyNote('${noteId}')">×</button>
+                </div>
+                <div class="sticky-note-content">
+                    <textarea class="sticky-note-text" placeholder="Write your note here..."></textarea>
+                    <div class="sticky-note-date">${dateString}</div>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById('wrap').insertAdjacentHTML('beforeend', noteHtml);
+        
+        // 새로 생성된 포스트잇에 드래그 기능 추가
+        setupNoteDragging(noteId);
+    }
+
+    // 포스트잇 제거 함수
+    function removeStickyNote(noteId) {
+        const note = document.getElementById(noteId);
+        if (note) {
+            note.remove();
+        }
+    }
+
+    // 포스트잇 드래그 기능 설정
+    function setupNoteDragging(noteId) {
+        const note = document.getElementById(noteId);
+        const header = note.querySelector('.sticky-note-header');
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        header.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - note.offsetLeft;
+            offsetY = e.clientY - note.offsetTop;
+            
+            // 클릭한 포스트잇을 최상위로 가져오기
+            noteZIndex++;
+            note.style.zIndex = noteZIndex;
+            
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+            e.preventDefault();
+        });
+
+        function onMouseMove(e) {
+            if (!isDragging) return;
+            const newX = e.clientX - offsetX;
+            const newY = e.clientY - offsetY;
+            
+            // 화면 밖으로 나가지 않도록 제한
+            const maxX = window.innerWidth - note.offsetWidth;
+            const maxY = window.innerHeight - note.offsetHeight - 30; // 작업표시줄 공간 확보
+            
+            note.style.left = `${Math.min(Math.max(0, newX), maxX)}px`;
+            note.style.top = `${Math.min(Math.max(0, newY), maxY)}px`;
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+    }
+
+    // Webamp Configuration
+    const window4 = document.getElementById("window4");
+    const Webamp = window.Webamp;
+    let webamp = null;
+    let webampLoaded = false;
+    
+    // 초기화 단계 - Webamp 인스턴스 생성
+    function setupWebamp() {
+        if (webamp) {
+            return webamp; // 이미 생성된 인스턴스가 있으면 반환
+        }
+        
+        // 새 인스턴스 생성 (원래 설정으로 복원)
+        webamp = new Webamp({
+            initialTracks: [
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "WATCH IT",
+                    },
+                    url: "watchit.mp3",
+                    duration: 179.322286,
+                },
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "덫 (Rat In The Trap)",
+                    },
+                    url: "ratinthetrap.mp3",
+                    duration: 200.322286,
+                },
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "Honey",
+                    },
+                    url: "honey.mp3",
+                    duration: 168.322286,
+                },
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "Bad Luck",
+                    },
+                    url: "badluck.mp3",
+                    duration: 178.322286,
+                },
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "CRYING&LAUGHTER",
+                    },
+                    url: "cryinglaughter.mp3",
+                    duration: 194.322286,
+                },
+                {
+                    metaData: {
+                        artist: "The Boyz",
+                        title: "Escape",
+                    },
+                    url: "escape.mp3",
+                    duration: 206.322286,
+                },
+            ]
+        });
+        
+        // 이벤트 핸들러 설정
+        webamp.onClose(() => {
+            window4.style.display = 'none';
+            updateTaskbar();
+        });
+        
+        return webamp;
+    }
+    
+    // Webamp 로드 및 표시
+    function openWinamp() {
+        // Webamp 표시 전 시작 메뉴 닫기
+        closeStartMenu();
+        
+        // Webamp 컨테이너를 표시
+        window4.style.display = 'block';
+        
+        if (!webampLoaded) {
+            // 최초 로드 시에만 실행
+            const instance = setupWebamp();
+            
+            try {
+                // Webamp 렌더링
+                instance.renderWhenReady(window4).then(() => {
+                    webampLoaded = true;
+                    updateTaskbar();
+                    console.log("Webamp loaded");
+                    
+                    // 첫 번째 트랙 자동 재생
+                    setTimeout(() => {
+                        try {
+                            instance.play();
+                            console.log("Auto-playing first track");
+                        } catch (err) {
+                            console.error("Error playing track:", err);
+                        }
+                    }, 1000);
+                });
+            } catch (err) {
+                console.error("Error rendering Webamp:", err);
+            }
+        } else {
+            // 이미 로드된 경우 표시만
+            if (webamp) {
+                try {
+                    webamp.reopen();
+                } catch (err) {
+                    console.error("Error reopening Webamp:", err);
+                }
+            }
+        }
+        
+        updateTaskbar();
+    }
+
+    // name 드롭다운 버튼 이벤트 처리 함수
+    function setupDropdownHandlers() {
+        // 모든 드롭다운 버튼에 이벤트 리스너 추가
+        document.querySelectorAll('.dropdown-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 현재 슬라이드의 비밀번호 입력란 찾기
+                const slide = this.closest('.slide');
+                const passwordInput = slide.querySelector('.password-input');
+                
+                // 버튼에 저장된 생일 데이터 가져오기
+                const birthday = this.getAttribute('data-birthday');
+                
+                // 비밀번호 입력란에 생일 설정
+                passwordInput.value = birthday;
+                
+                // 애니메이션 효과 추가 (노란색 배경 깜빡임)
+                passwordInput.classList.remove('password-reveal');
+                void passwordInput.offsetWidth; // 리플로우 유발하여 애니메이션 재시작
+                passwordInput.classList.add('password-reveal');
+            });
+        });
+    }
+
+    // 슬라이드 관련 변수와 함수
+    let currentSlide = 0; // sangyeon를 기본값으로 설정 (인덱스 0)
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    // 슬라이드 인디케이터 생성
+    function createSlideIndicators() {
+        const indicatorContainer = document.getElementById('slideIndicator');
+        indicatorContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = i === currentSlide ? 'dot active' : 'dot';
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+            });
+            indicatorContainer.appendChild(dot);
+        }
+    }
+
+    // 특정 슬라이드로 바로 이동
+    function goToSlide(slideIndex) {
+        // 현재 슬라이드에서 active 클래스 제거
+        slides[currentSlide].classList.remove('active');
+        
+        // 새 슬라이드 설정
+        currentSlide = slideIndex;
+        
+        // 새 슬라이드에 active 클래스 추가
+        slides[currentSlide].classList.add('active');
+        
+        // 슬라이드 변경 시 비밀번호 필드 초기화
+        const passwordInput = slides[currentSlide].querySelector('.password-input');
+        if (passwordInput) {
+            passwordInput.value = '';
+        }
+        
+        // 인디케이터 업데이트
+        updateIndicators();
+    }
+
+    // 슬라이드 변경 함수
+    function changeSlide(direction) {
+        // 현재 슬라이드에서 active 클래스 제거
+        slides[currentSlide].classList.remove('active');
+        
+        // 다음 슬라이드 인덱스 계산
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        
+        // 새 슬라이드에 active 클래스 추가
+        slides[currentSlide].classList.add('active');
+        
+        // 슬라이드 변경 시 비밀번호 필드 초기화
+        const passwordInput = slides[currentSlide].querySelector('.password-input');
+        if (passwordInput) {
+            passwordInput.value = '';
+        }
+        
+        // 인디케이터 업데이트
+        updateIndicators();
+    }
+
+    // 인디케이터 업데이트
+    function updateIndicators() {
+        const dots = document.querySelectorAll('.slide-indicator .dot');
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Get image elements
+    const img1 = document.querySelector('.img-1 img');
+    const img2 = document.querySelector('.img-2 img');
+    const img3 = document.querySelector('.img-3 img');
+    const img4 = document.querySelector('.img-4 img');
+    const img5 = document.querySelector('.img-5 img');
+    const img6 = document.querySelector('.img-6 img');
+
+    // 이벤트 리스너 설정
+    img1.addEventListener('dblclick', () => {
+        // 대신 window1을 표시하도록 변경
+        showWindow('window1');
+    });
+    
+    img2.addEventListener('dblclick', () => {
+        showWindow('window2'); // YouTube 플레이어만 열기
+    });
+    
+    img3.addEventListener('dblclick', () => {
+        showWindow('window3');
+    });
+    
+    img4.addEventListener('dblclick', () => {
+        openWinamp(); // Winamp 열기
+    });
+    
+    img5.addEventListener('dblclick', () => {
+        window.location.href = 'https://x.com/THEBOYZ_officl';
+    });
+    
+    img6.addEventListener('dblclick', () => {
+        window.location.href = 'time.html';
+    });
+
+    // 일반 창 표시 함수
+    function showWindow(windowId) {
+        closeStartMenu(); // 창을 열기 전에 시작 메뉴 닫기
+        const windowEl = document.getElementById(windowId);
+        windowEl.style.display = 'block';
+        
+        // 창을 최상위로 가져오기
+        windowEl.style.zIndex = getHighestZIndex() + 1;
+        
+        updateTaskbar();
+    }
+    
+    // 창 닫기 함수
+    function closeWindow(windowId) {
+        const windowEl = document.getElementById(windowId);
+        windowEl.style.display = 'none';
+        updateTaskbar();
+    }
+
+    // 시작 메뉴 닫기
+    function closeStartMenu() {
+        startMenu.style.display = 'none';
+        startButton.classList.remove('active');
+    }
+
+    // Draggable windows
+    document.querySelectorAll('.window0 .title-bar').forEach(titleBar => {
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+        let windowEl = titleBar.closest('.window0');
+
+        titleBar.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - windowEl.offsetLeft;
+            offsetY = e.clientY - windowEl.offsetTop;
+            
+            // 클릭한 창을 최상위로 가져오기
+            windowEl.style.zIndex = getHighestZIndex() + 1;
+            
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+
+        function onMouseMove(e) {
+            if (!isDragging) return;
+            const newX = e.clientX - offsetX;
+            const newY = e.clientY - offsetY;
+            
+            // 화면 밖으로 나가지 않도록 제한
+            const maxX = window.innerWidth - windowEl.offsetWidth;
+            const maxY = window.innerHeight - windowEl.offsetHeight;
+            
+            windowEl.style.left = `${Math.min(Math.max(0, newX), maxX)}px`;
+            windowEl.style.top = `${Math.min(Math.max(0, newY), maxY)}px`;
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+    });
+
+    // Start Menu functionality
+    const startButton = document.getElementById('startButton');
+    const startMenu = document.getElementById('startMenu');
+    const taskButtons = document.getElementById('taskButtons');
+    const clock = document.getElementById('clock');
+
+    startButton.addEventListener('click', () => {
+        if (startMenu.style.display === 'flex') {
+            startMenu.style.display = 'none';
+            startButton.classList.remove('active');
+        } else {
+            startMenu.style.display = 'flex';
+            startButton.classList.add('active');
+        }
+    });
+
+    // Close start menu when clicking elsewhere
+    document.addEventListener('click', (e) => {
+        if (!startMenu.contains(e.target) && !startButton.contains(e.target) && startMenu.style.display === 'flex') {
+            startMenu.style.display = 'none';
+            startButton.classList.remove('active');
+        }
+    });
+
+    // Update taskbar with open windows
+    function updateTaskbar() {
+        taskButtons.innerHTML = '';
+        
+        // Find all open windows
+        const openWindows = Array.from(document.querySelectorAll('.window0')).filter(win => 
+            win.style.display === 'block'
+        );
+        
+        // Webamp special case
+        if (webampLoaded && window4.style.display === 'block') {
+            const button = document.createElement('div');
+            button.className = 'task-button';
+            button.textContent = 'Winamp';
+            button.onclick = () => {
+                window4.style.display = 'block';
+                if (webamp) {
+                    try {
+                        webamp.reopen();
+                    } catch (err) {
+                        console.error("Error reopening Webamp:", err);
+                    }
+                }
+            };
+            taskButtons.appendChild(button);
+        }
+        
+        // Create a button for each open window
+        openWindows.forEach(win => {
+            const titleText = win.querySelector('.title-bar-text').textContent;
+            const button = document.createElement('div');
+            button.className = 'task-button';
+            button.textContent = titleText;
+            button.onclick = () => {
+                // Bring window to front
+                win.style.zIndex = getHighestZIndex() + 1;
+                win.style.display = 'block';
+            };
+            taskButtons.appendChild(button);
+        });
+    }
+
+    function getHighestZIndex() {
+        let highest = 0;
+        document.querySelectorAll('.window0').forEach(win => {
+            const zIndex = parseInt(window.getComputedStyle(win).zIndex) || 0;
+            if (zIndex > highest) highest = zIndex;
+        });
+        return highest;
+    }
+
+    // Update clock
+    function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Convert 0 to 12
+        
+        clock.textContent = `${hours}:${minutes} ${ampm}`;
+    }
+
+    // Mock shutdown function
+    function shutDown() {
+        if (confirm('Are you sure you want to shut down?')) {
+            document.body.innerHTML = `
+                <div style="height:100vh; display:flex; align-items:center; justify-content:center; background-color:#000080; color:white; font-family:'VT323', monospace; font-size:24px;">
+                    <div>
+                        <p>It's now safe to turn off your computer.</p>
+                        <p style="text-align:center;"><button onclick="location.reload()" style="padding:10px 20px; cursor:pointer;">Restart</button></p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // 키보드 이벤트 리스너 추가 (방향키로 슬라이드 변경)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            changeSlide(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeSlide(1);
+        }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        // 드롭다운 버튼 이벤트 핸들러 설정
+        setupDropdownHandlers();
+        
+        // 슬라이드 인디케이터 생성
+        createSlideIndicators();
+        
+        updateClock();
+        setInterval(updateClock, 60000); // Update every minute
+        
+        // 초기 taskbar update
+        updateTaskbar();
+        
+        // 기본 포스트잇에 드래그 기능 추가
+        setupNoteDragging('note1');
+        
+        // Winamp 초기화 및 자동 재생 (위치 조정)
+        setupWebamp();
+        setTimeout(() => {
+            openWinamp();
+        }, 1200);
+    });
+</script>
+
+
+</body></html>

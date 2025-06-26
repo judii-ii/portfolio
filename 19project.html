@@ -1,645 +1,872 @@
-<head>
-    <title>project 1</title>
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <title>19</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
     @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Orbit-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.navbar {
-    font-family: 'Orbit-Regular';
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0; /* Light gray background */
-    padding: 0 0 5px 0;
-    border-bottom: 1px solid #333; /* Dark line at the bottom */
-}
-
-.navbar-item1 {
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #333;
-    /* background-color: #5d3e3e; */
-}
-
-.navbar-item1 a {
-    cursor: pointer;
-    user-select: none;
-}
-
-.navbar-item2 {
-    flex-grow: 9;
-    /* background-color: #245ab0; */
-}
-
-.navbar-item3 {
-    flex-grow: 1;
-    text-align: center;
-    border-left: 1px solid #333;
-    /* background-color: #9f35c2; */
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
-}
-
-.navbar-item3:hover {
-  text-decoration: underline; /* 호버 시 시각적 피드백 */
-}
-
-.navbar-item4 {
-    flex-grow: 1;
-    text-align: center;
-    padding-left: 10px;
-    border-left: 1px solid #333;
-    color: black; /* 기본 텍스트 색 */
-    text-decoration: none; /* 밑줄 제거 */
-    cursor: pointer; /* 손가락 모양 커서 */
-    font-family: inherit;
-    font-weight: bold; /* 필요시 */
-}
-
-.navbar-item4:hover {
-  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
-}
-
-@media (max-width: 600px) {
-    .project-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
     }
+
+    @font-face {
+        font-family: 'Orbit-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {
+        cursor: url('danchu.png') 16 16, auto;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #efefef;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        font-family: 'Orbit-Regular';
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 0 0 5px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .navbar-item1 {
+        flex-grow: 1;
+        text-align: center;
+        border-right: 1px solid #333;
+    }
+
+    .navbar-item1 a {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .navbar-item2 {
+        flex-grow: 9;
+    }
+
+    .navbar-item3 {
+        flex-grow: 1;
+        text-align: center;
+        border-left: 1px solid #333;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    .navbar-item3:hover {
+        text-decoration: underline;
+    }
+
+    .navbar-item4 {
+        flex-grow: 1;
+        text-align: center;
+        padding-left: 10px;
+        border-left: 1px solid #333;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    .navbar-item4:hover {
+        text-decoration: underline;
+    }
+
+    .title1 {
+        position: relative;
+        font-family: 'Pretendard-Regular';
+        font-size: 40px;
+    }
+
+    .title2 {
+        position: relative;
+        font-family: 'Pretendard-Regular';
+        font-size: 40px;
+    }
+
+    .project-wrapper {
+        display: flex;
+        height: 150px;
+        padding-top: 30px;
+        justify-content: space-between;
+        transform: translateY(0);
+        transition: transform 0.3s ease-out;
+    }
+
+    .project_title {
+        flex-grow: 6;
+        line-height: 1;
+        padding-left: 50px;
+    }
+
     .project-container {
-        align-items: flex-start;
+        display: flex;
+        flex-grow: 1;
+        font-family: 'Pretendard-Regular';
+        font-size: 12px;
+        overflow: hidden;
+        animation: fadein 2s ease-in-out;
+    }
+
+    .project-with {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .project-person {
+        padding: 5px 0 0 10px;
+    }
+
+    .project-type {
+        font-weight: 500;
+        font-size: 14px;
         margin-top: 20px;
     }
-}
 
-* {
-    cursor: url('danchu.png') 16 16, auto;
-}
-body {
-    background-color: #efefef;
-    margin: 0;
-}
+    .project-type2 {
+        line-height: 1;
+        padding: 5px 0 0 10px;
+    }
 
+    .col1, .col2 {
+        flex-grow: 1;
+    }
 
-.title1 {
-    position: relative;
-    font-family: 'Pretendard-Regular';
-    font-size: 40px;
-}
+    .project-note {
+        font-weight: 500;
+        font-size: 14px;
+    }
 
-.title2 {
-    position: relative;
-    font-family: 'Pretendard-Regular';
-    font-size: 40px;
-}
+    .project-note2 {
+        padding: 5px 0 0 10px;
+    }
 
-.project-wrapper {
-    display: flex;
-    height: 150px;
-    padding-top: 30px;
-    justify-content: space-between;
-    transform: translateY(0);
-    transition: transform 0.3s ease-out;
-}
+    .project-contribution {
+        font-weight: 500;
+        font-size: 14px;
+        margin-top: 20px;
+    }
 
-.project_title {
-    flex-grow: 6;
-    line-height: 1;
-    padding-left: 50px;
-}
+    .project-contribution2 {
+        line-height: 1;
+        padding: 5px 0 0 10px;
+    }
 
+    .line {
+        border-top: 1px solid black;
+        width: 100%;
+    }
 
-.project-container {
-    display: flex;
-    flex-grow: 1;
-    font-family: 'Pretendard-Regular';
-    font-size: 12px;
-    overflow: hidden;
-    animation: fadein 2s ease-in-out;
+    .line2 {
+        display: flex;
+        width: 80%;
+        text-align: left;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding-top: 2vh;
+        font-family: 'Orbit-Regular';
+        font-size: 20px;
+        overflow: hidden;
+        animation: fadein 2s ease-in-out;
+    }
 
-}
+    .img-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1vh;
+        flex-grow: 1;
+    }
 
-.project-with {
-    font-weight: bolder;
-    font-size: 14px;
-}
+    .img-container img {
+        max-width: 100%;
+        height: auto;
+    }
 
-.project-person {
-    padding: 5px 0 0 10px;
-}
+    .main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
 
-.project-type {
-    font-weight: bolder;
-    font-size: 14px;
-    margin-top: 20px;
-}
+    .main img {
+        width: 110%;
+        height: auto;
+        transform: translateY(0);
+        transition: transform 0.3s ease-out;
+    }
 
-.project-type2 {
-    line-height: 1;
-    padding: 5px 0 0 10px;
-}
+    .writing1 {
+        display: flex;
+        align-items: center;
+        margin-top: 20vh;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+        animation: fade-in 2s ease-in-out;
+    }
 
-.col1, .col2 {
-    flex-grow: 1;
-}
+    .cont1 {
+        flex-grow: 6;
+        padding-left: 70px;
+        font-family: 'Pretendard-Bold';
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        padding-top: 10px;
+        line-height: 48px;
+    }
 
-.project-note {
-    font-weight: bolder;
-    font-size: 14px;
-}
+    .cont2 {
+        flex-grow: 1;
+        padding-top: 12px;
+        padding-right: 100px;
+        font-family: 'Orbit-Regular';
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
 
-.project-note2 {
-    padding: 5px 0 0 10px;
-}
+    .album-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        margin: 100px auto;
+    }
 
-.project-contribution {
-    font-weight: bolder;
-    font-size: 14px;
-    margin-top: 20px;
-}
+    .album-item {
+        width: 300px;
+        text-align: center;
+        cursor: pointer;
+    }
 
-.project-contribution2 {
-    line-height: 1;
-    padding: 5px 0 0 10px;
-}
+    .album-cover img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
 
-.line {
-    border-top: 1px solid black;
-    width: 100%;
-}
+    .album-item:hover .album-cover img {
+        transform: scale(1.03);
+    }
 
-.line2 {
-    display: flex;
-    width: 80%;
-    text-align: left;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding-top: 2vh;
-    font-family: 'Orbit-Regular';
-    font-size: 20px;
-    overflow: hidden;
-    animation: fadein 2s ease-in-out;
-}
+    .album-info {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        font-size: 14px;
+        font-family: 'Orbit', sans-serif;
+        margin-top: 10px;
+        line-height: 1.5;
+    }
 
-.img-container {
-    display: flex; /* 요소 정렬을 위한 Flexbox 사용 */
-    align-items: center;
-    flex-direction: column;
-    margin-top: 1vh; /* 위 요소와 간격 */
-    flex-grow: 1;
-}
+    .album-item.active .album-info {
+        max-height: 300px;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-.img-container img {
-    max-width: 100%; /* 이미지가 컨테이너를 벗어나지 않도록 제한 */
-    height: auto; /* 비율 유지 */
-}
+    .album-info::after {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 1px;
+        background-color: #bbb;
+        margin: 20px auto 0;
+        opacity: 0.4;
+    }
 
-.main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
+    .nineteen-design3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        margin-top: 5vh;
+        animation: fade-in 2s ease-in-out;
+        overflow: hidden;
+    }
 
-.main img {
-    width: 110%;
-    height: auto;
-    transform: translateY(0);
-    transition: transform 0.3s ease-out;
-}
+    .nineteen-design3 img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+    }
 
-.writing1 {
-    display: flex; /* 플렉스 컨테이너로 설정 */
-    align-items: center;
-    margin-top: 20vh;
-    flex-direction: row; /* 가로 방향 배치 */
-    width: 100%;
-    gap: 20px; /* 컨테이너 사이 간격 */
-    animation: fade-in 2s ease-in-out;
-}
+    .album-writing3 {
+        font-family: 'Orbit-Regular';
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        text-align: center;
+        align-items: center;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
 
-.cont1 {
-    flex-grow: 6;
-    padding-left: 70px;
-    font-family: 'Pretendard-Bold';
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    padding-top: 10px;
-    line-height: 48px;
-}
-.cont2 {
-    flex-grow: 1;
-    padding-top: 12px;
-    padding-right: 100px;
-    font-family: 'Orbit-Regular';
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
-}
+    .nineteen-design5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        margin-top: 5vh;
+        animation: fade-in 2s ease-in-out;
+        overflow: hidden;
+    }
 
-.album-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  margin: 100px auto;
-}
+    .nineteen-design5 img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+    }
 
-.album-item {
-  width: 300px;
-  text-align: center;
-  cursor: pointer;
-}
+    .nineteen-design6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin: 5vh auto;
+        padding: 20px 0;
+        overflow: hidden;
+    }
 
-.album-cover img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
+    .nineteen-design6 img {
+        width: 100%;
+        max-width: 80%;
+        height: auto;
+        object-fit: contain;
+        transition: opacity 0.5s ease-in-out;
+        display: block;
+    }
 
-.album-item:hover .album-cover img {
-  transform: scale(1.03);
-}
-
-.album-info {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  font-size: 14px;
-  font-family: 'Orbit', sans-serif;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-.album-item.active .album-info {
-  max-height: 300px;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.album-info::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 1px;
-  background-color: #bbb;
-  margin: 20px auto 0;
-  opacity: 0.4;
-}
-
-
-.nineteen-design3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw; /* 뷰포트 너비 100% */
-    height: auto; /* 뷰포트 높이 100% */
-    margin: 0;
-    padding: 0;
-    margin-top: 5vh;
-    animation: fade-in 2s ease-in-out;
-    overflow: hidden; /* 넘치는 부분 숨김 */
-}
-
-.nineteen-design3 img {
-    width: 100%; /* 부모 요소에 맞게 */
-    height: 100%; /* 부모 요소에 맞게 */
-    max-width: none; /* 최대 너비 제한 제거 */
-    max-height: none; /* 최대 높이 제한 제거 */
-    object-fit: contain; /* 이미지가 뷰포트를 꽉 채우도록 */
-}
-
-.album-writing3 {
-    font-family: 'Orbit-Regular';
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-align: center;
-    align-items: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-
-.nineteen-design5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw; /* 뷰포트 너비 100% */
-    height: auto; /* 뷰포트 높이 100% */
-    margin: 0;
-    padding: 0;
-    margin-top: 5vh;
-    animation: fade-in 2s ease-in-out;
-    overflow: hidden; /* 넘치는 부분 숨김 */
-}
-
-.nineteen-design5 img {
-    width: 100%; /* 부모 요소에 맞게 */
-    height: 100%; /* 부모 요소에 맞게 */
-    max-width: none; /* 최대 너비 제한 제거 */
-    max-height: none; /* 최대 높이 제한 제거 */
-    object-fit: contain; /* 이미지가 뷰포트를 꽉 채우도록 */
-}
-
-.nineteen-design6 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    max-width: 100%; /* 크기를 조정하고 싶다면 값 변경 가능 */
-    margin: 5vh auto; /* 화면 중앙 정렬 + 위아래 여백 추가 */
-    padding: 20px 0; /* 위아래 여백 추가 */
-    overflow: hidden;
-}
-
-.nineteen-design6 img {
-    width: 100%;
-    max-width: 80%; /* 이미지 크기 조정 (조절 가능) */
-    height: auto;
-    object-fit: contain;
-    transition: opacity 0.5s ease-in-out;
-    display: block;
-}
-
-.nineteen-design6 img:last-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-}
-
-.nineteen-design6:hover img:first-child {
-    opacity: 0;
-}
-
-.nineteen-design6:hover img:last-child {
-    opacity: 1;
-}
-
-.nineteen-design7 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw; /* 뷰포트 너비 100% */
-    height: auto; /* 뷰포트 높이 100% */
-    margin: 0;
-    padding: 0;
-    margin-top: 5vh;
-    animation: fade-in 2s ease-in-out;
-    overflow: hidden; /* 넘치는 부분 숨김 */
-}
-
-.nineteen-design7 img {
-    width: 100%; /* 부모 요소에 맞게 */
-    height: 100%; /* 부모 요소에 맞게 */
-    max-width: none; /* 최대 너비 제한 제거 */
-    max-height: none; /* 최대 높이 제한 제거 */
-    object-fit: contain; /* 이미지가 뷰포트를 꽉 채우도록 */
-}
-
-.nineteen-design8 {
-    background-color: #333;
-    display: flex;
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    height: auto; /* 높이를 내용에 맞게 조절 */
-    animation: fade-in 2s ease-in-out;
-}
-
-.book1, .book2 {
-    width: 50%; /* 두 개의 요소를 정확히 반반 배치 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.book1 img, .book2 img {
-    width: 80%; /* 부모 요소의 너비를 꽉 채우도록 설정 */
-    height: auto; /* 이미지 비율 유지 */
-    max-height: 100vh; /* 화면을 넘지 않도록 설정 */
-    object-fit: contain; /* 이미지가 잘리지 않도록 조절 */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.nineteen-design9 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw; /* 뷰포트 너비 100% */
-    height: auto; /* 뷰포트 높이 100% */
-    margin: 0;
-    padding: 0;
-    animation: fade-in 2s ease-in-out;
-    overflow: hidden; /* 넘치는 부분 숨김 */
-}
-
-.nineteen-design9 img {
-    width: 100%; /* 부모 요소에 맞게 */
-    height: auto; /* 부모 요소에 맞게 */
-    max-width: none; /* 최대 너비 제한 제거 */
-    max-height: none; /* 최대 높이 제한 제거 */
-    object-fit: contain; /* 이미지가 뷰포트를 꽉 채우도록 */
-}
-
-.album-writing4 {
-    font-family: 'Orbit-Regular';
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-align: center;
-    align-items: center;
-    margin-top: 10vh;
-    margin-bottom: 2vh;
-}
-
-.album-writing5 {
-    font-family: 'Orbit-Regular';
-    font-size: clamp(0.8rem, 1.2vw, 0.8rem);
-    text-align: center;
-    align-items: center;
-    margin-bottom: 5vh;
-}
-
-/* 개별 섹션 설정 */
-.parallax-section {
-    position: relative;
-    height: 100vh; /* 화면 전체 높이 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* 배경이 고정된 패럴렉스 효과 */
-.parallax-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat; /* 반복 방지 */
-    background-position: center;
-    background-attachment: fixed; /* 배경을 고정 */
-    z-index: -1;
-}
-
-/* 패럴렉스 효과 줄 이미지 */
-.parallax-image {
-    position: absolute;
-    width: 80%;
-    max-width: 100%;
-    height: auto;
-    transform: translateY(0);
-    transition: transform 0.1s ease-out;
-}
-
-.youtube-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 10vh;
-  padding-bottom: 10vh;
-}
-
-.youtube-wrapper iframe {
-  max-width: 960px;
-  width: 100%;
-  aspect-ratio: 16 / 9; /* 유지 가능한 경우 */
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-
-/* fade-in 애니메이션 정의 */
-@keyframes fadein{
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-
-}
-
-@-webkit-keyframes album-img1 {
-  0% {
-    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-    -webkit-transform-origin: 100% 50%;
-            transform-origin: 100% 50%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-}
-@keyframes album-img1 {
-  0% {
-    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-    -webkit-transform-origin: 100% 50%;
-            transform-origin: 100% 50%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-}
-
-/* .album-img2 애니메이션 정의 (오른쪽에서 날아오기) */
-@-webkit-keyframes album-img2 {
-    0% {
-        -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-        -webkit-transform-origin: 0% 50%;
-        transform-origin: 0% 50%;
-        -webkit-filter: blur(40px);
-        filter: blur(40px);
+    .nineteen-design6 img:last-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         opacity: 0;
     }
-    100% {
-        -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-        transform: translateX(0) scaleY(1) scaleX(1);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        opacity: 1;
-    }
-}
-@keyframes album-img2 {
-    0% {
-        -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-        -webkit-transform-origin: 0% 50%;
-        transform-origin: 0% 50%;
-        -webkit-filter: blur(40px);
-        filter: blur(40px);
+
+    .nineteen-design6:hover img:first-child {
         opacity: 0;
     }
-    100% {
-        -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-        transform: translateX(0) scaleY(1) scaleX(1);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        -webkit-filter: blur(0);
-        filter: blur(0);
+
+    .nineteen-design6:hover img:last-child {
         opacity: 1;
     }
-}
 
+    .nineteen-design7 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        margin-top: 5vh;
+        animation: fade-in 2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .nineteen-design7 img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .nineteen-design8 {
+        background-color: #333;
+        display: flex;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        height: auto;
+        animation: fade-in 2s ease-in-out;
+    }
+
+    .book1, .book2 {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .book1 img, .book2 img {
+        width: 80%;
+        height: auto;
+        max-height: 100vh;
+        object-fit: contain;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .nineteen-design9 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        animation: fade-in 2s ease-in-out;
+        overflow: hidden;
+    }
+
+    .nineteen-design9 img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .album-writing4 {
+        font-family: 'Orbit-Regular';
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        text-align: center;
+        align-items: center;
+        margin-top: 10vh;
+        margin-bottom: 2vh;
+    }
+
+    .album-writing5 {
+        font-family: 'Orbit-Regular';
+        font-size: clamp(0.8rem, 1.2vw, 0.8rem);
+        text-align: center;
+        align-items: center;
+        margin-bottom: 5vh;
+    }
+
+    .parallax-section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .parallax-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+
+    .parallax-image {
+        position: absolute;
+        width: 80%;
+        max-width: 100%;
+        height: auto;
+        transform: translateY(0);
+        transition: transform 0.1s ease-out;
+    }
+
+    .youtube-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    .youtube-wrapper iframe {
+        max-width: 960px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* 애니메이션 */
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @-webkit-keyframes album-img1 {
+        0% {
+            -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes album-img1 {
+        0% {
+            -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes album-img2 {
+        0% {
+            -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes album-img2 {
+        0% {
+            -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            -webkit-filter: blur(40px);
+            filter: blur(40px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+            transform: translateX(0) scaleY(1) scaleX(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
+
+    /* 미디어 쿼리 - 기본 스타일 정의 후 하단에 배치 */
+    
+    /* 모바일 디바이스 (768px 이하) */
+    @media (max-width: 768px) {
+        /* project-wrapper 반응형 */
+        .project-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            height: auto;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .project_title {
+            padding-left: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .project-container {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .col1, .col2 {
+            width: 100%;
+            padding: 0;
+        }
+
+        /* 기타 요소들 반응형 */
+        .writing1 {
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 10vh;
+            padding: 0 20px;
+        }
+
+        .cont1 {
+            padding-left: 20px;
+            text-align: center;
+        }
+
+        .cont2 {
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        .album-gallery {
+            gap: 30px;
+            margin: 50px 20px;
+        }
+
+        .album-item {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .nineteen-design8 {
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px 20px;
+        }
+
+        .book1, .book2 {
+            width: 100%;
+        }
+
+        .parallax-section {
+            height: 20vh;
+        }
+
+        .parallax-background {
+            background-attachment: scroll !important;
+        }
+
+        .line2 {
+            width: 90%;
+            padding: 20px;
+            font-size: clamp(16px, 4vw, 20px);
+        }
+
+        .main {
+            padding: 0 20px;
+        }
+
+        .main img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .album-writing5 {
+            padding: 0 20px;
+        }
+
+        .youtube-wrapper {
+            padding: 0 20px 10vh 20px;
+        }
+
+        .youtube-wrapper iframe {
+            height: clamp(200px, 50vw, 400px);
+        }
+    }
+
+    /* 세로 모드 모바일 (480px 이하) */
+    @media (max-width: 480px) {
+        .project-wrapper {
+            padding: 15px;
+        }
+
+        .title1, .title2 {
+            font-size: clamp(24px, 8vw, 32px);
+        }
+
+        .album-gallery {
+            margin: 30px 15px;
+            gap: 20px;
+        }
+
+        .album-item {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .youtube-wrapper iframe {
+            height: 200px;
+        }
+
+        .writing1 {
+            margin-top: 5vh;
+            padding: 0 15px;
+        }
+
+        .parallax-section {
+            height: 40vh;
+        }
+
+        .line2 {
+            padding: 15px;
+            width: 95%;
+        }
+
+        .album-writing5 {
+            padding: 0 15px;
+        }
+
+        .nineteen-design8 {
+            padding: 20px 15px;
+        }
+    }
+
+    /* 태블릿 (768px ~ 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .album-gallery {
+            gap: 30px;
+            margin: 80px auto;
+        }
+        
+        .album-item {
+            width: 250px;
+        }
+
+        .cont1 {
+            padding-left: 40px;
+        }
+
+        .cont2 {
+            padding-right: 50px;
+        }
+
+        .youtube-wrapper iframe {
+            height: 400px;
+        }
+    }
+
+    /* 데스크톱 대형 화면 (1200px 이상) */
+    @media (min-width: 1200px) {
+        .album-gallery {
+            max-width: 1200px;
+        }
+
+        .cont1 {
+            padding-left: 100px;
+        }
+
+        .cont2 {
+            padding-right: 120px;
+        }
+    }
+
+    /* 가로 모드 모바일 */
+    @media (max-height: 500px) and (orientation: landscape) {
+        .parallax-section {
+            height: 100vh;
+        }
+        
+        .writing1 {
+            margin-top: 5vh;
+        }
+        
+        .album-gallery {
+            margin: 50px auto;
+        }
+    }
+
+    /* 터치 디바이스 최적화 */
+    @media (hover: none) and (pointer: coarse) {
+        .album-item:hover .album-cover img {
+            transform: none;
+        }
+        
+        .album-cover {
+            touch-action: manipulation;
+        }
+        
+        .navbar-item3, .navbar-item4 {
+            min-height: 44px;
+        }
+        
+        .nineteen-design6:hover img:first-child {
+            opacity: 1;
+        }
+        
+        .nineteen-design6:hover img:last-child {
+            opacity: 0;
+        }
+    }
+
+    /* 프린트 스타일 */
+    @media print {
+        .navbar, .youtube-wrapper, .parallax-section {
+            display: none;
+        }
+        
+        .album-gallery {
+            break-inside: avoid;
+        }
+        
+        body {
+            background: white;
+            color: black;
+        }
+    }
 </style>
+</head>
 
 <body>
     <div class="navbar">
         <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
         <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
+    
     <div class="project-wrapper">
         <div class="project_title">
             <div class="title1"> ⟡ 19</div>
@@ -660,12 +887,15 @@ body {
             </div>
         </div>
     </div>
+    
     <div class="img-container">
         <div class="line"></div>
         <div class="line2">Hello, we are 19! <br>
         결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다. CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.</div>
     </div>
+    
     <div class="main"><img src="p1.webp" alt="포폴gif"></div>
+    
     <div class="writing1">
         <div class="cont1">19(NANA) <br> Album Design</div>
         <div class="cont2">가수 19(NANA)의 여러 앨범 디자인을 맡으며, 음악적 스타일과 이미지를 깊이 이해하고 반영하는 작업을 진행했습니다.<br>
@@ -674,12 +904,12 @@ body {
             또한, 실물 앨범을 책 형태로 직접 제작하면서, 굿즈와 함께 판매하는 전략을 펼쳐 큰 성과를 이루었습니다. 
         </div>
     </div>
+    
     <div class="img-container">
         <img src="main.webp" alt="포폴gif">
     </div>
     
     <div class="album-gallery">
-
         <div class="album-item">
           <div class="album-cover"><img src="album1.webp" alt="album1"></div>
           <div class="album-info">2018 1st single<br>summer side A<br>title : jelly</div>
@@ -723,50 +953,55 @@ body {
           <div class="album-cover"><img src="album8.webp" alt="album8"></div>
           <div class="album-info">2021 3rd single<br>cherry carnival<br>title : coco</div>
         </div>
-      
-      </div>
+    </div>
       
     <div class="nineteen-design3">
         <img src="nineteen2.webp" alt="포폴2gif">
     </div>
+    
     <div class="nineteen-design4">
         <div class="album-writing3">Album Book ver.</div>
     </div>
+    
     <div class="nineteen-design5">
         <img src="book3.webp" alt="book3">
     </div>
+    
     <div class="nineteen-design6">
         <img src="book4.webp" alt="book">
         <img src="book5.webp" alt="book-hover">
     </div>
+    
     <div class="nineteen-design7">
         <img src="book6.webp" alt="book6">
     </div>
+    
     <div class="nineteen-design8">
         <div class="book1"><img src="book1.webp" alt="book1"></div>
         <div class="book2"><img src="book2.webp" alt="book2"></div>
     </div>
+    
     <div class="nineteen-design9">
         <img src="book7.webp" alt="book7">
     </div>
+    
     <div class="nineteen-design10">
         <div class="album-writing4">Musicvideo</div>
         <div class="album-writing5">뮤직비디오의 디렉터로 활동하여 NANA의 싱글 및 ep에 필요한 부수적인
             콘텐츠를 제작하였습니다.<br> 그 외, 다양한 컨셉사진의 촬영 및 보정을 진행했습니다. <br>또한, YOUTUBE를 관리하면서 간접적인 마케팅
             및 홍보를 담당하기도 했습니다.</div>
     </div>
+    
     <section class="parallax-section">
         <div class="parallax-background" style="background-image: url('03.webp');"></div>
         <img src="03.webp" class="parallax-image" data-speed="0.3">
     </section>
     
-    <!-- 두 번째 섹션 (08.jpg) -->
     <section class="parallax-section">
         <div class="parallax-background" style="background-image: url('08.webp');"></div>
         <img src="08.webp" class="parallax-image" data-speed="0.6">
     </section>
 
-    <!-- 3 번째 섹션 (15.jpg) -->
     <section class="parallax-section">
         <div class="parallax-background" style="background-image: url('15.webp');"></div>
         <img src="15.webp" class="parallax-image" data-speed="0.9">
@@ -783,21 +1018,9 @@ body {
     </section>
 
     <div class="youtube-wrapper">
-        <iframe 
-          width="100%" 
-          height="600" 
-          src="https://www.youtube.com/embed/BrOtGB51eAk" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
+        <iframe width="100%" height="600" src="https://www.youtube.com/embed/BrOtGB51eAk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
         </iframe>
-      </div>
-      
-
-    
-
-</body>
+    </div>
 
 <script>
 // Intersection Observer 설정
@@ -807,24 +1030,20 @@ const albumImg2 = document.querySelector('.album-img2');
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // 요소가 뷰포트에 들어오면 animate 클래스 추가
             entry.target.classList.add('animate');
-            // 한 번 실행 후 관찰 중지
             observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.1 // 요소의 10%가 보일 때 트리거
+    threshold: 0.1
 });
 
-// .album-img1과 .album-img2 요소를 관찰
 if (albumImg1) {
     observer.observe(albumImg1);
 }
 if (albumImg2) {
     observer.observe(albumImg2);
 }
-
 
 document.addEventListener("scroll", function () {
     let scrollPosition = window.scrollY;
@@ -838,7 +1057,11 @@ document.addEventListener("scroll", function () {
 
 document.querySelectorAll(".album-cover").forEach(cover => {
     cover.addEventListener("click", () => {
-      cover.parentElement.classList.toggle("active");
+        cover.parentElement.classList.toggle("active");
     });
-  });
+});
 </script>
+
+
+
+</body></html>
