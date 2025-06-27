@@ -1,182 +1,177 @@
 <!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <title>juyoung</title>
 
 <style>
     @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Orbit-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-* {
-    cursor: url('danchu.png') 16 16, auto;
-}
-body {
-    background-color: #efefef;
-    margin: 0;
-    overflow-x: hidden; /* 가로 스크롤 방지 */
-}
-
-.introduce {
-    color: grey;
-}
-.navbar {
-    font-family: 'Orbit-Regular';
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0; /* Light gray background */
-    padding: 0 0 5px 0;
-    border-bottom: 1px solid #333; /* Dark line at the bottom */
-}
-
-.navbar-item1 {
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #333;
-    /* background-color: #5d3e3e; */
-}
-
-.navbar-item1 a {
-    cursor: pointer;
-    user-select: none;
-}
-
-.navbar-item2 {
-    flex-grow: 9;
-    /* background-color: #245ab0; */
-}
-
-.navbar-item3 {
-    flex-grow: 1;
-    text-align: center;
-    border-left: 1px solid #333;
-    /* background-color: #9f35c2; */
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
-}
-
-.navbar-item3:hover {
-  text-decoration: underline; /* 호버 시 시각적 피드백 */
-}
-
-.navbar-item4 {
-    flex-grow: 1;
-    text-align: center;
-    padding-left: 10px;
-    border-left: 1px solid #333;
-    color: black; /* 기본 텍스트 색 */
-    text-decoration: none; /* 밑줄 제거 */
-    cursor: pointer; /* 손가락 모양 커서 */
-    font-family: inherit;
-    font-weight: bold; /* 필요시 */
-}
-
-.navbar-item4:hover {
-  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
-}
-
-
-.introduce {
-    position: relative;
-    font-family: 'Pretendard-Regular';
-    font-size: 12px;
-    margin-top: 20px;
-    margin-left: 40px;
-}
-
-.img-container {
-    display: flex;
-    justify-content: center;
-}
-
-.img-container img {
-    max-width: 1200px;
-    width: 100%;
-    height: auto;
-}
-
-.flow-text {
-	  display: flex;
-      margin-top: 20px;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-      padding-bottom: 3px;
-      flex: 0 0 auto;
-      white-space: nowrap;
-      overflow: hidden;
-      transition: 0.1s;
-      font-family: 'Orbit-Regular';
-      font-size: 1rem;
-      /* font-weight:bold; */
-      color: #9D9993;
-  }
-
-  .flow-text:hover {
-    color: #000;
-  }
-
-  .flow-text:hover .flow-wrap {
-    animation-play-state: paused;
-    cursor: pointer;
-  }
-  
-  .flow-wrap {
-    animation: textLoop 12s linear infinite;
-    padding-right: 4vw;
-  }
-  
-  @keyframes textLoop {
-    0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
     }
-    100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
-    }
-  }
 
-  .sthumbnail-container {
-      display: grid;
-      position: relative;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 3200px;
+    @font-face {
+        font-family: 'Orbit-Regular';
+        src: url('./fonts/Orbit-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    * {
+        cursor: url('danchu.png') 16 16, auto;
+    }
+
+    body {
+        background-color: #efefef;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .introduce {
+        color: grey;
+    }
+
+    .navbar {
+        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 0 0 5px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .navbar-item1 {
+        flex-grow: 1;
+        text-align: center;
+        border-right: 1px solid #333;
+    }
+
+    .navbar-item1 a {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .navbar-item2 {
+        flex-grow: 9;
+    }
+
+    .navbar-item3 {
+        flex-grow: 1;
+        text-align: center;
+        border-left: 1px solid #333;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    .navbar-item3:hover {
+        text-decoration: underline;
+    }
+
+    .navbar-item4 {
+        flex-grow: 1;
+        text-align: center;
+        padding-left: 10px;
+        border-left: 1px solid #333;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    .navbar-item4:hover {
+        text-decoration: underline;
+    }
+
+    .introduce {
+        position: relative;
+        font-family: 'Pretendard-Regular';
+        font-size: 12px;
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-container img {
+        max-width: 1200px;
+        width: 100%;
+        height: auto;
+    }
+
+    .flow-text {
+        display: flex;
+        margin-top: 20px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-bottom: 3px;
+        flex: 0 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: 0.1s;
+        font-family: 'Orbit-Regular', 'Pretendard-Regular', Arial, sans-serif;
+        font-size: 0.8rem;
+        color: #9D9993;
+    }
+
+    .flow-text:hover {
+        color: #000;
+    }
+
+    .flow-text:hover .flow-wrap {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .flow-wrap {
+        animation: textLoop 12s linear infinite;
+        padding-right: 4vw;
+    }
+
+    @keyframes textLoop {
+        0% {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+
+    .sthumbnail-container {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 3200px;
     }
 
     .sthumbnail-container .sthumbnail-1 {
         position: relative;
-        overflow: hidden; /* 이미지 경계 밖으로 나가는 요소 숨기기 */
+        overflow: hidden;
     }
 
     .sthumbnail-1 img {
-      width: 100%;
-      aspect-ratio:  1 / 1; /* 정사각형 유지 */
-      object-fit: cover;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .sthumbnail-1 .hover-button {
@@ -187,11 +182,10 @@ body {
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
         padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은 배경 */
+        background-color: rgba(0, 0, 0, 0.7);
         color: #fff;
         font-family: 'Pretendard-Regular';
         font-size: 14px;
-        /* font-weight: bold; */
         text-align: center;
         border: none;
         border-radius: 20px;
@@ -199,13 +193,13 @@ body {
     }
 
     .sthumbnail-1:hover .hover-button {
-        opacity: 1; /* 호버 시 버튼 표시 */
+        opacity: 1;
     }
 
     .sthumbnail-1 {
         position: relative;
-        width: 100%; /* 부모 요소 크기에 맞춤 */
-        padding-top: 100%; /* 정사각형 비율 유지 (1:1) */
+        width: 100%;
+        padding-top: 100%;
         overflow: hidden;
     }
 
@@ -215,18 +209,18 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* 이미지 비율 유지하며 채우기 */
+        object-fit: cover;
     }
 
     .overlay-text1 {
         position: absolute;
-        top: 10%; /* 이미지 상단으로부터 상대적 위치 */
-        left: 18%; /* 이미지 왼쪽으로부터 상대적 위치 */
+        top: 10%;
+        left: 18%;
         transform: translate(-50%, -50%);
         color: white;
         font-family: 'Pretendard-Regular';
         font-weight: lighter;
-        font-size: 1.5vw; /* 뷰포트 너비를 기준으로 글자 크기 조정 */
+        font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         z-index: 2;
         pointer-events: none;
@@ -234,13 +228,13 @@ body {
 
     .overlay-text2 {
         position: absolute;
-        top: 10%; /* 이미지 상단으로부터 상대적 위치 */
-        left: 20%; /* 이미지 왼쪽으로부터 상대적 위치 */
+        top: 10%;
+        left: 20%;
         transform: translate(-50%, -50%);
         color: white;
         font-family: 'Pretendard-Regular';
         font-weight: lighter;
-        font-size: 1.5vw; /* 뷰포트 너비를 기준으로 글자 크기 조정 */
+        font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         z-index: 2;
         pointer-events: none;
@@ -248,13 +242,13 @@ body {
 
     .overlay-text3 {
         position: absolute;
-        top: 10%; /* 이미지 상단으로부터 상대적 위치 */
-        left: 12%; /* 이미지 왼쪽으로부터 상대적 위치 */
+        top: 10%;
+        left: 12%;
         transform: translate(-50%, -50%);
         color: white;
         font-family: 'Pretendard-Regular';
         font-weight: lighter;
-        font-size: 1.5vw; /* 뷰포트 너비를 기준으로 글자 크기 조정 */
+        font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         z-index: 2;
         pointer-events: none;
@@ -262,40 +256,43 @@ body {
 
     .overlay-text4 {
         position: absolute;
-        top: 10%; /* 이미지 상단으로부터 상대적 위치 */
-        left: 16%; /* 이미지 왼쪽으로부터 상대적 위치 */
+        top: 10%;
+        left: 16%;
         transform: translate(-50%, -50%);
         color: white;
         font-family: 'Pretendard-Regular';
         font-weight: lighter;
-        font-size: 1.5vw; /* 뷰포트 너비를 기준으로 글자 크기 조정 */
+        font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         z-index: 2;
         pointer-events: none;
     }
 
     .text-only-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
         background-color: #f8f8f8;
-        padding: 40px;
-        text-align: center;
-        aspect-ratio: 1 / 1; /* 정사각형 유지 */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
     }
 
     .text-only-content {
-        font-family: 'Orbit-Regular';
-        font-size: 1.0vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Orbit-Regular', 'Pretendard-Regular', Arial, sans-serif;
+        font-size: 1.2vw;
         line-height: 1.6;
         color: #333;
-        max-width: 80%;
+        text-align: center;
+        width: 80%;
     }
 
     .instagram-link {
         cursor: pointer;
-        max-width: 80px;
+        max-width: 200px;
         height: auto;
         margin-top: 15px;
         transition: transform 0.3s ease;
@@ -306,13 +303,22 @@ body {
         transform: scale(1.1);
     }
 
+    .copyright {
+        text-align: center;
+        font-family: 'Pretendard-Regular';
+        font-size: 12px;
+        color: #666;
+        padding: 30px 0;
+        margin-top: 30px;
+    }
+
     /* 모바일 반응형 */
     @media (max-width: 768px) {
         .sthumbnail-container {
-            grid-template-columns: repeat(2, 1fr); /* 2열 유지 */
+            grid-template-columns: repeat(2, 1fr);
             max-width: 100%;
-            padding: 0 10px;
-            gap: 10px; /* 간격 줄임 */
+            padding: 0;
+            gap: 0;
         }
         
         .img-container img {
@@ -321,26 +327,50 @@ body {
         }
         
         .text-only-content {
-            font-size: 10px; /* 모바일에서 더 작은 폰트 크기 */
-            max-width: 90%; /* 여백 확보 */
+            font-size: 8px;
+            max-width: 90%;
+            line-height: 1.4;
         }
         
         .text-only-container {
-            padding: 15px; /* 패딩 더 줄임 */
-            aspect-ratio: 1 / 1; /* 정사각형 강제 유지 */
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100% !important;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
         .overlay-text1, .overlay-text2, .overlay-text3, .overlay-text4 {
-            font-size: 12px; /* 모바일에서 고정 폰트 크기 */
+            font-size: 2.5vw;
+            top: 15%;
+            line-height: 1.2;
+        }
+        
+        .overlay-text1 {
+            left: 25%;
+        }
+        
+        .overlay-text2 {
+            left: 28%;
+        }
+        
+        .overlay-text3 {
+            left: 20%;
+        }
+        
+        .overlay-text4 {
+            left: 24%;
         }
         
         .instagram-link {
-            max-width: 120px; /* 모바일에서 이미지 크기 조정 */
+            max-width: 50px;
         }
         
         .hover-button {
-            font-size: 12px; /* 버튼 글자 크기 조정 */
-            padding: 8px 15px; /* 버튼 패딩 조정 */
+            font-size: 10px;
+            padding: 6px 12px;
         }
     }
 </style>
@@ -353,22 +383,23 @@ body {
         <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
         <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
-    <div class="introduce">Juyoung's room *⋆꒰ঌ(⁎ᴗ͈ˬᴗ͈⁎)໒꒱⋆* <br> I'd love to work in graphic design and marketing</div>
+    <div class="introduce">Juyoung's room *⋆꒰ঌ(⁎ᴗ͈ˬᴗ͈⁎)໒꒱⋆* <br> I'd love to work in graphic design and marketing!<br><br>
+    이 사이트는 웹에 최적화되어 있습니다 ❤︎</div>
     <div class="img-container">
         <img src="main_1.gif" alt="예시 GIF">
     </div>
     <div class="flow-container">
         <div class="flow-text">
             <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ⎛˶'ᵕ'˶ ⎞ෆ ̖́- </div>
+            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
             <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ⎛˶'ᵕ'˶ ⎞ෆ ̖́- </div>
+            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
             <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ⎛˶'ᵕ'˶ ⎞ෆ ̖́- </div>
+            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
             <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ⎛˶'ᵕ'˶ ⎞ෆ ̖́- </div>
+            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
             <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ⎛˶'ᵕ'˶ ⎞ෆ ̖́- </div>
+            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
             <div class="flow-wrap">check my pf out </div>
         </div>
     </div>
@@ -386,7 +417,7 @@ body {
         <div class="sthumbnail-1">
             <img src="b.png">
             <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&amp;design</div>
-            <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ა view project</button>
+            <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ա view project</button>
         </div>
         <div class="sthumbnail-1">
             <img src="a.webp">
@@ -407,6 +438,11 @@ body {
             </div>
         </div>
     </div>
+    
+    <div class="copyright">
+        copyright by Juyoung Lee
+    </div>
+
 
 
 </body></html>

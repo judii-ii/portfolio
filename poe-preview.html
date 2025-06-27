@@ -158,7 +158,7 @@
         }
         
         .coluffy-footer {
-            background-color: #c98698;
+            background-color: #d4a9a3;
             padding: 60px 40px;
             color: white;
         }
@@ -197,130 +197,84 @@
         }
 
         .brand-design-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 80px;
-            padding: 60px 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 60px;
+        padding: 0 40px;
+        align-items: center; /* flex-start에서 center로 변경 */
+        min-height: 400px; /* 최소 높이 설정 */
+    }
 
-        .logo-showcase {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 40px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            margin-bottom: 60px;
-            backdrop-filter: blur(10px);
-        }
+    .logo-showcase {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* flex-start에서 center로 변경 */
+        padding: 20px; /* 패딩 추가 */
+    }
 
-        .logo-description {
-            width: 100%;
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
+    .logo-description {
+        flex: 1;
+        padding: 20px 60px; /* 상하 패딩 추가 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* flex-start에서 center로 변경 */
+    }
 
         .logo-variants {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
         }
 
         .logo-variant {
-            display: flex;
-            justify-content: center;
+        display: flex;
+        justify-content: center;
         }
 
         .logo-variant img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-variant img:hover {
-            transform: scale(1.05);
+        width: 100%;
+        height: auto;
+        display: block;
         }
 
         .description-pt, .description-en {
-            background: rgba(255,255,255,0.05);
-            padding: 35px;
-            border-radius: 16px;
-            border-left: 4px solid rgba(255,255,255,0.3);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .description-pt:hover, .description-en:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-
-        .description-pt:last-child, .description-en:last-child {
-            margin-bottom: 0;
+        margin-bottom: 40px;
         }
 
         .description-pt h3, .description-en h3 {
-            font-family: "adobe-aldine", serif;
-            font-weight: 600;
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: rgba(255,255,255,0.95);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
+        font-family: "adobe-aldine", serif;
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 15px;
+        font-weight: 500;
         }
 
         .description-pt p, .description-en p {
-            font-family: "Inter", sans-serif;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: rgba(255,255,255,0.85);
-            text-align: justify;
-        }
-
-        .description-pt p:last-child, .description-en p:last-child {
-            margin-bottom: 0;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
         }
 
         .brand-tagline-section {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         padding: 60px 40px;
-        max-width: 800px;
-        margin: 0 auto;
         }
 
         .brand-taglines {
-        width: 100%;
-        max-width: 600px;
-        margin-bottom: 50px;
-        text-align: center;
+        flex: 1;
         }
 
         .tagline {
         font-size: 16px;
         font-family: "Inter", sans-serif;
         font-style: bold;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         font-weight: 500;
         color: white;
-        line-height: 1.6;
         }
 
         .tagline em {
@@ -333,12 +287,11 @@
         font-family: "adobe-aldine", serif;
         font-size: 12px;
         vertical-align: super;
-        margin-right: 8px;
+        margin-right: 5px;
         }
 
         .brand-logo-oval {
-        width: 100%;
-        max-width: 600px;
+        flex: 1;
         display: flex;
         justify-content: center;
         }
@@ -349,240 +302,114 @@
         display: block;
         }
 
-        /* 폰트 레이아웃 스타일 - 완전 새로운 구조 */
+        /* 폰트 레이아웃 스타일 */
         .brand-principles-content {
-            background-color: #AA6B77;
-            color: white;
-            padding: 50px 40px;
-            margin-bottom: 0;
-            position: relative;
-        }
-
-        /* 데스크톱 레이아웃 */
-        .font-desktop-layout {
-            display: flex;
-            min-height: 700px;
-            align-items: stretch;
-            padding: 20px 0;
+        display: flex;
+        background-color: #AA6B77;
+        color: white;
+        padding: 40px;
+        margin-bottom: 0;
         }
 
         .font-category {
-            width: 140px;
-            padding-right: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            flex-shrink: 0;
-            padding-top: 40px;
-            padding-bottom: 40px;
+        width: 120px;
+        margin-top: 5%;
+        padding-right: 20px;
         }
 
         .category-label {
-            font-family: "Inter", sans-serif;
-            font-style: italic;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 0;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-style: italic;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20vh;
         }
 
         .body-label {
-            margin-top: 280px;
+        margin-bottom: 0;
         }
 
         .font-samples {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            justify-content: space-between;
-            padding: 20px 0;
+        flex: 1;
         }
 
         .font-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-bottom: 0;
-            padding: 20px 0;
-        }
-
-        .font-section:first-child {
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            margin-bottom: 40px;
-            padding-bottom: 60px;
+        margin-bottom: 100px;
         }
 
         .font-title {
-            margin-bottom: 40px;
+        margin-bottom: 30px;
         }
 
         .korean-name {
-            font-family: "adobe-aldine", serif;
-            font-size: 32px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: white;
+        font-family: "adobe-aldine", "Times New Roman", Georgia, serif;
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 5.5%;
         }
 
         .english-name {
-            font-family: "Inter", sans-serif;
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: white;
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        margin-top: 11%;
         }
 
         .font-description {
-            margin-top: 20px;
+        margin-top: 30px;
         }
 
         .korean-desc {
-            font-family: "adobe-aldine", serif;
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 1.4;
-            margin-bottom: 8px;
-            color: rgba(255,255,255,0.9);
+        font-family: "adobe-aldine", "Times New Roman", Georgia, serif;
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 5px;
         }
 
         .font-weights {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
         }
 
         .font-weight-sample {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
         }
 
         .sample-text {
-            flex: 1;
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-            font-weight: 400;
-            color: rgba(255,255,255,0.95);
+        flex: 1;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
         }
 
         .sample-text.semi-bold {
-            font-weight: 500;
+        font-weight: 500;
         }
 
         .sample-text.extra-bold {
-            font-weight: 800;
+        font-weight: 800;
         }
 
         .sample-text.black {
-            font-weight: 900;
-            font-style: italic;
+        font-weight: 900;
+        font-style: italic;
         }
 
         .sample-text p {
-            margin: 0 0 8px 0;
+        margin: 0 0 5px 0;
         }
 
         .weight-name {
-            width: 120px;
-            font-family: "Inter", sans-serif;
-            text-align: right;
-            font-size: 14px;
-            line-height: 1.3;
-            color: rgba(255,255,255,0.8);
-            flex-shrink: 0;
-        }
-
-        /* 모바일 레이아웃 */
-        .font-mobile-layout {
-            display: none;
-        }
-
-        .mobile-font-section {
-            margin-bottom: 60px;
-        }
-
-        .mobile-font-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .mobile-font-label {
-            font-family: "Inter", sans-serif;
-            font-style: italic;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .mobile-font-name {
-            font-family: "adobe-aldine", serif;
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .mobile-font-desc {
-            margin-bottom: 30px;
-        }
-
-        .mobile-font-desc p {
-            font-family: "adobe-aldine", serif;
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.4;
-            margin-bottom: 8px;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .mobile-font-samples {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .mobile-sample {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .mobile-sample:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-sample p {
-            font-family: "Inter", sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            color: rgba(255,255,255,0.95);
-            font-weight: 400;
-        }
-
-        .mobile-sample.semi-bold p {
-            font-weight: 500;
-        }
-
-        .mobile-sample.extra-bold p {
-            font-weight: 800;
-        }
-
-        .mobile-sample.black p {
-            font-weight: 900;
-            font-style: italic;
-        }
-
-        .mobile-weight {
-            font-family: "Inter", sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.7);
-            display: block;
+        width: 120px;
+        font-family: "Inter", sans-serif;
+        text-align: right;
+        font-size: 16px;
+        line-height: 1.4;
         }
 
         /* Feature icons section */
@@ -1715,14 +1542,27 @@
             }
         }
 
-        /* 폰트 섹션 반응형 */
+        /* 930px 정도에서 레이아웃 수정 */
         @media (max-width: 1000px) {
-            .font-desktop-layout {
-                display: none;
+            .brand-principles-content {
+                flex-direction: column;
+                padding: 30px 20px;
             }
             
-            .font-mobile-layout {
-                display: block;
+            .font-category {
+                width: 100% !important;
+                display: block !important;
+                margin-bottom: 30px !important;
+            }
+            
+            .category-label:first-child {
+                margin-bottom: 60px !important;
+            }
+            
+            .body-label {
+                position: relative !important;
+                margin-top: 60px !important;
+                margin-bottom: 10px !important;
             }
         }
 
@@ -1766,11 +1606,6 @@
                 padding: 0;
             }
             
-            .overview p {
-                font-size: 12px;
-                line-height: 1.8;
-            }
-
             .brand-tagline-section {
                 flex-direction: column;
                 gap: 30px;
@@ -1918,8 +1753,7 @@
             }
             
             .overview p {
-                font-size: 9.5px;
-                line-height: 1.5;
+                line-height: 1.8;
             }
             
             .concept-contrasts {
@@ -2283,107 +2117,69 @@
             </div>
             
             <div class="brand-principles-content">
-                <!-- 데스크톱 레이아웃 -->
-                <div class="font-desktop-layout">
-                    <div class="font-category">
-                        <div class="category-label">Title</div>
-                        <div class="category-label body-label">Body</div>
-                    </div>
-                    
-                    <div class="font-samples">
-                        <!-- 타이틀 폰트 샘플 -->
-                        <div class="font-section title-section">
-                            <div class="font-title">
-                                <div class="korean-name">adobe-aldine</div>
-                            </div>
-                            
-                            <div class="font-description">
-                                <div class="korean-desc">softness, individuality, and playful imperfection</div>
-                                <div class="korean-desc">We create glosses colors that speak like feelings</div>
-                            </div>
+                <div class="font-category">
+                    <div class="category-label">Title</div>
+                    <div class="category-label body-label">Body</div>
+                </div>
+                
+                <div class="font-samples">
+                    <!-- 타이틀 폰트 샘플 -->
+                    <div class="font-section">
+                        <div class="font-title">
+                            <div class="korean-name">adobe-aldine</div>
                         </div>
                         
-                        <!-- 바디 폰트 샘플 -->
-                        <div class="font-section body-section">
-                            <div class="font-title">
-                                <div class="english-name">INTER</div>
+                        <div class="font-description">
+                            <div class="korean-desc">softness, individuality, and playful imperfection</div>
+                            <div class="korean-desc">We create glosses colors that speak like feelings</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 바디 폰트 샘플 -->
+                    <div class="font-section body-section">
+                        <div class="font-title">
+                            <div class="english-name">INTER</div>
+                        </div>
+                        
+                        <div class="font-weights">
+                            <!-- Regular 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
+                                </div>
+                                <div class="weight-name">Inter<br>Regular</div>
                             </div>
                             
-                            <div class="font-weights">
-                                <!-- Regular 폰트 -->
-                                <div class="font-weight-sample">
-                                    <div class="sample-text">
-                                        <p>감정을 닮은 컬러.</p>
-                                        <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                        <p>나다움을 증명할 필요 없어요.</p>
-                                    </div>
-                                    <div class="weight-name">Inter<br>Regular</div>
+                            <!-- Semi Bold 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text semi-bold">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
-                                
-                                <!-- Semi Bold 폰트 -->
-                                <div class="font-weight-sample">
-                                    <div class="sample-text semi-bold">
-                                        <p>감정을 닮은 컬러.</p>
-                                        <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                        <p>나다움을 증명할 필요 없어요.</p>
-                                    </div>
-                                    <div class="weight-name">Inter<br>Semi Bold</div>
+                                <div class="weight-name">Inter<br>Semi Bold</div>
+                            </div>
+                            
+                            <!-- Extra Bold 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text extra-bold">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
-                                
-                                <!-- Extra Bold 폰트 -->
-                                <div class="font-weight-sample">
-                                    <div class="sample-text extra-bold">
-                                        <p>감정을 닮은 컬러.</p>
-                                        <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                        <p>나다움을 증명할 필요 없어요.</p>
-                                    </div>
-                                    <div class="weight-name">Inter<br>Extra Bold</div>
+                                <div class="weight-name">Inter<br>Extra Bold</div>
+                            </div>
+                            
+                            <!-- Black 폰트 -->
+                            <div class="font-weight-sample">
+                                <div class="sample-text black">
+                                    <p>감정을 닮은 컬러.</p>
+                                    <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
+                                    <p>나다움을 증명할 필요 없어요.</p>
                                 </div>
-                                
-                                <!-- Black 폰트 -->
-                                <div class="font-weight-sample">
-                                    <div class="sample-text black">
-                                        <p>감정을 닮은 컬러.</p>
-                                        <p>돋보이기보단, 자연스럽게 스며드는 아름다움</p>
-                                        <p>나다움을 증명할 필요 없어요.</p>
-                                    </div>
-                                    <div class="weight-name">Inter<br>Black Italic</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 모바일 레이아웃 -->
-                <div class="font-mobile-layout">
-                    <div class="mobile-font-section">
-                        <h3 class="mobile-font-label">Title</h3>
-                        <div class="mobile-font-name">adobe-aldine</div>
-                        <div class="mobile-font-desc">
-                            <p>softness, individuality, and playful imperfection</p>
-                            <p>We create glosses colors that speak like feelings</p>
-                        </div>
-                    </div>
-
-                    <div class="mobile-font-section">
-                        <h3 class="mobile-font-label">Body</h3>
-                        <div class="mobile-font-name">INTER</div>
-                        <div class="mobile-font-samples">
-                            <div class="mobile-sample">
-                                <p>감정을 닮은 컬러. 돋보이기보단, 자연스럽게 스며드는 아름다움 나다움을 증명할 필요 없어요.</p>
-                                <span class="mobile-weight">Inter Regular</span>
-                            </div>
-                            <div class="mobile-sample semi-bold">
-                                <p>감정을 닮은 컬러. 돋보이기보단, 자연스럽게 스며드는 아름다움 나다움을 증명할 필요 없어요.</p>
-                                <span class="mobile-weight">Inter Semi Bold</span>
-                            </div>
-                            <div class="mobile-sample extra-bold">
-                                <p>감정을 닮은 컬러. 돋보이기보단, 자연스럽게 스며드는 아름다움 나다움을 증명할 필요 없어요.</p>
-                                <span class="mobile-weight">Inter Extra Bold</span>
-                            </div>
-                            <div class="mobile-sample black">
-                                <p>감정을 닮은 컬러. 돋보이기보단, 자연스럽게 스며드는 아름다움 나다움을 증명할 필요 없어요.</p>
-                                <span class="mobile-weight">Inter Black Italic</span>
+                                <div class="weight-name">Inter<br>Black Italic</div>
                             </div>
                         </div>
                     </div>
