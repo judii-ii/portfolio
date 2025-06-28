@@ -1,5 +1,5 @@
 <head>
-    <title>hi</title>
+    <title>hi xxxxxxx</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -67,13 +67,13 @@
             border-style: solid;
             border-color: black;
             font-size: 14px;
-            bottom: 125%;
-            left: 50%;
+            bottom: 3%;               /* 125%에서 200%로 변경 - 더 위로 */
+            left: 360%;
             transform: translateX(-50%);
             white-space: nowrap;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.3s ease;
         }
         
         .tooltip::after {
@@ -87,10 +87,40 @@
             border-color: rgb(255, 255, 225) transparent transparent transparent;
         }
         
+        /* 호버시 효과: 크기 커지기 + 색상 변화 */
         .pretendard-text:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
+            transform: translateX(-50%) scale(1.1);
+            background-color: rgb(255, 255, 180);
+            border-color: #ff6b6b;
         }
+
+        /* 다른 호버 효과 옵션들 (원하면 위 효과 대신 사용) */
+        
+        /* 흔들림 효과 */
+        /*
+        .pretendard-text:hover .tooltip {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            25% { transform: translateX(-50%) translateY(-2px); }
+            75% { transform: translateX(-50%) translateY(2px); }
+        }
+        */
+
+        /* 펄스 효과 */
+        /*
+        .pretendard-text:hover .tooltip {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+        */
 
         form {
             width: 100%; /* form을 컨테이너 너비에 맞춤 */
@@ -139,7 +169,7 @@
         
         if (passwordInput === "theboyz") {
             console.log("Password matched. Redirecting...");
-            window.location.href = "coding.html";
+            window.location.href = "coding-go.html";
         } else {
             alert("Your dreamm access has been denied");
         }

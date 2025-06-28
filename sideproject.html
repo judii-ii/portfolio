@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <title>other project</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
 }
 
 .navbar {
-    font-family: 'Orbit-Regular';
+    font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     font-size: 16px;
     font-weight: bold;
     color: #333;
@@ -239,6 +240,110 @@ body {
     width: 100%;
 }
 
+/* 화면 줄어들 때 간격 조정 */
+@media (max-width: 1024px) {
+    .content-row {
+        gap: 20px;
+    }
+}
+
+/* 중형 태블릿/작은 노트북 (1000px 이하) */
+@media (max-width: 1000px) {
+    .content-row {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .content-row .image-box,
+    .content-row .video-box,
+    .content-row .youtube-box {
+        flex: none;
+        width: 100%;
+    }
+    
+    .text-content {
+        padding: 20px 0 !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 14px !important;
+    }
+    
+    .text-content h3 {
+        text-align: center !important;
+        margin-bottom: 20px;
+        font-size: 24px !important;
+        width: 100% !important;
+    }
+    
+    .text-content p,
+    .section01-desc {
+        text-align: center !important;
+        margin-bottom: 15px !important;
+        width: 100% !important;
+        font-size: 12px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 중형 화면에서 info-grid 완전 중앙정렬 */
+    .info-grid,
+    .section01-info {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px;
+        margin-top: 5px;
+        width: 100% !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    
+    .info-item {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        padding: 12px 80px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+        margin: 0 auto !important;
+        width: 90% !important;
+        max-width: 700px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .info-item .label {
+        font-weight: 600 !important;
+        color: #555 !important;
+        flex: 1;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 0;
+        text-align: left !important;
+        font-size: 11px !important;
+    }
+    
+    .info-item .value {
+        font-weight: 400 !important;
+        color: #333 !important;
+        flex: 1.5;
+        text-align: right !important;
+        margin-right: 20px;
+        margin-bottom: 0;
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .content-row {
+        gap: 20px;
+    }
+}
+
 .content-row .image-box,
 .content-row .video-box,
 .content-row .youtube-box {
@@ -261,7 +366,7 @@ body {
 }
 
 .text-content h3 {
-    font-family: 'Orbit-SemiBold';
+    font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     font-size: 24px;
     font-weight: 600;
     margin: 0 0 60px 0;
@@ -289,7 +394,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 0;
+    margin-top: -20px;
 }
 
 /* 02, 03 섹션 - 텍스트 옆의 info-grid */
@@ -315,21 +420,28 @@ body {
     align-items: flex-start;
     font-size: 11px;
     line-height: 1.4;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.info-item:last-child {
+    border-bottom: none;
 }
 
 .info-item .label {
-    font-weight: 400;
-    color: #333;
+    font-weight: 600;
+    color: #555;
     flex: 1;
-    margin-right: 10px;
-    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-bottom: 0;
 }
 
 .info-item .value {
     font-weight: 400;
     color: #333;
-    flex: 1;
+    flex: 1.2;
     text-align: left;
+    line-height: 1.5;
 }
 
 /* 반응형 디자인 */
@@ -361,16 +473,75 @@ body {
         font-size: 36px;
     }
     
+    /* 모바일에서 텍스트 중앙정렬 - 강력하게 적용 */
     .text-content {
         font-size: 12px;
+        text-align: center !important;
+        padding: 30px 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
     }
     
     .text-content h3 {
         font-size: 20px;
+        text-align: center !important;
+        margin-bottom: 20px;
+        width: 100% !important;
+    }
+    
+    .text-content p,
+    .section01-desc {
+        text-align: center !important;
+        margin-bottom: 20px;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* 모바일에서 info-grid도 중앙정렬 */
+    .info-grid,
+    .section01-info {
+        text-align: center !important;
+        margin-top: 20px;
+        width: 100% !important;
+        display: block !important;
     }
     
     .info-item {
         font-size: 10px;
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 20px;
+        width: 100% !important;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .info-item .label {
+        text-align: center !important;
+        margin-right: 0 !important;
+        margin-bottom: 8px !important;
+        width: 100% !important;
+        display: block !important;
+        font-weight: 600 !important;
+        color: #666 !important;
+    }
+    
+    .info-item .value {
+        text-align: center !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
+        display: block !important;
+        font-weight: 400 !important;
+        color: #333 !important;
+        line-height: 1.4 !important;
     }
 }
 
@@ -455,7 +626,7 @@ body {
         <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
         <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
     <div class="project-wrapper">
         <div class="project_title">
@@ -486,18 +657,18 @@ body {
                     <div class="info-grid section01-info">
                         <div class="info-item">
                             <span class="label">✦ with</span>
-                            <span class="value">✦ contribution</span>
+                            <span class="value">made by Juyoung Lee</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">made by Juyoung Lee</span>
+                            <span class="label">✦ contribution</span>
                             <span class="value">100%</span>
                         </div>
                         <div class="info-item">
                             <span class="label">✦ project type</span>
-                            <span class="value">✦ project note</span>
+                            <span class="value">graphic design<br>goods design<br>personal project</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">graphic design<br>goods design<br>personal project</span>
+                            <span class="label">✦ project note</span>
                             <span class="value">A self-initiated fan merchandise<br>project involving design, production,<br>and online sales through Witchform.</span>
                         </div>
                     </div>
@@ -545,18 +716,18 @@ body {
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="label">✦ with</span>
-                            <span class="value">✦ contribution</span>
+                            <span class="value">made by Juyoung Lee</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">made by Juyoung Lee</span>
+                            <span class="label">✦ contribution</span>
                             <span class="value">100%</span>
                         </div>
                         <div class="info-item">
                             <span class="label">✦ project type</span>
-                            <span class="value">✦ project note</span>
+                            <span class="value">content localization<br>Adobe Premiere Pro<br>Adobe After Effects<br>personal project</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">content localization<br>Adobe Premiere Pro<br>Adobe After Effects<br>personal project</span>
+                            <span class="label">✦ project note</span>
                             <span class="value">Translated and subtitled Japanese<br>variety shows for a fan YouTube channel.<br>Managed all stages from translation and<br>editing to publishing.</span>
                         </div>
                     </div>
@@ -587,18 +758,18 @@ body {
                     <div class="info-grid">
                         <div class="info-item">
                             <span class="label">✦ with</span>
-                            <span class="value">✦ contribution</span>
+                            <span class="value">made by Juyoung Lee</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">made by Juyoung Lee</span>
+                            <span class="label">✦ contribution</span>
                             <span class="value">100%</span>
                         </div>
                         <div class="info-item">
                             <span class="label">✦ project type</span>
-                            <span class="value">✦ project note</span>
+                            <span class="value">AI Image Generation<br>prompt design<br>midjourney<br>Kling-2.0</span>
                         </div>
                         <div class="info-item">
-                            <span class="label">AI Image Generation<br>prompt design<br>midjourney<br>Kling-2.0</span>
+                            <span class="label">✦ project note</span>
                             <span class="value">This project explored new forms of AI-driven<br>visual storytelling. Created character visuals<br>using Midjourney with original prompt design,<br>and developed video content by Kling.</span>
                         </div>
                     </div>
