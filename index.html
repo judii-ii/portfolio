@@ -1,10 +1,13 @@
-<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>juyoung</title>
 
 <style>
+    /* 기존 폰트 정의 그대로 유지 */
     @font-face {
         font-family: 'Pretendard-Regular';
         src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -34,6 +37,7 @@
         color: grey;
     }
 
+    /* 기존 CSS 그대로 유지하되, 사파리에서만 fallback 폰트 추가 */
     .navbar {
         font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
         font-size: 16px;
@@ -95,7 +99,7 @@
 
     .introduce {
         position: relative;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-size: 12px;
         margin-top: 20px;
         margin-left: 40px;
@@ -122,7 +126,7 @@
         white-space: nowrap;
         overflow: hidden;
         transition: 0.1s;
-        font-family: 'Orbit-Regular', 'Pretendard-Regular', Arial, sans-serif;
+        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         font-size: 0.8rem;
         color: #9D9993;
     }
@@ -184,7 +188,7 @@
         padding: 10px 20px;
         background-color: rgba(0, 0, 0, 0.7);
         color: #fff;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         font-size: 14px;
         text-align: center;
         border: none;
@@ -218,7 +222,7 @@
         left: 18%;
         transform: translate(-50%, -50%);
         color: white;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-weight: lighter;
         font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -232,7 +236,7 @@
         left: 20%;
         transform: translate(-50%, -50%);
         color: white;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-weight: lighter;
         font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -246,7 +250,7 @@
         left: 12%;
         transform: translate(-50%, -50%);
         color: white;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-weight: lighter;
         font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -260,7 +264,7 @@
         left: 16%;
         transform: translate(-50%, -50%);
         color: white;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-weight: lighter;
         font-size: 1.5vw;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -282,7 +286,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-family: 'Orbit-Regular', 'Pretendard-Regular', Arial, sans-serif;
+        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         font-size: 1.2vw;
         line-height: 1.6;
         color: #333;
@@ -305,11 +309,21 @@
 
     .copyright {
         text-align: center;
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
         font-size: 12px;
         color: #666;
         padding: 30px 0;
         margin-top: 30px;
+    }
+
+    /* 🔥 사파리에서만 적용되는 글꼴 스무딩 - 다른 브라우저는 영향 없음 */
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            * {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
     }
 
     /* 모바일 반응형 */
@@ -374,6 +388,61 @@
         }
     }
 </style>
+
+<!-- 🎯 사파리 전용 폰트 보정 스크립트 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 사파리인지 정확하게 감지 (Chrome 제외)
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || 
+                     /iPad|iPhone|iPod/.test(navigator.userAgent);
+    
+    if (isSafari) {
+        console.log('Safari 감지 - 폰트 렌더링 최적화 적용');
+        
+        // 사파리에서만 폰트 스무딩 적용
+        const style = document.createElement('style');
+        style.textContent = `
+            * {
+                -webkit-font-smoothing: antialiased !important;
+                -moz-osx-font-smoothing: grayscale !important;
+                text-rendering: optimizeLegibility !important;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // 1.5초 후 폰트 로딩 확인 (사파리는 느림)
+        setTimeout(function() {
+            // 간단한 폰트 체크
+            const testDiv = document.createElement('div');
+            testDiv.style.fontFamily = 'Orbit-Regular, serif';
+            testDiv.style.fontSize = '12px';
+            testDiv.style.position = 'absolute';
+            testDiv.style.visibility = 'hidden';
+            testDiv.innerHTML = 'Test';
+            document.body.appendChild(testDiv);
+            
+            const computedStyle = window.getComputedStyle(testDiv);
+            const actualFont = computedStyle.fontFamily;
+            
+            // serif로 fallback되었다면 로컬 폰트 로딩 실패
+            if (actualFont.toLowerCase().includes('serif')) {
+                console.warn('사파리에서 Orbit 폰트 로딩 실패 - Apple 시스템 폰트 적용');
+                
+                // 사파리에서만 시스템 폰트로 대체
+                const safariStyle = document.createElement('style');
+                safariStyle.textContent = `
+                    .navbar, .flow-text, .text-only-content {
+                        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif !important;
+                    }
+                `;
+                document.head.appendChild(safariStyle);
+            }
+            
+            document.body.removeChild(testDiv);
+        }, 1500);
+    }
+});
+</script>
 </head>
 
 <body>
@@ -381,7 +450,7 @@
         <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
         <div class="navbar-item2"></div>
         <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
     </div>
     <div class="introduce">Juyoung's room *⋆꒰ঌ(⁎ᴗ͈ˬᴗ͈⁎)໒꒱⋆* <br> I'd love to work in graphic design and marketing!<br><br>
     이 사이트는 웹에 최적화되어 있습니다 ❤︎</div>
@@ -416,7 +485,7 @@
         </div>
         <div class="sthumbnail-1">
             <img src="b.png">
-            <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&amp;design</div>
+            <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&design</div>
             <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ա view project</button>
         </div>
         <div class="sthumbnail-1">
@@ -442,7 +511,5 @@
     <div class="copyright">
         copyright by Juyoung Lee
     </div>
-
-
-
-</body></html>
+</body>
+</html>
