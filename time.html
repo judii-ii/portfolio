@@ -52,8 +52,8 @@ html, body {
     background-color: #ffffff;
 }
 
-/* 모든 섹션에 강제 동일한 좌우 패딩 적용 */
-.section, .container, 
+/* 컨텐츠 섹션들만 패딩 적용 (hero, intro 제외) */
+.section:not(.hero):not(.intro), .container, 
 .album-design, .album-design2, .album-design3, .album-design4, .album-design5,
 .album-design6, .album-design7, .album-design8, .album-design9, .album-design10,
 .album-design11, .album-design12, .album-design13, .album-design14,
@@ -80,15 +80,17 @@ html, body {
     padding: 60px 20px;
 }
 
+/* Hero 섹션 - 전체 너비 사용 */
 .section.hero {
-    padding: 0 20px;
+    padding: 0;
     background-color: #ffffff;
 }
 
+/* Intro 섹션 - 그라데이션 배경 전체 너비 */
 .section.intro {
     background: linear-gradient(180deg, #4E8CFF 0%, #7BA3FF 50%, #E8E8E8 100%);
     position: relative;
-    padding: 60px 20px;
+    padding: 60px 0;
 }
 
 .section.intro::after {
@@ -123,7 +125,7 @@ html, body {
     flex-direction: column;
     flex-grow: 1;
     height: 25vh;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .line {
@@ -154,11 +156,13 @@ html, body {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 50px 30px;
-    margin: 40px auto;
+    margin: 40px 20px;
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 2;
-    max-width: 100%;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .intro-header {
@@ -196,6 +200,7 @@ html, body {
     font-display: swap;
 }
 
+/* 첫 번째 이미지 섹션 - 전체 너비 사용 */
 .section1 {
     position: relative;
     width: 100%;
@@ -203,7 +208,7 @@ html, body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .section1 img {
@@ -232,8 +237,9 @@ html, body {
     object-fit: contain;
 }
 
+/* Section3도 전체 너비 사용 */
 .section3 {
-    padding: 0 20px !important;
+    padding: 0 !important;
     background: linear-gradient(to bottom, rgba(232, 232, 232, 0.8), rgba(255, 255, 255, 0.9));
     display: flex;
     justify-content: center;
@@ -245,7 +251,6 @@ html, body {
     height: auto;
     display: block;
     margin: 0 auto;
-    max-width: 1160px;
 }
 
 .diary {
@@ -868,13 +873,31 @@ button {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* 강력한 반응형 여백 통일 */
+/* Copyright 섹션 스타일 추가 */
+.copyright-section {
+    background-color: #ffffff;
+    padding: 60px 20px 80px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.copyright-text {
+    font-family: 'Galmuri11', 'Pretendard-Regular', 'Apple Gothic', sans-serif;
+    font-size: clamp(12px, 1.2vw, 14px);
+    color: #999;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    opacity: 0.8;
+}
+
+/* 모바일 반응형 */
 @media (max-width: 768px) {
-    .section, .container, 
+    /* 컨텐츠 섹션들만 패딩 적용 */
+    .section:not(.hero):not(.intro), .container, 
     .album-design, .album-design2, .album-design3, .album-design4, .album-design5,
     .album-design6, .album-design7, .album-design8, .album-design9, .album-design10,
-    .album-design11, .album-design12, .album-design13, .album-design14,
-    .section3 {
+    .album-design11, .album-design12, .album-design13, .album-design14 {
         padding-left: 15px !important;
         padding-right: 15px !important;
         margin-left: auto !important;
@@ -882,8 +905,13 @@ button {
         max-width: 100% !important;
     }
     
+    .section3 {
+        padding: 0 !important;
+    }
+    
     .intro-content {
-        padding: 30px 15px;
+        margin: 40px 15px;
+        padding: 30px 20px;
     }
     
     .album-design {
@@ -919,14 +947,23 @@ button {
         width: 80%;
         margin-right: 0;
     }
+    
+    .copyright-section {
+        padding: 40px 15px 60px 15px;
+        margin-top: 30px;
+    }
+    
+    .copyright-text {
+        font-size: 11px;
+    }
 }
 
 @media (max-width: 480px) {
-    .section, .container, 
+    /* 컨텐츠 섹션들만 패딩 적용 */
+    .section:not(.hero):not(.intro), .container, 
     .album-design, .album-design2, .album-design3, .album-design4, .album-design5,
     .album-design6, .album-design7, .album-design8, .album-design9, .album-design10,
-    .album-design11, .album-design12, .album-design13, .album-design14,
-    .section3 {
+    .album-design11, .album-design12, .album-design13, .album-design14 {
         padding-left: 10px !important;
         padding-right: 10px !important;
         margin-left: auto !important;
@@ -934,8 +971,13 @@ button {
         max-width: 100% !important;
     }
     
+    .section3 {
+        padding: 0 !important;
+    }
+    
     .intro-content {
-        padding: 25px 10px;
+        margin: 40px 10px;
+        padding: 25px 15px;
     }
     
     .album-design4, .album-design5 {
@@ -945,6 +987,15 @@ button {
     button.custom-btn {
         width: 100px;
         height: 35px;
+    }
+    
+    .copyright-section {
+        padding: 30px 10px 50px 10px;
+        margin-top: 20px;
+    }
+    
+    .copyright-text {
+        font-size: 10px;
     }
 }
 
@@ -975,6 +1026,7 @@ button {
                 </div>
                 <div class="intro-subtitle">
                     개인 작업물로 앨범을 재구성하기 위해 더보이즈의 2집 앨범의 컨셉을 레트로 버전으로 새롭게 기획하여 <br> 다양함을 보여드리기 위해 Illustrator, Photoshop을 활용해 디자인했습니다.
+                    <br> windows98 느낌의 웹페이지는 app creator 등의 AI 프로그램을 활용하여 코딩했습니다.
                 </div>
                 <div class="highlight-box">
                     <strong>패키지의 구성품:</strong> 앨범 본체, CD, 스티커나 키링, 그 속 포토북과 포토카드까지 여러 가지 굿즈가 함께 들어가 있습니다.<br><br>
@@ -1092,6 +1144,11 @@ button {
                 <div class="mp3"><img src="mp3.webp" alt="mp3"></div>
             </div>
         </div>
+    </div>
+    
+    <!-- Copyright 섹션 추가 -->
+    <div class="copyright-section">
+        <div class="copyright-text">copyright by Juyoung Lee</div>
     </div>
     
     <script>
