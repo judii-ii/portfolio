@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://www.youtube-nocookie.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://www.youtube-nocookie.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <title>other project</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,7 +139,7 @@ body {
 
 /* 새로운 섹션 스타일 */
 .section {
-    margin: 50px 0;
+    margin: 90px 0;
     padding: 0 50px;
 }
 
@@ -159,16 +159,22 @@ body {
 .section-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .image-box {
-    height: 800px;
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+}
+
+/* content-row 안의 image-box는 높이를 자동으로 */
+.content-row .image-box {
+    height: auto;
+    min-height: 500px;
 }
 
 .image-box img {
@@ -184,7 +190,7 @@ body {
 }
 
 .video-box {
-    height: 600px;
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -212,7 +218,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     min-height: 200px;
     align-items: center;
 }
@@ -230,11 +236,134 @@ body {
     object-fit: contain;
 }
 
+/* 카카오톡 테마 섹션 스타일 */
+.kakaotalk-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+/* 상단: 정방형 이미지 */
+.kakaotalk-top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.square-image-box {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.square-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 하단: 아이폰 영상 + 아이폰 이미지 */
+.kakaotalk-bottom {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* iPhone 목업 프레임 */
+.iphone-mockup {
+    position: relative;
+    width: 320px;
+    height: 650px;
+    background: #1a1a1a;
+    border-radius: 45px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* iPhone 노치 */
+.iphone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 28px;
+    background: #1a1a1a;
+    border-radius: 0 0 20px 20px;
+    z-index: 2;
+}
+
+/* iPhone 스크린 */
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.iphone-video-box,
+.iphone-image-box {
+    width: 100%;
+    height: 100%;
+}
+
+.iphone-video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.iphone-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 링크 버튼 - Subtle 스타일 */
+.kakaotalk-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.theme-link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    border: 1.5px solid #333;
+    border-radius: 4px;
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.theme-link-button:hover {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.theme-link-button .link-text {
+    letter-spacing: -0.01em;
+}
+
 /* 텍스트 콘텐츠 스타일 */
 .content-row {
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch;
     margin-bottom: 20px;
     max-width: 1200px;
     width: 100%;
@@ -251,7 +380,7 @@ body {
 @media (max-width: 1000px) {
     .content-row {
         flex-direction: column;
-        gap: 25px;
+        gap: 40px;
     }
     
     .content-row .image-box,
@@ -261,8 +390,41 @@ body {
         width: 100%;
     }
     
+    /* 이미지/비디오 박스 높이 조정 */
+    .image-box {
+        height: 500px;
+    }
+    
+    .video-box {
+        height: 500px;
+    }
+    
+    .youtube-box {
+        height: 500px;
+    }
+    
+    /* 카카오톡 섹션 반응형 */
+    .square-image-box {
+        height: 450px;
+    }
+    
+    .kakaotalk-bottom {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .iphone-mockup {
+        width: 280px;
+        height: 570px;
+    }
+    
+    .theme-link-button {
+        font-size: 13px;
+        padding: 10px 24px;
+    }
+    
     .text-content {
-        padding: 20px 0 !important;
+        padding: 30px 0 !important;
         text-align: center !important;
         width: 100% !important;
         margin: 0 auto !important;
@@ -283,7 +445,7 @@ body {
     .text-content p,
     .section01-desc {
         text-align: center !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 30px !important;
         width: 100% !important;
         font-size: 12px !important;
         margin-left: auto !important;
@@ -295,8 +457,8 @@ body {
     .section01-info {
         display: flex !important;
         flex-direction: column !important;
-        gap: 8px;
-        margin-top: 5px;
+        gap: 15px;
+        margin-top: 20px;
         width: 100% !important;
         align-items: center !important;
         text-align: center !important;
@@ -305,42 +467,43 @@ body {
     
     .info-item {
         display: flex !important;
-        justify-content: space-between !important;
-        align-items: flex-start !important;
-        padding: 12px 80px;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 8px;
         margin: 0 auto !important;
         width: 90% !important;
         max-width: 700px !important;
         box-sizing: border-box !important;
+        border-bottom: none !important;
     }
     
     .info-item .label {
         font-weight: 600 !important;
         color: #555 !important;
-        flex: 1;
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-bottom: 0;
-        text-align: left !important;
+        margin: 0 0 8px 0 !important;
+        text-align: center !important;
         font-size: 11px !important;
+        width: 100% !important;
+        display: block !important;
     }
     
     .info-item .value {
         font-weight: 400 !important;
         color: #333 !important;
-        flex: 1.5;
-        text-align: right !important;
-        margin-right: 20px;
-        margin-bottom: 0;
+        text-align: center !important;
+        margin: 0 !important;
         font-size: 11px !important;
+        width: 100% !important;
+        display: block !important;
     }
 }
 
 @media (max-width: 900px) {
     .content-row {
-        gap: 20px;
+        gap: 35px;
     }
 }
 
@@ -358,6 +521,9 @@ body {
     line-height: 1.4;
     color: #333;
     padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .text-content.standalone {
@@ -381,7 +547,7 @@ body {
 
 /* 01 섹션 전용 - 완전 독립적으로 조정 가능 */
 .section01-text p {
-    margin-bottom: 80%; /* 기본 p 스타일 무시 */
+    margin-bottom: 30px; /* 기본값으로 변경 */
 }
 
 .section01-desc {
@@ -452,7 +618,7 @@ body {
     
     .content-row {
         flex-direction: column;
-        gap: 15px;
+        gap: 30px;
     }
     
     .pink-container {
@@ -471,6 +637,39 @@ body {
     
     .section-number {
         font-size: 36px;
+    }
+    
+    /* 이미지/비디오 박스 높이 조정 */
+    .image-box {
+        height: 400px;
+    }
+    
+    .video-box {
+        height: 350px;
+    }
+    
+    .youtube-box {
+        height: 400px;
+    }
+    
+    .slider-container {
+        height: 500px;
+    }
+    
+    /* 카카오톡 섹션 반응형 */
+    .square-image-box {
+        height: 350px;
+    }
+    
+    .iphone-video-box,
+    .iphone-image-box {
+        max-width: 300px;
+        height: 450px;
+    }
+    
+    .theme-link-button {
+        font-size: 13px;
+        padding: 12px 24px;
     }
     
     /* 모바일에서 텍스트 중앙정렬 - 강력하게 적용 */
@@ -507,20 +706,26 @@ body {
     .info-grid,
     .section01-info {
         text-align: center !important;
-        margin-top: 20px;
+        margin-top: 25px;
         width: 100% !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px;
     }
     
     .info-item {
         font-size: 10px;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
-        margin-bottom: 20px;
-        width: 100% !important;
+        margin-bottom: 0;
+        width: 90% !important;
         background-color: rgba(255, 255, 255, 0.3);
-        padding: 15px;
+        padding: 20px;
         border-radius: 8px;
+        border-bottom: none !important;
     }
     
     .info-item .label {
@@ -618,6 +823,152 @@ body {
   }
 }
 
+/* 700px 이하 - 모든 텍스트 완전 중앙 정렬 */
+@media (max-width: 700px) {
+    /* 이미지/비디오 박스 높이 조정 */
+    .image-box {
+        height: 350px;
+    }
+    
+    .video-box {
+        height: 300px;
+    }
+    
+    .youtube-box {
+        height: 350px;
+    }
+    
+    .slider-container {
+        height: 400px;
+    }
+    
+    .small-image-box {
+        height: 250px;
+    }
+    
+    /* 카카오톡 섹션 반응형 */
+    .square-image-box {
+        height: 300px;
+    }
+    
+    .iphone-video-box,
+    .iphone-image-box {
+        max-width: 250px;
+        height: 400px;
+    }
+    
+    .theme-link-button {
+        font-size: 12px;
+        padding: 10px 20px;
+        gap: 8px;
+    }
+    
+    /* 모든 info-grid 항목 중앙 정렬 */
+    .info-grid,
+    .section01-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .info-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 90% !important;
+        margin: 0 auto 15px auto !important;
+        padding: 15px !important;
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        border-radius: 8px !important;
+        border-bottom: none !important;
+        justify-content: center !important;
+    }
+    
+    .info-item .label {
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 0 8px 0 !important;
+        font-weight: 600 !important;
+        color: #666 !important;
+    }
+    
+    .info-item .value {
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        font-weight: 400 !important;
+        color: #333 !important;
+    }
+    
+    /* 텍스트 콘텐츠 완전 중앙 정렬 */
+    .text-content {
+        text-align: center !important;
+        align-items: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .text-content h3,
+    .text-content p,
+    .section01-desc {
+        text-align: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* 500px 이하 - 작은 모바일 화면 */
+@media (max-width: 500px) {
+    .image-box {
+        height: 250px;
+    }
+    
+    .video-box {
+        height: 220px;
+    }
+    
+    .youtube-box {
+        height: 250px;
+    }
+    
+    .slider-container {
+        height: 300px;
+    }
+    
+    .small-image-box {
+        height: 200px;
+    }
+    
+    /* 카카오톡 섹션 반응형 */
+    .square-image-box {
+        height: 250px;
+    }
+    
+    .iphone-video-box,
+    .iphone-image-box {
+        max-width: 200px;
+        height: 350px;
+    }
+    
+    .theme-link-button {
+        font-size: 11px;
+        padding: 10px 18px;
+        gap: 6px;
+    }
+    
+    .theme-link-button .link-icon,
+    .theme-link-button .link-arrow {
+        font-size: 12px;
+    }
+}
+
+
 </style>
 </head>
 
@@ -653,7 +1004,8 @@ body {
                 <div class="text-content section01-text">
                     <h3>FanGoods</h3>
                     <p class="section01-desc">팬 굿즈로 사원증과 스티커를 제작해 Witchform에서 판매했고, <br>
-                        실제 수익으로 이어졌습니다. 디자인부터 유통까지 전 과정을 직접 운영한 경험입니다.</p>
+                        실제 수익으로 이어졌습니다. <br>또한, ios 전용 카카오톡 테마를 만든 후 이미지를 제작하여 배포하기도 했습니다.<br>
+                        디자인부터 유통까지 전 과정을 직접 운영한 경험입니다.</p>
                     <div class="info-grid section01-info">
                         <div class="info-item">
                             <span class="label">✦ with</span>
@@ -685,6 +1037,47 @@ body {
                 </div>
                 <div class="small-image-box">
                     <img src="card03.webp" alt="이미지3">
+                </div>
+            </div>
+            
+            <!-- 카카오톡 테마 섹션 -->
+            <div class="kakaotalk-section">
+                <!-- 정방형 이미지 (상단) -->
+                <div class="kakaotalk-top">
+                    <div class="square-image-box">
+                        <img src="talkinfo.webp" alt="카카오톡 테마 정보">
+                    </div>
+                </div>
+                
+                <!-- 아이폰 영상 + 아이폰 이미지 (하단) -->
+                <div class="kakaotalk-bottom">
+                    <!-- 비디오 iPhone 목업 -->
+                    <div class="iphone-mockup">
+                        <div class="iphone-screen">
+                            <div class="iphone-video-box">
+                                <video controls autoplay muted loop playsinline>
+                                    <source src="ktalk.mov" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 이미지 iPhone 목업 -->
+                    <div class="iphone-mockup">
+                        <div class="iphone-screen">
+                            <div class="iphone-image-box">
+                                <img src="talk1.webp" alt="카카오톡 테마 화면">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 링크 버튼 -->
+                <div class="kakaotalk-link">
+                    <a href="https://posty.pe/0sc4ez" target="_blank" class="theme-link-button">
+                        <span class="link-text">카카오톡 테마 자세히 보기</span>
+                    </a>
                 </div>
             </div>
             
@@ -736,7 +1129,12 @@ body {
             
             <!-- YouTube 영상 -->
             <div class="youtube-box">
-                <iframe src="https://www.youtube.com/embed/wOTTg_YwfZQ?si=X-86_UhoKpshAEd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/wOTTg_YwfZQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
                 </iframe>
             </div>
         </div>

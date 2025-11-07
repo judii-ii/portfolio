@@ -35,7 +35,7 @@
         }
         
         body {
-            background-color: #D18293;
+            background-color: #FFF1F4;
             color: var(--text-dark);
             line-height: 1.6;
         }
@@ -47,7 +47,7 @@
             }
         
         .container {
-            background-color: #D18293;
+            background-color: #FFF1F4;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
@@ -55,7 +55,7 @@
         
         /* coluffy 브랜드 레이아웃 */
         .coluffy-section {
-            background: linear-gradient(to bottom, #e4c2c9 0%, #d28296 30%, #ffd4ce 65%, #d4a9a3 100%);
+            background: linear-gradient(to bottom, #FFF1F4 0%, #ffd4ce 100%);
             overflow: hidden;
         }
         
@@ -69,13 +69,14 @@
             font-weight: 500;
             font-style: normal;
             font-size: 120px;
-            color: white;
+            color: rgb(60, 57, 57);
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
             line-height: 1;
             margin-bottom: 30px;
         }
         
         .coluffy-subheader {
-            color: white;
+            color: rgb(60, 57, 57);
             font-family: "Inter", sans-serif;
             font-size: 14px;
             font-weight: 500;
@@ -94,7 +95,7 @@
             display: grid;
             gap: 20px;
             padding: 40px 0;
-            color: #ffffff;
+            color: rgb(60, 57, 57);
             font-family: "Inter", sans-serif;
             font-size: 14px;
             font-weight: 500;
@@ -103,33 +104,127 @@
             text-align: center;
         }
         
+        /* Figma 링크 섹션 */
+        .figma-link-section {
+            max-width: 800px;
+            margin: 30px auto 40px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .figma-description {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            color: rgb(60, 57, 57);
+            margin-bottom: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .figma-description-kr {
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 13px;
+            color: rgb(80, 77, 77);
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+        
+        .figma-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #FFB6C1;
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+        }
+        
+        .figma-button:hover {
+            background-color: #FF99AA;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+        }
+        
         .coluffy-hero {
             position: relative;
             height: 720px;
-            background-image: url('cf.webp');
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            overflow: hidden;
         }
         
+        .coluffy-hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            .coluffy-hero {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .coluffy-hero {
+                height: 300px;
+            }
+        }
+
         .coluffy-columns {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: block;
+            max-width: 100vw; /* hero와 동일한 너비 */
+            margin: 0 auto;
+            margin-top: 0; /* 상단 여백 제거 */
         }
-        
         .coluffy-column-black {
-            background-color: #7C696E;
-            color: white;
-            padding: 80px 40px;
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            padding: 100px 80px; /* 상하 패딩 늘리고 좌우도 충분히 */
+            text-align: center; /* 중앙 정렬 */
         }
-        
+
         .coluffy-column-beige {
-            background-color: #A7838C;
-            color: white;
-            padding: 80px 40px;
+            background-color: #FFF1F4;
+            color: rgb(0, 0, 0);
+            padding: 100px 80px;
+            text-align: center;
         }
+
+        .coluffy-column-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: inherit;
+        }
+
+        .coluffy-column-content {
+            font-size: 28px; /* 조금 더 크게 */
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 40px;
+            max-width: 500px; /* 텍스트 너비 늘리기 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 
         .coluffy-webp {
             position: relative;
@@ -142,25 +237,12 @@
             justify-content: center;
             margin-top: 0;
         }
-        
-        .coluffy-column-title {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 30px;
-            color: inherit;
-        }
-        
-        .coluffy-column-content {
-            font-size: 24px;
-            line-height: 1.5;
-            font-weight: 500;
-            margin-bottom: 40px;
-        }
+    
         
         .coluffy-footer {
-            background-color: #c98698;
+            background-color: #ffffff;
             padding: 60px 40px;
-            color: white;
+            color: rgb(0, 0, 0);
         }
         
         .coluffy-brand-name {
@@ -170,7 +252,7 @@
             font-size: 30px;
             font-weight: 600;
             margin-bottom: 30px;
-            color: white;
+            color: rgb(0, 0, 0);
         }
 
         .coluffy-brand-description {
@@ -178,192 +260,147 @@
             font-size: 14px;
             line-height: 1.8;
             max-width: 800px;
-            color: white;
+            color: rgb(0, 0, 0);
         }
         
+        /*로고 설명 */
         .brand-design-section {
-            color: white;
-            padding-top: 60px;
-            margin: 0;
+            background-color: white;
+            max-width: 100vw;
+            margin: 0 auto;
+            padding: 0;
         }
 
         .brand-design-header {
-        text-align: left;
-        padding: 20px 40px;
-        margin-bottom: 40px;
-        font-family: "Inter", sans-serif;
-        font-size: 14px;
-        font-weight: 300;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .brand-design-header h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000000;
+            letter-spacing: 2px;
         }
 
         .brand-design-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
             margin-bottom: 80px;
-            padding: 60px 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .logo-showcase {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 40px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            margin-bottom: 60px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 50px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            width: 500px; /* 큰 로고 사이즈 */
         }
 
         .logo-description {
-            width: 100%;
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        .logo-variants {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .description-pt h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
         }
 
-        .logo-variant {
+        .description-pt p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .description-en {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .description-en p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .brand-tagline-section {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 60px;
+            border-top: 2px solid #eee;
+        }
+
+        .brand-taglines {
+            margin-bottom: 50px;
+        }
+
+        .tagline {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+        }
+
+        .tagline sup {
+            font-size: 12px;
+            color: #999;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .tagline em {
+            display: block;
+            font-size: 13px;
+            color: #888;
+            font-style: normal;
+            margin-top: 4px;
+            margin-left: 20px;
+        }
+
+        .brand-logo-oval {
             display: flex;
             justify-content: center;
         }
 
-        .logo-variant img {
-            width: 100%;
-            max-width: 400px;
+        .logo-oval-image {
+            max-width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.3s ease;
+            width: 500px;
+            margin-bottom: 20%;
         }
-
-        .logo-variant img:hover {
-            transform: scale(1.05);
-        }
-
-        .description-pt, .description-en {
-            background: rgba(255,255,255,0.05);
-            padding: 35px;
-            border-radius: 16px;
-            border-left: 4px solid rgba(255,255,255,0.3);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .description-pt:hover, .description-en:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-
-        .description-pt:last-child, .description-en:last-child {
-            margin-bottom: 0;
-        }
-
-        .description-pt h3, .description-en h3 {
-            font-family: "adobe-aldine", serif;
-            font-weight: 600;
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: rgba(255,255,255,0.95);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .description-pt p, .description-en p {
-            font-family: "Inter", sans-serif;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: rgba(255,255,255,0.85);
-            text-align: justify;
-        }
-
-        .description-pt p:last-child, .description-en p:last-child {
-            margin-bottom: 0;
-        }
-
-        .brand-tagline-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 40px;
-        max-width: 800px;
-        margin: 0 auto;
-        }
-
-        .brand-taglines {
-        width: 100%;
-        max-width: 600px;
-        margin-bottom: 50px;
-        text-align: center;
-        }
-
-        .tagline {
-        font-size: 16px;
-        font-family: "Inter", sans-serif;
-        font-style: bold;
-        margin-bottom: 25px;
-        font-weight: 500;
-        color: white;
-        line-height: 1.6;
-        }
-
-        .tagline em {
-        font-family: "Inter", sans-serif;
-        font-style: italic;
-        font-weight: 200;
-        }
-
-        .tagline sup {
-        font-family: "adobe-aldine", serif;
-        font-size: 12px;
-        vertical-align: super;
-        margin-right: 8px;
-        }
-
-        .brand-logo-oval {
-        width: 100%;
-        max-width: 600px;
-        display: flex;
-        justify-content: center;
-        }
-
-        .brand-logo-oval img {
-        width: 100%;
-        height: auto;
-        display: block;
-        }
+        
 
         /* 폰트 레이아웃 스타일 - 완전 새로운 구조 */
         .brand-principles-content {
-            background-color: #AA6B77;
-            color: white;
-            padding: 50px 40px;
-            margin-bottom: 0;
+            background-color: #FFF1F4;
+            color: rgb(0, 0, 0);
+            padding: 50px 0;
+            margin: 0;
             position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
         }
 
-        /* 데스크톱 레이아웃 */
         .font-desktop-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
             display: flex;
             min-height: 700px;
             align-items: stretch;
-            padding: 20px 0;
         }
 
         .font-category {
@@ -384,8 +421,6 @@
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 0;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .body-label {
@@ -425,7 +460,7 @@
             font-size: 32px;
             font-weight: 500;
             margin-bottom: 20px;
-            color: white;
+            color: rgb(0, 0, 0);
         }
 
         .english-name {
@@ -433,7 +468,7 @@
             font-size: 32px;
             font-weight: 600;
             margin-bottom: 20px;
-            color: white;
+            color: black;
         }
 
         .font-description {
@@ -446,7 +481,7 @@
             font-weight: 300;
             line-height: 1.4;
             margin-bottom: 8px;
-            color: rgba(255,255,255,0.9);
+            color: black;
         }
 
         .font-weights {
@@ -468,7 +503,7 @@
             font-size: 16px;
             line-height: 1.7;
             font-weight: 400;
-            color: rgba(255,255,255,0.95);
+            color: black;
         }
 
         .sample-text.semi-bold {
@@ -494,7 +529,7 @@
             text-align: right;
             font-size: 14px;
             line-height: 1.3;
-            color: rgba(255,255,255,0.8);
+            color: black;
             flex-shrink: 0;
         }
 
@@ -517,7 +552,7 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: white;
+            color: black;
         }
 
         .mobile-font-name {
@@ -525,7 +560,7 @@
             font-size: 28px;
             font-weight: 500;
             margin-bottom: 20px;
-            color: white;
+            color: black;
         }
 
         .mobile-font-desc {
@@ -538,7 +573,7 @@
             font-weight: 300;
             line-height: 1.4;
             margin-bottom: 8px;
-            color: rgba(255,255,255,0.9);
+            color: black;
         }
 
         .mobile-font-samples {
@@ -561,7 +596,7 @@
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 8px;
-            color: rgba(255,255,255,0.95);
+            color: black;
             font-weight: 400;
         }
 
@@ -581,7 +616,7 @@
         .mobile-weight {
             font-family: "Inter", sans-serif;
             font-size: 12px;
-            color: rgba(255,255,255,0.7);
+            color: black;
             display: block;
         }
 
@@ -664,22 +699,21 @@
         }
         .coluffy-brand-pt2 {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             gap: 0;
-            flex-wrap: wrap;
             }
 
             .coluffy-brand-pt2 img {
-            width: 50%;
+            width: 100%;
             height: auto;
             object-fit: cover;
-            aspect-ratio: auto;
             }
         
         /* Product section */
         .product-showcase {
-            color: white;
+            color: rgb(0, 0, 0);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -703,6 +737,102 @@
             font-size: 16px;
             line-height: 1.6;
             }
+        
+        /* Brand Film 섹션 */
+        .brand-film-section {
+            background-color: #FFF1F4;
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .brand-film-title {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .brand-film-description {
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 1200px;
+            margin-bottom: 40px;
+            color: #000;
+        }
+        
+        .brand-film-divider {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 40px 0;
+        }
+        
+        .brand-film-subtitle {
+            font-family: "Inter", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .brand-film-subtitle2 {
+            font-family: "Inter", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .brand-film-tools {
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            margin-bottom: 60px;
+            padding-left: 20px;
+            color: #000;
+        }
+        
+        .brand-film-tools li {
+            margin-bottom: 8px;
+        }
+        
+        /* 2x2 비디오 그리드 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            grid-auto-rows: 400px; /* 모든 행을 동일한 높이로 */
+        }
+        
+        .grid-video {
+            width: 100%;
+            height: 100%; /* 부모 높이에 맞춤 */
+            object-fit: cover; /* 비율 유지하며 잘림 */
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                grid-auto-rows: 300px; /* 모바일에서는 300px */
+            }
+            
+            .brand-film-title {
+                font-size: 48px;
+            }
+            
+            .brand-film-subtitle {
+                font-size: 20px;
+            }
+            
+            .brand-film-subtitle2 {
+                font-size: 18px;
+            }
+        }
 
         /* info section */
         .double-image-section {
@@ -723,7 +853,7 @@
         
         /* Overview section */
         .overview {
-            color: white;
+            color: rgb(0, 0, 0);
             margin: 50px 0;
         }
         
@@ -739,6 +869,48 @@
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 15px;
+        }
+        
+        /* Brand Images Section - 1+2 Layout */
+        .brand-images-section {
+            width: 100%;
+            max-width: 100%;
+            margin: 60px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .brand-image-top {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        
+        .brand-image-top img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .brand-images-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            width: 100%;
+        }
+        
+        .brand-images-bottom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .brand-images-bottom {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* YouTube video section */
@@ -1289,20 +1461,32 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            display: block;
         }
 
         .billboard-image {
             width: 100%;
-            height: 100vh;
+            height: auto;
             overflow: hidden;
             position: relative;
         }
 
         .billboard-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .billboard-image {
+                height: 60vh;
+            }
+            
+            .billboard-image img {
+                height: 100%;
+                object-fit: cover;
+            }
         }
         
         /* 웹사이트 섹션 - 애니메이션 효과 */
@@ -1312,43 +1496,51 @@
         }
         
         .website-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background-color: #fff;
         }
         
         .website-header {
-            background-color: #f8f8f8;
-            padding: 15px 20px;
+            background-color: #ffffff;
+            padding: 20px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e5e5;
         }
         
         .website-logo {
             font-family: "adobe-aldine", serif;
-            font-size: 28px;
-            font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #000;
         }
         
         .website-nav {
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            margin-left: 40px;
         }
         
         .website-nav-item {
-            font-size: 14px;
-            color: #333;
+            font-size: 13px;
+            color: #000;
+            font-weight: 400;
+            cursor: pointer;
         }
         
         .website-user-nav {
             display: flex;
-            gap: 15px;
-            font-size: 14px;
+            gap: 20px;
+            font-size: 13px;
+        }
+        
+        .website-user-nav .website-nav-item {
+            color: #000;
         }
         
         .website-grid {
@@ -1358,18 +1550,24 @@
         }
         
         .product-card {
-            border: 1px solid #f0f0f0;
+            border-right: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
+            background-color: #fff;
+        }
+        
+        .product-card:nth-child(4) {
+            border-right: none;
         }
         
         .product-image {
             width: 100%;
             align-items: center;
             aspect-ratio: 3/4;
-            background-color: #f8f8f8;
+            background-color: #fafafa;
             position: relative;
             overflow: hidden;
         }
@@ -1392,21 +1590,135 @@
         }
                 
         .product-info {
-            padding: 10px;
+            padding: 15px 10px;
             background-color: #fff;
             font-family: 'Inter', sans-serif;
             text-align: center;
         }
         
         .product-title {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: #000;
         }
         
         .product-price {
             font-size: 12px;
             color: #666;
+            font-weight: 400;
+        }
+        
+        .product-clickable {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .product-clickable:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* 제품 상세 팝업 */
+        .product-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        
+        .product-popup.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .popup-content {
+            position: relative;
+            background-color: #fff;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1001;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: #333;
+            z-index: 1002;
+        }
+        
+        .popup-body {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .popup-image {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .popup-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .popup-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .popup-price {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .popup-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .popup-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .popup-btn:hover {
+            background-color: #333;
         }
         
         /* 애니메이션 코드 수정 */
@@ -1459,6 +1771,32 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
         
+        .clickable-phone {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .clickable-phone:hover {
+            transform: scale(1.02);
+        }
+        
+        .phone-screen {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            padding: 25px 0 0;
+        }
+        
+        .phone-screen.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
         .mobile-phone::before {
             content: '';
             position: absolute;
@@ -1469,7 +1807,7 @@
             height: 25px;
             background-color: #000;
             border-radius: 0 0 15px 15px;
-            z-index: 1;
+            z-index: 10;
         }
         
         .mobile-screen {
@@ -1678,7 +2016,19 @@
             .coluffy-hero {
                 height: 800px;
             }
+
+            .brand-design-section {
+                padding: 60px 40px 0;
+            }
             
+            .font-desktop-layout {
+                padding: 40px; /* 여백 늘리기 */
+            }
+            
+            .font-mobile-layout {
+                padding: 60px;
+            }
+
             .detail-content {
                 gap: 60px;
             }
@@ -1705,6 +2055,17 @@
             .coluffy-webp {
                 height: 800px;
             }
+
+            .brand-design-section {
+                padding: 60px 20px 0;
+            }
+
+            .font-mobile-layout {
+                padding: 40px;
+            }
+            .mobile-font-section {
+                margin: 0 40px;
+            }
             
             .mobile-container {
                 gap: 20px;
@@ -1718,6 +2079,7 @@
         /* 폰트 섹션 반응형 */
         @media (max-width: 1000px) {
             .font-desktop-layout {
+                margin: 40px 40px;
                 display: none;
             }
             
@@ -1753,17 +2115,38 @@
                 height: 700px;
             }
             
-            .coluffy-column-content {
-                font-size: 20px;
+            .coluffy-columns {
+                max-width: 100%;
             }
             
-            .brand-design-content {
-                flex-direction: column;
-                gap: 40px;
+            .coluffy-column-black,
+            .coluffy-column-beige {
+                padding: 80px 40px;
+            }
+            
+            .coluffy-column-content {
+                font-size: 24px;
+                max-width: 100%;
+            }
+                    
+            .brand-design-section {
+                padding: 60px 80px 0;
+            }
+            
+            .logo-image {
+                width: 350px;
             }
             
             .logo-description {
-                padding: 0;
+                max-width: 100%;
+            }
+            
+            .brand-tagline-section {
+                max-width: 100%;
+            }
+            
+            .logo-oval-image {
+                width: 800px;
             }
             
             .overview p {
@@ -1776,6 +2159,13 @@
                 gap: 30px;
             }
             
+            .font-mobile-layout {
+                padding: 40px;
+            }
+            .mobile-font-section {
+                margin: 0 40px;
+            }
+
             .color-title {
                 font-size: 36px;
             }
@@ -1838,19 +2228,38 @@
             }
             
             .coluffy-columns {
-                grid-template-columns: 1fr;
+                max-width: 100%;
             }
             
-            .coluffy-column-black, 
+            .coluffy-column-black,
             .coluffy-column-beige {
-                padding: 60px 30px;
+                padding: 80px 40px;
             }
             
             .coluffy-column-content {
-                font-size: 18px;
-                line-height: 1.6;
+                font-size: 24px;
+                max-width: 100%;
+            }
+                    
+            .brand-design-section {
+                padding: 60px 80px 0;
             }
             
+            .logo-image {
+                width: 350px;
+            }
+            
+            .logo-description {
+                max-width: 100%;
+            }
+            
+            .brand-tagline-section {
+                max-width: 100%;
+            }
+            
+            .logo-oval-image {
+                width: 600px;
+            }
             .coluffy-footer {
                 padding: 40px 30px;
             }
@@ -1870,6 +2279,14 @@
                 margin-bottom: 30px;
             }
             
+            .font-mobile-layout {
+                font-size: 0.6em;
+            }
+
+            .mobile-font-section {
+                margin: 10px 20px 40px;
+            }
+
             .category-label {
                 margin-bottom: 0;
             }
@@ -2079,6 +2496,14 @@
             .brand-design-header {
                 padding: 15px 20px;
             }
+
+            .brand-design-section {
+                padding: 40px 80px 0;
+            }
+
+            .description-pt {
+                font-size: 0.5em;
+            }
             
             .korean-name, .english-name {
                 font-size: 24px;
@@ -2193,9 +2618,23 @@
                 use AI PROGRAM(Midjourney, Google Veo-2), Photoshop &amp; Illustrator <br>
                 브랜드 무드와 제품 이미지를 함께 완성했습니다.
             </div>
+            
+            <!-- Figma 링크 섹션 -->
+            <div class="figma-link-section">
+                <p class="figma-description">This brand identity was first explored in Figma, then brought to life through code.</p>
+                <p class="figma-description-kr">컨셉에서 코드까지: 이 프로젝트는 Figma에서 디자인했습니다.<br>브랜드 아이덴티티, 컬러 시스템, 레이아웃 디자인 후 따로 코딩을 진행하여 기능을 갖춘 웹사이트로 구현되었습니다.</p>
+                <a href="https://stripe-movie-34083325.figma.site" target="_blank" class="figma-button">
+                    View Figma Design →
+                </a>
+            </div>
         </div>
         
         <div class="coluffy-hero">
+            <video autoplay loop muted playsinline>
+                <source src="your-video.mp4" type="video/mp4">
+                <source src="your-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
         </div>
         
         <div class="coluffy-columns">
@@ -2565,30 +3004,75 @@
         </div>
     </div>
 
-    <div class="coluffy-brand-pt"></div>
-    <div class="coluffy-brand-pt2">
-        <img src="brand2.webp" alt="bd1">
-        <img src="brand1.webp" alt="bd2">
+    <!-- 립 컬러 갤러리 섹션 -->
+    <div class="lip-color-section">
+        <h2 class="color-title">find out my color!</h2>
+        
+        <p class="color-description">
+            coluffy는 감정에 따라 선택할 수 있는 컬러를 제안합니다.
+            <br>4가지 립튜브는 모두 다른 기분을 담고 있으며, 그날의 분위기에 가장 어울리는 컬러를 고를 수 있도록 구성되었습니다.
+        </p>
+        
+        <div class="lip-color-grid">
+            <!-- 색상 1: 토마토 -->
+            <div class="lip-color-item">
+                <img src="lip1.webp" alt="Tomato Lip Color" class="lip-image">
+            </div>
+            
+            <!-- 색상 2: 피치 -->
+            <div class="lip-color-item">
+                <img src="lip2.webp" alt="Peach Lip Color" class="lip-image">
+            </div>
+            
+            <!-- 색상 3: 스트로베리 -->
+            <div class="lip-color-item">
+                <img src="lip3.webp" alt="Strawberry Lip Color" class="lip-image">
+            </div>
+            
+            <!-- 색상 4: 딥 체리 -->
+            <div class="lip-color-item">
+                <img src="lip4.webp" alt="Deep Cherry Lip Color" class="lip-image">
+            </div>
+        </div>
+        
+        <div class="color-credit">made by midjourney</div>
     </div>
+
     
     <!-- Main Content -->
     <div class="container">
         <!-- Product showcase -->
-        <div class="product-showcase">
-            <img src="pd1.webp" alt="Coluffy Lip Texture">
-            <div class="product-description">
-                <p>Coluffy 립튜브는 연분홍빛의 글로시한 제형으로, 입술에 탱글한 생기를 더해줍니다.</p>
-                <p>가볍지만 끈적임 없이 촘촘하게 밀착되어, '탕후루 립'처럼 탱글하고 빛나는 입술 표현이 가능합니다.</p>
-                <p>투명한 광택감과 유리알처럼 반짝이는 마무리감은,
-                    한 번의 터치만으로도 입술을 도톰하고 생기있게 연출해줍니다.</p>
+        <!-- Brand Film 섹션 -->
+        <div class="brand-film-section">
+            <h2 class="brand-film-title">Brand Film</h2>
+            <p class="brand-film-description">
+                An experimental brand film created through AI-assisted image generation and conceptual design. 
+                The work blends human emotion with machine imagination, offering a poetic take on contemporary brand expression.
+            </p>
+            <hr class="brand-film-divider">
+            <h3 class="brand-film-subtitle">AI Conceptual Visual Branding</h3>
+            <h4 class="brand-film-subtitle2">AI-Generated Visual Concept for a Color-Driven Brand Identity</h4>
+            <ul class="brand-film-tools">
+                <li>Image – Midjounrey, Firefly</li>
+                <li>Video – Veo2, Veo3</li>
+            </ul>
+            
+            <!-- 2x2 비디오 그리드 -->
+            <div class="video-grid">
+                <video autoplay loop muted playsinline class="grid-video">
+                    <source src="s1.mp4" type="video/mp4">
+                </video>
+                <video autoplay loop muted playsinline class="grid-video">
+                    <source src="s2.mp4" type="video/mp4">
+                </video>
+                <video autoplay loop muted playsinline class="grid-video">
+                    <source src="s3.mp4" type="video/mp4">
+                </video>
+                <video autoplay loop muted playsinline class="grid-video">
+                    <source src="s4.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-        
-        <!-- info information -->
-        <div class="double-image-section">
-            <img src="image1.webp" alt="texture1">
-            <img src="image2.webp" alt="texture2">
-          </div>
 
         <!-- Overview section -->
         <div class="overview">
@@ -2598,13 +3082,19 @@
             <p>revealing the natural beauty of the lips—elevated with elegant simplicity.</p>
         </div>
         
-        <!-- box image section -->
-        <div class="product-gallery">
-            <div class="video-container">
-              <img src="boximg.webp" alt="coluffy packaging">
-              <img src="boximg2.webp" alt="coluffy packaging">
+        <!-- Brand Images Section - 1+2 Layout -->
+        <div class="brand-images-section">
+            <!-- 세로 이미지 (위) -->
+            <div class="brand-image-top">
+                <img src="brand2.webp" alt="Brand Visual">
             </div>
-          </div>
+            
+            <!-- 가로 이미지 2개 (아래) -->
+            <div class="brand-images-bottom">
+                <img src="brand.webp" alt="Brand Visual">
+                <img src="brand1.webp" alt="Brand Visual">
+            </div>
+        </div>
           
         <!-- Concept contrasts -->
         <div class="concept-contrasts">
@@ -2691,68 +3181,21 @@
                     </div>
                 </div>
         </div>
-    </div>
     
         <!-- 라이프스타일 이미지 섹션 -->
-        <div class="lifestyle-section">
-            <div class="lifestyle-image">
-                <img src="butter.webp" alt="Lifestyle Image">
-            </div>
-        </div>
-    
-    <!-- 립 컬러 갤러리 섹션 -->
-            <div class="lip-color-section">
-                <h2 class="color-title">find out my color!</h2>
-                
-                <p class="color-description">
-                    coluffy는 감정에 따라 선택할 수 있는 컬러를 제안합니다.
-                    <br>4가지 립튜브는 모두 다른 기분을 담고 있으며, 그날의 분위기에 가장 어울리는 컬러를 고를 수 있도록 구성되었습니다.
-                </p>
-                
-                <div class="lip-color-grid">
-                    <!-- 색상 1: 토마토 -->
-                    <div class="lip-color-item">
-                        <img src="lip1.webp" alt="Tomato Lip Color" class="lip-image">
-                    </div>
-                    
-                    <!-- 색상 2: 피치 -->
-                    <div class="lip-color-item">
-                        <img src="lip2.webp" alt="Peach Lip Color" class="lip-image">
-                    </div>
-                    
-                    <!-- 색상 3: 스트로베리 -->
-                    <div class="lip-color-item">
-                        <img src="lip3.webp" alt="Strawberry Lip Color" class="lip-image">
-                    </div>
-                    
-                    <!-- 색상 4: 딥 체리 -->
-                    <div class="lip-color-item">
-                        <img src="lip4.webp" alt="Deep Cherry Lip Color" class="lip-image">
-                    </div>
-                </div>
-                
-                <div class="color-credit">made by midjourney</div>
-            </div>
-    
         <!-- 빌보드 이미지 섹션 - 간단 버전 -->
             <section class="billboard-section">
-                <!-- 첫 번째 이미지 -->
-                <div class="billboard-image">
-                    <img src="lipberry.webp" alt="Coluffy Lip Gloss with Strawberries">
-                </div>
-                
-                <!-- 두 번째 이미지 -->
+                <!-- 두 개 이미지 가로 배치 -->
                 <div class="billboard-image">
                     <img src="billboard1.webp" alt="Billboard Image 1">
                 </div>
                 
-                <!-- 세 번째 이미지 -->
                 <div class="billboard-image">
                     <img src="billboard2.webp" alt="Billboard Image 2">
                 </div>
             </section>
     
-    <!-- 웹사이트 섹션 (두 번째 이미지 - webp 효과) -->
+    <!-- 웹사이트 섹션 -->
     <section class="website-section">
         <div class="website-container">
             <div class="website-header">
@@ -2770,72 +3213,89 @@
                 </div>
             </div>
             <div class="website-grid">
-                <!-- 제품 카드 1 - 애니메이션 효과 -->
-                <div class="product-card">
+                <!-- 제품 카드 1 -->
+                <div class="product-card product-clickable" data-product="tomato">
                     <div class="product-image">
                         <img src="moisturizer.webp" alt="tube1" class="animate-product">
                         <img src="tube1.webp" alt="tube1" class="animate-product">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Tomato 001</div>
+                        <div class="product-title">TOMATO 001</div>
                         <div class="product-price">12,000KRW</div>
                     </div>
                 </div>
                 
-                <!-- 제품 카드 2 - 애니메이션 효과 -->
-                <div class="product-card">
+                <!-- 제품 카드 2 -->
+                <div class="product-card product-clickable" data-product="peach">
                     <div class="product-image">
                         <img src="serum.webp" alt="tube2" class="animate-product">
                         <img src="tube2.webp" alt="tube2" class="animate-product">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Peach 002</div>
+                        <div class="product-title">PEACH 002</div>
                         <div class="product-price">12,000KRW</div>
                     </div>
                 </div>
                 
-                <!-- 제품 카드 3 - 애니메이션 효과 -->
-                <div class="product-card">
+                <!-- 제품 카드 3 -->
+                <div class="product-card product-clickable" data-product="strawberry">
                     <div class="product-image">
                         <img src="kream.webp" alt="tube3" class="animate-product">
                         <img src="tube3.webp" alt="tube3" class="animate-product">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Strawberry 003</div>
+                        <div class="product-title">STRAWBERRY 003</div>
                         <div class="product-price">12,000KRW</div>
                     </div>
                 </div>
                 
-                <!-- 제품 카드 4 - 애니메이션 효과 -->
-                <div class="product-card">
+                <!-- 제품 카드 4 -->
+                <div class="product-card product-clickable" data-product="cherry">
                     <div class="product-image">
                         <img src="essence.webp" alt="tube4" class="animate-product">
                         <img src="tube4.webp" alt="tube4" class="animate-product">
                     </div>
                     <div class="product-info">
-                        <div class="product-title">Deep Cherry 004</div>
+                        <div class="product-title">DEEP CHERRY 004</div>
                         <div class="product-price">12,000KRW</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 제품 상세 팝업 -->
+            <div class="product-popup" id="productPopup">
+                <div class="popup-overlay"></div>
+                <div class="popup-content">
+                    <button class="popup-close">&times;</button>
+                    <div class="popup-body">
+                        <div class="popup-image">
+                            <img src="" alt="Product" id="popupImage">
+                        </div>
+                        <div class="popup-info">
+                            <h3 id="popupTitle"></h3>
+                            <p class="popup-price" id="popupPrice"></p>
+                            <p class="popup-description" id="popupDescription"></p>
+                            <button class="popup-btn">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- 모바일 앱 섹션 (세 번째 이미지) -->
+    <!-- 모바일 앱 섹션 -->
     <section class="mobile-section">
         <div class="mobile-container">
-            <!-- 첫 번째 핸드폰 - Unconfidence -->
-            <div class="mobile-phone">
-                <div class="mobile-screen mobile-screen-pink">
+            <!-- 첫 번째 핸드폰 - 클릭 가능 -->
+            <div class="mobile-phone clickable-phone" data-phone="1">
+                <div class="mobile-screen mobile-screen-pink phone-screen active" data-screen="1-1">
                     <div class="mobile-content mobile-content-center">
-                        <div class="unconfidence-text">What's your color?</div>
+                        <div class="unconfidence-text">WHAT'S YOUR<br>COLOR?</div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- 두 번째 핸드폰 - 제품 상세 페이지 -->
-            <div class="mobile-phone">
-                <div class="mobile-screen mobile-screen-black">
+                
+                <!-- 두 번째 화면 (숨김) -->
+                <div class="mobile-screen mobile-screen-black phone-screen" data-screen="1-2">
                     <div class="mobile-header">
                         <div class="mobile-title">coluffy</div>
                         <div class="mobile-icon">⋯</div>
@@ -2852,11 +3312,9 @@
                         <div class="mobile-nav-icon"><i class="fas fa-shopping-bag"></i></div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- 세 번째 핸드폰 - 소셜 피드 -->
-            <div class="mobile-phone">
-                <div class="mobile-screen mobile-screen-black">
+                
+                <!-- 세 번째 화면 (숨김) -->
+                <div class="mobile-screen mobile-screen-black phone-screen" data-screen="1-3">
                     <div class="mobile-header">
                         <div class="mobile-title">coluffy</div>
                         <div class="mobile-icons">
@@ -2897,7 +3355,8 @@
             </div>
         </div>
     </section>
-    
+
+
     <!-- 브랜드 아이덴티티 섹션 -->
     <section class="brand-identity">
         <div class="container">
@@ -2916,6 +3375,9 @@
         const backButtons = document.querySelectorAll('.back-button');
         const coluffySection = document.querySelector('.coluffy-section');
         
+        // 스크롤 위치 저장 변수
+        let savedScrollPosition = 0;
+        
         // Add click event to feature cards
         featureCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -2933,6 +3395,9 @@
         
         // Function to show specific product page
         function showProductPage(productId) {
+            // 현재 스크롤 위치 저장
+            savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            
             // Hide main content
             document.querySelectorAll('.container').forEach(container => {
                 container.style.display = 'none';
@@ -2941,7 +3406,7 @@
             coluffySection.style.display = 'none';
             
             // Hide other sections
-            document.querySelectorAll('.lifestyle-section, .billboard-section, .website-section, .mobile-section, .brand-identity').forEach(section => {
+            document.querySelectorAll('.billboard-section, .website-section, .mobile-section, .brand-identity, .lip-color-section').forEach(section => {
                 section.style.display = 'none';
             });
             
@@ -2975,7 +3440,7 @@
             coluffySection.style.display = 'block';
             
             // Show other sections
-            document.querySelectorAll('.lifestyle-section, .billboard-section, .website-section, .mobile-section, .brand-identity').forEach(section => {
+            document.querySelectorAll('.billboard-section, .website-section, .mobile-section, .brand-identity, .lip-color-section').forEach(section => {
                 section.style.display = 'block';
             });
             
@@ -2984,8 +3449,10 @@
                 page.classList.remove('active');
             });
             
-            // Scroll to top
-            window.scrollTo(0, 0);
+            // 저장된 스크롤 위치로 복원
+            setTimeout(() => {
+                window.scrollTo(0, savedScrollPosition);
+            }, 0);
         }
         
         // 페이지 로드 시 애니메이션 시작
@@ -2996,6 +3463,85 @@
         // 반응형 동작 확인
         window.addEventListener('resize', function() {
             console.log('화면 크기가 변경되었습니다. 현재 너비: ' + window.innerWidth + 'px');
+        });
+        
+        // ===== 핸드폰 목업 클릭 이벤트 =====
+        document.querySelectorAll('.clickable-phone').forEach(phone => {
+            let currentScreen = 1;
+            const totalScreens = phone.querySelectorAll('.phone-screen').length;
+            
+            phone.addEventListener('click', function() {
+                // 현재 화면 숨기기
+                phone.querySelector('.phone-screen.active').classList.remove('active');
+                
+                // 다음 화면 계산
+                currentScreen = currentScreen >= totalScreens ? 1 : currentScreen + 1;
+                
+                // 다음 화면 보이기
+                phone.querySelector(`[data-screen="${phone.dataset.phone}-${currentScreen}"]`).classList.add('active');
+            });
+        });
+        
+        // ===== 제품 팝업 기능 =====
+        const productData = {
+            tomato: {
+                title: 'TOMATO 001',
+                price: '12,000KRW',
+                image: 'tube1.webp',
+                description: 'A sheer light pink lip gloss with a jelly-soft texture and a high-shine finish. coluffy Liptube adds a layer of juicy color and hydration.'
+            },
+            peach: {
+                title: 'PEACH 002',
+                price: '12,000KRW',
+                image: 'tube2.webp',
+                description: 'A sheer peach pink lip gloss with a jelly-soft texture and a high-shine finish. Perfect for a natural, dewy look.'
+            },
+            strawberry: {
+                title: 'STRAWBERRY 003',
+                price: '12,000KRW',
+                image: 'tube3.webp',
+                description: 'A vibrant strawberry pink lip gloss that delivers a fresh, fruity glow with every application.'
+            },
+            cherry: {
+                title: 'DEEP CHERRY 004',
+                price: '12,000KRW',
+                image: 'tube4.webp',
+                description: 'A deep cherry lip gloss with rich color and luxurious shine. Perfect for a bold, confident look.'
+            }
+        };
+        
+        const popup = document.getElementById('productPopup');
+        const popupClose = document.querySelector('.popup-close');
+        const popupOverlay = document.querySelector('.popup-overlay');
+        
+        // 제품 카드 클릭 이벤트
+        document.querySelectorAll('.product-clickable').forEach(card => {
+            card.addEventListener('click', function() {
+                const productId = this.dataset.product;
+                const product = productData[productId];
+                
+                // 팝업 내용 채우기
+                document.getElementById('popupTitle').textContent = product.title;
+                document.getElementById('popupPrice').textContent = product.price;
+                document.getElementById('popupImage').src = product.image;
+                document.getElementById('popupDescription').textContent = product.description;
+                
+                // 팝업 열기
+                popup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // 팝업 닫기 - X 버튼
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // 팝업 닫기 - 오버레이 클릭
+        popupOverlay.addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     </script>
 
