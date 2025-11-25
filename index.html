@@ -173,6 +173,7 @@
         box-sizing: border-box;
         width: 100%;
         max-width: 3200px;
+        margin: 0 auto;
     }
 
     .sthumbnail-container .sthumbnail-1 {
@@ -242,7 +243,7 @@
     .overlay-text2 {
         position: absolute;
         top: 10%;
-        left: 20%;
+        left: 18%;
         transform: translate(-50%, -50%);
         color: white;
         font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
@@ -281,26 +282,42 @@
         pointer-events: none;
     }
 
+    .overlay-text5 {
+        position: absolute;
+        top: 10%;
+        left: 14%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
+        font-weight: lighter;
+        font-size: 1.5vw;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        pointer-events: none;
+    }
+
     .text-only-container {
         position: relative;
         width: 100%;
-        aspect-ratio: 1 / 1;
+        max-width: 3200px;
+        margin: 0 auto;
+        padding: 100px 0;
         background-color: #f8f8f8;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .text-only-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         font-size: 1.2vw;
         line-height: 1.6;
         color: #333;
         text-align: center;
-        width: 80%;
+        width: 100%;
+        max-width: 800px;
     }
 
     .instagram-link {
@@ -350,7 +367,7 @@
         }
         
         .text-only-content {
-            font-size: 8px;
+            font-size: 12px;
             max-width: 90%;
             line-height: 1.4;
         }
@@ -358,33 +375,39 @@
         .text-only-container {
             position: relative;
             width: 100%;
-            height: 0;
-            padding-bottom: 100% !important;
+            padding: 60px 0;
             background-color: #f8f8f8;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .overlay-text1, .overlay-text2, .overlay-text3, .overlay-text4 {
+        .overlay-text1, .overlay-text2, .overlay-text3, .overlay-text4, .overlay-text5 {
             font-size: 2.5vw;
             top: 15%;
             line-height: 1.2;
         }
         
         .overlay-text1 {
-            left: 25%;
-        }
-        
-        .overlay-text2 {
             left: 28%;
         }
         
+        .overlay-text2 {
+            left: 30%;
+        }
+        
         .overlay-text3 {
-            left: 20%;
+            left: 21%;
         }
         
         .overlay-text4 {
-            left: 24%;
+            left: 30%;
+        }
+        
+        .overlay-text5 {
+            left: 20%;
         }
         
         .instagram-link {
@@ -490,12 +513,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="sthumbnail-1">
             <img src="e.webp">
             <div class="overlay-text4">✦ cosmetic <br>&nbsp;&nbsp;&nbsp;&nbsp;brand design<br>&nbsp;&nbsp;&nbsp;&nbsp;personal project</div>
-            <button class="hover-button" onclick="location.href='cosmetics.html'">૮ ・ﻌ・ა view project</button>
+            <button class="hover-button" onclick="location.href='https://cosmetics-coluffy.figma.site/'">૮ ・ﻌ・ა view project</button>
         </div>
         <div class="sthumbnail-1">
             <img src="b.png">
             <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&design</div>
-            <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ա view project</button>
+            <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ა view project</button>
         </div>
         <div class="sthumbnail-1">
             <img src="a.webp">
@@ -506,14 +529,20 @@ document.addEventListener('DOMContentLoaded', function() {
             <img src="d.webp">
             <button class="hover-button" onclick="location.href='sideproject.html'">૮ ・ﻌ・ა view project</button>
         </div>
-        <div class="text-only-container">
-            <div class="text-only-content">
-                This is just the beginning-<br><br>
-                I'm planning to fill this space<br> with more projects I love(⸝⸝º ^ º⸝⸝ )<br>
-                rooted in my passion for music, film, and storytelling through design ♡
-                <br><br>
-                <img src="pixel.webp" alt="Instagram Link" class="instagram-link" onclick="window.open('https://www.instagram.com/19xharu', '_blank')">
-            </div>
+        <div class="sthumbnail-1">
+            <img src="f.webp">
+            <div class="overlay-text5">✦ AI<br>&nbsp;&nbsp;&nbsp;&nbsp;design</div>
+            <button class="hover-button" onclick="location.href='https://ai-project.figma.site'">૮ ・ﻌ・ა view project</button>
+        </div>
+    </div>
+    
+    <div class="text-only-container">
+        <div class="text-only-content">
+            This is just the beginning-<br><br>
+            I'm planning to fill this space<br> with more projects I love(⸝⸝º ^ º⸝⸝ )<br>
+            rooted in my passion for music, film, and storytelling through design ♡
+            <br><br>
+            <img src="pixel.webp" alt="Instagram Link" class="instagram-link" onclick="window.open('https://www.instagram.com/19xharu', '_blank')">
         </div>
     </div>
     
