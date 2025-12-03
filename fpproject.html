@@ -351,31 +351,12 @@ html, body {
 
 .section-title-inner {
     display: inline-block;
-    background: linear-gradient(135deg, #333 0%, #555 100%);
-    color: white;
-    padding: 25px 60px;
+    color: #333;
+    padding: 0 0 10px 0;
     font-family: 'Pretendard-Regular';
     font-size: 36px;
-    font-weight: 500;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.section-title-inner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.section-title-inner:hover::before {
-    left: 100%;
+    font-weight: 600;
+    border-bottom: 3px solid #333;
 }
 
 .section-subtitle {
@@ -386,21 +367,11 @@ html, body {
 
 .section-subtitle-inner {
     display: inline-block;
-    background: white;
     color: #666;
-    padding: 20px 40px;
+    padding: 0;
     font-family: 'Pretendard-Light';
-    font-size: 24px;
-    border: 2px solid #ddd;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.section-subtitle-inner:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    border-color: #333;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .slide-container {
@@ -827,7 +798,7 @@ html, body {
 /* 반응형 미디어 쿼리 */
 @media screen and (max-width: 1400px) {
     .navbar {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .title1, .title2 {
@@ -938,19 +909,10 @@ html, body {
 
 @media screen and (max-width: 800px) {
     .navbar {
-        font-size: 12px;
+        font-size: 14px;
         flex-wrap: wrap;
     }
 
-    .navbar-item1, .navbar-item3, .navbar-item4 {
-        flex-grow: 1;
-        padding: 0;
-    }
-
-    .navbar-item2 {
-        flex-grow: 0;
-        display: none;
-    }
 
     .project-wrapper {
         flex-direction: column;
@@ -1030,12 +992,12 @@ html, body {
 
     .section-title-inner {
         font-size: 24px;
-        padding: 15px 30px;
+        padding: 0 0 8px 0;
     }
 
     .section-subtitle-inner {
-        font-size: 18px;
-        padding: 12px 25px;
+        font-size: 16px;
+        padding: 0;
     }
 
     .recruit-container2 {
@@ -1167,12 +1129,12 @@ html, body {
 
     .section-title-inner {
         font-size: 20px;
-        padding: 12px 25px;
+        padding: 0 0 6px 0;
     }
 
     .section-subtitle-inner {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 14px;
+        padding: 0;
     }
 
     .recruit-writing {
@@ -1325,7 +1287,7 @@ html, body {
         <div class="workshop-start"><img src="workshop.webp" alt="이미지23" loading="lazy"></div>
         
         <div class="section-title">
-            <div class="section-title-inner">✴︎ Futureplay Can</div>
+            <div class="section-title-inner">FUTUREPLAY CAN</div>
         </div>
         <div class="workshop-container1">
             <img src="futureplaycan.webp" alt="이미지17" loading="lazy">
@@ -1348,7 +1310,7 @@ html, body {
         </div>
         
         <div class="section-title">
-            <div class="section-title-inner">✴︎ Banner Design</div>
+            <div class="section-title-inner">BANNER DESIGN</div>
         </div>
         <div class="workshop-container4">
             <img src="banner1.webp" alt="이미지17" loading="lazy">
@@ -1367,7 +1329,7 @@ html, body {
         <div class="workshop-container9"><img src="banner7.webp" alt="이미지27" loading="lazy"></div>
         
         <div class="section-title">
-            <div class="section-title-inner">✴︎ Sticker Design</div>
+            <div class="section-title-inner">STICKER DESIGN</div>
         </div>
         <div class="workshop-container10"><img src="sticker0.webp" alt="이미지28" loading="lazy"></div>
         <div class="workshop-container11">
@@ -1377,13 +1339,13 @@ html, body {
         <div class="workshop-container12"><img src="sticker4.webp" alt="이미지32" loading="lazy"></div>
         
         <div class="section-title">
-            <div class="section-title-inner">✴︎ Leaflet Design</div>
+            <div class="section-title-inner">LEAFLET DESIGN</div>
         </div>
         <div class="workshop-container13"><img src="leaflet0.webp" alt="이미지33" loading="lazy"></div>
         <div class="workshop-container14"><img src="leaflet1.webp" alt="이미지34" loading="lazy"></div>
         
         <div class="section-title">
-            <div class="section-title-inner">✴︎ Hoodie Design</div>
+            <div class="section-title-inner">HOODIE DESIGN</div>
         </div>
         <div class="workshop-container15"><img src="hoodie0.webp" alt="이미지35" loading="lazy"></div>
         <div class="workshop-container16">
