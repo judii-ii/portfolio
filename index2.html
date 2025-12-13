@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <style>
+        /* 기본 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            /* 기본 폰트를 Pretendard로 설정 */
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* --- [1] 상단 가로형 네비게이션바 스타일 --- */
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            background-color: #fff;
+        }
+
+        /* 좌측 로고 (이름) - 호버 효과 없음, 기존 폰트 유지 */
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #000;
+            text-decoration: none;
+            /* 로고만 타자기체 유지 (원하지 않으면 이 줄 삭제) */
+            font-family: 'Courier New', Courier, monospace; 
+        }
+
+        /* 중앙 메뉴 영역 */
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 500; /* Pretendard Bold 느낌 */
+        }
+
+        /* 우측 메뉴 영역 */
+        .nav-right a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ★수정됨★: 로고(.logo)를 제외하고 네비게이션 메뉴에만 호버 효과 적용 */
+        .nav-center a:hover,
+        .nav-right a:hover {
+            background-color: #ffff00; /* 형광펜 효과 */
+            font-style: italic;
+        }
+
+
+        /* --- [2] 메인 그리드 스타일 --- */
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 40px 100px;
+        }
+
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px 40px;
+        }
+
+        .grid-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+
+        .thumb-box {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            background-color: #eee;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .grid-item:hover .thumb-box img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            /* 캡션도 깔끔하게 Pretendard 적용됨 (body 상속) */
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            .nav-center {
+                position: static;
+                transform: none;
+            }
+            .grid-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="https://juyounglee.co.kr" class="logo">Leejuyoung</a>
+
+        <nav class="nav-center">
+            <a href="#">[WORK]</a>
+            <a href="#">[ABOUT]</a>
+            <a href="#">[CONTACT]</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="#" target="_blank">[LINKED IN]</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="grid-wrapper">
+            
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="c.webp" alt="Work 1">
+                </div>
+                <div class="caption">The Boyz_Project_A</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="https://via.placeholder.com/800x600/D3D3D3/000000?text=Phantasy" alt="Work 2">
+                </div>
+                <div class="caption">The Boyz_Project_B</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="e.webp" alt="Work 3">
+                </div>
+                <div class="caption">Coluffy_A</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="https://via.placeholder.com/800x600/F0F8FF/000000?text=Beauty+Model" alt="Work 4">
+                </div>
+                <div class="caption">Coluffy_B</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="b.png" alt="Work 5">
+                </div>
+                <div class="caption">ABC DESIGN_A</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="card.mp4" alt="Work 6">
+                </div>
+                <div class="caption">ABC DESIGN_B</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="a.webp" alt="Work 7">
+                </div>
+                <div class="caption">ABC DESIGN_C</div>
+            </a>
+
+            <a href="#" class="grid-item">
+                <div class="thumb-box">
+                    <img src="f.webp" alt="Work 8">
+                </div>
+                <div class="caption">ABC DESIGN_D</div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

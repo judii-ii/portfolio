@@ -88,33 +88,25 @@ html, body {
 
 /* Intro 섹션 - 그라데이션 배경 전체 너비 */
 .section.intro {
-    background: linear-gradient(180deg, #4E8CFF 0%, #7BA3FF 50%, #E8E8E8 100%);
+    background: transparent;
     position: relative;
     padding: 60px 0;
+    margin-top: 80px;
 }
 
-.section.intro::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.8));
-}
 
 .section.content {
-    background-color: #ffffff;
+    background: transparent;
     padding: 60px 20px;
 }
 
 .section.special-bg {
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 30%, #e8ecff 60%, #4E8CFF 100%);
+    background: transparent;
     padding: 0 20px;
 }
 
 .section.footer {
-    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    background: transparent;
     padding: 80px 20px;
 }
 
@@ -129,7 +121,7 @@ html, body {
 }
 
 .line {
-    color: #ffffff;
+    color: #333333;
     width: 100%;
     text-align: center;
     font-family: 'Galmuri11', 'Pretendard-Regular', 'Apple Gothic', sans-serif;
@@ -142,7 +134,7 @@ html, body {
 
 .line2 {
     width: 100%;
-    color: #ffffff;
+    color: #333333;
     text-align: center;
     font-family: 'W95FA', 'Courier New', 'Monaco', 'Consolas', monospace;
     font-size: clamp(0.8rem, 1vw, 1.2rem);
@@ -153,13 +145,7 @@ html, body {
 }
 
 .intro-content {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 50px 30px;
     margin: 40px 20px;
-    backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 2;
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
@@ -192,7 +178,7 @@ html, body {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, #4E8CFF20, #E8E8E8);
+    background: transparent;
     border-left: 4px solid #4E8CFF;
     padding: 20px;
     margin-top: 30px;
@@ -240,10 +226,11 @@ html, body {
 /* Section3도 전체 너비 사용 */
 .section3 {
     padding: 0 !important;
-    background: linear-gradient(to bottom, rgba(232, 232, 232, 0.8), rgba(255, 255, 255, 0.9));
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
 }
 
 .section3 img {
@@ -286,13 +273,14 @@ html, body {
     flex: 1;
     min-width: 0;
     padding: 20px;
+    height: 540px;
 }
 
-.diary1 img, .diary2 img {
-    max-width: 90%;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+.diary1 img, .diary1 video, .diary2 img, .diary2 video {
+    width: auto;
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -808,6 +796,193 @@ button {
     margin: 0 auto;
 }
 
+
+/* Website Section */
+.section.website {
+    background-color: #ffffff;
+    padding: 80px 20px;
+}
+
+.website-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.website-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.website-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.website-title {
+    font-family: 'W95FA', 'Courier New', monospace;
+    font-size: clamp(24pt, 3vw, 32pt);
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.website-description {
+    font-family: 'W95FA', 'Courier New', monospace;
+    font-size: clamp(10pt, 1.5vw, 12pt);
+    text-align: left;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.website-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.website-preview img,
+.website-preview video {
+    max-width: 100%;
+    height: auto;
+    /*box-shadow: 0 8px 16px rgba(0,0,0,0.2);*/
+    display: block;
+}
+
+.website-button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.website-button {
+    font-family: 'W95FA', 'Courier New', monospace;
+    font-size: 14pt;
+    padding: 15px 40px;
+    background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 100%);
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+.website-button:hover {
+    background: linear-gradient(180deg, #c0c0c0 0%, #a0a0a0 100%);
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+}
+
+.website-button:active {
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.website-button span {
+    display: block;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 800px) {
+    .section.website {
+        padding: 60px 20px;
+    }
+    
+    .website-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .website-left {
+        order: 1;
+    }
+    
+    .website-right {
+        order: 2;
+    }
+    
+    .website-title {
+        font-size: 20pt;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .website-description {
+        font-size: 9pt;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .website-button-container {
+        justify-content: center;
+    }
+    
+    .website-preview img,
+    .website-preview video {
+        max-width: 95%;
+    }
+    
+    .website-button {
+        font-size: 12pt;
+        padding: 12px 30px;
+    }
+    
+    .diary1, .diary2 {
+        height: 390px;
+    }
+
+    .diary1 img, .diary1 video, .diary2 img, .diary2 video {
+        height: 350px;
+    }
+}
+
+@media (max-width: 500px) {
+    .section.website {
+        padding: 40px 15px;
+    }
+    
+    .website-content {
+        gap: 30px;
+    }
+    
+    .website-title {
+        font-size: 16pt;
+    }
+    
+    .website-description {
+        font-size: 8pt;
+    }
+    
+    .website-button {
+        font-size: 10pt;
+        padding: 10px 25px;
+    }
+    
+    .diary1, .diary2 {
+        height: 290px;
+    }
+
+    .diary1 img, .diary1 video, .diary2 img, .diary2 video {
+        height: 250px;
+    }
+}
+
 .album14-writing {
     width: 100%;
     color: #000000;
@@ -978,6 +1153,7 @@ button {
     .intro-content {
         margin: 40px 10px;
         padding: 25px 15px;
+
     }
     
     .album-design4, .album-design5 {
@@ -1011,41 +1187,16 @@ button {
         </div>
     </div>
     
-    <div class="section intro">
-        <div class="container">
-            <div class="line-box">
-                <div class="line">개인 작업물로 진행하였으며 본래 출시된 앨범과는<br>
-                    아무런 상관이 없는 개인 작업물임을 명시하는 바입니다.</div>
-                <div class="line2">It's my personal work. Compared to the original album,<br>
-                it states that it is just my side work to redesign.</div>
-            </div>
-            
-            <div class="intro-content">
-                <div class="intro-header">
-                    <h2 class="intro-title">2 TYPES OF<br>ALBUM DETAIL PAGES</h2>
-                </div>
-                <div class="intro-subtitle">
-                    개인 작업물로 앨범을 재구성하기 위해 더보이즈의 2집 앨범의 컨셉을 레트로 버전으로 새롭게 기획하여 <br> 100% 개인의 역량으로 기획부터 레퍼런스 찾기, 디자인 등을 진행했습니다. <br><br>Illustrator, Photoshop등의 툴을 활용하였으며,
-                    <br> windows98 느낌의 웹페이지는 app creator 등의 AI 프로그램을 활용하여 코딩했습니다.
-                </div>
-                <div class="highlight-box">
-                    <strong>패키지의 구성품:</strong> 앨범 본체, CD, 스티커나 키링, 그 속 포토북과 포토카드까지 여러 가지 굿즈가 함께 들어가 있습니다.<br><br>
-                    앨범은 <strong>DIARY VER.</strong>과 <strong>NFC VER.</strong>으로 구성되어 다양한 팬들에게 더 많은 즐거움을 안겨줄 것입니다. <em>(포토카드는 제외외 구성품 동일)</em>
-                </div>
-            </div>
-        </div>
-        
         <div class="section3">
             <img src="detail.webp" alt="Detail Image">
         </div>
-    </div>
 
     <div class="section content">
         <div class="container">
             <div class="diary">DIARY VER.</div>
             <div class="album-design">
                 <div class="diary1"><img src="diary1.webp" alt="다이어리1"></div>
-                <div class="diary2"><img src="diary2.webp" alt="다이어리2"></div>
+                <div class="diary2"><video src="cd.mp4" autoplay muted loop playsinline></video></div>
             </div>
         </div>
         
@@ -1131,6 +1282,33 @@ button {
         </div>
     </div>
 
+
+    <div class="section website">
+        <div class="container">
+            <div class="website-content">
+                <div class="website-left">
+                    <div class="website-title">ALBUM PROMOTION WEBSITE</div>
+                    <div class="website-description">
+                        더보이즈의 2집 앨범 프로모션을 위한 웹사이트를 제작하였습니다.<br>
+                        레트로 감성의 Windows 98 스타일로 디자인하여 앨범의 컨셉을 극대화했습니다.<br><br>
+                        Created a promotional website for THE BOYZ's 2nd album.<br>
+                        Designed with retro Windows 98 aesthetics to maximize the album concept.
+                    </div>
+                    <div class="website-button-container">
+                        <a href="YOUR_WEBSITE_LINK_HERE" target="_blank" class="website-button">
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="website-right">
+                    <div class="website-preview">
+                        <video src="website.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="section footer">
         <div class="container">
             <div class="album14-writing">AND MORE...</div>
@@ -1146,6 +1324,30 @@ button {
         </div>
     </div>
     
+    <div class="section intro">
+        <div class="container">
+            <div class="line-box">
+                <div class="line">개인 작업물로 진행하였으며 본래 출시된 앨범과는<br>
+                    아무런 상관이 없는 개인 작업물임을 명시하는 바입니다.</div>
+                <div class="line2">It's my personal work. Compared to the original album,<br>
+                it states that it is just my side work to redesign.</div>
+            </div>
+            
+            <div class="intro-content">
+                <div class="intro-header">
+                    <h2 class="intro-title">2 TYPES OF<br>ALBUM DETAIL PAGES</h2>
+                </div>
+                <div class="intro-subtitle">
+                    개인 작업물로 앨범을 재구성하기 위해 더보이즈의 2집 앨범의 컨셉을 레트로 버전으로 새롭게 기획하여 <br> 100% 개인의 역량으로 기획부터 레퍼런스 찾기, 디자인 등을 진행했습니다. <br><br>Illustrator, Photoshop등의 툴을 활용하였으며,
+                    <br> windows98 느낌의 웹페이지는 app creator 등의 AI 프로그램을 활용하여 코딩했습니다.
+                </div>
+                <div class="highlight-box">
+                    <strong>패키지의 구성품:</strong> 앨범 본체, CD, 스티커나 키링, 그 속 포토북과 포토카드까지 여러 가지 굿즈가 함께 들어가 있습니다.<br><br>
+                    앨범은 <strong>DIARY VER.</strong>과 <strong>NFC VER.</strong>으로 구성되어 다양한 팬들에게 더 많은 즐거움을 안겨줄 것입니다. <em>(포토카드는 제외외 구성품 동일)</em>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Copyright 섹션 추가 -->
     <div class="copyright-section">
         <div class="copyright-text">copyright by Juyoung Lee</div>
