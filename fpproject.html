@@ -27,7 +27,7 @@
 }
 
 body {
-    background-color: #efefef;
+    background-color: #fff;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -46,91 +46,150 @@ html, body {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    background-color: #efefef;
+    background-color: #fff;
 }
 
-.navbar {
-    font-family: 'Orbit-Regular';
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+/* 상단 네비게이션 - 통일된 스타일 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f0f0;
-    padding: 0 0 5px 0;
-    border-bottom: 1px solid #333;
+    padding: 20px 40px;
+    background-color: rgba(255,255,255,0.95);
+    border-bottom: 1px solid #000;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-.navbar-item1 {
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #333;
-}
-
-.navbar-item1 a {
-    cursor: pointer;
-    user-select: none;
-}
-
-.navbar-item2 {
-    flex-grow: 9;
-}
-
-.navbar-item3 {
-    flex-grow: 1;
-    text-align: center;
-    border-left: 1px solid #333;
-    color: black;
+.logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #000;
     text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
 }
 
-.navbar-item3:hover {
-  text-decoration: underline;
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
 }
 
-.navbar-item4 {
-    flex-grow: 1;
-    text-align: center;
-    padding-left: 10px;
-    border-left: 1px solid #333;
-    color: black;
+.nav-center a {
     text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
     cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
 }
 
-.navbar-item4:hover {
-  text-decoration: underline;
+.nav-right a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-center a:hover,
+.nav-right a:hover {
+    background-color: #ffff00;
+    color: #000;
+    font-style: italic;
+}
+
+/* 프로젝트 정보 헤더 */
+.project-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    border-bottom: 1px solid #000;
+}
+
+.info-left {
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.info-right {
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    text-align: right;
+    text-transform: uppercase;
 }
 
 .title1 {
-    position: relative;
     font-family: 'Pretendard-Regular';
-    font-size: 40px;
+    font-size: 120px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -3px;
 }
 
 .title2 {
-    position: relative;
     font-family: 'Pretendard-Regular';
-    font-size: 40px;
+    font-size: 120px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -3px;
 }
 
 .project-wrapper {
-    display: flex;
-    height: 150px;
-    padding-top: 30px;
-    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
 }
 
 .project_title {
-    flex-grow: 6;
-    line-height: 1;
-    padding-left: 50px;
+    line-height: 1.1;
+}
+
+/* 프로젝트 상세 정보 */
+.project-details {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    font-family: 'Pretendard-Regular';
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
 }
 
 @keyframes fade-in {
@@ -197,18 +256,16 @@ html, body {
     padding: 5px 0 0 10px;
 }
 
-.line {
-    border-top: 1px solid black;
-    width: 100%;
-    margin-bottom: 20px;
+.img-container {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 40px;
 }
 
-.img-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
-    flex-grow: 1;
+.img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .img-container img {
@@ -265,6 +322,7 @@ html, body {
 .color-box2 {
     background-color: #FFFFFF;
     color: #000000;
+    border: 1px solid #ddd;
 }
 
 /* 새로운 텍스트 섹션 디자인 */
@@ -321,6 +379,7 @@ html, body {
     font-family: 'Pretendard-Bold';
     font-size: 48px;
     line-height: 1.1;
+    text-transform: uppercase;
 }
 
 .content-description {
@@ -357,6 +416,7 @@ html, body {
     font-size: 36px;
     font-weight: 600;
     border-bottom: 3px solid #333;
+    text-transform: uppercase;
 }
 
 .section-subtitle {
@@ -372,6 +432,7 @@ html, body {
     font-family: 'Pretendard-Light';
     font-size: 20px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .slide-container {
@@ -492,6 +553,7 @@ html, body {
     line-height: 1.2;
     margin-bottom: 30px;
     color: #333;
+    text-transform: uppercase;
 }
 
 .recruit-writing2 {
@@ -908,33 +970,61 @@ html, body {
 }
 
 @media screen and (max-width: 800px) {
-    .navbar {
-        font-size: 14px;
-        flex-wrap: wrap;
+    header {
+        padding: 15px 20px;
+    }
+    
+    .nav-center {
+        position: static;
+        transform: none;
+        gap: 20px;
+        font-size: 0.75rem;
+    }
+    
+    .nav-right {
+        display: none;
     }
 
+    .project-info-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 25px 20px;
+    }
+    
+    .info-left,
+    .info-right {
+        font-size: 11px;
+        color: #999;
+    }
 
     .project-wrapper {
-        flex-direction: column;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .project_title {
-        padding: 0;
-        text-align: center;
-        margin-bottom: 30px;
+        padding: 80px 20px 60px 20px;
     }
 
     .title1, .title2 {
-        font-size: 28px;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: -2px;
     }
-
-    .project-container {
-        flex-direction: column;
+    
+    .project-details {
+        margin: 50px auto;
         padding: 0 20px;
-        text-align: center;
-        gap: 25px;
+        gap: 35px;
+    }
+    
+    .detail-label {
+        font-size: 11px;
+    }
+    
+    .detail-content {
+        font-size: 13px;
+    }
+    
+    .img-container {
+        margin: 50px auto;
+        padding: 0 20px;
     }
 
     .col1, .col2 {
@@ -1067,25 +1157,62 @@ html, body {
 }
 
 @media screen and (max-width: 500px) {
-    .navbar {
+    header {
+        padding: 15px 20px;
+    }
+    
+    .nav-center {
+        position: static;
+        transform: none;
+        gap: 15px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-right {
+        display: none;
+    }
+
+    .project-info-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 25px 20px;
+    }
+    
+    .info-left,
+    .info-right {
         font-size: 10px;
+        color: #999;
     }
 
     .title1, .title2 {
-        font-size: 24px;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -2px;
     }
 
     .project-wrapper {
-        padding: 15px 0;
+        padding: 60px 20px 40px 20px;
     }
-
-    .project_title {
-        margin-bottom: 20px;
+    
+    .project-details {
+        margin: 40px auto;
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
-
-    .project-container {
-        font-size: 9px;
-        gap: 20px;
+    
+    .detail-label {
+        font-size: 11px;
+    }
+    
+    .detail-content {
+        font-size: 13px;
+    }
+    
+    .img-container {
+        margin: 40px auto;
+        padding: 0 20px;
     }
 
     .col1, .col2 {
@@ -1161,35 +1288,59 @@ html, body {
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="navbar">
-            <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
-            <div class="navbar-item2"></div>
-            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
+    <header>
+        <a href="index.html" class="logo">Leejuyoung</a>
+        <nav class="nav-center">
+            <a href="work.html">[WORK]</a>
+            <a href="about.html">[ABOUT]</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com">[CONTACT]</a>
+        </nav>
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank">[LINKED IN]</a>
         </div>
+    </header>
+    
+    <div class="main-container">
+        <!-- 프로젝트 정보 헤더 -->
+        <div class="project-info-header">
+            <div class="info-left">✦ with Futureplay</div>
+            <div class="info-right">Contents Design, Graphic Design, Merchandise Design</div>
+        </div>
+
+        <!-- 프로젝트 타이틀 -->
         <div class="project-wrapper">
             <div class="project_title">
-                <div class="title1"> ⟡ FP</div>
-                <div class="title2"> Design/Marketing</div>
-            </div>
-            <div class="project-container">
-                <div class="col1">
-                    <div class="project-with"> ✦with</div>
-                    <div class="project-person"> Futureplay </div>
-                    <div class="project-type"> ✦project type</div>
-                    <div class="project-type2"> contents design <br> graphic design <br> merchandise design</div>
-                </div>
-                <div class="col2">
-                    <div class="project-note">✦project note</div>
-                    <div class="project-note2">this project only contains digital design pic.</div>
-                    <div class="project-contribution"> ✦contribution</div>
-                    <div class="project-contribution2"> 80%</div>
-                </div>
+                <div class="title1">FUTUREPLAY</div>
+                <div class="title2">Design/Marketing</div>
             </div>
         </div>
+
+        <!-- 프로젝트 상세 정보 -->
+        <div class="project-details">
+            <div class="detail-item">
+                <div class="detail-label">Project Type</div>
+                <div class="detail-content">
+                    Contents Design<br>
+                    Graphic Design<br>
+                    Merchandise Design
+                </div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Project Note</div>
+                <div class="detail-content">This project only contains digital design pic.</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">With</div>
+                <div class="detail-content">Futureplay</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Contribution</div>
+                <div class="detail-content">80%</div>
+            </div>
+        </div>
+
+        <!-- 배너 이미지 -->
         <div class="img-container">
-            <div class="line"></div>
             <img src="future_banner.webp" alt="포폴png">
         </div>
         <div class="color-text-container">
@@ -1294,8 +1445,8 @@ html, body {
             <img src="futureplaycan2.webp" alt="호버 이미지2" loading="lazy">
         </div>
         
-        <div class="section-subtitle">
-            <div class="section-subtitle-inner">Label Design</div>
+        <div class="section-title">
+            <div class="section-title-inner">Label Design</div>
         </div>
         <div class="workshop-container2">
             <div class="can-img1"><img src="can-img1.webp" alt="이미지18" loading="lazy"></div>
@@ -1321,8 +1472,8 @@ html, body {
         </div>
         <div class="workshop-container6"><img src="banner4.webp" alt="이미지24" loading="lazy"></div>
         
-        <div class="section-subtitle">
-            <div class="section-subtitle-inner">Sports Towel Design</div>
+        <div class="section-title">
+            <div class="section-title-inner">Sports Towel Design</div>
         </div>
         <div class="workshop-container7"><img src="banner5.webp" alt="이미지25" loading="lazy"></div>
         <div class="workshop-container8"><img src="banner6.webp" alt="이미지26" loading="lazy"></div>
