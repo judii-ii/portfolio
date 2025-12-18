@@ -26,151 +26,136 @@
         }
 
         body {
-            background-color: #efefef;
+            background-color: #000;
             margin: 0;
             overflow-x: hidden;
             font-family: 'Pretendard-Regular', sans-serif;
+            color: #fff;
         }
 
-        /* 상단 부분 - 기존 유지 */
-        .navbar {
-            font-family: 'Orbit-Regular';
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
+        /* 상단 네비게이션 - 통일된 스타일 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f0f0f0;
-            padding: 0 0 5px 0;
-            border-bottom: 1px solid #333;
+            padding: 20px 40px;
+            background-color: rgba(0,0,0,0.95);
+            border-bottom: 1px solid #fff;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
-        .navbar-item1 {
-            flex-grow: 1;
-            text-align: center;
-            border-right: 1px solid #333;
-        }
-
-        .navbar-item1 a {
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .navbar-item2 {
-            flex-grow: 9;
-        }
-
-        .navbar-item3 {
-            flex-grow: 1;
-            text-align: center;
-            border-left: 1px solid #333;
-            color: black;
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #fff;
             text-decoration: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
         }
 
-        .navbar-item3:hover {
-            text-decoration: underline;
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
         }
 
-        .navbar-item4 {
-            flex-grow: 1;
-            text-align: center;
-            padding-left: 10px;
-            border-left: 1px solid #333;
-            color: black;
+        .nav-center a {
             text-decoration: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: bold;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        .navbar-item4:hover {
-            text-decoration: underline;
+        .nav-right a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        .title1 {
-            position: relative;
-            font-family: 'Pretendard-Regular';
-            font-size: 40px;
+        .nav-center a:hover,
+        .nav-right a:hover {
+            background-color: #ffff00;
+            color: #000;
+            font-style: italic;
         }
 
-        .title2 {
-            position: relative;
-            font-family: 'Pretendard-Regular';
-            font-size: 40px;
+        /* 컨텐츠 영역 상단 여백 */
+        .content-wrapper {
+            margin-top: 70px;
         }
 
         .project-wrapper {
-            display: flex;
-            height: 150px;
-            padding-top: 30px;
-            justify-content: space-between;
             max-width: 1400px;
             margin: 0 auto;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding: 120px 40px 80px 40px;
+            text-align: center;
         }
 
         .project_title {
-            flex-grow: 6;
-            line-height: 1;
-            padding-left: 50px;
+            margin-top: 80px;
         }
 
-        .project-container {
-            display: flex;
-            flex-grow: 1;
+        .title1 {
             font-family: 'Pretendard-Regular';
-            font-size: 12px;
-            overflow: hidden;
-        }
-
-        .project-with {
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .project-person {
-            padding: 5px 0 0 10px;
-        }
-
-        .project-type {
-            font-weight: 500;
-            font-size: 14px;
-            margin-top: 20px;
-        }
-
-        .project-type2 {
+            font-size: 120px;
+            font-weight: 800;
             line-height: 1;
-            padding: 5px 0 0 10px;
+            letter-spacing: -4px;
         }
 
-        .col1, .col2 {
-            flex-grow: 1;
+        .title2 {
+            font-family: 'Pretendard-Regular';
+            font-size: 100px;
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -3px;
         }
 
-        .project-note {
-            font-weight: 500;
-            font-size: 14px;
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 13px;
+            text-align: left;
         }
 
-        .project-note2 {
-            padding: 5px 0 0 10px;
+        .info-item {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
         }
 
-        .project-contribution {
-            font-weight: 500;
-            font-size: 14px;
-            margin-top: 20px;
+        .info-label {
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            white-space: nowrap;
         }
 
-        .project-contribution2 {
-            line-height: 1;
-            padding: 5px 0 0 10px;
+        .info-label::after {
+            content: ' →';
+            margin-left: 8px;
+            color: #666;
+        }
+
+        .info-value {
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         /* 메인 컨테이너 */
@@ -178,7 +163,7 @@
             max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            background-color: #efefef;
+            background-color: transparent;
         }
 
         /* 인트로 섹션 */
@@ -197,7 +182,7 @@
             font-family: 'Orbit-Regular';
             font-size: 18px;
             line-height: 1.6;
-            color: #333;
+            color: #fff;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -210,19 +195,27 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: bold;
-            font-size: 22px;
+            font-size: 48px;
             animation: gradientShift 3s ease-in-out infinite, typewriterLoop 4s steps(18) 0.5s infinite;
             overflow: hidden;
             white-space: nowrap;
-            border-right: 2px solid #4ecdc4;
+            position: relative;
             width: 0;
         }
 
         @keyframes typewriterLoop {
-            0% { width: 0; }
-            30% { width: 18ch; }
-            70% { width: 18ch; }
-            100% { width: 0; }
+            0% { 
+                width: 0;
+            }
+            30% { 
+                width: 18ch;
+            }
+            70% { 
+                width: 18ch;
+            }
+            100% { 
+                width: 0;
+            }
         }
 
         @keyframes gradientShift {
@@ -232,12 +225,22 @@
 
         .intro-highlight::after {
             content: '';
-            animation: blinkContinuous 1s infinite;
+            position: absolute;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #4ecdc4;
+            animation: blinkCursor 1s step-end infinite, hideCursor 4s steps(1) 0.5s infinite;
         }
 
-        @keyframes blinkContinuous {
-            0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: #4ecdc4; }
+        @keyframes blinkCursor {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        @keyframes hideCursor {
+            0%, 30%, 70% { opacity: 1; }
+            31%, 69%, 100% { opacity: 0; }
         }
 
         /* 메인 이미지 섹션 */
@@ -248,9 +251,18 @@
 
         .hero-image {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1400px;
             height: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .hero-caption {
+            font-size: 14px;
+            color: #999;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: center;
         }
 
         /* 컨텐츠 섹션 - 세로 배치로 변경 */
@@ -263,13 +275,7 @@
         }
 
         .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            display: none;
         }
 
         .content-title {
@@ -278,7 +284,7 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 40px;
-            color: #333;
+            color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -287,17 +293,82 @@
             font-family: 'Orbit-Regular';
             font-size: 16px;
             line-height: 1.8;
-            color: #555;
+            color: #ccc;
             max-width: 800px;
             margin: 0 auto;
         }
 
         /* 앨범 섹션 */
+        /* 앨범 인트로 섹션 */
+        .album-intro-section {
+            padding: 120px 40px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 100px auto;
+        }
+
+        .album-intro-title {
+            font-family: 'Pretendard-Regular';
+            font-size: 48px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .album-intro-image {
+            width: 100%;
+            max-width: 1400px;
+            height: auto;
+            margin: 0 auto 60px auto;
+            display: block;
+        }
+
+        .album-intro-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: end;
+        }
+
+        .album-intro-left {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .poster-in-layout {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 20px 60px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .poster-in-layout:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(255,255,255,0.15);
+        }
+
+        .album-intro-right {
+            text-align: left;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .album-intro-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* 앨범 섹션 */
         .album-section {
             padding: 120px 40px;
-            background: white;
+            background: transparent;
             margin: 100px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .section-title {
@@ -305,37 +376,40 @@
             font-family: 'Pretendard-Regular';
             font-size: 28px;
             font-weight: 600;
-            color: #333;
+            color: #fff;
             margin-bottom: 60px;
             display: inline-block;
             width: 100%;
             padding-bottom: 10px;
-            border-bottom: 3px solid #333;
         }
 
         /* 세련된 앨범 그리드 */
         .album-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2px;
+            gap: 15px;
             max-width: 1200px;
             margin: 0 auto;
-            background: #ddd;
+            background: transparent;
         }
 
         .album-card {
-            background: white;
+            background: transparent;
             position: relative;
             aspect-ratio: 1;
             overflow: hidden;
-            cursor: pointer;
+            cursor: pointer !important;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .album-card:hover {
             transform: scale(1.02);
             z-index: 10;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            cursor: pointer !important;
         }
 
         .album-cover {
@@ -381,8 +455,109 @@
         .album-book-section {
             padding: 120px 40px;
             text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: transparent;
             margin: 100px 0;
+        }
+
+        /* 상단 4개 그리드 */
+        /* 1줄: 3개 그리드 */
+        .book-row-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 80px auto 60px auto;
+            align-items: start;
+        }
+
+        .book-row-three .book-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .book-row-three .book-item:hover {
+            transform: scale(1.02);
+        }
+
+        .book-row-three .book-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 2줄: 2개 그리드 */
+        .book-row-one {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            max-width: 1300px;
+            margin: 100px auto 60px auto;
+            align-items: center;
+        }
+
+        .book-row-one .book-item-large {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-row-one .book-item-large:hover {
+            transform: scale(1.02);
+        }
+
+        .book-row-one .book-item-large img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* 3줄: 비디오 */
+        .book-video-row {
+            max-width: 1400px;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        .book-video-row video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 3줄: 2개 그리드 */
+        .book-row-two {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 60px auto;
+            align-items: center;
+        }
+
+        .book-row-two .book-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-row-two .book-item:hover {
+            transform: scale(1.02);
+        }
+
+        .book-row-two .book-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
         }
 
         .book-gallery {
@@ -395,7 +570,7 @@
 
         .book-thumbnail {
             position: relative;
-            width: 380px;
+            width: 600px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -408,7 +583,7 @@
             width: 100%;
             height: auto;
             display: block;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            
         }
 
         /* 특별한 호버 효과 (book4 → book5) */
@@ -493,7 +668,7 @@
 
         /* 다크 섹션 */
         .dark-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: transparent;
             padding: 100px 40px;
             margin: 80px 0;
             display: flex;
@@ -519,12 +694,37 @@
         }
 
         /* 뮤직비디오 섹션 */
+        /* 뮤직비디오 섹션 */
+        .video-intro-section {
+            padding: 120px 40px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 100px auto;
+        }
+
+        .video-intro-title {
+            font-family: 'Pretendard-Regular';
+            font-size: 48px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .video-intro-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+        }
+
         .video-section {
             padding: 120px 40px 60px;
             text-align: center;
             background: transparent;
             margin: 100px 0 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .video-intro {
@@ -533,17 +733,17 @@
             margin: 0 auto 80px;
             font-size: 16px;
             line-height: 1.8;
-            color: #666;
+            color: #ccc;
         }
 
         /* 이미지 슬라이더 */
         .photo-slider {
             position: relative;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto 80px;
-            height: 500px;
+            height: 800px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            
         }
 
         .slide {
@@ -606,7 +806,7 @@
         .video-title {
             font-family: 'Orbit-Regular';
             font-size: 14px;
-            color: #666;
+            color: #ccc;
             margin-top: 15px;
             text-align: center;
         }
@@ -640,25 +840,130 @@
             }
     
             .project-wrapper {
-                flex-direction: column;
-                height: auto;
-                padding: 20px;
-                gap: 20px;
+                padding: 80px 20px 40px 20px;
             }
 
             .project_title {
-                padding-left: 0;
-                text-align: center;
+                margin-top: 50px;
             }
 
-            .project-container {
+            .title1 {
+                font-size: 56px;
+                letter-spacing: -2px;
+            }
+
+            .project-info {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .info-item {
+                flex-direction: column;
+                align-items: center;
                 text-align: center;
+                gap: 8px;
+            }
+
+            .info-label::after {
+                content: '';
+                margin-left: 0;
+            }
+
+            .album-intro-section {
+                padding: 60px 20px;
+            }
+
+            .album-intro-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .album-intro-image {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .album-intro-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .album-intro-left {
+                order: 2;
+            }
+
+            .album-intro-right {
+                text-align: left;
+                order: 1;
+            }
+
+            .poster-in-layout {
+                max-width: 400px;
+                margin: 0 auto;
+                box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+            }
+
+            .album-intro-text {
+                font-size: 12px;
+            }
+
+            .intro-highlight {
+                font-size: 28px;
             }
 
             .intro-text {
                 font-size: 10px;
+            }
+
+            .book-row-three {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 40px auto;
+            }
+
+            .book-row-one {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 60px auto 40px auto;
+            }
+
+            .book-row-one .book-item-large {
+                height: 450px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .book-video-row {
+                max-width: 100%;
+                margin: 60px auto;
+            }
+
+            .book-row-two {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin: 40px auto;
+            }
+
+            .book-row-two .book-item {
+                height: 350px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .video-intro-section {
+                padding: 60px 20px;
+            }
+
+            .video-intro-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .video-intro-text {
+                font-size: 12px;
+                margin-bottom: 40px;
             }
 
 
@@ -708,7 +1013,7 @@
             }
 
             .book-thumbnail {
-                width: 320px;
+                width: 480px;
                 max-width: 90%;
             }
 
@@ -751,8 +1056,17 @@
         }
 
         @media (max-width: 480px) {
-            .title1, .title2 {
-                font-size: 32px;
+            .title1 {
+                font-size: 42px;
+                letter-spacing: -1px;
+            }
+
+            .project_title {
+                margin-top: 40px;
+            }
+
+            .project-info {
+                gap: 15px;
             }
 
             .content-title {
@@ -786,8 +1100,39 @@
                 height: 250px;
             }
 
+            .book-row-three {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .book-row-one {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .book-row-one .book-item-large {
+                height: 350px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .book-video-row {
+                margin: 40px auto;
+            }
+
+            .book-row-two {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .book-row-two .book-item {
+                height: 280px;
+                align-items: center;
+                justify-content: center;
+            }
+
             .book-thumbnail {
-                width: 280px;
+                width: 380px;
                 max-width: 85%;
             }
         }
@@ -796,69 +1141,77 @@
 
 <body>
     <div class="main-container">
-    <div class="navbar">
-        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
-        <div class="navbar-item2"></div>
-        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
-    </div>
-    
-    <div class="project-wrapper">
-        <div class="project_title">
-            <div class="title1"> ⟡ 19</div>
-            <div class="title2"> Project</div>
+    <header>
+        <a href="index.html" class="logo">Leejuyoung</a>
+        <nav class="nav-center">
+            <a href="work.html">[WORK]</a>
+            <a href="about.html">[ABOUT]</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com">[CONTACT]</a>
+        </nav>
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank">[LINKED IN]</a>
         </div>
-        <div class="project-container">
-            <div class="col1">
-                <div class="project-with"> ✦with</div>
-                <div class="project-person"> 19(NANA) </div>
-                <div class="project-type"> ✦project type</div>
-                <div class="project-type2"> video design <br> graphic design</div>
+    </header>
+    
+    <div class="content-wrapper">
+    <div class="project-wrapper">
+        <div class="project-info">
+            <div class="info-item">
+                <div class="info-label">Client</div>
+                <div class="info-value">19(NANA)</div>
             </div>
-            <div class="col2">
-                <div class="project-note">✦project note</div>
-                <div class="project-note2">this project is mixed with hand drawing and digital pic.</div>
-                <div class="project-contribution"> ✦contribution</div>
-                <div class="project-contribution2"> 100%</div>
+            <div class="info-item">
+                <div class="info-label">Project Type</div>
+                <div class="info-value">Video Design, Graphic Design</div>
             </div>
+            <div class="info-item">
+                <div class="info-label">Role</div>
+                <div class="info-value">Artwork Director, 100% Contribution</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Note</div>
+                <div class="info-value">Mixed with hand drawing and digital design</div>
+            </div>
+        </div>
+        <div class="project_title">
+            <div class="title1">19 Project</div>
         </div>
     </div>
     
         <!-- 인트로 섹션 -->
         <section class="intro-section">
-            <div class="line"></div>
-            <div class="intro-text">
-                <span class="intro-highlight">Hello, we are 19!</span><br>
-                결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다.<br>
-                CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.
-            </div>
+            <span class="intro-highlight">Hello, we are 19!</span>
         </section>
 
         <!-- 히어로 이미지 -->
         <section class="hero-section">
             <img src="p1.webp" alt="19 Project Hero" class="hero-image">
+            <p class="hero-caption">결성하여 음반 제작에서부터 뮤직비디오 제작 과정까지 참여하였습니다. CREDIT에 ARTWORK 담당 및 DIRECTOR로 이름을 올렸습니다.</p>
         </section>
 
         <!-- 앨범 디자인 소개 -->
-        <section class="content-section">
-            <div class="content-title">19(NANA) ALBUM DESIGN</div>
-            <div class="content-description">
-                가수 19(NANA)의 여러 앨범 디자인을 맡으며,<br> 음악적 스타일과 이미지를 깊이 이해하고 반영하는 작업을 진행했습니다.<br><br>
-                앨범 디자인을 시작하기 전, 원하는 이미지와 스타일을 세밀하게 체크한 후,<br> 음악의 분위기와 메시지를 가장 잘 전달할 수 있는 비주얼을 구상했습니다.<br><br>
-                각 곡의 특징을 반영하여 앨범 커버뿐만 아니라, 전체적인 디자인 컨셉을 세우는 데 집중했습니다.<br> 또한, 실물 앨범을 책 형태로 직접 제작하면서, 굿즈와 함께 판매하는 전략을 펼쳐 큰 성과를 이루었습니다.
+        <section class="album-intro-section">
+            <h2 class="album-intro-title">19(NANA) ALBUM DESIGN</h2>
+            <img src="main.webp" alt="Album Collection" class="album-intro-image">
+            <div class="album-intro-layout">
+                <div class="album-intro-left">
+                    <img src="poster.webp" alt="19 Project Poster" class="poster-in-layout">
+                </div>
+                <div class="album-intro-right">
+                    <p class="album-intro-text">
+                        가수 19(NANA)의 여러 앨범 디자인을 맡으며, 음악적 스타일과 이미지를 깊이 이해하고 반영하는 작업을 진행했습니다.
+                        앨범 디자인을 시작하기 전, 원하는 이미지와 스타일을 세밀하게 체크한 후, 음악의 분위기와 메시지를 가장 잘 전달할 수 있는 비주얼을 구상했습니다.
+                        각 곡의 특징을 반영하여 앨범 커버뿐만 아니라, 전체적인 디자인 컨셉을 세우는 데 집중했습니다. 또한, 실물 앨범을 책 형태로 직접 제작하면서, 굿즈와 함께 판매하는 전략을 펼쳐 큰 성과를 이루었습니다.
+                    </p>
+                </div>
             </div>
-        </section>
-
-        <!-- 메인 앨범 이미지 -->
-        <section class="hero-section">
-            <img src="main.webp" alt="Album Collection" class="hero-image">
         </section>
 
         <!-- 앨범 갤러리 -->
         <section class="album-section">
             <h2 class="section-title">ALBUM COLLECTION</h2>
             <div class="album-grid">
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/1msENuOMnqJek2fKMmJFYJ?si=IeuSEwXMQG2EYgIQfJIdrA" target="_blank" class="album-card">
                     <img src="album1.webp" alt="album1" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -867,9 +1220,9 @@
                             title : jelly
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/3EWS6rs10lcesmrFb0bdla?si=FQhQnM5tSbCG3a672wCUjg" target="_blank" class="album-card">
                     <img src="album2.webp" alt="album2" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -878,9 +1231,9 @@
                             title : flamingo
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/2eN3DNEU8it7RTgmuG2u77?si=pGKAD7XXRLWOkOTh2m0X-Q" target="_blank" class="album-card">
                     <img src="album3.webp" alt="album3" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -889,9 +1242,9 @@
                             title : melancholy smoothie
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/1RSvL2yDIxw4neSlbW6iiB?si=DutmBLi8TY2nUhUQYnfI4g" target="_blank" class="album-card">
                     <img src="album4.webp" alt="album4" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -900,9 +1253,9 @@
                             title : 밤의 피크닉
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/0fHVEVexM0N2tHflQ2m2Iu?si=KKNqn3aSR9edZSU6XtgI5Q" target="_blank" class="album-card">
                     <img src="album5.webp" alt="album5" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -916,9 +1269,9 @@
                             06. 410
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/70RsojoR9lNawDEfjVmN87?si=wvO0-TprTxq7vZ_vEgs1Kw" target="_blank" class="album-card">
                     <img src="album6.webp" alt="album6" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -927,9 +1280,9 @@
                             title : 우리는 지구에서 모래성을 만들어
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/0QDL1riQVHtieu1l0W5Xht?si=ArN7n9M9SYOHaylMGplouw" target="_blank" class="album-card">
                     <img src="album7.webp" alt="album7" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -938,9 +1291,9 @@
                             title : 서로 등을 맞대고 다른 등을 보았지
                         </div>
                     </div>
-                </div>
+                </a>
                 
-                <div class="album-card">
+                <a href="https://open.spotify.com/album/7L9tRO5FnYByHcsjebF3eo?si=4fREc5ciSxapnnkcUr11XA" target="_blank" class="album-card">
                     <img src="album8.webp" alt="album8" class="album-cover">
                     <div class="album-overlay">
                         <div class="album-info">
@@ -949,46 +1302,54 @@
                             title : coco
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
         <!-- 앨범북 섹션 -->
         <section class="album-book-section">
-            <img src="nineteen2.webp" alt="Album Design Process" class="hero-image" style="margin-bottom: 80px; border: 3px solid #333; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+            <img src="nineteen2.webp" alt="Album Design Process" class="hero-image" style="margin-bottom: 80px;">
             
             <h2 class="section-title">ALBUM BOOK VERSION</h2>
             
-            <img src="book3.webp" alt="Album Book" class="hero-image" style="margin-bottom: 60px;">
-            
-            <div class="book-gallery">
-                <div class="book-thumbnail book-hover-effect" onclick="openModal('book4.webp')">
-                    <img src="book4.webp" alt="Album Book">
-                    <img src="book5.webp" alt="Album Book Hover" class="hover-image">
+            <!-- 1줄: 3개 -->
+            <div class="book-row-three">
+                <div class="book-item">
+                    <img src="book3.webp" alt="Album Book" onclick="openModal('book3.webp')">
                 </div>
-                <div class="book-thumbnail" onclick="openModal('book6.webp')">
-                    <img src="book6.webp" alt="Album Book">
+                <div class="book-item">
+                    <img src="book4.webp" alt="Album Book" onclick="openModal('book4.webp')">
                 </div>
-            </div>
-            
-            <div class="dark-section">
-                <div class="dark-book-item">
-                    <img src="book1.webp" alt="Album Book">
-                </div>
-                <div class="dark-book-item">
-                    <img src="book2.webp" alt="Album Book">
+                <div class="book-item">
+                    <img src="book6.webp" alt="Album Book" onclick="openModal('book6.webp')">
                 </div>
             </div>
             
-            <img src="book7.webp" alt="Album Book Final" class="hero-image">
+            <!-- 2줄: 2개 -->
+            <div class="book-row-one">
+                <div class="book-item-large">
+                    <img src="book2.webp" alt="Album Book" onclick="openModal('book2.webp')">
+                </div>
+                <div class="book-item-large">
+                    <img src="book1.webp" alt="Album Book" onclick="openModal('book1.webp')">
+                </div>
+            </div>
+            
+            <!-- 3줄: 비디오 -->
+            <div class="book-video-row">
+                <video controls autoplay muted loop>
+                    <source src="pink.mp4" type="video/mp4">
+                </video>
+            </div>
         </section>
 
         <!-- 뮤직비디오 섹션 -->
-        <section class="video-section">
-            <h2 class="section-title">MUSIC VIDEO</h2>
-            <div class="video-intro">
-                뮤직비디오의 디렉터로 활동하여 NANA의 싱글 및 EP에 필요한 부수적인 콘텐츠를 제작하였습니다.<br>
-                그 외, 다양한 컨셉사진의 촬영 및 보정을 진행했습니다.<br>
+        <!-- 뮤직비디오 섹션 -->
+        <section class="video-intro-section">
+            <h2 class="video-intro-title">MUSIC VIDEO</h2>
+            <div class="video-intro-text">
+                뮤직비디오의 디렉터로 활동하여 NANA의 싱글 및 EP에 필요한 부수적인 콘텐츠를 제작하였습니다.
+                그 외, 다양한 컨셉사진의 촬영 및 보정을 진행했습니다.
                 또한, YOUTUBE를 관리하면서 간접적인 마케팅 및 홍보를 담당하기도 했습니다.
             </div>
             
@@ -1044,7 +1405,7 @@
         <img class="modal-content" id="modal-img">
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // 이미지 슬라이더
         let currentSlideIndex = 1;
         const totalSlides = 5;
@@ -1114,5 +1475,6 @@
         });
     </script>
 
+    </div>
     </div>
 </body></html>

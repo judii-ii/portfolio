@@ -26,155 +26,208 @@
     font-weight: 600;
     font-style: normal;
 }
-
-.navbar {
-    font-family: 'Orbit-Regular';
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+* {
+    cursor: url('danchu.png') 16 16, auto;
+    box-sizing: border-box;
 }
-
-.navbar {
+/* 상단 네비게이션 - 통일된 스타일 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f0f0f0; /* Light gray background */
-    padding: 0 0 5px 0;
-    border-bottom: 1px solid #333; /* Dark line at the bottom */
+    padding: 20px 40px;
+    background-color: rgba(255,255,255,0.95);
+    border-bottom: 1px solid #000;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-.navbar-item1 {
-    flex-grow: 1;
-    text-align: center;
-    border-right: 1px solid #333;
-    /* background-color: #5d3e3e; */
-}
-
-.navbar-item1 a {
-    cursor: pointer;
-    user-select: none;
-}
-
-.navbar-item2 {
-    flex-grow: 9;
-    /* background-color: #245ab0; */
-}
-
-.navbar-item3 {
-    flex-grow: 1;
-    text-align: center;
-    border-left: 1px solid #333;
-    /* background-color: #9f35c2; */
-    color: black;
+.logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #000;
     text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.navbar-item3:hover {
-  text-decoration: underline; /* 호버 시 시각적 피드백 */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
 }
 
-.navbar-item4 {
-    flex-grow: 1;
-    text-align: center;
-    padding-left: 10px;
-    border-left: 1px solid #333;
-    color: black; /* 기본 텍스트 색 */
-    text-decoration: none; /* 밑줄 제거 */
-    cursor: pointer; /* 손가락 모양 커서 */
-    font-family: inherit;
-    font-weight: bold; /* 필요시 */
+.nav-center a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-.navbar-item4:hover {
-  text-decoration: underline; /* 호버 시 밑줄 추가 (선택사항) */
+.nav-right a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-@media (max-width: 600px) {
+.nav-center a:hover,
+.nav-right a:hover {
+    background-color: #ffff00;
+    color: #000;
+    font-style: italic;
+}
 
-    .navbar {
-        font-size: 14px;
-        flex-wrap: wrap;
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
     }
-    /*.navbar-item1, .navbar-item3, .navbar-item4 {
-        flex-grow: 1;
-        padding: 0;
+    
+    .nav-center {
+        position: static;
+        transform: none;
+        gap: 15px;
+        font-size: 0.7rem;
     }
-    .navbar-item2 {
-        flex-grow: 0;
+    
+    .nav-right {
         display: none;
-    }*/
-    .project-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .project-container {
-        align-items: flex-start;
-        margin-top: 20px;
     }
 }
 
-* {
-    cursor: url('danchu.png') 16 16, auto;
-}
+
 body {
-    background-color: #efefef;
+    background-color: #fff;
     margin: 0;
+    font-family: 'Pretendard-Regular', sans-serif;
+    color: #000;
+    overflow-x: hidden;
 }
 
+/* 컨텐츠 영역 상단 여백 */
+.content-wrapper {
+    padding-top: 80px;
+}
 
 .title1 {
-    position: relative;
     font-family: 'Pretendard-Regular';
-    font-size: 40px;
+    font-size: 120px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -4px;
+    text-align: center;
 }
 
 .title2 {
-    position: relative;
     font-family: 'Pretendard-Regular';
-    font-size: 40px;
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -3px;
+}
+
+/* Cargo 스타일 프로젝트 정보 헤더 */
+/* 심플한 상단 프로젝트 정보 */
+.project-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px 40px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.info-left {
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.info-right {
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
 }
 
 .project-wrapper {
-    display: flex;
-    height: 150px;
-    padding-top: 30px;
-    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 40px 80px 40px;
+    text-align: center;
 }
 
 .project_title {
-    flex-grow: 6;
-    line-height: 1;
-    padding-left: 50px;
+    margin-bottom: 80px;
 }
 
 /* 새로운 섹션 스타일 */
 .section {
-    margin: 90px 0;
-    padding: 0 50px;
+    margin: 50px 0;
+    padding: 0 40px;
 }
 
 .section-divider {
     border-top: 1px solid #000;
-    margin: 50px 50px 0 50px;
+    margin: 80px auto;
+    max-width: 1400px;
 }
 
 .section-number {
     font-family: 'Pretendard-SemiBold';
     font-size: 48px;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 30px;
+    color: #000;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .section-content {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* theme 섹션 라벨 */
+.theme-label {
+    font-family: 'Pretendard-Regular';
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+    text-align: center;
+    margin: 60px 0 40px 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.theme-label::before,
+.theme-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.theme-label::before {
+    right: calc(50% + 60px);
+}
+
+.theme-label::after {
+    left: calc(50% + 60px);
 }
 
 .image-box {
@@ -193,7 +246,7 @@ body {
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .image-box video {
@@ -231,14 +284,14 @@ body {
     padding: 20px;
     border-radius: 10px;
     display: flex;
-    gap: 30px;
+    gap: 5px;
     min-height: 200px;
     align-items: center;
 }
 
 .small-image-box {
     flex: 1;
-    height: 400px;
+    height: 800px;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -269,7 +322,7 @@ body {
     height: 600px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 .square-image-box img {
@@ -319,24 +372,31 @@ body {
     border-radius: 35px;
     overflow: hidden;
     position: relative;
+    padding-top: 40px;
 }
 
 .iphone-video-box,
 .iphone-image-box {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .iphone-video-box video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: top center;
 }
 
 .iphone-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: top center;
 }
 
 /* 링크 버튼 - Subtle 스타일 */
@@ -625,6 +685,54 @@ body {
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
+    .project-info-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 25px 20px;
+    }
+    
+    .info-left,
+    .info-right {
+        font-size: 12px;
+    }
+    
+    .project-wrapper {
+        padding: 80px 20px 40px 20px;
+    }
+    
+    .title1 {
+        font-size: 56px;
+        letter-spacing: -2px;
+    }
+    
+    .project_title {
+        margin-bottom: 60px;
+    }
+    
+    .section-divider {
+        margin: 60px 20px;
+    }
+    
+    .theme-label {
+        font-size: 11px;
+        margin: 40px 0 30px 0;
+        letter-spacing: 2px;
+    }
+    
+    .theme-label::before,
+    .theme-label::after {
+        width: 40px;
+    }
+    
+    .theme-label::before {
+        right: calc(50% + 50px);
+    }
+    
+    .theme-label::after {
+        left: calc(50% + 50px);
+    }
+    
     .section {
         padding: 0 20px;
     }
@@ -938,6 +1046,37 @@ body {
 
 /* 500px 이하 - 작은 모바일 화면 */
 @media (max-width: 500px) {
+    .project-info-header {
+        padding: 20px 15px;
+        gap: 6px;
+    }
+    
+    .info-left,
+    .info-right {
+        font-size: 11px;
+    }
+    
+    .title1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+    
+    .project-wrapper {
+        padding: 60px 15px 30px 15px;
+    }
+    
+    .project_title {
+        margin-bottom: 40px;
+    }
+    
+    .section-divider {
+        margin: 40px 15px;
+    }
+    
+    .section-number {
+        font-size: 28px;
+    }
+    
     .image-box {
         height: 250px;
     }
@@ -986,22 +1125,30 @@ body {
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
-        <div class="navbar-item2"></div>
-        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&amp;to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
-    </div>
-    <div class="project-wrapper">
-        <div class="project_title">
-            <div class="title1"> ⟡ Side</div>
-            <div class="title2"> &nbsp;&nbsp;&nbsp;&nbsp;Project</div>
+    <header>
+        <a href="index.html" class="logo">Leejuyoung</a>
+        <nav class="nav-center">
+            <a href="work.html">[WORK]</a>
+            <a href="about.html">[ABOUT]</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com">[CONTACT]</a>
+        </nav>
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank">[LINKED IN]</a>
         </div>
-    </div>
+    </header>
+    
+    <div class="content-wrapper">
+        <!-- Cargo 스타일 프로젝트 정보 -->
+        <div class="project-info-header">
+            <div class="info-left">personal project</div>
+            <div class="info-right">Fan Goods, Video Design</div>
+        </div>
 
-    <!-- 구분선 -->
-    <div class="section-divider"></div>
-
+        <div class="project-wrapper">
+            <div class="project_title">
+                <div class="title1">Side Project</div>
+            </div>
+        </div>
     <!-- Section 01 -->
     <div class="section">
         <div class="section-number">01</div>
@@ -1040,7 +1187,7 @@ body {
                 </div>
             </div>
             
-            <!-- 3개 이미지 분홍 컨테이너 -->
+            <!-- 2개 이미지 분홍 컨테이너 -->
             <div class="pink-container">
                 <div class="small-image-box">
                     <img src="card01.webp" alt="이미지1">
@@ -1048,9 +1195,19 @@ body {
                 <div class="small-image-box">
                     <img src="card02.webp" alt="이미지2">
                 </div>
-                <div class="small-image-box">
-                    <img src="card03.webp" alt="이미지3">
-                </div>
+            </div>
+                        
+            <!-- 네 번째 이미지 -->
+            <div class="image-box">
+                <img src="card04.webp" alt="이미지 4">
+            </div>
+
+            <!-- theme 라벨 -->
+            <div class="theme-label">theme</div>
+
+            <!-- card03 독립 -->
+            <div class="image-box">
+                <img src="card03.webp" alt="이미지3">
             </div>
             
             <!-- 카카오톡 테마 섹션 -->
@@ -1093,11 +1250,7 @@ body {
                     </a>
                 </div>
             </div>
-            
-            <!-- 네 번째 이미지 -->
-            <div class="image-box">
-                <img src="card04.webp" alt="이미지 4">
-            </div>
+
         </div>
     </div>
 
@@ -1153,7 +1306,7 @@ body {
         </div>
     </div>
 
-    
+    </div><!-- content-wrapper 닫기 -->
 
     <script>
         // 자동 이미지 슬라이더 기능

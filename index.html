@@ -1,553 +1,224 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Juyoung's room">
     <meta property="og:description" content="Design & creative projects by Juyoung Lee">
     <meta property="og:image" content="https://juyounglee.co.kr/jyroom.jpg">
     <meta property="og:url" content="https://juyounglee.co.kr/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 페이지 탭 제목 -->
-    <title>juyoung</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
-<style>
-    /* 기존 폰트 정의 그대로 유지 */
-    @font-face {
-        font-family: 'Pretendard-Regular';
-        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-    }
+    <style>
 
-    @font-face {
-        font-family: 'Orbit-Regular';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
+        @font-face {
+                font-family: 'Orbit-Regular';
+                src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+        }
 
-    * {
+        * {
         cursor: url('danchu.png') 16 16, auto;
-    }
-
-    body {
-        background-color: #efefef;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    .introduce {
-        color: grey;
-    }
-
-    /* 기존 CSS 그대로 유지하되, 사파리에서만 fallback 폰트 추가 */
-    .navbar {
-        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #f0f0f0;
-        padding: 0 0 5px 0;
-        border-bottom: 1px solid #333;
-    }
-
-    .navbar-item1 {
-        flex-grow: 1;
-        text-align: center;
-        border-right: 1px solid #333;
-    }
-
-    .navbar-item1 a {
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .navbar-item2 {
-        flex-grow: 9;
-    }
-
-    .navbar-item3 {
-        flex-grow: 1;
-        text-align: center;
-        border-left: 1px solid #333;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-        font-family: inherit;
-        font-weight: bold;
-    }
-
-    .navbar-item3:hover {
-        text-decoration: underline;
-    }
-
-    .navbar-item4 {
-        flex-grow: 1;
-        text-align: center;
-        padding-left: 10px;
-        border-left: 1px solid #333;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-        font-family: inherit;
-        font-weight: bold;
-    }
-
-    .navbar-item4:hover {
-        text-decoration: underline;
-    }
-
-    .introduce {
-        position: relative;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-size: 12px;
-        margin-top: 20px;
-        margin-left: 40px;
-    }
-
-    .img-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .img-container img {
-        max-width: 1200px;
-        width: 100%;
-        height: auto;
-    }
-
-    .flow-text {
-        display: flex;
-        margin-top: 20px;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        padding-bottom: 3px;
-        flex: 0 0 auto;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: 0.1s;
-        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-        font-size: 0.8rem;
-        color: #9D9993;
-    }
-
-    .flow-text:hover {
-        color: #000;
-    }
-
-    .flow-text:hover .flow-wrap {
-        animation-play-state: paused;
-        cursor: pointer;
-    }
-
-    .flow-wrap {
-        animation: textLoop 12s linear infinite;
-        padding-right: 4vw;
-    }
-
-    @keyframes textLoop {
-        0% {
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
         }
-        100% {
-            -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-        }
-    }
-
-    .sthumbnail-container {
-        display: grid;
-        position: relative;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        box-sizing: border-box;
-        width: 100%;
-        max-width: 3200px;
-        margin: 0 auto;
-    }
-
-    .sthumbnail-container .sthumbnail-1 {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .sthumbnail-1 img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .sthumbnail-1 .hover-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.8s ease-in-out;
-        padding: 10px 20px;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-        font-size: 14px;
-        text-align: center;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    .sthumbnail-1:hover .hover-button {
-        opacity: 1;
-    }
-
-    .sthumbnail-1 {
-        position: relative;
-        width: 100%;
-        padding-top: 100%;
-        overflow: hidden;
-    }
-
-    .sthumbnail-1 img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .overlay-text1 {
-        position: absolute;
-        top: 10%;
-        left: 18%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5vw;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .overlay-text2 {
-        position: absolute;
-        top: 10%;
-        left: 18%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5vw;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .overlay-text3 {
-        position: absolute;
-        top: 10%;
-        left: 12%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5vw;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .overlay-text4 {
-        position: absolute;
-        top: 10%;
-        left: 18%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5vw;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .overlay-text5 {
-        position: absolute;
-        top: 10%;
-        left: 14%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5vw;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .text-only-container {
-        position: relative;
-        width: 100%;
-        max-width: 3200px;
-        margin: 0 auto;
-        padding: 100px 0;
-        background-color: #f8f8f8;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .text-only-content {
-        font-family: 'Orbit-Regular', 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-        font-size: 1.2vw;
-        line-height: 1.6;
-        color: #333;
-        text-align: center;
-        width: 100%;
-        max-width: 800px;
-    }
-
-    .instagram-link {
-        cursor: pointer;
-        max-width: 200px;
-        height: auto;
-        margin-top: 15px;
-        transition: transform 0.3s ease;
-        object-fit: contain;
-    }
-
-    .instagram-link:hover {
-        transform: scale(1.1);
-    }
-
-    .copyright {
-        text-align: center;
-        font-family: 'Pretendard-Regular', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Arial, sans-serif;
-        font-size: 12px;
-        color: #666;
-        padding: 30px 0;
-        margin-top: 30px;
-    }
-
-    /* 🔥 사파리에서만 적용되는 글꼴 스무딩 - 다른 브라우저는 영향 없음 */
-    @media not all and (min-resolution: 0.001dpcm) {
-        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-            * {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
-        }
-    }
-
-    /* 모바일 반응형 */
-    @media (max-width: 768px) {
-        .sthumbnail-container {
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 100%;
+        /* 기본 설정 */
+        body {
+            margin: 0;
             padding: 0;
-            gap: 0;
+            /* 기본 폰트를 Pretendard로 설정 */
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
         }
+
+        /* --- [1] 상단 가로형 네비게이션바 스타일 --- */
         
-        .img-container img {
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .text-only-content {
-            font-size: 12px;
-            max-width: 90%;
-            line-height: 1.4;
-        }
-        
-        .text-only-container {
-            position: relative;
-            width: 100%;
-            padding: 60px 0;
-            background-color: #f8f8f8;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            padding: 30px 40px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            background-color: #fff;
         }
-        
-        .overlay-text1, .overlay-text2, .overlay-text3, .overlay-text4, .overlay-text5 {
-            font-size: 2.5vw;
-            top: 15%;
-            line-height: 1.2;
-        }
-        
-        .overlay-text1 {
-            left: 28%;
-        }
-        
-        .overlay-text2 {
-            left: 30%;
-        }
-        
-        .overlay-text3 {
-            left: 21%;
-        }
-        
-        .overlay-text4 {
-            left: 30%;
-        }
-        
-        .overlay-text5 {
-            left: 20%;
-        }
-        
-        .instagram-link {
-            max-width: 50px;
-        }
-        
-        .hover-button {
-            font-size: 10px;
-            padding: 6px 12px;
-        }
-    }
-</style>
 
-<!-- 🎯 사파리 전용 폰트 보정 스크립트 -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 사파리인지 정확하게 감지 (Chrome 제외)
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || 
-                     /iPad|iPhone|iPod/.test(navigator.userAgent);
-    
-    if (isSafari) {
-        console.log('Safari 감지 - 폰트 렌더링 최적화 적용');
-        
-        // 사파리에서만 폰트 스무딩 적용
-        const style = document.createElement('style');
-        style.textContent = `
-            * {
-                -webkit-font-smoothing: antialiased !important;
-                -moz-osx-font-smoothing: grayscale !important;
-                text-rendering: optimizeLegibility !important;
+        /* 좌측 로고 (이름) - 호버 효과 없음, 기존 폰트 유지 */
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #000;
+            text-decoration: none;
+            /* 로고만 타자기체 유지 (원하지 않으면 이 줄 삭제) */
+            font-family: 'Courier New', Courier, monospace; 
+        }
+
+        /* 중앙 메뉴 영역 */
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 500; /* Pretendard Bold 느낌 */
+        }
+
+        /* 우측 메뉴 영역 */
+        .nav-right a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ★수정됨★: 로고(.logo)를 제외하고 네비게이션 메뉴에만 호버 효과 적용 */
+        .nav-center a:hover,
+        .nav-right a:hover {
+            background-color: #ffff00; /* 형광펜 효과 */
+            font-style: italic;
+        }
+
+
+        /* --- [2] 메인 그리드 스타일 --- */
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 40px 100px;
+        }
+
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px 40px;
+        }
+
+        .grid-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+
+        .thumb-box {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            background-color: #eee;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .grid-item:hover .thumb-box img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            /* 캡션도 깔끔하게 Pretendard 적용됨 (body 상속) */
+        }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
             }
-        `;
-        document.head.appendChild(style);
-        
-        // 1.5초 후 폰트 로딩 확인 (사파리는 느림)
-        setTimeout(function() {
-            // 간단한 폰트 체크
-            const testDiv = document.createElement('div');
-            testDiv.style.fontFamily = 'Orbit-Regular, serif';
-            testDiv.style.fontSize = '12px';
-            testDiv.style.position = 'absolute';
-            testDiv.style.visibility = 'hidden';
-            testDiv.innerHTML = 'Test';
-            document.body.appendChild(testDiv);
-            
-            const computedStyle = window.getComputedStyle(testDiv);
-            const actualFont = computedStyle.fontFamily;
-            
-            // serif로 fallback되었다면 로컬 폰트 로딩 실패
-            if (actualFont.toLowerCase().includes('serif')) {
-                console.warn('사파리에서 Orbit 폰트 로딩 실패 - Apple 시스템 폰트 적용');
-                
-                // 사파리에서만 시스템 폰트로 대체
-                const safariStyle = document.createElement('style');
-                safariStyle.textContent = `
-                    .navbar, .flow-text, .text-only-content {
-                        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif !important;
-                    }
-                `;
-                document.head.appendChild(safariStyle);
+            .nav-center {
+                position: static;
+                transform: none;
             }
-            
-            document.body.removeChild(testDiv);
-        }, 1500);
-    }
-});
-</script>
+            .grid-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <div class="navbar">
-        <div class="navbar-item1"><a href="index.html" style="text-decoration: none; color: inherit;">Juyoung LEE</a></div>
-        <div class="navbar-item2"></div>
-        <a href="https://www.linkedin.com/in/juyounglee01" target="_blank" class="navbar-item3">LINKEDIN</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com" target="_blank" class="navbar-item4">CONTACT</a>
-    </div>
-    <div class="introduce">Juyoung's room *⋆꒰ঌ(⁎ᴗ͈ˬᴗ͈⁎)໒꒱⋆* <br> I'd love to work in graphic design and marketing!<br><br>
-    이 사이트는 웹에 최적화되어 있습니다 ❤︎ 평소 만들어 보고 싶었던 개인만의 작업물을 모아두었습니다⌒.⌒ ♡</div>
-    <div class="img-container">
-        <img src="mainroom.webp" alt="예시 GIF">
-    </div>
-    <div class="flow-container">
-        <div class="flow-text">
-            <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
-            <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
-            <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
-            <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
-            <div class="flow-wrap">check my pf out </div>
-            <div class="flow-wrap">- ̗̀ෆ'ᵕ'˶ ⎞ෆ ̖́- </div>
-            <div class="flow-wrap">check my pf out </div>
+
+    <header>
+        <a href="https://juyounglee.co.kr" class="logo">Leejuyoung</a>
+
+        <nav class="nav-center">
+            <a href="work.html">[WORK]</a>
+            <a href="about.html">[ABOUT]</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=haruxme@gmail.com">[CONTACT]</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/juyounglee01" target="_blank">[LINKED IN]</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="grid-wrapper">
+            
+            <a href="pwtbz.html" class="grid-item">
+                <div class="thumb-box">
+                    <img src="c.webp" alt="Work 1">
+                </div>
+                <div class="caption">The Boyz Redesign</div>
+            </a>
+
+            <a href="https://cosmetics-coluffy.figma.site/" class="grid-item">
+                <div class="thumb-box">
+                    <img src="e.webp" alt="Work 2">
+                </div>
+                <div class="caption">Coluffy Brand Design</div>
+            </a>
+
+            <a href="fpproject.html" class="grid-item">
+                <div class="thumb-box">
+                    <img src="b.png" alt="Work 3">
+                </div>
+                <div class="caption">Futureplay Contents Design</div>
+            </a>
+
+            <a href="19project.html" class="grid-item">
+                <div class="thumb-box">
+                    <img src="a.webp" alt="Work 4">
+                </div>
+                <div class="caption">19 Project</div>
+            </a>
+
+            <a href="sideproject.html" class="grid-item">
+                <div class="thumb-box">
+                    <img src="g.webp" alt="Work 5">
+                </div>
+                <div class="caption">Fan Goods Design</div>
+            </a>
+
+            <a href="https://ai-project.figma.site" class="grid-item">
+                <div class="thumb-box">
+                    <img src="f.webp" alt="Work 6">
+                </div>
+                <div class="caption">AI Design</div>
+            </a>
+
         </div>
     </div>
-    <div class="sthumbnail-container">
-        <div class="sthumbnail-1">
-            <img src="c.webp">
-            <div class="overlay-text1">✦ theboyz<br>&nbsp;&nbsp;&nbsp;&nbsp;access password<br>&nbsp;&nbsp;&nbsp;&nbsp;personal project</div>
-            <button class="hover-button" onclick="location.href='pwtbz.html'">૮ ・ﻌ・ა view project</button>
-        </div>
-        <div class="sthumbnail-1">
-            <img src="e.webp">
-            <div class="overlay-text4">✦ cosmetic <br>&nbsp;&nbsp;&nbsp;&nbsp;brand design<br>&nbsp;&nbsp;&nbsp;&nbsp;personal project</div>
-            <button class="hover-button" onclick="location.href='https://cosmetics-coluffy.figma.site/'">૮ ・ﻌ・ა view project</button>
-        </div>
-        <div class="sthumbnail-1">
-            <img src="b.png">
-            <div class="overlay-text2">✦ recruitment<br>&nbsp;&nbsp;&nbsp;&nbsp;marketing&design</div>
-            <button class="hover-button" onclick="location.href='fpproject.html'">૮ ・ﻌ・ა view project</button>
-        </div>
-        <div class="sthumbnail-1">
-            <img src="a.webp">
-            <div class="overlay-text3">✦ 19<br>&nbsp;&nbsp;&nbsp;&nbsp;project</div>
-            <button class="hover-button" onclick="location.href='19project.html'">૮ ・ﻌ・ა view project</button>
-        </div>
-        <div class="sthumbnail-1">
-            <img src="d.webp">
-            <button class="hover-button" onclick="location.href='sideproject.html'">૮ ・ﻌ・ა view project</button>
-        </div>
-        <div class="sthumbnail-1">
-            <img src="f.webp">
-            <div class="overlay-text5">✦ AI<br>&nbsp;&nbsp;&nbsp;&nbsp;design</div>
-            <button class="hover-button" onclick="location.href='https://ai-project.figma.site'">૮ ・ﻌ・ა view project</button>
-        </div>
-    </div>
-    
-    <div class="text-only-container">
-        <div class="text-only-content">
-            This is just the beginning-<br><br>
-            I'm planning to fill this space<br> with more projects I love(⸝⸝º ^ º⸝⸝ )<br>
-            rooted in my passion for music, film, and storytelling through design ♡
-            <br><br>
-            <img src="pixel.webp" alt="Instagram Link" class="instagram-link" onclick="window.open('https://www.instagram.com/19xharu', '_blank')">
-        </div>
-    </div>
-    
-    <div class="copyright">
-        copyright by Juyoung Lee
-    </div>
+
 </body>
 </html>
