@@ -84,6 +84,9 @@ html, body {
 .section.hero {
     padding: 0;
     background-color: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
 }
 
 /* Intro 섹션 - 그라데이션 배경 전체 너비 */
@@ -193,18 +196,20 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
     margin: 0 auto;
     padding: 0;
 }
 
 .section1 img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
-    padding: 0;
+    will-change: transform;
 }
 
 .overlay-img {
@@ -215,6 +220,7 @@ html, body {
     z-index: 1;
     width: 50%;
     max-width: 500px;
+    will-change: transform;
 }
 
 .overlay-img img {
@@ -1382,4 +1388,36 @@ button {
             }
         });
     </script>
+<script>
+// 극적인 패럴랙스 효과
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const heroSection = document.querySelector('.section.hero');
+    
+    if (heroSection) {
+        const heroTop = heroSection.offsetTop;
+        const heroBottom = heroTop + heroSection.offsetHeight;
+        
+        // hero 섹션이 화면에 있을 때만 효과
+        if (scrolled < heroBottom) {
+            // 배경 이미지 (time.webp) - 천천히 아래로 + 줌인
+            const bgImage = document.querySelector('.section1 > img');
+            if (bgImage) {
+                const bgSpeed = 0.8; // 80% 속도 (훨씬 빠르게!)
+                const scale = 1 + (scrolled * 0.0003); // 서서히 확대
+                bgImage.style.transform = `translateY(${scrolled * bgSpeed}px) scale(${scale})`;
+            }
+            
+            // 오버레이 글씨 (am.png) - 빠르게 위로
+            const overlayImage = document.querySelector('.overlay-img');
+            if (overlayImage) {
+                const overlaySpeed = -2.5; // 역방향으로 엄청 빠르게!
+                const opacity = 1 - (scrolled / heroBottom); // 점점 투명해짐
+                overlayImage.style.transform = `translate(-50%, calc(-50% + ${scrolled * overlaySpeed}px))`;
+                overlayImage.style.opacity = opacity;
+            }
+        }
+    }
+});
+</script>
 </body>
